@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhaka roads 16 ft and wider (Google Maps)</title>
+<style>
+  :root{
+    --ink:#1d2a2f; --paper:#f6f7f5; --line:#d5dbd8; --muted:#5d6b70;
+    --tagged:#c2261f; --lanes:#e07b00; --class:#1f6f8b; --unknown:#8b9699;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;color:var(--ink)}
+  #app{display:flex;height:100%}
+  #panel{width:330px;flex:none;background:var(--paper);border-right:1px solid var(--line);padding:18px 18px 12px;overflow-y:auto}
+  #map{flex:1;min-width:0;background:#e8ebe9}
+  h1{font-size:19px;line-height:1.25;margin:0 0 4px}
+  p.sub{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.45}
+  fieldset{border:0;border-top:1px solid var(--line);margin:0;padding:12px 0}
+  legend{font-size:13px;font-weight:600;padding:0 6px 0 0}
+  label.row{display:flex;align-items:flex-start;gap:9px;font-size:13px;line-height:1.35;margin:7px 0;cursor:pointer}
+  label.row input{margin-top:2px}
+  .sw{display:inline-block;width:22px;height:0;border-top:4px solid;margin-right:2px;vertical-align:middle;flex:none}
+  .small{font-size:12px;color:var(--muted);line-height:1.4}
+  input[type=password],input[type=text]{width:100%;font:inherit;font-size:13px;padding:8px 9px;border:1px solid var(--line);border-radius:4px;background:#fff}
+  button{font:inherit;font-size:13px;padding:8px 12px;border:1px solid var(--ink);background:var(--ink);color:#fff;border-radius:4px;cursor:pointer}
+  button.alt{background:transparent;color:var(--ink)}
+  button:disabled{opacity:.45;cursor:default}
+  button:focus-visible,input:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+  .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  #status{font-size:13px;margin:10px 0;padding:9px 10px;background:#fff;border:1px solid var(--line);border-radius:4px;line-height:1.4}
+  #status.err{border-color:var(--tagged);color:var(--tagged)}
+  #stats div{display:flex;justify-content:space-between;font-size:13px;padding:2px 0}
+  #stats b{font-variant-numeric:tabular-nums}
+  @media (max-width:760px){
+    #app{flex-direction:column-reverse}
+    #panel{width:100%;max-height:52%;border-right:0;border-top:1px solid var(--line)}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="panel">
+    <h1>Dhaka roads, 16 ft and wider</h1>
+    <p class="sub">Google Maps basemap, with road data from OpenStreetMap. Google does not publish road widths, so widths come from OpenStreetMap tags and inference.</p>
+
+    <fieldset style="border-top:0;padding-top:0">
+      <legend>Google Maps API key</legend>
+      <input id="key" type="password" autocomplete="off" placeholder="Paste a Maps JavaScript API key" aria-label="Google Maps API key">
+      <p class="small" style="margin:6px 0 0">This is an API key (starts with “AIza”), not the OAuth client secret. Enable “Maps JavaScript API” for it in Google Cloud Console. The key stays in this browser tab.</p>
+    </fieldset>
+
+    <div class="btns" style="margin-top:0">
+      <button id="load">Load map and roads</button>
+      <button id="dl" class="alt" disabled>Download GeoJSON</button>
+    </div>
+    <div id="status">Paste your key, then press “Load map and roads”.</div>
+
+    <fieldset>
+      <legend>How each road qualified</legend>
+      <label class="row"><input type="checkbox" data-layer="tagged" checked><span><span class="sw" style="border-color:var(--tagged)"></span>Width tag is 16 ft or more <span class="small">(verified)</span></span></label>
+      <label class="row"><input type="checkbox" data-layer="lanes" checked><span><span class="sw" style="border-color:var(--lanes)"></span>Two or more lanes <span class="small">(inferred, about 10 ft per lane)</span></span></label>
+      <label class="row"><input type="checkbox" data-layer="class" checked><span><span class="sw" style="border-color:var(--class)"></span>Trunk, primary, secondary or tertiary <span class="small">(inferred from class)</span></span></label>
+      <label class="row"><input type="checkbox" data-layer="unknown"><span><span class="sw" style="border-color:var(--unknown)"></span>Minor roads tagged with fewer than two lanes <span class="small">(not counted; reference only)</span></span></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Counts</legend>
+      <div id="stats" class="small">Nothing loaded yet.</div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Reading the result</legend>
+      <p class="small" style="margin:0">Few Dhaka roads carry a width tag in OpenStreetMap, so most results are inferred. Treat orange and blue lines as likely, and red lines as confirmed. Click any line for its details.</p>
+    </fieldset>
+  </aside>
+  <div id="map" role="application" aria-label="Map of Dhaka roads"></div>
+</div>
+
+<script>
+const MIN_M = 16 * 0.3048;                 // 4.8768 m
+const BBOX = [23.66, 90.33, 23.90, 90.48]; // south, west, north, east
+const ENDPOINTS = [
+  "https://overpass-api.de/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter",
+  "https://overpass.private.coffee/api/interpreter"
+];
+const COLORS = {tagged:"#c2261f", lanes:"#e07b00", class:"#1f6f8b", unknown:"#8b9699"};
+
+const $ = id => document.getElementById(id);
+function status(msg, err){ const s=$("status"); s.textContent=msg; s.className = err ? "err" : ""; }
+
+let map, info, features = [], mapReady = false;
+const visible = {tagged:true, lanes:true, class:true, unknown:false};
+
+/* ---------- Google Maps loading ---------- */
+function loadGoogle(key){
+  return new Promise((resolve, reject) => {
+    if (window.google && google.maps) return resolve();
+    window.gm_authFailure = () => {
+      status("Google rejected this key. Check that Maps JavaScript API is enabled, billing is on, and any key restrictions allow this page.", true);
+    };
+    window.__gmReady = () => resolve();
+    const s = document.createElement("script");
+    s.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(key) + "&callback=__gmReady&loading=async&v=weekly";
+    s.async = true;
+    s.onerror = () => reject(new Error("could not load Google Maps script"));
+    document.head.appendChild(s);
+  });
+}
+
+function initMap(){
+  map = new google.maps.Map($("map"), {
+    center:{lat:23.78, lng:90.4}, zoom:12,
+    mapTypeControl:true, streetViewControl:false, fullscreenControl:true,
+    styles:[{featureType:"poi", stylers:[{visibility:"off"}]},
+            {featureType:"transit", stylers:[{visibility:"off"}]}]
+  });
+  info = new google.maps.InfoWindow();
+  new google.maps.Rectangle({
+    map, bounds:{south:BBOX[0], west:BBOX[1], north:BBOX[2], east:BBOX[3]},
+    strokeColor:"#1d2a2f", strokeOpacity:.7, strokeWeight:1, fillOpacity:0, clickable:false
+  });
+  map.data.setStyle(styleFn);
+  map.data.addListener("click", ev => {
+    const f = ev.feature, get = k => f.getProperty(k);
+    const cat = get("_cat");
+    const rows = ["<b>" + esc(get("name") || get("name:en") || "Unnamed road") + "</b>",
+                  "Type: " + esc(get("highway"))];
+    if (get("width")) rows.push("Width tag: " + esc(get("width")));
+    if (get("lanes")) rows.push("Lanes: " + esc(get("lanes")));
+    rows.push("Basis: " + ({tagged:"width tag", lanes:"lane count", class:"road class", unknown:"no qualifying data"})[cat]);
+    rows.push("<a target='_blank' rel='noopener' href='https://www.openstreetmap.org/way/" + get("_id") + "'>Open in OSM</a>");
+    info.setContent("<div style='font:13px/1.5 system-ui;color:#1d2a2f'>" + rows.join("<br>") + "</div>");
+    info.setPosition(ev.latLng);
+    info.open(map);
+  });
+  mapReady = true;
+}
+function esc(v){ return String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+function styleFn(f){
+  const c = f.getProperty("_cat");
+  if (!visible[c]) return {visible:false};
+  const hw = String(f.getProperty("highway") || "");
+  const big = /^(motorway|trunk|primary)/.test(hw);
+  return {strokeColor:COLORS[c], strokeWeight: c==="unknown" ? 2 : (big ? 5 : 3.5), strokeOpacity: c==="unknown" ? .6 : .95, zIndex: c==="tagged" ? 3 : 2};
+}
+
+/* ---------- Width logic ---------- */
+function parseWidth(v){
+  if(!v) return null;
+  v = String(v).trim().toLowerCase().replace(",", ".");
+  let m = v.match(/^(\d+(?:\.\d+)?)\s*(?:'|ft|feet|foot)/);
+  if(m) return parseFloat(m[1]) * 0.3048;
+  m = v.match(/^(\d+(?:\.\d+)?)\s*(?:m|meter|metre|meters|metres)?$/);
+  if(m) return parseFloat(m[1]);
+  return null;
+}
+function classify(tags){
+  const hw = tags.highway || "";
+  const w = parseWidth(tags.width) ?? parseWidth(tags.est_width) ?? parseWidth(tags["width:carriageway"]);
+  if (w !== null) return w >= MIN_M ? {cat:"tagged", widthM:w} : null;
+  const lanes = parseInt(tags.lanes, 10);
+  if (!isNaN(lanes)) {
+    if (lanes >= 2) return {cat:"lanes", widthM:null};
+    if (lanes === 1 && (tags.oneway === "yes" || tags.oneway === "-1")) return {cat:"unknown", widthM:null};
+  }
+  const base = hw.replace("_link","");
+  if (["motorway","trunk","primary","secondary","tertiary"].includes(base)) return {cat:"class", widthM:null};
+  if (["residential","unclassified","service","living_street"].includes(base)) return {cat:"unknown", widthM:null};
+  return null;
+}
+function segKm(coords){
+  const R = 6371, rad = Math.PI/180; let d = 0;
+  for (let i=1;i<coords.length;i++){
+    const [x1,y1] = coords[i-1], [x2,y2] = coords[i];
+    const dl = (x2-x1)*rad*Math.cos((y1+y2)/2*rad), dp = (y2-y1)*rad;
+    d += R*Math.sqrt(dl*dl+dp*dp);
+  }
+  return d;
+}
+
+/* ---------- Overpass ---------- */
+async function overpass(query){
+  let lastErr;
+  for (const url of ENDPOINTS){
+    const ctl = new AbortController();
+    const timer = setTimeout(() => ctl.abort(), 75000);
+    try{
+      status("Querying " + new URL(url).hostname + " (can take up to a minute) …");
+      const r = await fetch(url, {method:"POST", body:"data="+encodeURIComponent(query), signal:ctl.signal});
+      if(!r.ok) throw new Error("HTTP " + r.status);
+      const j = await r.json();
+      if(!j.elements) throw new Error("empty response");
+      return j;
+    }catch(e){
+      lastErr = e.name === "AbortError" ? new Error("timed out") : e;
+    }finally{ clearTimeout(timer); }
+  }
+  throw lastErr;
+}
+
+function updateStats(){
+  const counts = {tagged:0,lanes:0,class:0,unknown:0}, km = {tagged:0,lanes:0,class:0,unknown:0};
+  for (const f of features){ const c=f.properties._cat; counts[c]++; km[c]+=f.properties._km; }
+  const qual = counts.tagged+counts.lanes+counts.class, qualKm = km.tagged+km.lanes+km.class;
+  $("stats").innerHTML =
+    `<div><span>Verified by width tag</span><b>${counts.tagged} (${km.tagged.toFixed(0)} km)</b></div>`+
+    `<div><span>Inferred from lanes</span><b>${counts.lanes} (${km.lanes.toFixed(0)} km)</b></div>`+
+    `<div><span>Inferred from road class</span><b>${counts.class} (${km.class.toFixed(0)} km)</b></div>`+
+    `<div style="border-top:1px solid var(--line);margin-top:4px;padding-top:4px"><span><b>Included in map</b></span><b>${qual} (${qualKm.toFixed(0)} km)</b></div>`+
+    `<div><span>Reference only</span><b>${counts.unknown}</b></div>`;
+}
+
+/* ---------- Events ---------- */
+$("load").addEventListener("click", async () => {
+  const key = $("key").value.trim();
+  if (!key){ status("Paste a Maps JavaScript API key first.", true); return; }
+  if (!key.startsWith("AIza")) { status("That doesn't look like a Maps API key. Keys start with “AIza”. The OAuth client secret (GOCSPX-…) will not work here.", true); return; }
+  $("load").disabled = true; $("dl").disabled = true;
+  try{
+    status("Loading Google Maps …");
+    await loadGoogle(key);
+    if (!mapReady) initMap();
+
+    const [s,w,n,e] = BBOX;
+    const major = "motorway|trunk|primary|secondary|tertiary";
+    const minor = "unclassified|residential|service|living_street";
+    const q = `[out:json][timeout:60];
+      (
+        way["highway"~"^(${major})(_link)?$"](${s},${w},${n},${e});
+        way["highway"~"^(${minor})$"]["width"](${s},${w},${n},${e});
+        way["highway"~"^(${minor})$"]["lanes"](${s},${w},${n},${e});
+      );
+      out tags geom;`;
+    const data = await overpass(q);
+    status("Processing " + data.elements.length.toLocaleString() + " road segments …");
+    await new Promise(r => setTimeout(r, 30));
+
+    features = [];
+    for (const el of data.elements){
+      if(!el.geometry || el.geometry.length < 2) continue;
+      const res = classify(el.tags || {});
+      if(!res) continue;
+      const coords = el.geometry.map(p => [p.lon, p.lat]);
+      features.push({type:"Feature",
+        properties:Object.assign({}, el.tags, {_id:el.id, _cat:res.cat, _km:segKm(coords), _width_m:res.widthM}),
+        geometry:{type:"LineString", coordinates:coords}});
+    }
+    map.data.forEach(f => map.data.remove(f));
+    map.data.addGeoJson({type:"FeatureCollection", features});
+    updateStats();
+    const kept = features.filter(f => f.properties._cat !== "unknown").length;
+    status("Done. " + kept.toLocaleString() + " road segments included.");
+    $("dl").disabled = false;
+  }catch(err){
+    status("Something failed: " + err.message + ". If this is about Overpass, wait a minute and retry. If Google Maps did not load, check the key.", true);
+  }finally{
+    $("load").disabled = false;
+  }
+});
+
+document.querySelectorAll("input[data-layer]").forEach(cb => {
+  visible[cb.dataset.layer] = cb.checked;
+  cb.addEventListener("change", () => {
+    visible[cb.dataset.layer] = cb.checked;
+    if (mapReady) map.data.setStyle(styleFn);
+  });
+});
+
+$("dl").addEventListener("click", () => {
+  const out = {type:"FeatureCollection", features: features.filter(f => f.properties._cat !== "unknown")};
+  const blob = new Blob([JSON.stringify(out)], {type:"application/geo+json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "dhaka_roads_16ft_plus.geojson";
+  document.body.appendChild(a); a.click(); a.remove();
+});
+</script>
+</body>
+</html>
