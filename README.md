@@ -6,7 +6,7 @@ Supplementary and supporting materials for research on precast (prefabricated) R
 |---|---|---|
 | Question | Under what regulatory, economic, logistical and institutional conditions is precast RCC feasible in Bangladesh? | How does a precast RC frame–wall system perform under BNBC 2020 compared with an equivalent cast-in-situ system? |
 | Folder | [`Paper1_PreFeasibility/`](Paper1_PreFeasibility) | [`Paper2_Structural/`](Paper2_Structural) |
-| Status | Full draft (`Paper1_draft.md` / `.docx`) | Analysis complete; outline (`Paper2_outline.md`), results (`analysis/results_summary.md`) |
+| Status | Full draft (`Paper1_draft.md` / `.docx`) | Full draft (`Paper2_draft.md` / `.docx`); results in `analysis/results_summary.md` |
 
 ## Repository layout
 ```
@@ -21,7 +21,7 @@ Paper1_PreFeasibility/
   analysis/             gis_analysis.py, cost_model.py, gfa_model.py (+ results .md/.json, figures), boq_notes.md
   research/             Fact-check and BNBC 2020 clause verification notes
 Paper2_Structural/
-  Paper2_outline.md     Manuscript outline
+  Paper2_draft.md/.docx Manuscript draft (Paper2_outline.md: original outline)
   models/1_CastInSitu   ETABS analysis 1: cast-in-situ reference (cis_baseline.EDB)
   models/2_Precast      ETABS analysis 2: precast variants M1–M4, B7, W45 and *_fix600 (recommended scheme)
   scripts/              ETABS API (comtypes) scripts: build baseline, precast variants, run, export, design, checks
