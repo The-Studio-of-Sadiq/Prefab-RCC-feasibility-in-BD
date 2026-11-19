@@ -26,7 +26,7 @@ Paper2_Structural/
   scripts/              ETABS API (comtypes) scripts: build baseline, precast variants, run, export, design, checks
   analysis/             baseline_review.md, soil_data.md, results_summary.md, figures/, exported tables per variant
   research/             Literature-based precast connection stiffness parameters
-BIM/                    Revit model of the reference building (see BIM/README.md)
+BIM/                    Revit 2027 model (.rvt), IFC export, 3D view and the add-in that generates them (see BIM/README.md)
 ```
 
 ## Reproducing the analyses

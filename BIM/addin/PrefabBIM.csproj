@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);MSB3277</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2027\RevitAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2027\RevitAPIUI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="UseNet10RuntimeAssemblies" AfterTargets="ResolveAssemblyReferences">
+    <ItemGroup>
+      <ReferencePath Remove="@(ReferencePath)" Condition="$([System.String]::Copy('%(ReferencePath.FullPath)').Contains('Microsoft.NETCore.App.Ref'))" />
+      <ReferencePath Remove="@(ReferencePath)" Condition="$([System.String]::Copy('%(ReferencePath.FullPath)').Contains('Microsoft.WindowsDesktop.App.Ref'))" />
+      <Net10Assemblies Include="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\*.dll" />
+      <Net10Assemblies Include="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.9\*.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\clretwrc.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\clrgc.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\clrgcexp.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\clrjit.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\coreclr.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\hostpolicy.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\Microsoft.DiaSymReader.Native.amd64.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\mscordaccore.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\mscordaccore_amd64_amd64_10.0.926.27113.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\mscordbi.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\mscorrc.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\msquic.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.9\System.IO.Compression.Native.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.9\D3DCompiler_47_cor3.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.9\PenImc_cor3.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.9\PresentationNative_cor3.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.9\vcruntime140_cor3.dll" />
+      <Net10Assemblies Remove="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\10.0.9\wpfgfx_cor3.dll" />
+      <ReferencePath Include="@(Net10Assemblies)" />
+    </ItemGroup>
+  </Target>
+
+</Project>

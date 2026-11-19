@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>PrefabBIM</Name>
+    <Assembly>C:\Users\rashe\Documents\prefab\repo\BIM\addin\bin\Release\net8.0-windows\PrefabBIM.dll</Assembly>
+    <FullClassName>PrefabBIM.App</FullClassName>
+    <AddInId>4E527D63-B8B7-4D9A-8758-693D4A8DF0B1</AddInId>
+    <VendorId>PREFAB</VendorId>
+    <VendorDescription>Automated 10-Storey Precast RC Building BIM Generator</VendorDescription>
+  </AddIn>
+</RevitAddIns>
