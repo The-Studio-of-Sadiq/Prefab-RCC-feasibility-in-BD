@@ -5,7 +5,10 @@ using System.Linq;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
+using Autodesk.Revit.DB.Electrical;
 using Autodesk.Revit.DB.Events;
+using Autodesk.Revit.DB.Mechanical;
+using Autodesk.Revit.DB.Plumbing;
 using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
@@ -18,26 +21,48 @@ namespace PrefabBIM
     {
         private static UIControlledApplication? _uiControlledApp;
         private static readonly object _logLock = new object();
+        private static string _activeJobMode = "none";
+
         private static readonly string BimDir = @"C:\Users\rashe\Documents\prefab\repo\BIM";
-        private static readonly string LogFilePath = Path.Combine(BimDir, "build_log.txt");
-        private static readonly string TemplatePath = @"C:\ProgramData\Autodesk\RVT 2027\Templates\English\Structural Analysis-DefaultMetric.rte";
+        private static readonly string LogFilePathStructural = Path.Combine(BimDir, "build_log.txt");
+        private static readonly string LogFilePathMep = Path.Combine(BimDir, "build_log_mep.txt");
+        private static string _currentLogPath = LogFilePathStructural;
+
+        // Structural Model Paths
+        private static readonly string StructuralTemplatePath = @"C:\ProgramData\Autodesk\RVT 2027\Templates\English\Structural Analysis-DefaultMetric.rte";
         private static readonly string RvtPath = Path.Combine(BimDir, "Prefab_RCC_10storey.rvt");
         private static readonly string IfcFileName = "Prefab_RCC_10storey.ifc";
         private static readonly string PngPath = Path.Combine(BimDir, "Prefab_RCC_10storey_3D.png");
+
+        // MEP Model Paths
+        private static readonly string MepTemplatePath = @"C:\ProgramData\Autodesk\RVT 2027\Templates\English\Systems-Default_Metric.rte";
+        private static readonly string MepRvtPath = Path.Combine(BimDir, "Prefab_RCC_10storey_MEP.rvt");
+        private static readonly string MepIfcFileName = "Prefab_RCC_10storey_MEP.ifc";
+        private static readonly string MepPngPath = Path.Combine(BimDir, "Prefab_RCC_10storey_MEP_3D.png");
 
         public Result OnStartup(UIControlledApplication application)
         {
             _uiControlledApp = application;
 
             var jobEnv = Environment.GetEnvironmentVariable("PREFAB_BIM_JOB");
-            if (jobEnv != "1")
+            if (string.Equals(jobEnv, "1", StringComparison.OrdinalIgnoreCase))
+            {
+                _activeJobMode = "structural";
+                _currentLogPath = LogFilePathStructural;
+            }
+            else if (string.Equals(jobEnv, "mep", StringComparison.OrdinalIgnoreCase))
+            {
+                _activeJobMode = "mep";
+                _currentLogPath = LogFilePathMep;
+            }
+            else
             {
                 // Standby mode: do nothing
                 return Result.Succeeded;
             }
 
             Log("================================================================================");
-            Log("PrefabBIM Add-in started. PREFAB_BIM_JOB=1 detected. Initializing job pipeline...");
+            Log($"PrefabBIM Add-in started. PREFAB_BIM_JOB='{jobEnv}' detected. Active mode: '{_activeJobMode}'.");
             Log("================================================================================");
 
             try
@@ -61,7 +86,7 @@ namespace PrefabBIM
 
         public Result OnShutdown(UIControlledApplication application)
         {
-            Log("PrefabBIM Add-in shutting down.");
+            Log($"PrefabBIM Add-in shutting down (Mode: {_activeJobMode}).");
             return Result.Succeeded;
         }
 
@@ -116,7 +141,7 @@ namespace PrefabBIM
 
         private static void OnApplicationInitialized(object? sender, ApplicationInitializedEventArgs e)
         {
-            Log("ApplicationInitialized event fired. Beginning headless BIM construction...");
+            Log($"ApplicationInitialized event fired. Executing pipeline for mode: '{_activeJobMode}'...");
 
             if (sender is not Autodesk.Revit.ApplicationServices.Application app)
             {
@@ -130,14 +155,21 @@ namespace PrefabBIM
             bool buildSuccess = false;
             try
             {
-                buildSuccess = ExecuteBimGeneration(app);
+                if (_activeJobMode == "structural")
+                {
+                    buildSuccess = ExecuteBimGeneration(app);
+                }
+                else if (_activeJobMode == "mep")
+                {
+                    buildSuccess = ExecuteMepPipeline(app);
+                }
             }
             catch (Exception ex)
             {
-                Log($"FATAL UNHANDLED EXCEPTION in ExecuteBimGeneration: {ex}");
+                Log($"FATAL UNHANDLED EXCEPTION in {_activeJobMode} execution: {ex}");
             }
 
-            Log($"BIM Generation finished with result: {(buildSuccess ? "SUCCESS" : "FAILED")}. Registering Idling event for Revit exit...");
+            Log($"Job execution finished with result: {(buildSuccess ? "SUCCESS" : "FAILED")}. Registering Idling event for Revit exit...");
 
             // Subscribe to Idling to post the ExitRevit command safely
             if (_uiControlledApp != null)
@@ -178,11 +210,14 @@ namespace PrefabBIM
             }
         }
 
+        // =========================================================================
+        // JOB 1: Structural Model Generation (PREFAB_BIM_JOB=1)
+        // =========================================================================
         private static bool ExecuteBimGeneration(Autodesk.Revit.ApplicationServices.Application app)
         {
-            if (!File.Exists(TemplatePath))
+            if (!File.Exists(StructuralTemplatePath))
             {
-                Log($"ERROR: Template file does not exist at '{TemplatePath}'");
+                Log($"ERROR: Template file does not exist at '{StructuralTemplatePath}'");
                 return false;
             }
 
@@ -191,8 +226,8 @@ namespace PrefabBIM
                 Directory.CreateDirectory(BimDir);
             }
 
-            Log($"Opening template project: {TemplatePath}");
-            Document doc = app.NewProjectDocument(TemplatePath);
+            Log($"Opening template project: {StructuralTemplatePath}");
+            Document doc = app.NewProjectDocument(StructuralTemplatePath);
             if (doc == null)
             {
                 Log("ERROR: Failed to create new project document from template.");
@@ -434,7 +469,6 @@ namespace PrefabBIM
                     }
 
                     pcFloorType = doc.GetElement(baseFloorType.Duplicate("PC Slab 150").Id) as FloorType;
-                    // Reuse the template floor's compound structure (keeps floor-valid EndCap settings) and replace its layers.
                     var floorCs = pcFloorType!.GetCompoundStructure();
                     floorCs.SetLayers(new List<CompoundStructureLayer>
                     {
@@ -458,7 +492,6 @@ namespace PrefabBIM
                 {
                     tx.Start();
 
-                    // Grid layout definition
                     double[] colXs = { 0.0, 5.0, 10.0, 15.0, 20.0 };
                     string[] colXNames = { "A", "B", "C", "D", "E" };
                     double[] colYs = { 0.0, 5.0, 10.0, 15.0 };
@@ -487,7 +520,6 @@ namespace PrefabBIM
                                     var pt = new XYZ(MToFt(x), MToFt(y), baseLvl.Elevation);
                                     var colInstance = doc.Create.NewFamilyInstance(pt, symbol, baseLvl, StructuralType.Column);
 
-                                    // Set levels and offsets
                                     var topParam = colInstance.get_Parameter(BuiltInParameter.FAMILY_TOP_LEVEL_PARAM);
                                     topParam?.Set(topLvl.Id);
 
@@ -581,10 +613,6 @@ namespace PrefabBIM
                     Log($"Beams generated: {beamsCreated} (expected: 310)");
 
                     // 3. Structural Walls (40 total: 4 panels per storey × 10 storeys)
-                    // WY1: x=0, y: 5->10
-                    // WY2: x=20, y: 5->10
-                    // WX1: y=0, x: 5->10
-                    // WX2: y=15, x: 10->15
                     var wallConfigs = new (string Tag, double X1, double Y1, double X2, double Y2)[]
                     {
                         ("WY1", 0.0, 5.0, 0.0, 10.0),
@@ -613,7 +641,7 @@ namespace PrefabBIM
                                     MToFt(3.0),
                                     0.0,
                                     false,
-                                    true); // Structural = true
+                                    true);
 
                                 string mark = $"PC-W-{wc.Tag}-S{storey}";
                                 SetMarkAndComments(wall, mark, elementComments);
@@ -675,7 +703,6 @@ namespace PrefabBIM
                 {
                     tx.Start();
 
-                    // Floor Plans for all levels
                     var vftPlan = new FilteredElementCollector(doc)
                         .OfClass(typeof(ViewFamilyType))
                         .Cast<ViewFamilyType>()
@@ -710,7 +737,6 @@ namespace PrefabBIM
                         }
                     }
 
-                    // 3D Isometric View: "BIM 3D"
                     var vft3D = new FilteredElementCollector(doc)
                         .OfClass(typeof(ViewFamilyType))
                         .Cast<ViewFamilyType>()
@@ -768,7 +794,6 @@ namespace PrefabBIM
                     ExportPngView(doc, isometric3D, PngPath);
                 }
 
-                // Re-save if IFC export or view export marked document as modified
                 if (doc.IsModified)
                 {
                     doc.Save();
@@ -791,9 +816,872 @@ namespace PrefabBIM
             }
         }
 
+        // =========================================================================
+        // JOB 2: MEP Pipeline (PREFAB_BIM_JOB=mep)
+        // Part A: Structural Model Shaft Opening Update
+        // Part B: MEP Model Generation & Coordination
+        // =========================================================================
+        private static bool ExecuteMepPipeline(Autodesk.Revit.ApplicationServices.Application app)
+        {
+            Log("================================================================================");
+            Log("Starting MEP Job Pipeline (Part A: Shaft Opening + Part B: MEP Model)...");
+            Log("================================================================================");
+
+            bool partASuccess = false;
+            try
+            {
+                partASuccess = UpdateStructuralShaft(app);
+            }
+            catch (Exception ex)
+            {
+                Log($"ERROR in Part A (UpdateStructuralShaft): {ex}");
+            }
+            Log($"Part A (Structural Shaft Opening) Result: {(partASuccess ? "SUCCESS" : "FAILED")}");
+
+            bool partBSuccess = false;
+            try
+            {
+                partBSuccess = ExecuteMepGeneration(app);
+            }
+            catch (Exception ex)
+            {
+                Log($"ERROR in Part B (ExecuteMepGeneration): {ex}");
+            }
+            Log($"Part B (MEP Model Generation) Result: {(partBSuccess ? "SUCCESS" : "FAILED")}");
+
+            return partBSuccess;
+        }
+
+        private static bool UpdateStructuralShaft(Autodesk.Revit.ApplicationServices.Application app)
+        {
+            Log("--------------------------------------------------------------------------------");
+            Log("Part A: Opening structural model to add MEP shaft opening...");
+            Log("--------------------------------------------------------------------------------");
+
+            if (!File.Exists(RvtPath))
+            {
+                Log($"ERROR: Structural model file not found at '{RvtPath}'. Cannot add shaft opening.");
+                return false;
+            }
+
+            Document? structDoc = null;
+            try
+            {
+                Log($"Opening document: '{RvtPath}'");
+                structDoc = app.OpenDocumentFile(RvtPath);
+                if (structDoc == null)
+                {
+                    Log("ERROR: OpenDocumentFile returned null.");
+                    return false;
+                }
+
+                var levels = new FilteredElementCollector(structDoc)
+                    .OfClass(typeof(Level))
+                    .Cast<Level>()
+                    .ToList();
+
+                var bottomLevel = levels.FirstOrDefault(l => l.Name.Equals("Base", StringComparison.OrdinalIgnoreCase))
+                    ?? levels.OrderBy(l => l.Elevation).FirstOrDefault();
+
+                var topLevel = levels.FirstOrDefault(l => l.Name.Equals("Level 10", StringComparison.OrdinalIgnoreCase))
+                    ?? levels.OrderByDescending(l => l.Elevation).FirstOrDefault();
+
+                if (bottomLevel == null || topLevel == null)
+                {
+                    Log("ERROR: Bottom level ('Base') or top level ('Level 10') not found in structural document.");
+                    return false;
+                }
+
+                Log($"Located levels: Bottom = '{bottomLevel.Name}' ({bottomLevel.Elevation:F2} ft), Top = '{topLevel.Name}' ({topLevel.Elevation:F2} ft)");
+
+                const string shaftComments = "MEP service shaft; must be formed (cast-in) in precast slabs before casting";
+
+                // Clean any pre-existing shaft opening with matching comments for idempotency
+                using (var tx = new Transaction(structDoc, "Clean Existing Shaft Openings"))
+                {
+                    tx.Start();
+                    var existingShafts = new FilteredElementCollector(structDoc)
+                        .OfClass(typeof(Opening))
+                        .Cast<Opening>()
+                        .Where(o =>
+                        {
+                            var c = o.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)?.AsString()
+                                    ?? o.LookupParameter("Comments")?.AsString();
+                            return c != null && c.IndexOf("MEP service shaft", StringComparison.OrdinalIgnoreCase) >= 0;
+                        })
+                        .ToList();
+
+                    foreach (var es in existingShafts)
+                    {
+                        try
+                        {
+                            structDoc.Delete(es.Id);
+                            Log($"Deleted existing shaft opening Id {es.Id} prior to recreation.");
+                        }
+                        catch { }
+                    }
+                    tx.Commit();
+                }
+
+                // Rectangle x: 11.0–13.0 m, y: 6.0–7.5 m
+                double zBottom = bottomLevel.Elevation;
+                var p1 = new XYZ(MToFt(11.0), MToFt(6.0), zBottom);
+                var p2 = new XYZ(MToFt(13.0), MToFt(6.0), zBottom);
+                var p3 = new XYZ(MToFt(13.0), MToFt(7.5), zBottom);
+                var p4 = new XYZ(MToFt(11.0), MToFt(7.5), zBottom);
+
+                var curveArray = new CurveArray();
+                curveArray.Append(Line.CreateBound(p1, p2));
+                curveArray.Append(Line.CreateBound(p2, p3));
+                curveArray.Append(Line.CreateBound(p3, p4));
+                curveArray.Append(Line.CreateBound(p4, p1));
+
+                Opening? shaftOpening = null;
+                using (var tx = new Transaction(structDoc, "Create MEP Shaft Opening"))
+                {
+                    tx.Start();
+                    shaftOpening = structDoc.Create.NewOpening(bottomLevel, topLevel, curveArray);
+                    if (shaftOpening != null)
+                    {
+                        SetMarkAndComments(shaftOpening, "MEP-SHAFT-01", shaftComments);
+
+                        var topOffParam = shaftOpening.get_Parameter(BuiltInParameter.WALL_TOP_OFFSET)
+                                          ?? shaftOpening.LookupParameter("Top Offset");
+                        if (topOffParam != null && !topOffParam.IsReadOnly)
+                        {
+                            topOffParam.Set(MToFt(0.5)); // Ensure penetration through Level 10 top slab
+                        }
+
+                        var baseOffParam = shaftOpening.get_Parameter(BuiltInParameter.WALL_BASE_OFFSET)
+                                           ?? shaftOpening.LookupParameter("Base Offset");
+                        if (baseOffParam != null && !baseOffParam.IsReadOnly)
+                        {
+                            baseOffParam.Set(0.0);
+                        }
+
+                        Log($"Shaft opening created successfully (Id: {shaftOpening.Id}) from '{bottomLevel.Name}' to '{topLevel.Name}'. Comments: '{shaftComments}'");
+                    }
+                    tx.Commit();
+                }
+
+                // Save (overwrite) the RVT
+                Log($"Saving updated structural model to '{RvtPath}'...");
+                try
+                {
+                    structDoc.Save();
+                    Log("Saved with doc.Save().");
+                }
+                catch (Exception exSave)
+                {
+                    Log($"doc.Save() failed ({exSave.Message}). Attempting doc.SaveAs...");
+                    structDoc.SaveAs(RvtPath, new SaveAsOptions { OverwriteExistingFile = true });
+                    Log("Saved with doc.SaveAs().");
+                }
+
+                // Re-export IFC
+                Log($"Re-exporting structural IFC to '{BimDir}\\{IfcFileName}'...");
+                ExportIfc(structDoc, BimDir, IfcFileName);
+
+                // Re-export 3D PNG
+                var view3D = new FilteredElementCollector(structDoc)
+                    .OfClass(typeof(View3D))
+                    .Cast<View3D>()
+                    .FirstOrDefault(v => !v.IsTemplate && v.Name.Equals("BIM 3D", StringComparison.OrdinalIgnoreCase))
+                    ?? new FilteredElementCollector(structDoc)
+                    .OfClass(typeof(View3D))
+                    .Cast<View3D>()
+                    .FirstOrDefault(v => !v.IsTemplate);
+
+                if (view3D != null)
+                {
+                    Log($"Re-exporting structural 3D PNG to '{PngPath}'...");
+                    ExportPngView(structDoc, view3D, PngPath);
+                }
+                else
+                {
+                    Log("WARNING: No 3D view found in structural model for PNG re-export.");
+                }
+
+                if (structDoc.IsModified)
+                {
+                    structDoc.Save();
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log($"ERROR in UpdateStructuralShaft: {ex}");
+                return false;
+            }
+            finally
+            {
+                if (structDoc != null)
+                {
+                    try
+                    {
+                        Log("Closing structural document...");
+                        structDoc.Close(false);
+                        Log("Structural document closed successfully.");
+                    }
+                    catch (Exception exClose)
+                    {
+                        Log($"Exception closing structural document: {exClose.Message}");
+                    }
+                }
+            }
+        }
+
+        private static bool ExecuteMepGeneration(Autodesk.Revit.ApplicationServices.Application app)
+        {
+            Log("--------------------------------------------------------------------------------");
+            Log("Part B: Generating MEP Model & System Components...");
+            Log("--------------------------------------------------------------------------------");
+
+            if (!File.Exists(MepTemplatePath))
+            {
+                Log($"ERROR: MEP template file not found at '{MepTemplatePath}'");
+                return false;
+            }
+
+            Document? mepDoc = null;
+            int pipesCreated = 0;
+            int ductsCreated = 0;
+            int cableTraysCreated = 0;
+            int mepFailures = 0;
+            bool linkSuccess = false;
+
+            try
+            {
+                Log($"Creating new MEP project from template: '{MepTemplatePath}'...");
+                mepDoc = app.NewProjectDocument(MepTemplatePath);
+                if (mepDoc == null)
+                {
+                    Log("ERROR: Failed to create new MEP project from template.");
+                    return false;
+                }
+
+                // -------------------------------------------------------------
+                // B.1 Levels: Base (0.0) and Level 1..10 (3.0 m intervals)
+                // -------------------------------------------------------------
+                var levels = new Level[11];
+                using (var tx = new Transaction(mepDoc, "Setup MEP Levels"))
+                {
+                    tx.Start();
+                    var existingLevels = new FilteredElementCollector(mepDoc)
+                        .OfClass(typeof(Level))
+                        .Cast<Level>()
+                        .ToList();
+
+                    for (int i = 0; i < existingLevels.Count; i++)
+                    {
+                        existingLevels[i].Name = $"_tmp_mep_lvl_{Guid.NewGuid():N}";
+                    }
+
+                    for (int i = 0; i <= 10; i++)
+                    {
+                        string lvlName = (i == 0) ? "Base" : $"Level {i}";
+                        double elevM = i * 3.0;
+                        double elevFt = MToFt(elevM);
+
+                        Level lvl;
+                        if (i < existingLevels.Count)
+                        {
+                            lvl = existingLevels[i];
+                            lvl.Elevation = elevFt;
+                            lvl.Name = lvlName;
+                        }
+                        else
+                        {
+                            lvl = Level.Create(mepDoc, elevFt);
+                            lvl.Name = lvlName;
+                        }
+                        levels[i] = lvl;
+                        Log($"MEP Level [{i}]: '{lvl.Name}', Elevation = {elevM:F1} m ({elevFt:F3} ft)");
+                    }
+
+                    for (int i = 11; i < existingLevels.Count; i++)
+                    {
+                        try { mepDoc.Delete(existingLevels[i].Id); } catch { }
+                    }
+                    tx.Commit();
+                }
+
+                // -------------------------------------------------------------
+                // B.2 Link the structural model (origin to origin)
+                // -------------------------------------------------------------
+                ElementId? linkInstanceId = null;
+                if (File.Exists(RvtPath))
+                {
+                    try
+                    {
+                        using (var tx = new Transaction(mepDoc, "Link Structural Model"))
+                        {
+                            tx.Start();
+                            var modelPath = ModelPathUtils.ConvertUserVisiblePathToModelPath(RvtPath);
+                            var linkOptions = new RevitLinkOptions(false);
+                            var loadResult = RevitLinkType.Create(mepDoc, modelPath, linkOptions);
+                            var linkTypeId = loadResult.ElementId;
+
+                            if (linkTypeId != null && linkTypeId != ElementId.InvalidElementId)
+                            {
+                                var linkInstance = RevitLinkInstance.Create(mepDoc, linkTypeId);
+                                linkInstanceId = linkInstance.Id;
+                                linkSuccess = true;
+                                Log($"Linked structural model '{RvtPath}' successfully (LinkTypeId: {linkTypeId}, InstanceId: {linkInstance.Id}).");
+                            }
+                            else
+                            {
+                                Log($"WARNING: RevitLinkType.Create returned invalid ElementId: {loadResult.LoadResult}");
+                            }
+                            tx.Commit();
+                        }
+                    }
+                    catch (Exception exLink)
+                    {
+                        Log($"ERROR linking structural model '{RvtPath}': {exLink.Message}");
+                    }
+                }
+                else
+                {
+                    Log($"WARNING: Structural model '{RvtPath}' does not exist on disk. Skipping link.");
+                }
+
+                // -------------------------------------------------------------
+                // B.3 Pick types by name with fallbacks and log chosen ones
+                // -------------------------------------------------------------
+                // 1. PipeType (first available)
+                var pipeTypes = new FilteredElementCollector(mepDoc)
+                    .OfClass(typeof(PipeType))
+                    .Cast<PipeType>()
+                    .ToList();
+                var selectedPipeType = pipeTypes.FirstOrDefault();
+                if (selectedPipeType == null)
+                {
+                    throw new InvalidOperationException("No PipeType found in MEP template.");
+                }
+                Log($"Selected PipeType: '{selectedPipeType.Name}' (Id: {selectedPipeType.Id})");
+
+                // 2. PipingSystemTypes ("Domestic Cold Water" & "Sanitary")
+                var pipingSysTypes = new FilteredElementCollector(mepDoc)
+                    .OfClass(typeof(PipingSystemType))
+                    .Cast<PipingSystemType>()
+                    .ToList();
+
+                var cwSysType = pipingSysTypes.FirstOrDefault(pst =>
+                    pst.Name.IndexOf("Domestic Cold Water", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    pst.Name.IndexOf("Cold Water", StringComparison.OrdinalIgnoreCase) >= 0)
+                    ?? pipingSysTypes.FirstOrDefault(pst => pst.SystemClassification == MEPSystemClassification.DomesticColdWater)
+                    ?? pipingSysTypes.FirstOrDefault();
+
+                if (cwSysType == null)
+                {
+                    throw new InvalidOperationException("No PipingSystemType found for Domestic Cold Water.");
+                }
+                Log($"Selected Domestic Cold Water PipingSystemType: '{cwSysType.Name}' (Classification: {cwSysType.SystemClassification}, Id: {cwSysType.Id})");
+
+                var sanSysType = pipingSysTypes.FirstOrDefault(pst =>
+                    pst.Name.IndexOf("Sanitary", StringComparison.OrdinalIgnoreCase) >= 0)
+                    ?? pipingSysTypes.FirstOrDefault(pst => pst.SystemClassification == MEPSystemClassification.Sanitary)
+                    ?? pipingSysTypes.FirstOrDefault();
+
+                if (sanSysType == null)
+                {
+                    throw new InvalidOperationException("No PipingSystemType found for Sanitary.");
+                }
+                Log($"Selected Sanitary PipingSystemType: '{sanSysType.Name}' (Classification: {sanSysType.SystemClassification}, Id: {sanSysType.Id})");
+
+                // 3. Rectangular DuctType
+                var ductTypes = new FilteredElementCollector(mepDoc)
+                    .OfClass(typeof(DuctType))
+                    .Cast<DuctType>()
+                    .ToList();
+
+                var rectDuctType = ductTypes.FirstOrDefault(dt => dt.Shape == ConnectorProfileType.Rectangular)
+                    ?? ductTypes.FirstOrDefault(dt => dt.Name.IndexOf("Rectangular", StringComparison.OrdinalIgnoreCase) >= 0)
+                    ?? ductTypes.FirstOrDefault();
+
+                if (rectDuctType == null)
+                {
+                    throw new InvalidOperationException("No rectangular DuctType found in MEP template.");
+                }
+                Log($"Selected Rectangular DuctType: '{rectDuctType.Name}' (Shape: {rectDuctType.Shape}, Id: {rectDuctType.Id})");
+
+                // 4. MechanicalSystemType "Exhaust Air"
+                var mechSysTypes = new FilteredElementCollector(mepDoc)
+                    .OfClass(typeof(MechanicalSystemType))
+                    .Cast<MechanicalSystemType>()
+                    .ToList();
+
+                var exhSysType = mechSysTypes.FirstOrDefault(mst =>
+                    mst.Name.IndexOf("Exhaust Air", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    mst.Name.IndexOf("Exhaust", StringComparison.OrdinalIgnoreCase) >= 0)
+                    ?? mechSysTypes.FirstOrDefault(mst => mst.SystemClassification == MEPSystemClassification.ExhaustAir)
+                    ?? mechSysTypes.FirstOrDefault();
+
+                if (exhSysType == null)
+                {
+                    throw new InvalidOperationException("No MechanicalSystemType found for Exhaust Air.");
+                }
+                Log($"Selected Exhaust Air MechanicalSystemType: '{exhSysType.Name}' (Classification: {exhSysType.SystemClassification}, Id: {exhSysType.Id})");
+
+                // 5. CableTrayType (first available)
+                var cableTrayTypes = new FilteredElementCollector(mepDoc)
+                    .OfClass(typeof(CableTrayType))
+                    .Cast<CableTrayType>()
+                    .ToList();
+
+                var selectedTrayType = cableTrayTypes.FirstOrDefault();
+                if (selectedTrayType == null)
+                {
+                    throw new InvalidOperationException("No CableTrayType found in MEP template.");
+                }
+                Log($"Selected CableTrayType: '{selectedTrayType.Name}' (Id: {selectedTrayType.Id})");
+
+                // -------------------------------------------------------------
+                // B.4 Vertical Risers in shaft from z = 0.0 to z = 31.0 m (level "Base")
+                // -------------------------------------------------------------
+                var baseLevel = levels[0];
+                using (var tx = new Transaction(mepDoc, "Create MEP Vertical Risers"))
+                {
+                    tx.Start();
+
+                    double z0 = MToFt(0.0);
+                    double z31 = MToFt(31.0);
+
+                    // 1. Pipe DN50 Domestic Cold Water at (11.3, 6.3)
+                    try
+                    {
+                        var p1 = new XYZ(MToFt(11.3), MToFt(6.3), z0);
+                        var p2 = new XYZ(MToFt(11.3), MToFt(6.3), z31);
+                        var pipe = Pipe.Create(mepDoc, cwSysType.Id, selectedPipeType.Id, baseLevel.Id, p1, p2);
+                        SetPipeDiameter(pipe, 50.0);
+                        SetMarkAndComments(pipe, "MEP-Pipe-CW-Riser", "Domestic Cold Water Riser");
+                        pipesCreated++;
+                        Log($"Created Pipe DN50 CW Riser (Id: {pipe.Id})");
+                    }
+                    catch (Exception ex)
+                    {
+                        mepFailures++;
+                        Log($"ERROR creating CW riser: {ex.Message}");
+                    }
+
+                    // 2. Pipe DN100 Sanitary at (11.8, 6.3)
+                    try
+                    {
+                        var p1 = new XYZ(MToFt(11.8), MToFt(6.3), z0);
+                        var p2 = new XYZ(MToFt(11.8), MToFt(6.3), z31);
+                        var pipe = Pipe.Create(mepDoc, sanSysType.Id, selectedPipeType.Id, baseLevel.Id, p1, p2);
+                        SetPipeDiameter(pipe, 100.0);
+                        SetMarkAndComments(pipe, "MEP-Pipe-San-Riser", "Sanitary Soil/Waste Riser");
+                        pipesCreated++;
+                        Log($"Created Pipe DN100 Sanitary Riser (Id: {pipe.Id})");
+                    }
+                    catch (Exception ex)
+                    {
+                        mepFailures++;
+                        Log($"ERROR creating Sanitary riser: {ex.Message}");
+                    }
+
+                    // 3. Pipe DN100 Sanitary (rainwater/vent stack) at (12.3, 6.3) — set Comments "Rainwater/vent stack"
+                    try
+                    {
+                        var p1 = new XYZ(MToFt(12.3), MToFt(6.3), z0);
+                        var p2 = new XYZ(MToFt(12.3), MToFt(6.3), z31);
+                        var pipe = Pipe.Create(mepDoc, sanSysType.Id, selectedPipeType.Id, baseLevel.Id, p1, p2);
+                        SetPipeDiameter(pipe, 100.0);
+                        SetMarkAndComments(pipe, "MEP-Pipe-Vent-Riser", "Rainwater/vent stack");
+                        pipesCreated++;
+                        Log($"Created Pipe DN100 Rainwater/Vent Stack Riser (Id: {pipe.Id})");
+                    }
+                    catch (Exception ex)
+                    {
+                        mepFailures++;
+                        Log($"ERROR creating Rainwater/vent stack riser: {ex.Message}");
+                    }
+
+                    // 4. Duct 400x250 Exhaust Air at (11.6, 7.1)
+                    try
+                    {
+                        var p1 = new XYZ(MToFt(11.6), MToFt(7.1), z0);
+                        var p2 = new XYZ(MToFt(11.6), MToFt(7.1), z31);
+                        var duct = Duct.Create(mepDoc, exhSysType.Id, rectDuctType.Id, baseLevel.Id, p1, p2);
+                        SetDuctSize(duct, 400.0, 250.0);
+                        SetMarkAndComments(duct, "MEP-Duct-Exhaust-Riser", "Exhaust Air Riser 400x250");
+                        ductsCreated++;
+                        Log($"Created Duct 400x250 Exhaust Air Riser (Id: {duct.Id})");
+                    }
+                    catch (Exception ex)
+                    {
+                        mepFailures++;
+                        Log($"ERROR creating Exhaust Air duct riser: {ex.Message}");
+                    }
+
+                    // 5. Cable tray 300x100 at (12.6, 7.1)
+                    try
+                    {
+                        var p1 = new XYZ(MToFt(12.6), MToFt(7.1), z0);
+                        var p2 = new XYZ(MToFt(12.6), MToFt(7.1), z31);
+                        CableTray? tray = null;
+                        try
+                        {
+                            tray = CableTray.Create(mepDoc, selectedTrayType.Id, p1, p2, baseLevel.Id);
+                        }
+                        catch (Exception exTrayVert)
+                        {
+                            Log($"Vertical CableTray.Create direct attempt note: {exTrayVert.Message}. Trying with micro offset (1 mm)...");
+                            var p2Adj = new XYZ(MToFt(12.601), MToFt(7.1), z31);
+                            tray = CableTray.Create(mepDoc, selectedTrayType.Id, p1, p2Adj, baseLevel.Id);
+                        }
+
+                        if (tray != null)
+                        {
+                            SetCableTraySize(tray, 300.0, 100.0);
+                            SetMarkAndComments(tray, "MEP-CableTray-Riser", "Main Electrical / Data Cable Tray Riser");
+                            cableTraysCreated++;
+                            Log($"Created Cable Tray 300x100 Riser (Id: {tray.Id})");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        mepFailures++;
+                        Log($"ERROR creating Cable Tray riser: {ex.Message}");
+                    }
+
+                    tx.Commit();
+                }
+
+                // -------------------------------------------------------------
+                // B.5 Per floor i = 1..10
+                // reference level = "Level i-1" for i=1 -> "Base"
+                // elevation zi = 3.0*i - 0.65 m
+                // -------------------------------------------------------------
+                for (int i = 1; i <= 10; i++)
+                {
+                    var refLevel = levels[i - 1];
+                    double zi = 3.0 * i - 0.65;
+                    double zFt = MToFt(zi);
+
+                    using (var tx = new Transaction(mepDoc, $"Create MEP Floor {i} Branches"))
+                    {
+                        tx.Start();
+
+                        // 1. Cold-water branch DN25: from (11.3, 6.3, zi) to (7.5, 6.3, zi)
+                        try
+                        {
+                            var p1 = new XYZ(MToFt(11.3), MToFt(6.3), zFt);
+                            var p2 = new XYZ(MToFt(7.5), MToFt(6.3), zFt);
+                            var pipe = Pipe.Create(mepDoc, cwSysType.Id, selectedPipeType.Id, refLevel.Id, p1, p2);
+                            SetPipeDiameter(pipe, 25.0);
+                            SetMarkAndComments(pipe, $"MEP-Pipe-CW-L{i}-1", "Domestic Cold Water Branch 1");
+                            pipesCreated++;
+                        }
+                        catch (Exception ex)
+                        {
+                            mepFailures++;
+                            Log($"ERROR creating CW branch 1 at Level {i}: {ex.Message}");
+                        }
+
+                        // 2. Cold-water branch DN25: from (11.3, 6.3, zi) to (15.5, 6.3, zi)
+                        try
+                        {
+                            var p1 = new XYZ(MToFt(11.3), MToFt(6.3), zFt);
+                            var p2 = new XYZ(MToFt(15.5), MToFt(6.3), zFt);
+                            var pipe = Pipe.Create(mepDoc, cwSysType.Id, selectedPipeType.Id, refLevel.Id, p1, p2);
+                            SetPipeDiameter(pipe, 25.0);
+                            SetMarkAndComments(pipe, $"MEP-Pipe-CW-L{i}-2", "Domestic Cold Water Branch 2");
+                            pipesCreated++;
+                        }
+                        catch (Exception ex)
+                        {
+                            mepFailures++;
+                            Log($"ERROR creating CW branch 2 at Level {i}: {ex.Message}");
+                        }
+
+                        // 3. Sanitary branch DN100 at zi - 0.15: from (11.8, 6.3) to (7.5, 6.3)
+                        try
+                        {
+                            double zSanFt = MToFt(zi - 0.15);
+                            var p1 = new XYZ(MToFt(11.8), MToFt(6.3), zSanFt);
+                            var p2 = new XYZ(MToFt(7.5), MToFt(6.3), zSanFt);
+                            var pipe = Pipe.Create(mepDoc, sanSysType.Id, selectedPipeType.Id, refLevel.Id, p1, p2);
+                            SetPipeDiameter(pipe, 100.0);
+                            SetMarkAndComments(pipe, $"MEP-Pipe-San-L{i}-1", "Sanitary Branch");
+                            pipesCreated++;
+                        }
+                        catch (Exception ex)
+                        {
+                            mepFailures++;
+                            Log($"ERROR creating Sanitary branch at Level {i}: {ex.Message}");
+                        }
+
+                        // 4. Exhaust duct branch 200x150 at zi: from (11.6, 7.1) to (6.0, 7.1)
+                        try
+                        {
+                            var p1 = new XYZ(MToFt(11.6), MToFt(7.1), zFt);
+                            var p2 = new XYZ(MToFt(6.0), MToFt(7.1), zFt);
+                            var duct = Duct.Create(mepDoc, exhSysType.Id, rectDuctType.Id, refLevel.Id, p1, p2);
+                            SetDuctSize(duct, 200.0, 150.0);
+                            SetMarkAndComments(duct, $"MEP-Duct-Exhaust-L{i}-1", "Exhaust Duct Branch 200x150");
+                            ductsCreated++;
+                        }
+                        catch (Exception ex)
+                        {
+                            mepFailures++;
+                            Log($"ERROR creating Exhaust duct branch at Level {i}: {ex.Message}");
+                        }
+
+                        // 5. Cable tray 200x50 at zi + 0.05: from (12.6, 7.1) to (18.0, 7.1)
+                        try
+                        {
+                            double zTrayFt = MToFt(zi + 0.05);
+                            var p1 = new XYZ(MToFt(12.6), MToFt(7.1), zTrayFt);
+                            var p2 = new XYZ(MToFt(18.0), MToFt(7.1), zTrayFt);
+                            var tray = CableTray.Create(mepDoc, selectedTrayType.Id, p1, p2, refLevel.Id);
+                            SetCableTraySize(tray, 200.0, 50.0);
+                            SetMarkAndComments(tray, $"MEP-CableTray-L{i}-1", "Cable Tray Branch 1 (East)");
+                            cableTraysCreated++;
+                        }
+                        catch (Exception ex)
+                        {
+                            mepFailures++;
+                            Log($"ERROR creating Cable tray branch 1 at Level {i}: {ex.Message}");
+                        }
+
+                        // 6. Cable tray 200x50 at zi + 0.05: from (12.6, 7.1) to (2.0, 7.1)
+                        try
+                        {
+                            double zTrayFt = MToFt(zi + 0.05);
+                            var p1 = new XYZ(MToFt(12.6), MToFt(7.1), zTrayFt);
+                            var p2 = new XYZ(MToFt(2.0), MToFt(7.1), zTrayFt);
+                            var tray = CableTray.Create(mepDoc, selectedTrayType.Id, p1, p2, refLevel.Id);
+                            SetCableTraySize(tray, 200.0, 50.0);
+                            SetMarkAndComments(tray, $"MEP-CableTray-L{i}-2", "Cable Tray Branch 2 (West)");
+                            cableTraysCreated++;
+                        }
+                        catch (Exception ex)
+                        {
+                            mepFailures++;
+                            Log($"ERROR creating Cable tray branch 2 at Level {i}: {ex.Message}");
+                        }
+
+                        tx.Commit();
+                    }
+                }
+
+                // -------------------------------------------------------------
+                // B.6 Create 3D isometric view "MEP 3D"
+                // -------------------------------------------------------------
+                View3D? mep3DView = null;
+                using (var tx = new Transaction(mepDoc, "Create MEP 3D View"))
+                {
+                    tx.Start();
+
+                    var existingView = new FilteredElementCollector(mepDoc)
+                        .OfClass(typeof(View3D))
+                        .Cast<View3D>()
+                        .FirstOrDefault(v => !v.IsTemplate && v.Name.Equals("MEP 3D", StringComparison.OrdinalIgnoreCase));
+
+                    if (existingView != null)
+                    {
+                        try { existingView.Name = $"_tmp_mep3d_{Guid.NewGuid():N}"; } catch { }
+                    }
+
+                    var vft3D = new FilteredElementCollector(mepDoc)
+                        .OfClass(typeof(ViewFamilyType))
+                        .Cast<ViewFamilyType>()
+                        .FirstOrDefault(v => v.ViewFamily == ViewFamily.ThreeDimensional);
+
+                    if (vft3D != null)
+                    {
+                        mep3DView = View3D.CreateIsometric(mepDoc, vft3D.Id);
+                        mep3DView.Name = "MEP 3D";
+                        mep3DView.DetailLevel = ViewDetailLevel.Fine;
+                        mep3DView.DisplayStyle = DisplayStyle.Shading;
+
+                        if (linkInstanceId != null && linkInstanceId != ElementId.InvalidElementId)
+                        {
+                            try
+                            {
+                                var ogs = new OverrideGraphicSettings();
+                                ogs.SetHalftone(true);
+                                mep3DView.SetElementOverrides(linkInstanceId, ogs);
+                                Log($"Set linked structural model (Id: {linkInstanceId}) to halftone in 'MEP 3D'.");
+                            }
+                            catch (Exception exOgs)
+                            {
+                                Log($"Note: Could not set link halftone overrides in 3D view: {exOgs.Message}");
+                            }
+                        }
+                        Log("Created 3D Isometric View 'MEP 3D' (Detail: Fine, DisplayStyle: Shading).");
+                    }
+                    else
+                    {
+                        Log("WARNING: Could not find ViewFamilyType for ThreeDimensional in MEP template.");
+                    }
+                    tx.Commit();
+                }
+
+                // -------------------------------------------------------------
+                // B.8 Log counts of pipes, ducts, cable trays, link status
+                // -------------------------------------------------------------
+                Log("================================================================================");
+                Log("MEP MODEL SUMMARY:");
+                Log($"  Pipes created:       {pipesCreated} (expected: 33 = 3 risers + 30 branches)");
+                Log($"  Ducts created:       {ductsCreated} (expected: 11 = 1 riser + 10 branches)");
+                Log($"  Cable trays created: {cableTraysCreated} (expected: 21 = 1 riser + 20 branches)");
+                Log($"  Total MEP elements:  {pipesCreated + ductsCreated + cableTraysCreated} / 65");
+                Log($"  Failures:            {mepFailures}");
+                Log($"  Link status:         {(linkSuccess ? "Linked successfully (halftone in 3D view)" : "Link failed or skipped")}");
+                Log("================================================================================");
+
+                // -------------------------------------------------------------
+                // B.7 Save as BIM/Prefab_RCC_10storey_MEP.rvt (overwrite)
+                // -------------------------------------------------------------
+                Log($"Saving MEP model to '{MepRvtPath}'...");
+                var saveOpts = new SaveAsOptions { OverwriteExistingFile = true };
+                mepDoc.SaveAs(MepRvtPath, saveOpts);
+                Log("MEP model saved successfully.");
+
+                // Export IFC BIM/Prefab_RCC_10storey_MEP.ifc
+                Log($"Exporting MEP IFC file to '{BimDir}\\{MepIfcFileName}'...");
+                ExportIfc(mepDoc, BimDir, MepIfcFileName);
+
+                // Export PNG BIM/Prefab_RCC_10storey_MEP_3D.png (1600 px)
+                if (mep3DView != null)
+                {
+                    Log($"Exporting MEP 3D PNG to '{MepPngPath}'...");
+                    ExportPngView(mepDoc, mep3DView, MepPngPath);
+                }
+                else
+                {
+                    Log("WARNING: No 3D view available for MEP PNG export.");
+                }
+
+                if (mepDoc.IsModified)
+                {
+                    mepDoc.Save();
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log($"FATAL ERROR in ExecuteMepGeneration: {ex}");
+                return false;
+            }
+            finally
+            {
+                if (mepDoc != null)
+                {
+                    try
+                    {
+                        Log("Closing MEP document...");
+                        mepDoc.Close(false);
+                        Log("MEP document closed successfully.");
+                    }
+                    catch (Exception exClose)
+                    {
+                        Log($"Exception closing MEP document: {exClose.Message}");
+                    }
+                }
+            }
+        }
+
+        // =========================================================================
+        // Helper Methods
+        // =========================================================================
+        private static void SetPipeDiameter(Pipe pipe, double diameterMm)
+        {
+            try
+            {
+                double diamFt = MmToFt(diameterMm);
+                var p = pipe.get_Parameter(BuiltInParameter.RBS_PIPE_DIAMETER_PARAM)
+                    ?? pipe.LookupParameter("Diameter");
+                if (p != null && !p.IsReadOnly)
+                {
+                    bool ok = p.Set(diamFt);
+                    Log($"Pipe {pipe.Id}: Set diameter = {diameterMm} mm ({diamFt:F4} ft) [Success: {ok}]");
+                }
+                else
+                {
+                    Log($"WARNING: RBS_PIPE_DIAMETER_PARAM not writable on Pipe {pipe.Id}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log($"WARNING: Failed setting diameter on Pipe {pipe.Id}: {ex.Message}");
+            }
+        }
+
+        private static void SetDuctSize(Duct duct, double widthMm, double heightMm)
+        {
+            try
+            {
+                double wFt = MmToFt(widthMm);
+                double hFt = MmToFt(heightMm);
+
+                var pw = duct.get_Parameter(BuiltInParameter.RBS_CURVE_WIDTH_PARAM)
+                    ?? duct.LookupParameter("Width");
+                bool wOk = false;
+                if (pw != null && !pw.IsReadOnly)
+                {
+                    wOk = pw.Set(wFt);
+                }
+
+                var ph = duct.get_Parameter(BuiltInParameter.RBS_CURVE_HEIGHT_PARAM)
+                    ?? duct.LookupParameter("Height");
+                bool hOk = false;
+                if (ph != null && !ph.IsReadOnly)
+                {
+                    hOk = ph.Set(hFt);
+                }
+
+                Log($"Duct {duct.Id}: Set size = {widthMm}x{heightMm} mm [Width set: {wOk}, Height set: {hOk}]");
+            }
+            catch (Exception ex)
+            {
+                Log($"WARNING: Failed setting size on Duct {duct.Id}: {ex.Message}");
+            }
+        }
+
+        private static void SetCableTraySize(CableTray tray, double widthMm, double heightMm)
+        {
+            try
+            {
+                double wFt = MmToFt(widthMm);
+                double hFt = MmToFt(heightMm);
+                bool wSet = false;
+                bool hSet = false;
+
+                var pw = tray.get_Parameter(BuiltInParameter.RBS_CABLETRAY_WIDTH_PARAM)
+                    ?? tray.get_Parameter(BuiltInParameter.RBS_CURVE_WIDTH_PARAM)
+                    ?? tray.LookupParameter("Width");
+
+                if (pw != null && !pw.IsReadOnly)
+                {
+                    wSet = pw.Set(wFt);
+                }
+
+                var ph = tray.get_Parameter(BuiltInParameter.RBS_CABLETRAY_HEIGHT_PARAM)
+                    ?? tray.get_Parameter(BuiltInParameter.RBS_CURVE_HEIGHT_PARAM)
+                    ?? tray.LookupParameter("Height");
+
+                if (ph != null && !ph.IsReadOnly)
+                {
+                    hSet = ph.Set(hFt);
+                }
+
+                Log($"CableTray {tray.Id}: Set size = {widthMm}x{heightMm} mm [Width set: {wSet}, Height set: {hSet}]");
+            }
+            catch (Exception ex)
+            {
+                Log($"WARNING: Failed setting size on CableTray {tray.Id}: {ex.Message}");
+            }
+        }
+
         private static bool IsWallEndColumn(double x, double y)
         {
-            // 8 wall-end positions: (0,5), (0,10), (20,5), (20,10), (5,0), (10,0), (10,15), (15,15)
             const double tol = 0.01;
             return (Math.Abs(x - 0.0) < tol && (Math.Abs(y - 5.0) < tol || Math.Abs(y - 10.0) < tol))
                 || (Math.Abs(x - 20.0) < tol && (Math.Abs(y - 5.0) < tol || Math.Abs(y - 10.0) < tol))
@@ -911,7 +1799,7 @@ namespace PrefabBIM
             }
         }
 
-        private static void SetMarkAndComments(Element elem, string mark, string comments)
+        private static void SetMarkAndComments(Element elem, string mark, string? comments = null)
         {
             var markParam = elem.get_Parameter(BuiltInParameter.ALL_MODEL_MARK) ?? elem.LookupParameter("Mark");
             if (markParam != null && !markParam.IsReadOnly)
@@ -919,10 +1807,13 @@ namespace PrefabBIM
                 markParam.Set(mark);
             }
 
-            var commentParam = elem.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS) ?? elem.LookupParameter("Comments");
-            if (commentParam != null && !commentParam.IsReadOnly)
+            if (!string.IsNullOrEmpty(comments))
             {
-                commentParam.Set(comments);
+                var commentParam = elem.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS) ?? elem.LookupParameter("Comments");
+                if (commentParam != null && !commentParam.IsReadOnly)
+                {
+                    commentParam.Set(comments);
+                }
             }
         }
 
@@ -930,7 +1821,6 @@ namespace PrefabBIM
         {
             try
             {
-                // Attempt direct export
                 var options = new IFCExportOptions { FileVersion = IFCVersion.IFC4RV };
                 doc.Export(folder, fileName, options);
                 Log($"IFC export succeeded with IFC4RV at '{Path.Combine(folder, fileName)}'");
@@ -995,14 +1885,12 @@ namespace PrefabBIM
                 doc.ExportImage(imgOptions);
                 Log("ExportImage command executed.");
 
-                // Revit often appends the view name, e.g. "Prefab_RCC_10storey_3D-3D View-BIM 3D.png"
                 if (File.Exists(targetPngPath))
                 {
                     Log($"Target PNG file exists at expected path: '{targetPngPath}'");
                 }
                 else
                 {
-                    // Search for generated matching files
                     var matching = Directory.GetFiles(targetDir, $"{baseNameWithoutExt}*.png");
                     if (matching.Length > 0)
                     {
@@ -1035,7 +1923,7 @@ namespace PrefabBIM
                 lock (_logLock)
                 {
                     var line = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff}] {message}";
-                    File.AppendAllText(LogFilePath, line + Environment.NewLine);
+                    File.AppendAllText(_currentLogPath, line + Environment.NewLine);
                 }
             }
             catch

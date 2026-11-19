@@ -1,0 +1,145 @@
+[2026-11-20 02:00:33.568] ================================================================================
+[2026-11-20 02:00:33.569] PrefabBIM Add-in started. PREFAB_BIM_JOB='mep' detected. Active mode: 'mep'.
+[2026-11-20 02:00:33.570] ================================================================================
+[2026-11-20 02:00:33.574] Subscribed to ApplicationInitialized and DialogBoxShowing successfully.
+[2026-11-20 02:00:37.811] ApplicationInitialized event fired. Executing pipeline for mode: 'mep'...
+[2026-11-20 02:00:37.815] ================================================================================
+[2026-11-20 02:00:37.819] Starting MEP Job Pipeline (Part A: Shaft Opening + Part B: MEP Model)...
+[2026-11-20 02:00:37.820] ================================================================================
+[2026-11-20 02:00:37.821] --------------------------------------------------------------------------------
+[2026-11-20 02:00:37.821] Part A: Opening structural model to add MEP shaft opening...
+[2026-11-20 02:00:37.821] --------------------------------------------------------------------------------
+[2026-11-20 02:00:37.822] Opening document: 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.rvt'
+[2026-11-20 02:00:40.328] Located levels: Bottom = 'Base' (0.00 ft), Top = 'Level 10' (98.43 ft)
+[2026-11-20 02:00:40.393] Shaft opening created successfully (Id: 427085) from 'Base' to 'Level 10'. Comments: 'MEP service shaft; must be formed (cast-in) in precast slabs before casting'
+[2026-11-20 02:00:43.042] Saving updated structural model to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.rvt'...
+[2026-11-20 02:00:44.593] Saved with doc.Save().
+[2026-11-20 02:00:44.593] Re-exporting structural IFC to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.ifc'...
+[2026-11-20 02:00:44.607] Direct IFC export (IFC4RV) returned: Modifying  is forbidden because the document has no open transaction.. Retrying within Transaction...
+[2026-11-20 02:00:57.781] IFC export succeeded within transaction.
+[2026-11-20 02:00:57.783] Re-exporting structural 3D PNG to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_3D.png'...
+[2026-11-20 02:00:58.573] ExportImage command executed.
+[2026-11-20 02:00:58.574] Target PNG file exists at expected path: 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_3D.png'
+[2026-11-20 02:00:58.575] Closing structural document...
+[2026-11-20 02:00:58.837] Structural document closed successfully.
+[2026-11-20 02:00:58.837] Part A (Structural Shaft Opening) Result: SUCCESS
+[2026-11-20 02:00:58.844] --------------------------------------------------------------------------------
+[2026-11-20 02:00:58.844] Part B: Generating MEP Model & System Components...
+[2026-11-20 02:00:58.844] --------------------------------------------------------------------------------
+[2026-11-20 02:00:58.846] Creating new MEP project from template: 'C:\ProgramData\Autodesk\RVT 2027\Templates\English\Systems-Default_Metric.rte'...
+[2026-11-20 02:01:01.045] MEP Level [0]: 'Base', Elevation = 0.0 m (0.000 ft)
+[2026-11-20 02:01:01.046] MEP Level [1]: 'Level 1', Elevation = 3.0 m (9.843 ft)
+[2026-11-20 02:01:01.054] MEP Level [2]: 'Level 2', Elevation = 6.0 m (19.685 ft)
+[2026-11-20 02:01:01.055] MEP Level [3]: 'Level 3', Elevation = 9.0 m (29.528 ft)
+[2026-11-20 02:01:01.056] MEP Level [4]: 'Level 4', Elevation = 12.0 m (39.370 ft)
+[2026-11-20 02:01:01.056] MEP Level [5]: 'Level 5', Elevation = 15.0 m (49.213 ft)
+[2026-11-20 02:01:01.057] MEP Level [6]: 'Level 6', Elevation = 18.0 m (59.055 ft)
+[2026-11-20 02:01:01.057] MEP Level [7]: 'Level 7', Elevation = 21.0 m (68.898 ft)
+[2026-11-20 02:01:01.058] MEP Level [8]: 'Level 8', Elevation = 24.0 m (78.740 ft)
+[2026-11-20 02:01:01.058] MEP Level [9]: 'Level 9', Elevation = 27.0 m (88.583 ft)
+[2026-11-20 02:01:01.059] MEP Level [10]: 'Level 10', Elevation = 30.0 m (98.425 ft)
+[2026-11-20 02:01:02.967] Linked structural model 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.rvt' successfully (LinkTypeId: 1354347, InstanceId: 1354348).
+[2026-11-20 02:01:02.983] Selected PipeType: 'Standard' (Id: 142438)
+[2026-11-20 02:01:02.991] Selected Domestic Cold Water PipingSystemType: 'Domestic Cold Water' (Classification: DomesticColdWater, Id: 683915)
+[2026-11-20 02:01:02.992] Selected Sanitary PipingSystemType: 'Sanitary' (Classification: Sanitary, Id: 683913)
+[2026-11-20 02:01:03.008] Selected Rectangular DuctType: 'Radius Elbows / Taps' (Shape: Rectangular, Id: 142425)
+[2026-11-20 02:01:03.010] Selected Exhaust Air MechanicalSystemType: 'Exhaust Air' (Classification: ExhaustAir, Id: 683909)
+[2026-11-20 02:01:03.013] Selected CableTrayType: 'Channel Cable Tray' (Id: 536000)
+[2026-11-20 02:01:03.046] Pipe 1354350: Set diameter = 50 mm (0.1640 ft) [Success: True]
+[2026-11-20 02:01:03.051] Created Pipe DN50 CW Riser (Id: 1354350)
+[2026-11-20 02:01:03.053] Pipe 1354353: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.053] Created Pipe DN100 Sanitary Riser (Id: 1354353)
+[2026-11-20 02:01:03.055] Pipe 1354356: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.055] Created Pipe DN100 Rainwater/Vent Stack Riser (Id: 1354356)
+[2026-11-20 02:01:03.062] Duct 1354359: Set size = 400x250 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.063] Created Duct 400x250 Exhaust Air Riser (Id: 1354359)
+[2026-11-20 02:01:03.140] CableTray 1354361: Set size = 300x100 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.141] Created Cable Tray 300x100 Riser (Id: 1354361)
+[2026-11-20 02:01:03.200] Pipe 1354365: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.202] Pipe 1354368: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.203] Pipe 1354371: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.204] Duct 1354374: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.224] CableTray 1354376: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.231] CableTray 1354377: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.265] Pipe 1354381: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.267] Pipe 1354384: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.269] Pipe 1354387: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.270] Duct 1354390: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.290] CableTray 1354392: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.297] CableTray 1354393: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.330] Pipe 1354397: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.332] Pipe 1354400: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.334] Pipe 1354403: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.335] Duct 1354406: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.354] CableTray 1354408: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.363] CableTray 1354409: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.398] Pipe 1354413: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.400] Pipe 1354416: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.401] Pipe 1354419: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.402] Duct 1354422: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.420] CableTray 1354424: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.427] CableTray 1354425: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.460] Pipe 1354429: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.461] Pipe 1354432: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.462] Pipe 1354435: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.464] Duct 1354438: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.482] CableTray 1354440: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.493] CableTray 1354441: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.533] Pipe 1354445: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.535] Pipe 1354448: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.537] Pipe 1354451: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.539] Duct 1354454: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.564] CableTray 1354456: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.575] CableTray 1354457: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.609] Pipe 1354461: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.610] Pipe 1354464: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.612] Pipe 1354467: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.614] Duct 1354470: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.636] CableTray 1354472: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.646] CableTray 1354473: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.710] Pipe 1354477: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.712] Pipe 1354480: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.714] Pipe 1354483: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.716] Duct 1354486: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.750] CableTray 1354488: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.762] CableTray 1354489: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.820] Pipe 1354493: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.823] Pipe 1354496: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.825] Pipe 1354499: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.827] Duct 1354502: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.864] CableTray 1354504: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.879] CableTray 1354505: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.944] Pipe 1354509: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.947] Pipe 1354512: Set diameter = 25 mm (0.0820 ft) [Success: True]
+[2026-11-20 02:01:03.950] Pipe 1354515: Set diameter = 100 mm (0.3281 ft) [Success: True]
+[2026-11-20 02:01:03.952] Duct 1354518: Set size = 200x150 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:03.991] CableTray 1354520: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:04.005] CableTray 1354521: Set size = 200x50 mm [Width set: True, Height set: True]
+[2026-11-20 02:01:04.579] Set linked structural model (Id: 1354348) to halftone in 'MEP 3D'.
+[2026-11-20 02:01:04.580] Created 3D Isometric View 'MEP 3D' (Detail: Fine, DisplayStyle: Shading).
+[2026-11-20 02:01:04.591] ================================================================================
+[2026-11-20 02:01:04.592] MEP MODEL SUMMARY:
+[2026-11-20 02:01:04.592]   Pipes created:       33 (expected: 33 = 3 risers + 30 branches)
+[2026-11-20 02:01:04.592]   Ducts created:       11 (expected: 11 = 1 riser + 10 branches)
+[2026-11-20 02:01:04.592]   Cable trays created: 21 (expected: 21 = 1 riser + 20 branches)
+[2026-11-20 02:01:04.592]   Total MEP elements:  65 / 65
+[2026-11-20 02:01:04.592]   Failures:            0
+[2026-11-20 02:01:04.593]   Link status:         Linked successfully (halftone in 3D view)
+[2026-11-20 02:01:04.593] ================================================================================
+[2026-11-20 02:01:04.593] Saving MEP model to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_MEP.rvt'...
+[2026-11-20 02:01:10.205] MEP model saved successfully.
+[2026-11-20 02:01:10.206] Exporting MEP IFC file to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_MEP.ifc'...
+[2026-11-20 02:01:10.207] Direct IFC export (IFC4RV) returned: Modifying  is forbidden because the document has no open transaction.. Retrying within Transaction...
+[2026-11-20 02:01:10.983] IFC export succeeded within transaction.
+[2026-11-20 02:01:10.983] Exporting MEP 3D PNG to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_MEP_3D.png'...
+[2026-11-20 02:01:11.652] ExportImage command executed.
+[2026-11-20 02:01:11.655] Copied generated image 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_MEP_3D - 3D View - MEP 3D.png' to target path 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_MEP_3D.png'
+[2026-11-20 02:01:11.655] Closing MEP document...
+[2026-11-20 02:01:12.026] MEP document closed successfully.
+[2026-11-20 02:01:12.026] Part B (MEP Model Generation) Result: SUCCESS
+[2026-11-20 02:01:12.026] Job execution finished with result: SUCCESS. Registering Idling event for Revit exit...
+[2026-11-20 02:01:12.066] [DIALOG SUPPRESSION] DialogBoxShowing: DialogId = ''
+[2026-11-20 02:01:12.069] [DIALOG SUPPRESSION] TaskDialog: Id = '', Message = 'Failed to open file.'
+[2026-11-20 02:01:13.386] Idling triggered after document closed. Posting ExitRevit command...
+[2026-11-20 02:01:13.393] ExitRevit command posted successfully.
+[2026-11-20 02:01:19.248] PrefabBIM Add-in shutting down (Mode: mep).
