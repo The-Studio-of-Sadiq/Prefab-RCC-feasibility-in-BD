@@ -22,9 +22,11 @@ Paper1_PreFeasibility/
   research/             Fact-check and BNBC 2020 clause verification notes
 Paper2_Structural/
   Paper2_outline.md     Manuscript outline
-  models/               ETABS 22 models: cis_baseline (M0) and precast variants M1–M4, B7, W45, *_fix600
+  models/1_CastInSitu   ETABS analysis 1: cast-in-situ reference (cis_baseline.EDB)
+  models/2_Precast      ETABS analysis 2: precast variants M1–M4, B7, W45 and *_fix600 (recommended scheme)
   scripts/              ETABS API (comtypes) scripts: build baseline, precast variants, run, export, design, checks
-  analysis/             baseline_review.md, soil_data.md, results_summary.md, figures/, exported tables per variant
+  analysis/             baseline_review.md, soil_data.md, results_summary.md, figures/;
+                        1_CastInSitu/ and 2_Precast/ hold the exported tables and design results of each analysis
   research/             Literature-based precast connection stiffness parameters
 BIM/                    Revit 2027 model (.rvt), IFC export, 3D view and the add-in that generates them (see BIM/README.md)
 ```
