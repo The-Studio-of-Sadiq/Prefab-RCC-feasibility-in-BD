@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
@@ -26,13 +29,17 @@ namespace PrefabBIM
         private static readonly string BimDir = @"C:\Users\rashe\Documents\prefab\repo\BIM";
         private static readonly string LogFilePathStructural = Path.Combine(BimDir, "build_log.txt");
         private static readonly string LogFilePathMep = Path.Combine(BimDir, "build_log_mep.txt");
+        private static readonly string LogFilePathSub = Path.Combine(BimDir, "build_log_sub.txt");
         private static string _currentLogPath = LogFilePathStructural;
 
         // Structural Model Paths
+        private static readonly string RepoRootDir = @"C:\Users\rashe\Documents\prefab\repo";
+        private static readonly string PileDesignJsonPath = Path.Combine(RepoRootDir, "Paper2_Structural", "analysis", "2_Precast", "reactions_M2_fix600", "pile_design_Qa1307.json");
         private static readonly string StructuralTemplatePath = @"C:\ProgramData\Autodesk\RVT 2027\Templates\English\Structural Analysis-DefaultMetric.rte";
         private static readonly string RvtPath = Path.Combine(BimDir, "Prefab_RCC_10storey.rvt");
         private static readonly string IfcFileName = "Prefab_RCC_10storey.ifc";
         private static readonly string PngPath = Path.Combine(BimDir, "Prefab_RCC_10storey_3D.png");
+        private static readonly string FoundationsPngPath = Path.Combine(BimDir, "Prefab_RCC_10storey_foundations_3D.png");
 
         // MEP Model Paths
         private static readonly string MepTemplatePath = @"C:\ProgramData\Autodesk\RVT 2027\Templates\English\Systems-Default_Metric.rte";
@@ -54,6 +61,11 @@ namespace PrefabBIM
             {
                 _activeJobMode = "mep";
                 _currentLogPath = LogFilePathMep;
+            }
+            else if (string.Equals(jobEnv, "sub", StringComparison.OrdinalIgnoreCase))
+            {
+                _activeJobMode = "sub";
+                _currentLogPath = LogFilePathSub;
             }
             else
             {
@@ -162,6 +174,10 @@ namespace PrefabBIM
                 else if (_activeJobMode == "mep")
                 {
                     buildSuccess = ExecuteMepPipeline(app);
+                }
+                else if (_activeJobMode == "sub")
+                {
+                    buildSuccess = ExecuteSubPipeline(app);
                 }
             }
             catch (Exception ex)
@@ -1680,6 +1696,951 @@ namespace PrefabBIM
             }
         }
 
+        // =========================================================================
+        // JOB 3: Substructure Pipeline (PREFAB_BIM_JOB=sub)
+        // Adds pile foundation (pile caps & bored piles) and grade beams
+        // =========================================================================
+        private static bool ExecuteSubPipeline(Autodesk.Revit.ApplicationServices.Application app)
+        {
+            Log("================================================================================");
+            Log("Starting Substructure Job Pipeline (PREFAB_BIM_JOB=sub)...");
+            Log("================================================================================");
+
+            if (!File.Exists(RvtPath))
+            {
+                Log($"ERROR: Structural model file not found at '{RvtPath}'. Cannot add substructure.");
+                return false;
+            }
+
+            // 1. Locate and parse pile_design JSON
+            string jsonPath = PileDesignJsonPath;
+            if (!File.Exists(jsonPath))
+            {
+                var altPath = Path.Combine(Directory.GetCurrentDirectory(), "Paper2_Structural", "analysis", "2_Precast", "reactions_M2_fix600", "pile_design_Qa1307.json");
+                if (File.Exists(altPath))
+                {
+                    jsonPath = altPath;
+                }
+                else
+                {
+                    Log($"ERROR: Pile design JSON not found at '{jsonPath}' or '{altPath}'.");
+                    return false;
+                }
+            }
+
+            Log($"Reading pile design JSON from '{jsonPath}'...");
+            PileDesignData? designData;
+            try
+            {
+                string jsonText = File.ReadAllText(jsonPath);
+                var jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                designData = JsonSerializer.Deserialize<PileDesignData>(jsonText, jsonOptions);
+                if (designData == null || designData.Caps == null || designData.Caps.Count == 0)
+                {
+                    Log("ERROR: Deserialized pile design data is null or contains no caps.");
+                    return false;
+                }
+                Log($"Successfully parsed pile design JSON: total_piles = {designData.TotalPiles}, caps count = {designData.Caps.Count}");
+            }
+            catch (Exception exJson)
+            {
+                Log($"ERROR parsing pile design JSON: {exJson}");
+                return false;
+            }
+
+            Document? doc = null;
+            int capsCreated = 0;
+            int pilesCreated = 0;
+            int gradeBeamsCreated = 0;
+            int failureCount = 0;
+
+            try
+            {
+                Log($"Opening structural model document: '{RvtPath}'");
+                doc = app.OpenDocumentFile(RvtPath);
+                if (doc == null)
+                {
+                    Log("ERROR: OpenDocumentFile returned null.");
+                    return false;
+                }
+
+                // Locate Base level
+                var levels = new FilteredElementCollector(doc)
+                    .OfClass(typeof(Level))
+                    .Cast<Level>()
+                    .ToList();
+
+                var baseLevel = levels.FirstOrDefault(l => l.Name.Equals("Base", StringComparison.OrdinalIgnoreCase))
+                    ?? levels.OrderBy(l => l.Elevation).FirstOrDefault();
+
+                if (baseLevel == null)
+                {
+                    Log("ERROR: Base level not found in structural model.");
+                    return false;
+                }
+                Log($"Located Base level: '{baseLevel.Name}', Elevation = {baseLevel.Elevation:F3} ft ({UnitUtils.ConvertFromInternalUnits(baseLevel.Elevation, UnitTypeId.Meters):F2} m)");
+
+                // Locate concrete material
+                var concreteMaterial = new FilteredElementCollector(doc)
+                    .OfClass(typeof(Material))
+                    .Cast<Material>()
+                    .FirstOrDefault(m => m.Name.Equals("Concrete C28 (precast)", StringComparison.OrdinalIgnoreCase));
+
+                if (concreteMaterial != null)
+                {
+                    Log($"Found material '{concreteMaterial.Name}' (Id: {concreteMaterial.Id}).");
+                }
+                else
+                {
+                    Log("WARNING: Material 'Concrete C28 (precast)' not found in document. Searching for any Concrete material...");
+                    concreteMaterial = new FilteredElementCollector(doc)
+                        .OfClass(typeof(Material))
+                        .Cast<Material>()
+                        .FirstOrDefault(m => m.Name.Contains("Concrete", StringComparison.OrdinalIgnoreCase));
+                    if (concreteMaterial != null)
+                    {
+                        Log($"Using fallback material '{concreteMaterial.Name}' (Id: {concreteMaterial.Id}).");
+                    }
+                }
+
+                // -------------------------------------------------------------
+                // Phase 1: Clean up previously created elements (Comments start with "SUB:")
+                // -------------------------------------------------------------
+                using (var tx = new Transaction(doc, "Delete Previous Substructure Elements"))
+                {
+                    tx.Start();
+                    var prevElements = new FilteredElementCollector(doc)
+                        .WhereElementIsNotElementType()
+                        .Where(e =>
+                        {
+                            var c = e.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS)?.AsString()
+                                    ?? e.LookupParameter("Comments")?.AsString();
+                            return c != null && c.StartsWith("SUB:", StringComparison.OrdinalIgnoreCase);
+                        })
+                        .Select(e => e.Id)
+                        .ToList();
+
+                    if (prevElements.Count > 0)
+                    {
+                        Log($"Found {prevElements.Count} previous SUB elements to delete for clean re-run.");
+                        foreach (var id in prevElements)
+                        {
+                            try
+                            {
+                                doc.Delete(id);
+                            }
+                            catch (Exception exDel)
+                            {
+                                Log($"Warning deleting element Id {id}: {exDel.Message}");
+                            }
+                        }
+                        Log($"Deleted {prevElements.Count} previous SUB elements.");
+                    }
+                    else
+                    {
+                        Log("No previous SUB elements found to delete.");
+                    }
+                    tx.Commit();
+                }
+
+                // -------------------------------------------------------------
+                // Phase 2: Prepare Types (Grade Beam & Isolated Footing Symbols)
+                // -------------------------------------------------------------
+                FamilySymbol? symGradeBeam = null;
+                var capSymbolsBySize = new Dictionary<string, FamilySymbol>();
+
+                using (var tx = new Transaction(doc, "Prepare Substructure Types"))
+                {
+                    tx.Start();
+
+                    var matId = concreteMaterial?.Id ?? ElementId.InvalidElementId;
+
+                    // 1. Grade beam symbol: "GB 300x600"
+                    var beamSymbols = new FilteredElementCollector(doc)
+                        .OfCategory(BuiltInCategory.OST_StructuralFraming)
+                        .OfClass(typeof(FamilySymbol))
+                        .Cast<FamilySymbol>()
+                        .ToList();
+
+                    var baseBeamSymbol = beamSymbols.FirstOrDefault(s =>
+                        (s.FamilyName.Contains("Concrete", StringComparison.OrdinalIgnoreCase) || s.Name.Contains("Concrete", StringComparison.OrdinalIgnoreCase)) &&
+                        (s.FamilyName.Contains("Rect", StringComparison.OrdinalIgnoreCase) || s.Name.Contains("Rect", StringComparison.OrdinalIgnoreCase)))
+                        ?? beamSymbols.FirstOrDefault();
+
+                    if (baseBeamSymbol != null)
+                    {
+                        symGradeBeam = GetOrCreateFamilySymbol(baseBeamSymbol, "GB 300x600");
+                        SetDimensionParameters(symGradeBeam, MToFt(0.3), MToFt(0.6), matId, "GB 300x600");
+                        Log($"Prepared grade beam symbol 'GB 300x600' from '{baseBeamSymbol.FamilyName}'.");
+                    }
+                    else
+                    {
+                        Log("WARNING: No base framing symbol found for grade beams.");
+                    }
+
+                    // 2. Foundation Family Symbols for Pile Caps (OST_StructuralFoundation)
+                    var foundationSymbols = new FilteredElementCollector(doc)
+                        .OfCategory(BuiltInCategory.OST_StructuralFoundation)
+                        .OfClass(typeof(FamilySymbol))
+                        .Cast<FamilySymbol>()
+                        .ToList();
+
+                    Log($"Found {foundationSymbols.Count} structural foundation symbols in document.");
+                    foreach (var fs in foundationSymbols)
+                    {
+                        Log($"  Foundation Symbol: Family='{fs.FamilyName}', Name='{fs.Name}'");
+                    }
+
+                    var baseFootingSymbol = foundationSymbols.FirstOrDefault(s =>
+                        (s.FamilyName.Contains("Footing", StringComparison.OrdinalIgnoreCase) || s.Name.Contains("Footing", StringComparison.OrdinalIgnoreCase)) &&
+                        (s.FamilyName.Contains("Rect", StringComparison.OrdinalIgnoreCase) || s.Name.Contains("Rect", StringComparison.OrdinalIgnoreCase)));
+
+                    if (baseFootingSymbol != null)
+                    {
+                        Log($"Found base footing symbol: '{baseFootingSymbol.FamilyName}' : '{baseFootingSymbol.Name}'");
+
+                        var distinctSizes = designData.Caps
+                            .Select(c => (Lx: c.Lx, Ly: c.Ly, Depth: c.Depth))
+                            .Distinct()
+                            .ToList();
+
+                        foreach (var size in distinctSizes)
+                        {
+                            string typeName = $"PC-CAP {FormatDimension(size.Lx)}x{FormatDimension(size.Ly)}x{FormatDimension(size.Depth)}";
+                            try
+                            {
+                                var capSym = GetOrCreateFamilySymbol(baseFootingSymbol, typeName);
+                                if (TrySetFootingDimensions(capSym, MToFt(size.Lx), MToFt(size.Ly), MToFt(size.Depth), matId, out string loggedDetails))
+                                {
+                                    capSymbolsBySize[typeName] = capSym;
+                                    Log($"Configured footing type '{typeName}': {loggedDetails}");
+                                }
+                                else
+                                {
+                                    Log($"Failed to configure all dimensions on footing type '{typeName}'. Will fall back to DirectShape for this size.");
+                                }
+                            }
+                            catch (Exception exSym)
+                            {
+                                Log($"Exception preparing footing type '{typeName}': {exSym.Message}. Will fall back to DirectShape.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Log("No isolated rectangular footing family found in template/document. Will use DirectShape fallback for all pile caps.");
+                    }
+
+                    tx.Commit();
+                }
+
+                // -------------------------------------------------------------
+                // Phase 3: Create Pile Caps and Bored Piles
+                // -------------------------------------------------------------
+                using (var tx = new Transaction(doc, "Generate Pile Caps and Piles"))
+                {
+                    tx.Start();
+
+                    foreach (var cap in designData.Caps)
+                    {
+                        double cx = cap.X;
+                        double cy = cap.Y;
+                        double lx = cap.Lx;
+                        double ly = cap.Ly;
+                        double depth = cap.Depth;
+                        int n = cap.N;
+                        string gridName = GetGridName(cx, cy);
+
+                        // --- 2. Pile Cap Creation ---
+                        bool capPlaced = false;
+                        string typeName = $"PC-CAP {FormatDimension(lx)}x{FormatDimension(ly)}x{FormatDimension(depth)}";
+
+                        if (capSymbolsBySize.TryGetValue(typeName, out var footingSym) && footingSym != null)
+                        {
+                            try
+                            {
+                                var pt = new XYZ(MToFt(cx), MToFt(cy), baseLevel.Elevation);
+                                var capInstance = doc.Create.NewFamilyInstance(pt, footingSym, baseLevel, StructuralType.Footing);
+
+                                // Adjust elevation offset so top is at 0.0
+                                var bbox = capInstance.get_BoundingBox(null);
+                                if (bbox != null)
+                                {
+                                    double zTop = bbox.Max.Z;
+                                    double deltaZ = 0.0 - zTop;
+                                    if (Math.Abs(deltaZ) > 0.001)
+                                    {
+                                        var offParam = capInstance.get_Parameter(BuiltInParameter.FLOOR_HEIGHTABOVELEVEL_PARAM)
+                                                       ?? capInstance.get_Parameter(BuiltInParameter.INSTANCE_FREE_HOST_OFFSET_PARAM)
+                                                       ?? capInstance.LookupParameter("Offset")
+                                                       ?? capInstance.LookupParameter("Height Offset From Level");
+                                        if (offParam != null && !offParam.IsReadOnly)
+                                        {
+                                            offParam.Set(offParam.AsDouble() + deltaZ);
+                                        }
+                                        else
+                                        {
+                                            ElementTransformUtils.MoveElement(doc, capInstance.Id, new XYZ(0, 0, deltaZ));
+                                        }
+                                    }
+                                }
+
+                                string mark = $"SUB-CAP-{gridName}";
+                                string comments = $"SUB: pile cap, {n} piles";
+                                SetMarkAndComments(capInstance, mark, comments);
+
+                                capsCreated++;
+                                capPlaced = true;
+                                Log($"Created FamilyInstance pile cap '{mark}' at ({cx:F1},{cy:F1}), size {lx}x{ly}x{depth} m, type '{typeName}'.");
+                            }
+                            catch (Exception exFam)
+                            {
+                                Log($"Warning placing FamilyInstance cap at ({cx:F1},{cy:F1}): {exFam.Message}. Falling back to DirectShape...");
+                            }
+                        }
+
+                        if (!capPlaced)
+                        {
+                            try
+                            {
+                                var dsCap = CreatePileCapDirectShape(doc, cx, cy, lx, ly, depth, concreteMaterial, gridName, n);
+                                capsCreated++;
+                                Log($"Created DirectShape pile cap 'SUB-CAP-{gridName}' at ({cx:F1},{cy:F1}), size {lx}x{ly}x{depth} m.");
+                            }
+                            catch (Exception exDs)
+                            {
+                                failureCount++;
+                                Log($"ERROR creating DirectShape pile cap at ({cx:F1},{cy:F1}): {exDs.Message}");
+                            }
+                        }
+
+                        // --- 3. Bored Piles Creation ---
+                        var pileOffsets = GetPileOffsets(n);
+                        for (int pi = 0; pi < pileOffsets.Count; pi++)
+                        {
+                            int pileK = pi + 1;
+                            double px = cx + pileOffsets[pi].dx;
+                            double py = cy + pileOffsets[pi].dy;
+
+                            try
+                            {
+                                var dsPile = CreatePileDirectShape(doc, px, py, depth, concreteMaterial, gridName, pileK);
+                                pilesCreated++;
+                                Log($"Created DirectShape pile 'SUB-PILE-{gridName}-{pileK}' at ({px:F2},{py:F2}), depth -{depth:F2} to -{depth + 24.0:F2} m.");
+                            }
+                            catch (Exception exPile)
+                            {
+                                failureCount++;
+                                Log($"ERROR creating pile {pileK} for cap {gridName} at ({px:F2},{py:F2}): {exPile.Message}");
+                            }
+                        }
+                    }
+
+                    tx.Commit();
+                }
+                Log($"Pile caps created: {capsCreated} / {designData.Caps.Count}");
+                Log($"Piles created: {pilesCreated} / 70");
+
+                // -------------------------------------------------------------
+                // Phase 4: Create Grade Beams (300x600 along grid lines)
+                // -------------------------------------------------------------
+                if (symGradeBeam == null)
+                {
+                    Log("ERROR: Grade beam symbol 'GB 300x600' is not available. Cannot create grade beams.");
+                    failureCount += 31;
+                }
+                else
+                {
+                    using (var tx = new Transaction(doc, "Generate Grade Beams"))
+                    {
+                        tx.Start();
+
+                        double[] colXs = { 0.0, 5.0, 10.0, 15.0, 20.0 };
+                        double[] colYs = { 0.0, 5.0, 10.0, 15.0 };
+                        int gbIndex = 1;
+
+                        // X-direction: 4 bays × 4 lines = 16
+                        foreach (double y in colYs)
+                        {
+                            for (int bay = 0; bay < colXs.Length - 1; bay++)
+                            {
+                                double x1 = colXs[bay];
+                                double x2 = colXs[bay + 1];
+
+                                try
+                                {
+                                    var p1 = new XYZ(MToFt(x1), MToFt(y), baseLevel.Elevation);
+                                    var p2 = new XYZ(MToFt(x2), MToFt(y), baseLevel.Elevation);
+                                    var line = Line.CreateBound(p1, p2);
+                                    var beam = doc.Create.NewFamilyInstance(line, symGradeBeam, baseLevel, StructuralType.Beam);
+
+                                    // Ensure top of beam is at z = 0.0
+                                    var zJust = beam.get_Parameter(BuiltInParameter.Z_JUSTIFICATION);
+                                    if (zJust != null && !zJust.IsReadOnly && zJust.AsInteger() != 0)
+                                    {
+                                        zJust.Set(0); // Top
+                                    }
+                                    var zOffset = beam.get_Parameter(BuiltInParameter.Z_OFFSET_VALUE);
+                                    if (zOffset != null && !zOffset.IsReadOnly)
+                                    {
+                                        zOffset.Set(0.0);
+                                    }
+
+                                    string mark = $"SUB-GB-{gbIndex++}";
+                                    SetMarkAndComments(beam, mark, "SUB: grade/tie beam (BNBC seismic interconnection of pile caps)");
+                                    gradeBeamsCreated++;
+                                }
+                                catch (Exception exGbX)
+                                {
+                                    failureCount++;
+                                    Log($"ERROR creating X grade beam at y={y}, x={x1}->{x2}: {exGbX.Message}");
+                                }
+                            }
+                        }
+
+                        // Y-direction: 3 bays × 5 lines = 15
+                        foreach (double x in colXs)
+                        {
+                            for (int bay = 0; bay < colYs.Length - 1; bay++)
+                            {
+                                double y1 = colYs[bay];
+                                double y2 = colYs[bay + 1];
+
+                                try
+                                {
+                                    var p1 = new XYZ(MToFt(x), MToFt(y1), baseLevel.Elevation);
+                                    var p2 = new XYZ(MToFt(x), MToFt(y2), baseLevel.Elevation);
+                                    var line = Line.CreateBound(p1, p2);
+                                    var beam = doc.Create.NewFamilyInstance(line, symGradeBeam, baseLevel, StructuralType.Beam);
+
+                                    var zJust = beam.get_Parameter(BuiltInParameter.Z_JUSTIFICATION);
+                                    if (zJust != null && !zJust.IsReadOnly && zJust.AsInteger() != 0)
+                                    {
+                                        zJust.Set(0); // Top
+                                    }
+                                    var zOffset = beam.get_Parameter(BuiltInParameter.Z_OFFSET_VALUE);
+                                    if (zOffset != null && !zOffset.IsReadOnly)
+                                    {
+                                        zOffset.Set(0.0);
+                                    }
+
+                                    string mark = $"SUB-GB-{gbIndex++}";
+                                    SetMarkAndComments(beam, mark, "SUB: grade/tie beam (BNBC seismic interconnection of pile caps)");
+                                    gradeBeamsCreated++;
+                                }
+                                catch (Exception exGbY)
+                                {
+                                    failureCount++;
+                                    Log($"ERROR creating Y grade beam at x={x}, y={y1}->{y2}: {exGbY.Message}");
+                                }
+                            }
+                        }
+
+                        tx.Commit();
+                    }
+                }
+                Log($"Grade beams created: {gradeBeamsCreated} / 31");
+
+                // -------------------------------------------------------------
+                // Phase 5: Setup Views (BIM 3D Foundations & BIM 3D)
+                // -------------------------------------------------------------
+                View3D? viewFoundations = null;
+                View3D? viewBim3D = null;
+
+                using (var tx = new Transaction(doc, "Setup Foundation 3D Views"))
+                {
+                    tx.Start();
+
+                    // Locate or create "BIM 3D Foundations"
+                    viewFoundations = new FilteredElementCollector(doc)
+                        .OfClass(typeof(View3D))
+                        .Cast<View3D>()
+                        .FirstOrDefault(v => !v.IsTemplate && v.Name.Equals("BIM 3D Foundations", StringComparison.OrdinalIgnoreCase));
+
+                    if (viewFoundations == null)
+                    {
+                        var vft3D = new FilteredElementCollector(doc)
+                            .OfClass(typeof(ViewFamilyType))
+                            .Cast<ViewFamilyType>()
+                            .FirstOrDefault(v => v.ViewFamily == ViewFamily.ThreeDimensional);
+
+                        if (vft3D == null)
+                        {
+                            throw new InvalidOperationException("ViewFamilyType for ThreeDimensional not found.");
+                        }
+
+                        viewFoundations = View3D.CreateIsometric(doc, vft3D.Id);
+                        viewFoundations.Name = "BIM 3D Foundations";
+                        Log("Created 3D Isometric View 'BIM 3D Foundations'.");
+                    }
+                    else
+                    {
+                        Log("Reusing existing 3D View 'BIM 3D Foundations'.");
+                    }
+
+                    viewFoundations.DetailLevel = ViewDetailLevel.Fine;
+                    viewFoundations.DisplayStyle = DisplayStyle.Shading;
+
+                    // Set section box to show whole building down to -26 m (and margin to -28 m)
+                    var box = new BoundingBoxXYZ
+                    {
+                        Min = new XYZ(MToFt(-5.0), MToFt(-5.0), MToFt(-28.0)),
+                        Max = new XYZ(MToFt(25.0), MToFt(20.0), MToFt(36.0))
+                    };
+                    viewFoundations.SetSectionBox(box);
+                    viewFoundations.IsSectionBoxActive = true;
+                    Log("Configured section box on 'BIM 3D Foundations' from z = -28 m to +36 m.");
+
+                    // Also locate main view "BIM 3D"
+                    viewBim3D = new FilteredElementCollector(doc)
+                        .OfClass(typeof(View3D))
+                        .Cast<View3D>()
+                        .FirstOrDefault(v => !v.IsTemplate && v.Name.Equals("BIM 3D", StringComparison.OrdinalIgnoreCase));
+
+                    if (viewBim3D != null && viewBim3D.IsSectionBoxActive)
+                    {
+                        var curBox = viewBim3D.GetSectionBox();
+                        if (curBox.Min.Z > MToFt(-26.0))
+                        {
+                            curBox.Min = new XYZ(curBox.Min.X, curBox.Min.Y, MToFt(-28.0));
+                            viewBim3D.SetSectionBox(curBox);
+                            Log("Expanded section box on 'BIM 3D' to include piles down to -28 m.");
+                        }
+                    }
+
+                    tx.Commit();
+                }
+
+                // -------------------------------------------------------------
+                // Phase 6: Model Summary Logging
+                // -------------------------------------------------------------
+                Log("================================================================================");
+                Log("SUBSTRUCTURE MODEL SUMMARY:");
+                Log($"  Pile Caps:   {capsCreated} / {designData.Caps.Count}");
+                Log($"  Piles:       {pilesCreated} / 70");
+                Log($"  Grade Beams: {gradeBeamsCreated} / 31");
+                Log($"  Total Added: {capsCreated + pilesCreated + gradeBeamsCreated} elements");
+                Log($"  Failures:    {failureCount}");
+                Log("================================================================================");
+
+                // -------------------------------------------------------------
+                // Phase 7: Save & Re-export IFC and PNGs
+                // -------------------------------------------------------------
+                Log($"Saving updated structural model to '{RvtPath}'...");
+                try
+                {
+                    doc.Save();
+                    Log("Saved with doc.Save().");
+                }
+                catch (Exception exSave)
+                {
+                    Log($"doc.Save() failed ({exSave.Message}). Attempting doc.SaveAs...");
+                    doc.SaveAs(RvtPath, new SaveAsOptions { OverwriteExistingFile = true });
+                    Log("Saved with doc.SaveAs().");
+                }
+
+                Log($"Re-exporting structural IFC to '{BimDir}\\{IfcFileName}'...");
+                ExportIfc(doc, BimDir, IfcFileName);
+
+                if (viewFoundations != null)
+                {
+                    Log($"Exporting Foundations 3D PNG to '{FoundationsPngPath}'...");
+                    ExportPngView(doc, viewFoundations, FoundationsPngPath);
+                }
+
+                if (viewBim3D != null)
+                {
+                    Log($"Re-exporting main 3D PNG to '{PngPath}'...");
+                    ExportPngView(doc, viewBim3D, PngPath);
+                }
+
+                if (doc.IsModified)
+                {
+                    doc.Save();
+                }
+
+                return failureCount == 0 && capsCreated == designData.Caps.Count && pilesCreated == 70 && gradeBeamsCreated == 31;
+            }
+            catch (Exception ex)
+            {
+                Log($"FATAL ERROR in ExecuteSubPipeline: {ex}");
+                return false;
+            }
+            finally
+            {
+                if (doc != null)
+                {
+                    try
+                    {
+                        Log("Closing structural document...");
+                        doc.Close(false);
+                        Log("Structural document closed successfully.");
+                    }
+                    catch (Exception exClose)
+                    {
+                        Log($"Exception closing structural document: {exClose.Message}");
+                    }
+                }
+            }
+        }
+
+        private static string FormatDimension(double val)
+        {
+            if (Math.Abs(val - Math.Round(val)) < 0.001)
+            {
+                return val.ToString("0.0", CultureInfo.InvariantCulture);
+            }
+            return val.ToString("0.##", CultureInfo.InvariantCulture);
+        }
+
+        private static string GetGridName(double x, double y)
+        {
+            string colLetter = Math.Abs(x - 0.0) < 0.1 ? "A" :
+                               Math.Abs(x - 5.0) < 0.1 ? "B" :
+                               Math.Abs(x - 10.0) < 0.1 ? "C" :
+                               Math.Abs(x - 15.0) < 0.1 ? "D" :
+                               Math.Abs(x - 20.0) < 0.1 ? "E" : $"X{x:F0}";
+
+            string rowNumber = Math.Abs(y - 0.0) < 0.1 ? "1" :
+                               Math.Abs(y - 5.0) < 0.1 ? "2" :
+                               Math.Abs(y - 10.0) < 0.1 ? "3" :
+                               Math.Abs(y - 15.0) < 0.1 ? "4" : $"Y{y:F0}";
+
+            return $"{colLetter}{rowNumber}";
+        }
+
+        private static List<(double dx, double dy)> GetPileOffsets(int n)
+        {
+            var offsets = new List<(double dx, double dy)>();
+            switch (n)
+            {
+                case 2:
+                    offsets.Add((-0.9, 0.0));
+                    offsets.Add((0.9, 0.0));
+                    break;
+                case 3:
+                    offsets.Add((-0.9, -0.5196));
+                    offsets.Add((0.9, -0.5196));
+                    offsets.Add((0.0, 1.0392));
+                    break;
+                case 5:
+                    offsets.Add((-0.9, -0.9));
+                    offsets.Add((0.9, -0.9));
+                    offsets.Add((-0.9, 0.9));
+                    offsets.Add((0.9, 0.9));
+                    offsets.Add((0.0, 0.0));
+                    break;
+                default:
+                    Log($"WARNING: Unexpected pile count n={n}. Defaulting to center pile.");
+                    offsets.Add((0.0, 0.0));
+                    break;
+            }
+            return offsets;
+        }
+
+        private static bool TrySetFootingDimensions(
+            FamilySymbol symbol,
+            double widthFt,
+            double lengthFt,
+            double thicknessFt,
+            ElementId materialId,
+            out string loggedDetails)
+        {
+            var details = new List<string>();
+
+            // Width
+            bool widthSet = false;
+            string[] widthNames = { "Width", "width", "Width (b)", "b", "B" };
+            foreach (var name in widthNames)
+            {
+                var p = symbol.LookupParameter(name);
+                if (p != null && !p.IsReadOnly && p.StorageType == StorageType.Double)
+                {
+                    p.Set(widthFt);
+                    widthSet = true;
+                    details.Add($"width via '{name}' ({widthFt:F4} ft)");
+                    break;
+                }
+            }
+            if (!widthSet)
+            {
+                var bip = symbol.get_Parameter(BuiltInParameter.FAMILY_WIDTH_PARAM);
+                if (bip != null && !bip.IsReadOnly)
+                {
+                    bip.Set(widthFt);
+                    widthSet = true;
+                    details.Add($"width via BuiltInParameter.FAMILY_WIDTH_PARAM ({widthFt:F4} ft)");
+                }
+            }
+
+            // Length
+            bool lengthSet = false;
+            string[] lengthNames = { "Length", "length", "Length (l)", "l", "L" };
+            foreach (var name in lengthNames)
+            {
+                var p = symbol.LookupParameter(name);
+                if (p != null && !p.IsReadOnly && p.StorageType == StorageType.Double)
+                {
+                    p.Set(lengthFt);
+                    lengthSet = true;
+                    details.Add($"length via '{name}' ({lengthFt:F4} ft)");
+                    break;
+                }
+            }
+
+            // Thickness
+            bool thicknessSet = false;
+            string[] thickNames = { "Foundation Thickness", "Foundation thickness", "Thickness", "thickness", "Thickness (h)", "h", "Height", "depth", "Depth" };
+            foreach (var name in thickNames)
+            {
+                var p = symbol.LookupParameter(name);
+                if (p != null && !p.IsReadOnly && p.StorageType == StorageType.Double)
+                {
+                    p.Set(thicknessFt);
+                    thicknessSet = true;
+                    details.Add($"thickness via '{name}' ({thicknessFt:F4} ft)");
+                    break;
+                }
+            }
+            if (!thicknessSet)
+            {
+                var bip = symbol.get_Parameter(BuiltInParameter.STRUCTURAL_FOUNDATION_THICKNESS);
+                if (bip != null && !bip.IsReadOnly)
+                {
+                    bip.Set(thicknessFt);
+                    thicknessSet = true;
+                    details.Add($"thickness via BuiltInParameter.STRUCTURAL_FOUNDATION_THICKNESS ({thicknessFt:F4} ft)");
+                }
+            }
+
+            // Material
+            if (materialId != ElementId.InvalidElementId)
+            {
+                string[] matNames = { "Structural Material", "Material", "Foundation Material" };
+                foreach (var name in matNames)
+                {
+                    var p = symbol.LookupParameter(name);
+                    if (p != null && !p.IsReadOnly && p.StorageType == StorageType.ElementId)
+                    {
+                        p.Set(materialId);
+                        details.Add($"material via '{name}'");
+                        break;
+                    }
+                }
+            }
+
+            loggedDetails = string.Join(", ", details);
+            return widthSet && lengthSet && thicknessSet;
+        }
+
+        private static DirectShape CreatePileCapDirectShape(
+            Document doc,
+            double cx,
+            double cy,
+            double lx,
+            double ly,
+            double depth,
+            Material? material,
+            string gridName,
+            int nPiles)
+        {
+            double zBottom = MToFt(-depth);
+            double hFt = MToFt(depth);
+            double halfLx = MToFt(lx / 2.0);
+            double halfLy = MToFt(ly / 2.0);
+            double cxFt = MToFt(cx);
+            double cyFt = MToFt(cy);
+
+            var p1 = new XYZ(cxFt - halfLx, cyFt - halfLy, zBottom);
+            var p2 = new XYZ(cxFt + halfLx, cyFt - halfLy, zBottom);
+            var p3 = new XYZ(cxFt + halfLx, cyFt + halfLy, zBottom);
+            var p4 = new XYZ(cxFt - halfLx, cyFt + halfLy, zBottom);
+
+            var loop = new CurveLoop();
+            loop.Append(Line.CreateBound(p1, p2));
+            loop.Append(Line.CreateBound(p2, p3));
+            loop.Append(Line.CreateBound(p3, p4));
+            loop.Append(Line.CreateBound(p4, p1));
+
+            Solid capSolid = GeometryCreationUtilities.CreateExtrusionGeometry(
+                new List<CurveLoop> { loop },
+                XYZ.BasisZ,
+                hFt);
+
+            var ds = DirectShape.CreateElement(doc, new ElementId(BuiltInCategory.OST_StructuralFoundation));
+            ds.ApplicationId = "PrefabBIM";
+            ds.ApplicationDataId = Guid.NewGuid().ToString();
+            ds.SetShape(new List<GeometryObject> { capSolid });
+
+            if (material != null)
+            {
+                AssignMaterialToDirectShape(doc, ds, material.Id, "Concrete Pile Cap Type");
+            }
+
+            string mark = $"SUB-CAP-{gridName}";
+            string comments = $"SUB: pile cap, {nPiles} piles";
+            SetMarkAndComments(ds, mark, comments);
+
+            return ds;
+        }
+
+        private static DirectShape CreatePileDirectShape(
+            Document doc,
+            double px,
+            double py,
+            double capDepth,
+            Material? material,
+            string gridName,
+            int pileIndex)
+        {
+            double rFt = MToFt(0.3);
+            double lenFt = MToFt(24.0);
+            double zToeFt = MToFt(-capDepth - 24.0);
+            double pxFt = MToFt(px);
+            double pyFt = MToFt(py);
+
+            var p1 = new XYZ(pxFt + rFt, pyFt, zToeFt);
+            var p2 = new XYZ(pxFt - rFt, pyFt, zToeFt);
+            var mid1 = new XYZ(pxFt, pyFt + rFt, zToeFt);
+            var mid2 = new XYZ(pxFt, pyFt - rFt, zToeFt);
+
+            var arc1 = Arc.Create(p1, p2, mid1);
+            var arc2 = Arc.Create(p2, p1, mid2);
+
+            var loop = new CurveLoop();
+            loop.Append(arc1);
+            loop.Append(arc2);
+
+            Solid pileSolid = GeometryCreationUtilities.CreateExtrusionGeometry(
+                new List<CurveLoop> { loop },
+                XYZ.BasisZ,
+                lenFt);
+
+            var ds = DirectShape.CreateElement(doc, new ElementId(BuiltInCategory.OST_StructuralFoundation));
+            ds.ApplicationId = "PrefabBIM";
+            ds.ApplicationDataId = Guid.NewGuid().ToString();
+            ds.SetShape(new List<GeometryObject> { pileSolid });
+
+            if (material != null)
+            {
+                AssignMaterialToDirectShape(doc, ds, material.Id, "Concrete Pile Type");
+            }
+
+            string mark = $"SUB-PILE-{gridName}-{pileIndex}";
+            string comments = "SUB: bored pile 600 mm x 24 m (cast-in-situ)";
+            SetMarkAndComments(ds, mark, comments);
+
+            return ds;
+        }
+
+        private static void AssignMaterialToDirectShape(Document doc, DirectShape ds, ElementId matId, string typeName)
+        {
+            if (matId == ElementId.InvalidElementId) return;
+
+            try
+            {
+                // 1. Try instance parameter
+                var matParam = ds.get_Parameter(BuiltInParameter.MATERIAL_ID_PARAM)
+                               ?? ds.LookupParameter("Material")
+                               ?? ds.get_Parameter(BuiltInParameter.STRUCTURAL_MATERIAL_PARAM);
+                if (matParam != null && !matParam.IsReadOnly)
+                {
+                    matParam.Set(matId);
+                    Log($"DirectShape Id {ds.Id}: Assigned material directly via instance parameter.");
+                    return;
+                }
+
+                // 2. Try DirectShapeType if supported
+                try
+                {
+                    var dsType = new FilteredElementCollector(doc)
+                        .OfClass(typeof(DirectShapeType))
+                        .Cast<DirectShapeType>()
+                        .FirstOrDefault(t => t.Name == typeName);
+
+                    if (dsType == null)
+                    {
+                        dsType = DirectShapeType.Create(doc, typeName, new ElementId(BuiltInCategory.OST_StructuralFoundation));
+                        var typeMatParam = dsType.get_Parameter(BuiltInParameter.MATERIAL_ID_PARAM)
+                                           ?? dsType.LookupParameter("Material")
+                                           ?? dsType.get_Parameter(BuiltInParameter.STRUCTURAL_MATERIAL_PARAM);
+                        if (typeMatParam != null && !typeMatParam.IsReadOnly)
+                        {
+                            typeMatParam.Set(matId);
+                        }
+                    }
+
+                    if (dsType != null)
+                    {
+                        ds.ChangeTypeId(dsType.Id);
+                        Log($"DirectShape Id {ds.Id}: Assigned material via DirectShapeType '{typeName}'.");
+                        return;
+                    }
+                }
+                catch (Exception exType)
+                {
+                    Log($"DirectShape Id {ds.Id}: DirectShapeType material assignment skipped ({exType.Message}).");
+                }
+
+                Log($"DirectShape Id {ds.Id}: Material parameter not directly settable on instance or type, skipped material.");
+            }
+            catch (Exception ex)
+            {
+                Log($"DirectShape Id {ds.Id}: Material assignment exception ({ex.Message}), skipped material.");
+            }
+        }
+
+        // =========================================================================
+        // Substructure Data Transfer Objects
+        // =========================================================================
+        public class PileDesignData
+        {
+            [JsonPropertyName("Qa")]
+            public double Qa { get; set; }
+
+            [JsonPropertyName("Qt")]
+            public double Qt { get; set; }
+
+            [JsonPropertyName("H_allow")]
+            public double HAllow { get; set; }
+
+            [JsonPropertyName("total_piles")]
+            public int TotalPiles { get; set; }
+
+            [JsonPropertyName("caps")]
+            public List<PileCapData> Caps { get; set; } = new List<PileCapData>();
+        }
+
+        public class PileCapData
+        {
+            [JsonPropertyName("n")]
+            public int N { get; set; }
+
+            [JsonPropertyName("cap_LxLyT")]
+            public List<double> CapLxLyT { get; set; } = new List<double>();
+
+            [JsonPropertyName("xy")]
+            public List<double> Xy { get; set; } = new List<double>();
+
+            [JsonPropertyName("joint")]
+            public string? Joint { get; set; }
+
+            [JsonIgnore]
+            public double X => Xy.Count > 0 ? Xy[0] : 0.0;
+
+            [JsonIgnore]
+            public double Y => Xy.Count > 1 ? Xy[1] : 0.0;
+
+            [JsonIgnore]
+            public double Lx => CapLxLyT.Count > 0 ? CapLxLyT[0] : 0.0;
+
+            [JsonIgnore]
+            public double Ly => CapLxLyT.Count > 1 ? CapLxLyT[1] : 0.0;
+
+            [JsonIgnore]
+            public double Depth => CapLxLyT.Count > 2 ? CapLxLyT[2] : 0.0;
+        }
+
         private static bool IsWallEndColumn(double x, double y)
         {
             const double tol = 0.01;
@@ -1885,26 +2846,25 @@ namespace PrefabBIM
                 doc.ExportImage(imgOptions);
                 Log("ExportImage command executed.");
 
-                if (File.Exists(targetPngPath))
+                // Look for files matching baseName that Revit generated with view names appended
+                var matching = Directory.GetFiles(targetDir, $"{baseNameWithoutExt}*.png")
+                    .Where(f => !string.Equals(f, targetPngPath, StringComparison.OrdinalIgnoreCase))
+                    .OrderByDescending(f => File.GetLastWriteTimeUtc(f))
+                    .ToList();
+
+                if (matching.Count > 0)
+                {
+                    var createdFile = matching.First();
+                    File.Copy(createdFile, targetPngPath, true);
+                    Log($"Copied generated image '{createdFile}' to target path '{targetPngPath}'");
+                }
+                else if (File.Exists(targetPngPath))
                 {
                     Log($"Target PNG file exists at expected path: '{targetPngPath}'");
                 }
                 else
                 {
-                    var matching = Directory.GetFiles(targetDir, $"{baseNameWithoutExt}*.png");
-                    if (matching.Length > 0)
-                    {
-                        var createdFile = matching.OrderByDescending(f => File.GetLastWriteTime(f)).First();
-                        if (createdFile != targetPngPath)
-                        {
-                            File.Copy(createdFile, targetPngPath, true);
-                            Log($"Copied generated image '{createdFile}' to target path '{targetPngPath}'");
-                        }
-                    }
-                    else
-                    {
-                        Log($"WARNING: No matching PNG output found starting with '{baseNameWithoutExt}'");
-                    }
+                    Log($"WARNING: No matching PNG output found starting with '{baseNameWithoutExt}'");
                 }
             }
             catch (Exception ex)

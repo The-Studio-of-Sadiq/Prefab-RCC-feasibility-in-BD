@@ -1,0 +1,337 @@
+{
+ "Qa": 523.0,
+ "Qt": 261.5,
+ "H_allow": 50.0,
+ "total_piles": 70,
+ "V_service_kN": 2219,
+ "H_per_pile_global": 31.7,
+ "piles_needed_for_lateral": 45,
+ "caps": [
+  {
+   "n": 4,
+   "cap_LxLyT": [
+    2.7,
+    2.7,
+    1.1
+   ],
+   "pile_max": 447,
+   "gov_max": "S2 D+0.75L-0.525EQy#2",
+   "pile_min": 182,
+   "gov_min": "S3 0.6D+0.7EQy#2",
+   "H_per_pile": 5.2,
+   "joint": "294",
+   "xy": [
+    0.0,
+    0.0
+   ],
+   "DL": 1474
+  },
+  {
+   "n": ">9",
+   "pile_max": 696,
+   "pile_min": -216,
+   "H_per_pile": 61.6,
+   "joint": "305",
+   "xy": [
+    0.0,
+    5.0
+   ],
+   "DL": 2726
+  },
+  {
+   "n": ">9",
+   "pile_max": 704,
+   "pile_min": -214,
+   "H_per_pile": 61.6,
+   "joint": "316",
+   "xy": [
+    0.0,
+    10.0
+   ],
+   "DL": 2816
+  },
+  {
+   "n": 4,
+   "cap_LxLyT": [
+    2.7,
+    2.7,
+    1.1
+   ],
+   "pile_max": 471,
+   "gov_max": "S2 D+0.75L+0.525EQy#2",
+   "pile_min": 185,
+   "gov_min": "S3 0.6D-0.7EQy#2",
+   "H_per_pile": 5.5,
+   "joint": "327",
+   "xy": [
+    0.0,
+    15.0
+   ],
+   "DL": 1586
+  },
+  {
+   "n": ">9",
+   "pile_max": 696,
+   "pile_min": -209,
+   "H_per_pile": 61.7,
+   "joint": "338",
+   "xy": [
+    5.0,
+    0.0
+   ],
+   "DL": 2761
+  },
+  {
+   "n": 6,
+   "cap_LxLyT": [
+    4.5,
+    2.7,
+    1.2
+   ],
+   "pile_max": 499,
+   "gov_max": "S1 D+L",
+   "pile_min": 242,
+   "gov_min": "S3 0.6D+0.7EQy#2",
+   "H_per_pile": 2.6,
+   "joint": "349",
+   "xy": [
+    5.0,
+    5.0
+   ],
+   "DL": 2637
+  },
+  {
+   "n": 6,
+   "cap_LxLyT": [
+    4.5,
+    2.7,
+    1.2
+   ],
+   "pile_max": 489,
+   "gov_max": "S1 D+L",
+   "pile_min": 227,
+   "gov_min": "S3 0.6D-0.7EQy#2",
+   "H_per_pile": 2.9,
+   "joint": "360",
+   "xy": [
+    5.0,
+    10.0
+   ],
+   "DL": 2574
+  },
+  {
+   "n": 5,
+   "cap_LxLyT": [
+    2.7,
+    2.7,
+    1.2
+   ],
+   "pile_max": 519,
+   "gov_max": "S2 D+0.75L+0.525EQy#2",
+   "pile_min": 235,
+   "gov_min": "S3 0.6D-0.7EQy#2",
+   "H_per_pile": 4.1,
+   "joint": "371",
+   "xy": [
+    5.0,
+    15.0
+   ],
+   "DL": 2350
+  },
+  {
+   "n": ">9",
+   "pile_max": 709,
+   "pile_min": -200,
+   "H_per_pile": 61.6,
+   "joint": "382",
+   "xy": [
+    10.0,
+    0.0
+   ],
+   "DL": 2876
+  },
+  {
+   "n": 8,
+   "cap_LxLyT": [
+    6.3,
+    2.7,
+    1.4
+   ],
+   "pile_max": 437,
+   "gov_max": "S1 D+L",
+   "pile_min": 220,
+   "gov_min": "S3 0.6D-0.7EQx#2",
+   "H_per_pile": 1.9,
+   "joint": "393",
+   "xy": [
+    10.0,
+    5.0
+   ],
+   "DL": 2915
+  },
+  {
+   "n": 6,
+   "cap_LxLyT": [
+    4.5,
+    2.7,
+    1.2
+   ],
+   "pile_max": 501,
+   "gov_max": "S1 D+L",
+   "pile_min": 244,
+   "gov_min": "S3 0.6D+0.7EQx#1",
+   "H_per_pile": 2.8,
+   "joint": "404",
+   "xy": [
+    10.0,
+    10.0
+   ],
+   "DL": 2646
+  },
+  {
+   "n": ">9",
+   "pile_max": 697,
+   "pile_min": -207,
+   "H_per_pile": 61.6,
+   "joint": "415",
+   "xy": [
+    10.0,
+    15.0
+   ],
+   "DL": 2768
+  },
+  {
+   "n": 6,
+   "cap_LxLyT": [
+    4.5,
+    2.7,
+    1.2
+   ],
+   "pile_max": 469,
+   "gov_max": "S2 D+0.75L-0.525EQy#1",
+   "pile_min": 225,
+   "gov_min": "S3 0.6D+0.7EQy#1",
+   "H_per_pile": 3.4,
+   "joint": "426",
+   "xy": [
+    15.0,
+    0.0
+   ],
+   "DL": 2419
+  },
+  {
+   "n": 8,
+   "cap_LxLyT": [
+    6.3,
+    2.7,
+    1.4
+   ],
+   "pile_max": 515,
+   "gov_max": "S1 D+L",
+   "pile_min": 255,
+   "gov_min": "S3 0.6D+0.7EQy#1",
+   "H_per_pile": 1.7,
+   "joint": "437",
+   "xy": [
+    15.0,
+    5.0
+   ],
+   "DL": 3549
+  },
+  {
+   "n": 8,
+   "cap_LxLyT": [
+    6.3,
+    2.7,
+    1.4
+   ],
+   "pile_max": 520,
+   "gov_max": "S1 D+L",
+   "pile_min": 259,
+   "gov_min": "S3 0.6D-0.7EQy#1",
+   "H_per_pile": 1.7,
+   "joint": "448",
+   "xy": [
+    15.0,
+    10.0
+   ],
+   "DL": 3584
+  },
+  {
+   "n": ">9",
+   "pile_max": 714,
+   "pile_min": -197,
+   "H_per_pile": 61.7,
+   "joint": "459",
+   "xy": [
+    15.0,
+    15.0
+   ],
+   "DL": 2928
+  },
+  {
+   "n": 4,
+   "cap_LxLyT": [
+    2.7,
+    2.7,
+    1.1
+   ],
+   "pile_max": 484,
+   "gov_max": "S2 D+0.75L-0.525EQy#1",
+   "pile_min": 200,
+   "gov_min": "S3 0.6D+0.7EQy#1",
+   "H_per_pile": 5.3,
+   "joint": "470",
+   "xy": [
+    20.0,
+    0.0
+   ],
+   "DL": 1614
+  },
+  {
+   "n": ">9",
+   "pile_max": 733,
+   "pile_min": -225,
+   "H_per_pile": 65.1,
+   "joint": "481",
+   "xy": [
+    20.0,
+    5.0
+   ],
+   "DL": 2907
+  },
+  {
+   "n": ">9",
+   "pile_max": 736,
+   "pile_min": -224,
+   "H_per_pile": 65.1,
+   "joint": "492",
+   "xy": [
+    20.0,
+    10.0
+   ],
+   "DL": 2935
+  },
+  {
+   "n": 5,
+   "cap_LxLyT": [
+    2.7,
+    2.7,
+    1.2
+   ],
+   "pile_max": 435,
+   "gov_max": "S2 D+0.75L+0.525EQy#1",
+   "pile_min": 186,
+   "gov_min": "S3 0.6D-0.7EQy#1",
+   "H_per_pile": 4.2,
+   "joint": "503",
+   "xy": [
+    20.0,
+    15.0
+   ],
+   "DL": 1827
+  }
+ ],
+ "tie_beam_force_kN": 358,
+ "note": "Tie (grade) beams between caps designed for 10% of the larger column load (seismic interconnection)"
+}

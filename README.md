@@ -24,9 +24,11 @@ Paper2_Structural/
   Paper2_draft.md/.docx Manuscript draft (Paper2_outline.md: original outline)
   models/1_CastInSitu   ETABS analysis 1: cast-in-situ reference (cis_baseline.EDB)
   models/2_Precast      ETABS analysis 2: precast variants M1–M4, B7, W45 and *_fix600 (recommended scheme)
+  models/3_SSI          ETABS analysis 3: pile-spring (soil–structure interaction) models, stiff/central/soft
   scripts/              ETABS API (comtypes) scripts: build baseline, precast variants, run, export, design, checks
   analysis/             baseline_review.md, soil_data.md, results_summary.md, figures/;
-                        1_CastInSitu/ and 2_Precast/ hold the exported tables and design results of each analysis
+                        1_CastInSitu/, 2_Precast/ and 3_SSI/ hold the exported tables and design results of each analysis;
+                        substructure_summary.md: bored-pile foundation design (70 piles, caps, tie beams); cm_drifts.json: BNBC centre-of-mass drifts
   research/             Literature-based precast connection stiffness parameters
 BIM/                    Revit 2027 model (.rvt), IFC export, 3D view and the add-in that generates them (see BIM/README.md)
 ```
@@ -40,6 +42,7 @@ BIM/                    Revit 2027 model (.rvt), IFC export, 3D view and the add
   2. `scripts/make_precast_variant.py <baseline> <out> <Rk|rigid> <wall_modifier>` creates a precast variant.
   3. `scripts/etabs_tables.py <model> <outdir>` runs the model and exports tables; `scripts/bnbc_checks.py <outdir>` applies the BNBC checks.
   4. `scripts/member_design.py` + `scripts/design_summary.py` run member checks; `scripts/compare_variants.py` and `scripts/figures.py` produce comparisons and figures.
+  5. `scripts/pile_design.py "<Joint Reactions.csv>" out.json [Qa]` sizes the pile foundation; `scripts/add_pile_springs.py <model> <out> <pile_design.json> stiff|central|soft` builds the soil–structure interaction models.
 
 ## Key caveats
 - The original `ETABS/4.EDB` used a user seismic coefficient of 0.056, an off-centre open U-core (extreme torsional irregularity) and a seismic mass without partitions. `Paper2_Structural/analysis/baseline_review.md` documents this, and the corrected baseline is `Paper2_Structural/models/cis_baseline.EDB`.
