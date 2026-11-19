@@ -1,0 +1,2036 @@
+Story,OutputCase,CaseType,StepType,StepNumber,Direction,Drift,Drift/,Label,X,Y,Z
+Story10,Dead,LinStatic,,,X,3E-06,1/350885,1,0,15,30
+Story10,Live,LinStatic,,,Y,2.4E-05,1/42175,12,0,0,30
+Story10,Modal,LinModEigen,Mode,1,Y,1E-06,1/846996,7,20,5,30
+Story10,Modal,LinModEigen,Mode,2,X,1E-06,1/883928,24,5,0,30
+Story10,Modal,LinModEigen,Mode,3,Y,1E-06,1/702162,13,0,5,30
+Story10,Modal,LinModEigen,Mode,4,X,2E-06,1/627285,1,0,15,30
+Story10,Modal,LinModEigen,Mode,4,Y,4E-06,1/284251,8,20,0,30
+Story10,Modal,LinModEigen,Mode,5,X,3E-06,1/291231,8,20,0,30
+Story10,Modal,LinModEigen,Mode,5,Y,2E-06,1/664731,5,20,15,30
+Story10,Modal,LinModEigen,Mode,6,X,3E-06,1/308314,8,20,0,30
+Story10,Modal,LinModEigen,Mode,6,Y,5E-06,1/220910,1,0,15,30
+Story10,Modal,LinModEigen,Mode,7,X,3E-06,1/331368,1,0,15,30
+Story10,Modal,LinModEigen,Mode,7,Y,5E-06,1/199344,21,10,10,30
+Story10,Modal,LinModEigen,Mode,8,X,5E-06,1/209048,7,20,5,30
+Story10,Modal,LinModEigen,Mode,8,Y,3E-06,1/368876,5,20,15,30
+Story10,Modal,LinModEigen,Mode,9,X,5E-06,1/191097,1,0,15,30
+Story10,Modal,LinModEigen,Mode,9,Y,7E-06,1/134362,21,10,10,30
+Story10,Modal,LinModEigen,Mode,10,X,6E-06,1/176263,8,20,0,30
+Story10,Modal,LinModEigen,Mode,10,Y,7E-06,1/137294,1,0,15,30
+Story10,Modal,LinModEigen,Mode,11,X,7E-06,1/147455,19,15,10,30
+Story10,Modal,LinModEigen,Mode,11,Y,4E-06,1/257375,24,5,0,30
+Story10,Modal,LinModEigen,Mode,12,X,7E-06,1/141806,8,20,0,30
+Story10,Modal,LinModEigen,Mode,12,Y,1E-05,1/96330,21,10,10,30
+Story10,FF,LinStatic,,,X,1E-06,1/0,1,0,15,30
+Story10,PW,LinStatic,,,X,1E-06,1/0,1,0,15,30
+Story10,EQx,LinStatic,Step By Step,1,X,0.003195,1/313,4,15,15,30
+Story10,EQx,LinStatic,Step By Step,2,X,0.003199,1/313,24,5,0,30
+Story10,EQy,LinStatic,Step By Step,1,Y,0.003387,1/295,7,20,5,30
+Story10,EQy,LinStatic,Step By Step,2,Y,0.003239,1/309,23,0,10,30
+Story10,Wx,LinStatic,Step By Step,1,X,0.000197,1/5081,4,15,15,30
+Story10,Wx,LinStatic,Step By Step,2,Y,0.00028,1/3574,23,0,10,30
+Story10,Wx,LinStatic,Step By Step,3,X,0.000164,1/6109,24,5,0,30
+Story10,Wx,LinStatic,Step By Step,4,X,0.000164,1/6101,4,15,15,30
+Story10,Wx,LinStatic,Step By Step,5,Y,0.000251,1/3989,26,20,10,30
+Story10,Wx,LinStatic,Step By Step,6,Y,0.000251,1/3988,23,0,10,30
+Story10,Wx,LinStatic,Step By Step,7,X,0.000148,1/6768,24,5,0,30
+Story10,Wx,LinStatic,Step By Step,7,Y,0.000199,1/5037,26,20,10,30
+Story10,Wx,LinStatic,Step By Step,8,X,0.000156,1/6407,3,10,15,30
+Story10,Wx,LinStatic,Step By Step,8,Y,0.00021,1/4764,7,20,5,30
+Story10,Wx,LinStatic,Step By Step,9,X,0.000145,1/6899,24,5,0,30
+Story10,Wx,LinStatic,Step By Step,9,Y,0.000194,1/5147,13,0,5,30
+Story10,Wx,LinStatic,Step By Step,10,X,0.000145,1/6903,4,15,15,30
+Story10,Wx,LinStatic,Step By Step,10,Y,0.000194,1/5144,26,20,10,30
+Story10,Wx,LinStatic,Step By Step,11,X,0.000153,1/6536,10,10,0,30
+Story10,Wx,LinStatic,Step By Step,11,Y,0.000205,1/4866,7,20,5,30
+Story10,Wx,LinStatic,Step By Step,12,X,0.000153,1/6529,3,10,15,30
+Story10,Wx,LinStatic,Step By Step,12,Y,0.000205,1/4869,23,0,10,30
+Story10,Wy,LinStatic,Step By Step,1,X,0.000197,1/5081,4,15,15,30
+Story10,Wy,LinStatic,Step By Step,2,Y,0.00028,1/3574,23,0,10,30
+Story10,Wy,LinStatic,Step By Step,3,X,0.000164,1/6109,24,5,0,30
+Story10,Wy,LinStatic,Step By Step,4,X,0.000164,1/6101,4,15,15,30
+Story10,Wy,LinStatic,Step By Step,5,Y,0.000251,1/3989,26,20,10,30
+Story10,Wy,LinStatic,Step By Step,6,Y,0.000251,1/3988,23,0,10,30
+Story10,Wy,LinStatic,Step By Step,7,X,0.000148,1/6768,24,5,0,30
+Story10,Wy,LinStatic,Step By Step,7,Y,0.000199,1/5037,26,20,10,30
+Story10,Wy,LinStatic,Step By Step,8,X,0.000156,1/6407,3,10,15,30
+Story10,Wy,LinStatic,Step By Step,8,Y,0.00021,1/4764,7,20,5,30
+Story10,Wy,LinStatic,Step By Step,9,X,0.000145,1/6899,24,5,0,30
+Story10,Wy,LinStatic,Step By Step,9,Y,0.000194,1/5147,13,0,5,30
+Story10,Wy,LinStatic,Step By Step,10,X,0.000145,1/6903,4,15,15,30
+Story10,Wy,LinStatic,Step By Step,10,Y,0.000194,1/5144,26,20,10,30
+Story10,Wy,LinStatic,Step By Step,11,X,0.000153,1/6536,10,10,0,30
+Story10,Wy,LinStatic,Step By Step,11,Y,0.000205,1/4866,7,20,5,30
+Story10,Wy,LinStatic,Step By Step,12,X,0.000153,1/6529,3,10,15,30
+Story10,Wy,LinStatic,Step By Step,12,Y,0.000205,1/4869,23,0,10,30
+Story10,WALL,LinStatic,,,X,6.7E-05,1/14847,12,0,0,30
+Story10,WALL,LinStatic,,,Y,9E-06,1/105486,8,20,0,30
+Story10,RSx,LinRespSpec,Max,,X,0.001419,1/705,24,5,0,30
+Story10,RSy,LinRespSpec,Max,,Y,0.001525,1/656,7,20,5,30
+Story10,0.9D+1.0EQx,Combination,Max,,X,0.003201,1/312,24,5,0,30
+Story10,0.9D+1.0EQx,Combination,Min,,X,0.00304,1/329,13,0,5,30
+Story10,0.9D+1.0EQy,Combination,Max,,Y,0.003387,1/295,7,20,5,30
+Story10,0.9D+1.0EQy,Combination,Min,,Y,0.003096,1/323,10,10,0,30
+Story10,DWalS1,Combination,,,X,9.9E-05,1/10068,1,0,15,30
+Story10,DWalS1,Combination,,,Y,1.7E-05,1/58106,12,0,0,30
+Story10,DWalS2,Combination,,,X,9.7E-05,1/10283,1,0,15,30
+Story10,DWalS2,Combination,,,Y,5.3E-05,1/18980,12,0,0,30
+Story10,DWalS3,Combination,Max,,X,0.000287,1/3482,1,0,15,30
+Story10,DWalS3,Combination,Max,,Y,0.000317,1/3154,12,0,0,30
+Story10,DWalS3,Combination,Min,,X,7.8E-05,1/12827,23,0,10,30
+Story10,DWalS3,Combination,Min,,Y,0.000191,1/5236,5,20,15,30
+Story10,DWalS4,Combination,Max,,X,0.000122,1/8178,1,0,15,30
+Story10,DWalS4,Combination,Max,,Y,0.000236,1/4231,12,0,0,30
+Story10,DWalS4,Combination,Min,,X,0.000131,1/7605,8,20,0,30
+Story10,DWalS4,Combination,Min,,Y,0.000272,1/3676,5,20,15,30
+Story10,DWalS5,Combination,Max,,X,0.000287,1/3482,1,0,15,30
+Story10,DWalS5,Combination,Max,,Y,0.000317,1/3154,12,0,0,30
+Story10,DWalS5,Combination,Min,,X,7.8E-05,1/12827,23,0,10,30
+Story10,DWalS5,Combination,Min,,Y,0.000191,1/5236,5,20,15,30
+Story10,DWalS6,Combination,Max,,X,0.000122,1/8178,1,0,15,30
+Story10,DWalS6,Combination,Max,,Y,0.000236,1/4231,12,0,0,30
+Story10,DWalS6,Combination,Min,,X,0.000131,1/7605,8,20,0,30
+Story10,DWalS6,Combination,Min,,Y,0.000272,1/3676,5,20,15,30
+Story10,DWalS7,Combination,Max,,X,0.000259,1/3861,12,0,0,30
+Story10,DWalS7,Combination,Max,,Y,0.00029,1/3452,12,0,0,30
+Story10,DWalS7,Combination,Min,,X,5.4E-05,1/18655,23,0,10,30
+Story10,DWalS7,Combination,Min,,Y,0.000195,1/5116,5,20,15,30
+Story10,DWalS8,Combination,Max,,X,9.4E-05,1/10605,12,0,0,30
+Story10,DWalS8,Combination,Max,,Y,0.000209,1/4786,12,0,0,30
+Story10,DWalS8,Combination,Min,,X,0.000141,1/7084,8,20,0,30
+Story10,DWalS8,Combination,Min,,Y,0.000277,1/3617,5,20,15,30
+Story10,DWalS9,Combination,Max,,X,0.000259,1/3861,12,0,0,30
+Story10,DWalS9,Combination,Max,,Y,0.00029,1/3452,12,0,0,30
+Story10,DWalS9,Combination,Min,,X,5.4E-05,1/18655,23,0,10,30
+Story10,DWalS9,Combination,Min,,Y,0.000195,1/5116,5,20,15,30
+Story10,DWalS10,Combination,Max,,X,9.4E-05,1/10605,12,0,0,30
+Story10,DWalS10,Combination,Max,,Y,0.000209,1/4786,12,0,0,30
+Story10,DWalS10,Combination,Min,,X,0.000141,1/7084,8,20,0,30
+Story10,DWalS10,Combination,Min,,Y,0.000277,1/3617,5,20,15,30
+Story10,DWalS11,Combination,Max,,X,0.003288,1/304,3,10,15,30
+Story10,DWalS11,Combination,Min,,X,0.003127,1/320,23,0,10,30
+Story10,DWalS12,Combination,Max,,X,0.002958,1/338,7,20,5,30
+Story10,DWalS12,Combination,Min,,X,0.003121,1/320,10,10,0,30
+Story10,DWalS13,Combination,Max,,Y,0.003403,1/294,7,20,5,30
+Story10,DWalS13,Combination,Min,,Y,0.003122,1/320,10,10,0,30
+Story10,DWalS14,Combination,Max,,Y,0.003075,1/325,3,10,15,30
+Story10,DWalS14,Combination,Min,,Y,0.003376,1/296,26,20,10,30
+Story10,DWalS15,Combination,Max,,X,0.003254,1/307,24,5,0,30
+Story10,DWalS15,Combination,Min,,X,0.003093,1/323,13,0,5,30
+Story10,DWalS16,Combination,Max,,X,0.002986,1/335,26,20,10,30
+Story10,DWalS16,Combination,Min,,X,0.003146,1/318,10,10,0,30
+Story10,DWalS17,Combination,Max,,Y,0.003394,1/295,7,20,5,30
+Story10,DWalS17,Combination,Min,,Y,0.003102,1/322,10,10,0,30
+Story10,DWalS18,Combination,Max,,Y,0.00309,1/324,3,10,15,30
+Story10,DWalS18,Combination,Min,,Y,0.003383,1/296,26,20,10,30
+Story10,B1_1.4D,Combination,,,X,9.9E-05,1/10068,1,0,15,30
+Story10,B1_1.4D,Combination,,,Y,1.7E-05,1/58106,12,0,0,30
+Story10,B2_1.2D+1.6L,Combination,,,X,9.7E-05,1/10283,1,0,15,30
+Story10,B2_1.2D+1.6L,Combination,,,Y,5.3E-05,1/18980,12,0,0,30
+Story10,B5_1.2D+L+EQx,Combination,Max,,X,0.003281,1/305,3,10,15,30
+Story10,B5_1.2D+L+EQx,Combination,Min,,X,0.00312,1/321,23,0,10,30
+Story10,B7_0.9D+EQx,Combination,Max,,X,0.00326,1/307,24,5,0,30
+Story10,B7_0.9D+EQx,Combination,Min,,X,0.0031,1/323,13,0,5,30
+Story10,B5_1.2D+L-EQx,Combination,Max,,X,0.002964,1/337,7,20,5,30
+Story10,B5_1.2D+L-EQx,Combination,Min,,X,0.003127,1/320,10,10,0,30
+Story10,B7_0.9D-EQx,Combination,Max,,X,0.00298,1/336,26,20,10,30
+Story10,B7_0.9D-EQx,Combination,Min,,X,0.003139,1/319,10,10,0,30
+Story10,B5_1.2D+L+EQy,Combination,Max,,Y,0.003402,1/294,7,20,5,30
+Story10,B5_1.2D+L+EQy,Combination,Min,,Y,0.003121,1/320,10,10,0,30
+Story10,B7_0.9D+EQy,Combination,Max,,Y,0.003395,1/295,7,20,5,30
+Story10,B7_0.9D+EQy,Combination,Min,,Y,0.003103,1/322,10,10,0,30
+Story10,B5_1.2D+L-EQy,Combination,Max,,Y,0.003075,1/325,3,10,15,30
+Story10,B5_1.2D+L-EQy,Combination,Min,,Y,0.003377,1/296,26,20,10,30
+Story10,B7_0.9D-EQy,Combination,Max,,Y,0.003089,1/324,3,10,15,30
+Story10,B7_0.9D-EQy,Combination,Min,,Y,0.003382,1/296,26,20,10,30
+Story10,DConS1,Combination,,,X,9.9E-05,1/10068,1,0,15,30
+Story10,DConS1,Combination,,,Y,1.7E-05,1/58106,12,0,0,30
+Story10,DConS2,Combination,,,X,9.7E-05,1/10283,1,0,15,30
+Story10,DConS2,Combination,,,Y,5.3E-05,1/18980,12,0,0,30
+Story10,DConS3,Combination,Max,,X,0.000287,1/3482,1,0,15,30
+Story10,DConS3,Combination,Max,,Y,0.000317,1/3154,12,0,0,30
+Story10,DConS3,Combination,Min,,X,7.8E-05,1/12827,23,0,10,30
+Story10,DConS3,Combination,Min,,Y,0.000191,1/5236,5,20,15,30
+Story10,DConS4,Combination,Max,,X,0.000122,1/8178,1,0,15,30
+Story10,DConS4,Combination,Max,,Y,0.000236,1/4231,12,0,0,30
+Story10,DConS4,Combination,Min,,X,0.000131,1/7605,8,20,0,30
+Story10,DConS4,Combination,Min,,Y,0.000272,1/3676,5,20,15,30
+Story10,DConS5,Combination,Max,,X,0.000287,1/3482,1,0,15,30
+Story10,DConS5,Combination,Max,,Y,0.000317,1/3154,12,0,0,30
+Story10,DConS5,Combination,Min,,X,7.8E-05,1/12827,23,0,10,30
+Story10,DConS5,Combination,Min,,Y,0.000191,1/5236,5,20,15,30
+Story10,DConS6,Combination,Max,,X,0.000122,1/8178,1,0,15,30
+Story10,DConS6,Combination,Max,,Y,0.000236,1/4231,12,0,0,30
+Story10,DConS6,Combination,Min,,X,0.000131,1/7605,8,20,0,30
+Story10,DConS6,Combination,Min,,Y,0.000272,1/3676,5,20,15,30
+Story10,DConS7,Combination,Max,,X,0.000259,1/3861,12,0,0,30
+Story10,DConS7,Combination,Max,,Y,0.00029,1/3452,12,0,0,30
+Story10,DConS7,Combination,Min,,X,5.4E-05,1/18655,23,0,10,30
+Story10,DConS7,Combination,Min,,Y,0.000195,1/5116,5,20,15,30
+Story10,DConS8,Combination,Max,,X,9.4E-05,1/10605,12,0,0,30
+Story10,DConS8,Combination,Max,,Y,0.000209,1/4786,12,0,0,30
+Story10,DConS8,Combination,Min,,X,0.000141,1/7084,8,20,0,30
+Story10,DConS8,Combination,Min,,Y,0.000277,1/3617,5,20,15,30
+Story10,DConS9,Combination,Max,,X,0.000259,1/3861,12,0,0,30
+Story10,DConS9,Combination,Max,,Y,0.00029,1/3452,12,0,0,30
+Story10,DConS9,Combination,Min,,X,5.4E-05,1/18655,23,0,10,30
+Story10,DConS9,Combination,Min,,Y,0.000195,1/5116,5,20,15,30
+Story10,DConS10,Combination,Max,,X,9.4E-05,1/10605,12,0,0,30
+Story10,DConS10,Combination,Max,,Y,0.000209,1/4786,12,0,0,30
+Story10,DConS10,Combination,Min,,X,0.000141,1/7084,8,20,0,30
+Story10,DConS10,Combination,Min,,Y,0.000277,1/3617,5,20,15,30
+Story10,DConS11,Combination,Max,,X,0.003288,1/304,3,10,15,30
+Story10,DConS11,Combination,Min,,X,0.003127,1/320,23,0,10,30
+Story10,DConS12,Combination,Max,,X,0.002958,1/338,7,20,5,30
+Story10,DConS12,Combination,Min,,X,0.003121,1/320,10,10,0,30
+Story10,DConS13,Combination,Max,,Y,0.003403,1/294,7,20,5,30
+Story10,DConS13,Combination,Min,,Y,0.003122,1/320,10,10,0,30
+Story10,DConS14,Combination,Max,,Y,0.003075,1/325,3,10,15,30
+Story10,DConS14,Combination,Min,,Y,0.003376,1/296,26,20,10,30
+Story10,DConS15,Combination,Max,,X,0.003254,1/307,24,5,0,30
+Story10,DConS15,Combination,Min,,X,0.003093,1/323,13,0,5,30
+Story10,DConS16,Combination,Max,,X,0.002986,1/335,26,20,10,30
+Story10,DConS16,Combination,Min,,X,0.003146,1/318,10,10,0,30
+Story10,DConS17,Combination,Max,,Y,0.003394,1/295,7,20,5,30
+Story10,DConS17,Combination,Min,,Y,0.003102,1/322,10,10,0,30
+Story10,DConS18,Combination,Max,,Y,0.00309,1/324,3,10,15,30
+Story10,DConS18,Combination,Min,,Y,0.003383,1/296,26,20,10,30
+Story10,DConS19,Combination,Max,,X,0.00151,1/662,1,0,15,30
+Story10,DConS19,Combination,Min,,X,0.001344,1/744,8,20,0,30
+Story10,DConS20,Combination,Max,,X,0.000225,1/4446,1,0,15,30
+Story10,DConS20,Combination,Max,,Y,0.001542,1/649,8,20,0,30
+Story10,DConS20,Combination,Min,,Y,0.001515,1/660,5,20,15,30
+Story10,DConS21,Combination,Max,,X,0.001474,1/678,24,5,0,30
+Story10,DConS21,Combination,Min,,X,0.001367,1/731,10,10,0,30
+Story10,DConS22,Combination,Max,,Y,0.001532,1/653,7,20,5,30
+Story10,DConS22,Combination,Min,,Y,0.001521,1/658,26,20,10,30
+Story9,Dead,LinStatic,,,X,1E-06,1/893213,3,10,15,27
+Story9,Live,LinStatic,,,Y,2.3E-05,1/44274,1,0,15,27
+Story9,Modal,LinModEigen,Mode,1,Y,1E-06,1/834680,5,20,15,27
+Story9,Modal,LinModEigen,Mode,2,X,1E-06,1/869942,8,20,0,27
+Story9,Modal,LinModEigen,Mode,3,Y,1E-06,1/692398,1,0,15,27
+Story9,Modal,LinModEigen,Mode,4,X,2E-06,1/617240,1,0,15,27
+Story9,Modal,LinModEigen,Mode,4,Y,4E-06,1/281690,8,20,0,27
+Story9,Modal,LinModEigen,Mode,5,X,3E-06,1/288013,8,20,0,27
+Story9,Modal,LinModEigen,Mode,5,Y,2E-06,1/658443,5,20,15,27
+Story9,Modal,LinModEigen,Mode,6,X,3E-06,1/304876,8,20,0,27
+Story9,Modal,LinModEigen,Mode,6,Y,5E-06,1/218975,1,0,15,27
+Story9,Modal,LinModEigen,Mode,7,X,3E-06,1/366705,1,0,15,27
+Story9,Modal,LinModEigen,Mode,7,Y,5E-06,1/220552,21,10,10,27
+Story9,Modal,LinModEigen,Mode,8,X,4E-06,1/231218,7,20,5,27
+Story9,Modal,LinModEigen,Mode,8,Y,2E-06,1/409439,5,20,15,27
+Story9,Modal,LinModEigen,Mode,9,X,3E-06,1/295207,1,0,15,27
+Story9,Modal,LinModEigen,Mode,9,Y,5E-06,1/216538,17,15,5,27
+Story9,Modal,LinModEigen,Mode,10,X,5E-06,1/202525,8,20,0,27
+Story9,Modal,LinModEigen,Mode,10,Y,6E-06,1/157376,1,0,15,27
+Story9,Modal,LinModEigen,Mode,11,X,4E-06,1/238029,19,15,10,27
+Story9,Modal,LinModEigen,Mode,11,Y,2E-06,1/410257,12,0,0,27
+Story9,Modal,LinModEigen,Mode,12,X,1E-06,1/874107,1,0,15,27
+Story9,Modal,LinModEigen,Mode,12,Y,2E-06,1/583174,16,10,5,27
+Story9,FF,LinStatic,,,X,3.888E-07,1/0,5,20,15,27
+Story9,PW,LinStatic,,,X,3.11E-07,1/0,5,20,15,27
+Story9,EQx,LinStatic,Step By Step,1,X,0.003247,1/308,1,0,15,27
+Story9,EQx,LinStatic,Step By Step,2,X,0.00325,1/308,8,20,0,27
+Story9,EQy,LinStatic,Step By Step,1,Y,0.003436,1/291,5,20,15,27
+Story9,EQy,LinStatic,Step By Step,2,Y,0.003286,1/304,12,0,0,27
+Story9,Wx,LinStatic,Step By Step,1,X,0.000201,1/4986,1,0,15,27
+Story9,Wx,LinStatic,Step By Step,2,Y,0.000285,1/3506,16,10,5,27
+Story9,Wx,LinStatic,Step By Step,3,X,0.000167,1/5987,8,20,0,27
+Story9,Wx,LinStatic,Step By Step,4,X,0.000167,1/5986,1,0,15,27
+Story9,Wx,LinStatic,Step By Step,5,Y,0.000255,1/3916,8,20,0,27
+Story9,Wx,LinStatic,Step By Step,6,Y,0.000255,1/3916,12,0,0,27
+Story9,Wx,LinStatic,Step By Step,7,X,0.000151,1/6643,8,20,0,27
+Story9,Wx,LinStatic,Step By Step,7,Y,0.000202,1/4941,21,10,10,27
+Story9,Wx,LinStatic,Step By Step,8,X,0.000159,1/6289,21,10,10,27
+Story9,Wx,LinStatic,Step By Step,8,Y,0.000214,1/4675,16,10,5,27
+Story9,Wx,LinStatic,Step By Step,9,X,0.000148,1/6773,8,20,0,27
+Story9,Wx,LinStatic,Step By Step,9,Y,0.000198,1/5053,1,0,15,27
+Story9,Wx,LinStatic,Step By Step,10,X,0.000148,1/6774,1,0,15,27
+Story9,Wx,LinStatic,Step By Step,10,Y,0.000198,1/5052,8,20,0,27
+Story9,Wx,LinStatic,Step By Step,11,X,0.000156,1/6413,12,0,0,27
+Story9,Wx,LinStatic,Step By Step,11,Y,0.000209,1/4778,5,20,15,27
+Story9,Wx,LinStatic,Step By Step,12,X,0.000156,1/6411,5,20,15,27
+Story9,Wx,LinStatic,Step By Step,12,Y,0.000209,1/4778,12,0,0,27
+Story9,Wy,LinStatic,Step By Step,1,X,0.000201,1/4986,1,0,15,27
+Story9,Wy,LinStatic,Step By Step,2,Y,0.000285,1/3506,16,10,5,27
+Story9,Wy,LinStatic,Step By Step,3,X,0.000167,1/5987,8,20,0,27
+Story9,Wy,LinStatic,Step By Step,4,X,0.000167,1/5986,1,0,15,27
+Story9,Wy,LinStatic,Step By Step,5,Y,0.000255,1/3916,8,20,0,27
+Story9,Wy,LinStatic,Step By Step,6,Y,0.000255,1/3916,12,0,0,27
+Story9,Wy,LinStatic,Step By Step,7,X,0.000151,1/6643,8,20,0,27
+Story9,Wy,LinStatic,Step By Step,7,Y,0.000202,1/4941,21,10,10,27
+Story9,Wy,LinStatic,Step By Step,8,X,0.000159,1/6289,21,10,10,27
+Story9,Wy,LinStatic,Step By Step,8,Y,0.000214,1/4675,16,10,5,27
+Story9,Wy,LinStatic,Step By Step,9,X,0.000148,1/6773,8,20,0,27
+Story9,Wy,LinStatic,Step By Step,9,Y,0.000198,1/5053,1,0,15,27
+Story9,Wy,LinStatic,Step By Step,10,X,0.000148,1/6774,1,0,15,27
+Story9,Wy,LinStatic,Step By Step,10,Y,0.000198,1/5052,8,20,0,27
+Story9,Wy,LinStatic,Step By Step,11,X,0.000156,1/6413,12,0,0,27
+Story9,Wy,LinStatic,Step By Step,11,Y,0.000209,1/4778,5,20,15,27
+Story9,Wy,LinStatic,Step By Step,12,X,0.000156,1/6411,5,20,15,27
+Story9,Wy,LinStatic,Step By Step,12,Y,0.000209,1/4778,12,0,0,27
+Story9,WALL,LinStatic,,,X,6.7E-05,1/14900,8,20,0,27
+Story9,WALL,LinStatic,,,Y,8E-06,1/119330,5,20,15,27
+Story9,RSx,LinRespSpec,Max,,X,0.001442,1/693,8,20,0,27
+Story9,RSy,LinRespSpec,Max,,Y,0.001547,1/646,5,20,15,27
+Story9,0.9D+1.0EQx,Combination,Max,,X,0.003251,1/308,8,20,0,27
+Story9,0.9D+1.0EQx,Combination,Min,,X,0.003096,1/323,7,20,5,27
+Story9,0.9D+1.0EQy,Combination,Max,,Y,0.003436,1/291,5,20,15,27
+Story9,0.9D+1.0EQy,Combination,Min,,Y,0.003162,1/316,3,10,15,27
+Story9,DWalS1,Combination,,,X,9.6E-05,1/10411,8,20,0,27
+Story9,DWalS1,Combination,,,Y,1.2E-05,1/82400,2,5,15,27
+Story9,DWalS2,Combination,,,X,9.1E-05,1/10953,5,20,15,27
+Story9,DWalS2,Combination,,,Y,4.6E-05,1/21741,13,0,5,27
+Story9,DWalS3,Combination,Max,,X,0.000288,1/3476,5,20,15,27
+Story9,DWalS3,Combination,Max,,Y,0.000317,1/3151,13,0,5,27
+Story9,DWalS3,Combination,Min,,X,7.3E-05,1/13728,26,20,10,27
+Story9,DWalS3,Combination,Min,,Y,0.000189,1/5278,8,20,0,27
+Story9,DWalS4,Combination,Max,,X,0.000118,1/8443,5,20,15,27
+Story9,DWalS4,Combination,Max,,Y,0.000235,1/4264,13,0,5,27
+Story9,DWalS4,Combination,Min,,X,0.000129,1/7738,12,0,0,27
+Story9,DWalS4,Combination,Min,,Y,0.000272,1/3673,8,20,0,27
+Story9,DWalS5,Combination,Max,,X,0.000288,1/3476,5,20,15,27
+Story9,DWalS5,Combination,Max,,Y,0.000317,1/3151,13,0,5,27
+Story9,DWalS5,Combination,Min,,X,7.3E-05,1/13728,26,20,10,27
+Story9,DWalS5,Combination,Min,,Y,0.000189,1/5278,8,20,0,27
+Story9,DWalS6,Combination,Max,,X,0.000118,1/8443,5,20,15,27
+Story9,DWalS6,Combination,Max,,Y,0.000235,1/4264,13,0,5,27
+Story9,DWalS6,Combination,Min,,X,0.000129,1/7738,12,0,0,27
+Story9,DWalS6,Combination,Min,,Y,0.000272,1/3673,8,20,0,27
+Story9,DWalS7,Combination,Max,,X,0.000262,1/3812,8,20,0,27
+Story9,DWalS7,Combination,Max,,Y,0.000293,1/3414,3,10,15,27
+Story9,DWalS7,Combination,Min,,X,5.1E-05,1/19796,7,20,5,27
+Story9,DWalS7,Combination,Min,,Y,0.000197,1/5074,10,10,0,27
+Story9,DWalS8,Combination,Max,,X,9.3E-05,1/10742,8,20,0,27
+Story9,DWalS8,Combination,Max,,Y,0.00021,1/4760,3,10,15,27
+Story9,DWalS8,Combination,Min,,X,0.000143,1/7010,1,0,15,27
+Story9,DWalS8,Combination,Min,,Y,0.00028,1/3572,10,10,0,27
+Story9,DWalS9,Combination,Max,,X,0.000262,1/3812,8,20,0,27
+Story9,DWalS9,Combination,Max,,Y,0.000293,1/3414,3,10,15,27
+Story9,DWalS9,Combination,Min,,X,5.1E-05,1/19796,7,20,5,27
+Story9,DWalS9,Combination,Min,,Y,0.000197,1/5074,10,10,0,27
+Story9,DWalS10,Combination,Max,,X,9.3E-05,1/10742,8,20,0,27
+Story9,DWalS10,Combination,Max,,Y,0.00021,1/4760,3,10,15,27
+Story9,DWalS10,Combination,Min,,X,0.000143,1/7010,1,0,15,27
+Story9,DWalS10,Combination,Min,,Y,0.00028,1/3572,10,10,0,27
+Story9,DWalS11,Combination,Max,,X,0.003337,1/300,2,5,15,27
+Story9,DWalS11,Combination,Min,,X,0.003182,1/314,26,20,10,27
+Story9,DWalS12,Combination,Max,,X,0.003011,1/332,13,0,5,27
+Story9,DWalS12,Combination,Min,,X,0.003169,1/316,12,0,0,27
+Story9,DWalS13,Combination,Max,,Y,0.003452,1/290,5,20,15,27
+Story9,DWalS13,Combination,Min,,Y,0.003186,1/314,3,10,15,27
+Story9,DWalS14,Combination,Max,,Y,0.00314,1/318,10,10,0,27
+Story9,DWalS14,Combination,Min,,Y,0.003422,1/292,8,20,0,27
+Story9,DWalS15,Combination,Max,,X,0.003305,1/303,8,20,0,27
+Story9,DWalS15,Combination,Min,,X,0.003149,1/318,7,20,5,27
+Story9,DWalS16,Combination,Max,,X,0.003041,1/329,23,0,10,27
+Story9,DWalS16,Combination,Min,,X,0.003196,1/313,1,0,15,27
+Story9,DWalS17,Combination,Max,,Y,0.003443,1/290,5,20,15,27
+Story9,DWalS17,Combination,Min,,Y,0.003168,1/316,3,10,15,27
+Story9,DWalS18,Combination,Max,,Y,0.003156,1/317,10,10,0,27
+Story9,DWalS18,Combination,Min,,Y,0.00343,1/292,8,20,0,27
+Story9,B1_1.4D,Combination,,,X,9.6E-05,1/10411,8,20,0,27
+Story9,B1_1.4D,Combination,,,Y,1.2E-05,1/82400,2,5,15,27
+Story9,B2_1.2D+1.6L,Combination,,,X,9.1E-05,1/10953,5,20,15,27
+Story9,B2_1.2D+1.6L,Combination,,,Y,4.6E-05,1/21741,13,0,5,27
+Story9,B5_1.2D+L+EQx,Combination,Max,,X,0.003331,1/300,2,5,15,27
+Story9,B5_1.2D+L+EQx,Combination,Min,,X,0.003175,1/315,26,20,10,27
+Story9,B7_0.9D+EQx,Combination,Max,,X,0.003311,1/302,8,20,0,27
+Story9,B7_0.9D+EQx,Combination,Min,,X,0.003155,1/317,7,20,5,27
+Story9,B5_1.2D+L-EQx,Combination,Max,,X,0.003018,1/331,13,0,5,27
+Story9,B5_1.2D+L-EQx,Combination,Min,,X,0.003175,1/315,12,0,0,27
+Story9,B7_0.9D-EQx,Combination,Max,,X,0.003035,1/330,23,0,10,27
+Story9,B7_0.9D-EQx,Combination,Min,,X,0.003189,1/314,1,0,15,27
+Story9,B5_1.2D+L+EQy,Combination,Max,,Y,0.003451,1/290,5,20,15,27
+Story9,B5_1.2D+L+EQy,Combination,Min,,Y,0.003185,1/314,3,10,15,27
+Story9,B7_0.9D+EQy,Combination,Max,,Y,0.003444,1/290,5,20,15,27
+Story9,B7_0.9D+EQy,Combination,Min,,Y,0.003169,1/316,3,10,15,27
+Story9,B5_1.2D+L-EQy,Combination,Max,,Y,0.003141,1/318,10,10,0,27
+Story9,B5_1.2D+L-EQy,Combination,Min,,Y,0.003423,1/292,8,20,0,27
+Story9,B7_0.9D-EQy,Combination,Max,,Y,0.003156,1/317,10,10,0,27
+Story9,B7_0.9D-EQy,Combination,Min,,Y,0.00343,1/292,8,20,0,27
+Story9,DConS1,Combination,,,X,9.6E-05,1/10411,8,20,0,27
+Story9,DConS1,Combination,,,Y,1.2E-05,1/82400,2,5,15,27
+Story9,DConS2,Combination,,,X,9.1E-05,1/10953,5,20,15,27
+Story9,DConS2,Combination,,,Y,4.6E-05,1/21741,13,0,5,27
+Story9,DConS3,Combination,Max,,X,0.000288,1/3476,5,20,15,27
+Story9,DConS3,Combination,Max,,Y,0.000317,1/3151,13,0,5,27
+Story9,DConS3,Combination,Min,,X,7.3E-05,1/13728,26,20,10,27
+Story9,DConS3,Combination,Min,,Y,0.000189,1/5278,8,20,0,27
+Story9,DConS4,Combination,Max,,X,0.000118,1/8443,5,20,15,27
+Story9,DConS4,Combination,Max,,Y,0.000235,1/4264,13,0,5,27
+Story9,DConS4,Combination,Min,,X,0.000129,1/7738,12,0,0,27
+Story9,DConS4,Combination,Min,,Y,0.000272,1/3673,8,20,0,27
+Story9,DConS5,Combination,Max,,X,0.000288,1/3476,5,20,15,27
+Story9,DConS5,Combination,Max,,Y,0.000317,1/3151,13,0,5,27
+Story9,DConS5,Combination,Min,,X,7.3E-05,1/13728,26,20,10,27
+Story9,DConS5,Combination,Min,,Y,0.000189,1/5278,8,20,0,27
+Story9,DConS6,Combination,Max,,X,0.000118,1/8443,5,20,15,27
+Story9,DConS6,Combination,Max,,Y,0.000235,1/4264,13,0,5,27
+Story9,DConS6,Combination,Min,,X,0.000129,1/7738,12,0,0,27
+Story9,DConS6,Combination,Min,,Y,0.000272,1/3673,8,20,0,27
+Story9,DConS7,Combination,Max,,X,0.000262,1/3812,8,20,0,27
+Story9,DConS7,Combination,Max,,Y,0.000293,1/3414,3,10,15,27
+Story9,DConS7,Combination,Min,,X,5.1E-05,1/19796,7,20,5,27
+Story9,DConS7,Combination,Min,,Y,0.000197,1/5074,10,10,0,27
+Story9,DConS8,Combination,Max,,X,9.3E-05,1/10742,8,20,0,27
+Story9,DConS8,Combination,Max,,Y,0.00021,1/4760,3,10,15,27
+Story9,DConS8,Combination,Min,,X,0.000143,1/7010,1,0,15,27
+Story9,DConS8,Combination,Min,,Y,0.00028,1/3572,10,10,0,27
+Story9,DConS9,Combination,Max,,X,0.000262,1/3812,8,20,0,27
+Story9,DConS9,Combination,Max,,Y,0.000293,1/3414,3,10,15,27
+Story9,DConS9,Combination,Min,,X,5.1E-05,1/19796,7,20,5,27
+Story9,DConS9,Combination,Min,,Y,0.000197,1/5074,10,10,0,27
+Story9,DConS10,Combination,Max,,X,9.3E-05,1/10742,8,20,0,27
+Story9,DConS10,Combination,Max,,Y,0.00021,1/4760,3,10,15,27
+Story9,DConS10,Combination,Min,,X,0.000143,1/7010,1,0,15,27
+Story9,DConS10,Combination,Min,,Y,0.00028,1/3572,10,10,0,27
+Story9,DConS11,Combination,Max,,X,0.003337,1/300,2,5,15,27
+Story9,DConS11,Combination,Min,,X,0.003182,1/314,26,20,10,27
+Story9,DConS12,Combination,Max,,X,0.003011,1/332,13,0,5,27
+Story9,DConS12,Combination,Min,,X,0.003169,1/316,12,0,0,27
+Story9,DConS13,Combination,Max,,Y,0.003452,1/290,5,20,15,27
+Story9,DConS13,Combination,Min,,Y,0.003186,1/314,3,10,15,27
+Story9,DConS14,Combination,Max,,Y,0.00314,1/318,10,10,0,27
+Story9,DConS14,Combination,Min,,Y,0.003422,1/292,8,20,0,27
+Story9,DConS15,Combination,Max,,X,0.003305,1/303,8,20,0,27
+Story9,DConS15,Combination,Min,,X,0.003149,1/318,7,20,5,27
+Story9,DConS16,Combination,Max,,X,0.003041,1/329,23,0,10,27
+Story9,DConS16,Combination,Min,,X,0.003196,1/313,1,0,15,27
+Story9,DConS17,Combination,Max,,Y,0.003443,1/290,5,20,15,27
+Story9,DConS17,Combination,Min,,Y,0.003168,1/316,3,10,15,27
+Story9,DConS18,Combination,Max,,Y,0.003156,1/317,10,10,0,27
+Story9,DConS18,Combination,Min,,Y,0.00343,1/292,8,20,0,27
+Story9,DConS19,Combination,Max,,X,0.001531,1/653,5,20,15,27
+Story9,DConS19,Combination,Min,,X,0.001363,1/734,12,0,0,27
+Story9,DConS20,Combination,Max,,X,0.000222,1/4495,3,10,15,27
+Story9,DConS20,Combination,Max,,Y,0.001563,1/640,5,20,15,27
+Story9,DConS20,Combination,Min,,Y,0.001533,1/652,8,20,0,27
+Story9,DConS21,Combination,Max,,X,0.001497,1/668,8,20,0,27
+Story9,DConS21,Combination,Min,,X,0.001388,1/720,1,0,15,27
+Story9,DConS22,Combination,Max,,Y,0.001553,1/644,5,20,15,27
+Story9,DConS22,Combination,Min,,Y,0.001541,1/649,8,20,0,27
+Story8,Dead,LinStatic,,,X,1E-06,1/817224,3,10,15,24
+Story8,Live,LinStatic,,,Y,2.2E-05,1/45744,12,0,0,24
+Story8,Modal,LinModEigen,Mode,1,Y,1E-06,1/836464,5,20,15,24
+Story8,Modal,LinModEigen,Mode,2,X,1E-06,1/872508,8,20,0,24
+Story8,Modal,LinModEigen,Mode,3,Y,1E-06,1/694923,1,0,15,24
+Story8,Modal,LinModEigen,Mode,4,X,1E-06,1/690074,1,0,15,24
+Story8,Modal,LinModEigen,Mode,4,Y,3E-06,1/316256,8,20,0,24
+Story8,Modal,LinModEigen,Mode,5,X,3E-06,1/323417,8,20,0,24
+Story8,Modal,LinModEigen,Mode,5,Y,1E-06,1/739173,5,20,15,24
+Story8,Modal,LinModEigen,Mode,6,X,3E-06,1/342735,8,20,0,24
+Story8,Modal,LinModEigen,Mode,6,Y,4E-06,1/247287,1,0,15,24
+Story8,Modal,LinModEigen,Mode,7,X,1E-06,1/741489,8,20,0,24
+Story8,Modal,LinModEigen,Mode,7,Y,2E-06,1/443780,16,10,5,24
+Story8,Modal,LinModEigen,Mode,8,X,2E-06,1/483864,7,20,5,24
+Story8,Modal,LinModEigen,Mode,8,Y,1E-06,1/856609,10,10,0,24
+Story8,Modal,LinModEigen,Mode,9,X,2E-06,1/654024,8,20,0,24
+Story8,Modal,LinModEigen,Mode,9,Y,2E-06,1/484909,3,10,15,24
+Story8,Modal,LinModEigen,Mode,10,X,2E-06,1/438324,1,0,15,24
+Story8,Modal,LinModEigen,Mode,10,Y,3E-06,1/353888,8,20,0,24
+Story8,Modal,LinModEigen,Mode,11,X,2E-06,1/499685,8,20,0,24
+Story8,Modal,LinModEigen,Mode,11,Y,1E-06,1/817575,5,20,15,24
+Story8,Modal,LinModEigen,Mode,12,X,7E-06,1/151503,8,20,0,24
+Story8,Modal,LinModEigen,Mode,12,Y,9E-06,1/107787,16,10,5,24
+Story8,FF,LinStatic,,,X,3.686E-07,1/0,3,10,15,24
+Story8,PW,LinStatic,,,X,2.949E-07,1/0,3,10,15,24
+Story8,EQx,LinStatic,Step By Step,1,X,0.00324,1/309,1,0,15,24
+Story8,EQx,LinStatic,Step By Step,2,X,0.003242,1/308,12,0,0,24
+Story8,EQy,LinStatic,Step By Step,1,Y,0.003431,1/291,5,20,15,24
+Story8,EQy,LinStatic,Step By Step,2,Y,0.00328,1/305,12,0,0,24
+Story8,Wx,LinStatic,Step By Step,1,X,0.000202,1/4951,23,0,10,24
+Story8,Wx,LinStatic,Step By Step,2,Y,0.000287,1/3483,10,10,0,24
+Story8,Wx,LinStatic,Step By Step,3,X,0.000168,1/5945,12,0,0,24
+Story8,Wx,LinStatic,Step By Step,4,X,0.000168,1/5944,1,0,15,24
+Story8,Wx,LinStatic,Step By Step,5,Y,0.000257,1/3888,8,20,0,24
+Story8,Wx,LinStatic,Step By Step,6,Y,0.000257,1/3888,12,0,0,24
+Story8,Wx,LinStatic,Step By Step,7,X,0.000151,1/6601,1,0,15,24
+Story8,Wx,LinStatic,Step By Step,7,Y,0.000204,1/4910,3,10,15,24
+Story8,Wx,LinStatic,Step By Step,8,X,0.00016,1/6244,10,10,0,24
+Story8,Wx,LinStatic,Step By Step,8,Y,0.000215,1/4645,24,5,0,24
+Story8,Wx,LinStatic,Step By Step,9,X,0.000149,1/6731,24,5,0,24
+Story8,Wx,LinStatic,Step By Step,9,Y,0.000199,1/5016,13,0,5,24
+Story8,Wx,LinStatic,Step By Step,10,X,0.000149,1/6730,1,0,15,24
+Story8,Wx,LinStatic,Step By Step,10,Y,0.000199,1/5016,26,20,10,24
+Story8,Wx,LinStatic,Step By Step,11,X,0.000157,1/6366,10,10,0,24
+Story8,Wx,LinStatic,Step By Step,11,Y,0.000211,1/4744,7,20,5,24
+Story8,Wx,LinStatic,Step By Step,12,X,0.000157,1/6366,3,10,15,24
+Story8,Wx,LinStatic,Step By Step,12,Y,0.000211,1/4744,23,0,10,24
+Story8,Wy,LinStatic,Step By Step,1,X,0.000202,1/4951,23,0,10,24
+Story8,Wy,LinStatic,Step By Step,2,Y,0.000287,1/3483,10,10,0,24
+Story8,Wy,LinStatic,Step By Step,3,X,0.000168,1/5945,12,0,0,24
+Story8,Wy,LinStatic,Step By Step,4,X,0.000168,1/5944,1,0,15,24
+Story8,Wy,LinStatic,Step By Step,5,Y,0.000257,1/3888,8,20,0,24
+Story8,Wy,LinStatic,Step By Step,6,Y,0.000257,1/3888,12,0,0,24
+Story8,Wy,LinStatic,Step By Step,7,X,0.000151,1/6601,1,0,15,24
+Story8,Wy,LinStatic,Step By Step,7,Y,0.000204,1/4910,3,10,15,24
+Story8,Wy,LinStatic,Step By Step,8,X,0.00016,1/6244,10,10,0,24
+Story8,Wy,LinStatic,Step By Step,8,Y,0.000215,1/4645,24,5,0,24
+Story8,Wy,LinStatic,Step By Step,9,X,0.000149,1/6731,24,5,0,24
+Story8,Wy,LinStatic,Step By Step,9,Y,0.000199,1/5016,13,0,5,24
+Story8,Wy,LinStatic,Step By Step,10,X,0.000149,1/6730,1,0,15,24
+Story8,Wy,LinStatic,Step By Step,10,Y,0.000199,1/5016,26,20,10,24
+Story8,Wy,LinStatic,Step By Step,11,X,0.000157,1/6366,10,10,0,24
+Story8,Wy,LinStatic,Step By Step,11,Y,0.000211,1/4744,7,20,5,24
+Story8,Wy,LinStatic,Step By Step,12,X,0.000157,1/6366,3,10,15,24
+Story8,Wy,LinStatic,Step By Step,12,Y,0.000211,1/4744,23,0,10,24
+Story8,WALL,LinStatic,,,X,6.6E-05,1/15114,24,5,0,24
+Story8,WALL,LinStatic,,,Y,9E-06,1/115983,7,20,5,24
+Story8,RSx,LinRespSpec,Max,,X,0.001435,1/697,8,20,0,24
+Story8,RSy,LinRespSpec,Max,,Y,0.00154,1/649,5,20,15,24
+Story8,0.9D+1.0EQx,Combination,Max,,X,0.003243,1/308,24,5,0,24
+Story8,0.9D+1.0EQx,Combination,Min,,X,0.003089,1/324,13,0,5,24
+Story8,0.9D+1.0EQy,Combination,Max,,Y,0.003431,1/291,7,20,5,24
+Story8,0.9D+1.0EQy,Combination,Min,,Y,0.003151,1/317,3,10,15,24
+Story8,DWalS1,Combination,,,X,9.4E-05,1/10648,24,5,0,24
+Story8,DWalS1,Combination,,,Y,1.2E-05,1/80416,13,0,5,24
+Story8,DWalS2,Combination,,,X,9E-05,1/11064,3,10,15,24
+Story8,DWalS2,Combination,,,Y,4.6E-05,1/21930,13,0,5,24
+Story8,DWalS3,Combination,Max,,X,0.000289,1/3465,3,10,15,24
+Story8,DWalS3,Combination,Max,,Y,0.00032,1/3129,13,0,5,24
+Story8,DWalS3,Combination,Min,,X,7.1E-05,1/13993,23,0,10,24
+Story8,DWalS3,Combination,Min,,Y,0.000192,1/5209,26,20,10,24
+Story8,DWalS4,Combination,Max,,X,0.000118,1/8468,3,10,15,24
+Story8,DWalS4,Combination,Max,,Y,0.000236,1/4235,13,0,5,24
+Story8,DWalS4,Combination,Min,,X,0.000131,1/7623,10,10,0,24
+Story8,DWalS4,Combination,Min,,Y,0.000275,1/3631,26,20,10,24
+Story8,DWalS5,Combination,Max,,X,0.000289,1/3465,3,10,15,24
+Story8,DWalS5,Combination,Max,,Y,0.00032,1/3129,13,0,5,24
+Story8,DWalS5,Combination,Min,,X,7.1E-05,1/13993,23,0,10,24
+Story8,DWalS5,Combination,Min,,Y,0.000192,1/5209,26,20,10,24
+Story8,DWalS6,Combination,Max,,X,0.000118,1/8468,3,10,15,24
+Story8,DWalS6,Combination,Max,,Y,0.000236,1/4235,13,0,5,24
+Story8,DWalS6,Combination,Min,,X,0.000131,1/7623,10,10,0,24
+Story8,DWalS6,Combination,Min,,Y,0.000275,1/3631,26,20,10,24
+Story8,DWalS7,Combination,Max,,X,0.000262,1/3812,24,5,0,24
+Story8,DWalS7,Combination,Max,,Y,0.000295,1/3389,13,0,5,24
+Story8,DWalS7,Combination,Min,,X,5E-05,1/20135,13,0,5,24
+Story8,DWalS7,Combination,Min,,Y,0.000198,1/5044,26,20,10,24
+Story8,DWalS8,Combination,Max,,X,9.2E-05,1/10895,24,5,0,24
+Story8,DWalS8,Combination,Max,,Y,0.000212,1/4725,13,0,5,24
+Story8,DWalS8,Combination,Min,,X,0.000144,1/6952,4,15,15,24
+Story8,DWalS8,Combination,Min,,Y,0.000282,1/3550,26,20,10,24
+Story8,DWalS9,Combination,Max,,X,0.000262,1/3812,24,5,0,24
+Story8,DWalS9,Combination,Max,,Y,0.000295,1/3389,13,0,5,24
+Story8,DWalS9,Combination,Min,,X,5E-05,1/20135,13,0,5,24
+Story8,DWalS9,Combination,Min,,Y,0.000198,1/5044,26,20,10,24
+Story8,DWalS10,Combination,Max,,X,9.2E-05,1/10895,24,5,0,24
+Story8,DWalS10,Combination,Max,,Y,0.000212,1/4725,13,0,5,24
+Story8,DWalS10,Combination,Min,,X,0.000144,1/6952,4,15,15,24
+Story8,DWalS10,Combination,Min,,Y,0.000282,1/3550,26,20,10,24
+Story8,DWalS11,Combination,Max,,X,0.003332,1/300,3,10,15,24
+Story8,DWalS11,Combination,Min,,X,0.003176,1/315,23,0,10,24
+Story8,DWalS12,Combination,Max,,X,0.003006,1/333,7,20,5,24
+Story8,DWalS12,Combination,Min,,X,0.003165,1/316,10,10,0,24
+Story8,DWalS13,Combination,Max,,Y,0.003447,1/290,7,20,5,24
+Story8,DWalS13,Combination,Min,,Y,0.003174,1/315,10,10,0,24
+Story8,DWalS14,Combination,Max,,Y,0.003129,1/320,3,10,15,24
+Story8,DWalS14,Combination,Min,,Y,0.003419,1/293,26,20,10,24
+Story8,DWalS15,Combination,Max,,X,0.003296,1/303,24,5,0,24
+Story8,DWalS15,Combination,Min,,X,0.003142,1/318,13,0,5,24
+Story8,DWalS16,Combination,Max,,X,0.003035,1/329,7,20,5,24
+Story8,DWalS16,Combination,Min,,X,0.00319,1/313,10,10,0,24
+Story8,DWalS17,Combination,Max,,Y,0.003438,1/291,7,20,5,24
+Story8,DWalS17,Combination,Min,,Y,0.003157,1/317,3,10,15,24
+Story8,DWalS18,Combination,Max,,Y,0.003145,1/318,3,10,15,24
+Story8,DWalS18,Combination,Min,,Y,0.003426,1/292,26,20,10,24
+Story8,B1_1.4D,Combination,,,X,9.4E-05,1/10648,24,5,0,24
+Story8,B1_1.4D,Combination,,,Y,1.2E-05,1/80416,13,0,5,24
+Story8,B2_1.2D+1.6L,Combination,,,X,9E-05,1/11064,3,10,15,24
+Story8,B2_1.2D+1.6L,Combination,,,Y,4.6E-05,1/21930,13,0,5,24
+Story8,B5_1.2D+L+EQx,Combination,Max,,X,0.003325,1/301,3,10,15,24
+Story8,B5_1.2D+L+EQx,Combination,Min,,X,0.003169,1/316,23,0,10,24
+Story8,B7_0.9D+EQx,Combination,Max,,X,0.003303,1/303,24,5,0,24
+Story8,B7_0.9D+EQx,Combination,Min,,X,0.003148,1/318,13,0,5,24
+Story8,B5_1.2D+L-EQx,Combination,Max,,X,0.003012,1/332,7,20,5,24
+Story8,B5_1.2D+L-EQx,Combination,Min,,X,0.003171,1/315,10,10,0,24
+Story8,B7_0.9D-EQx,Combination,Max,,X,0.003029,1/330,7,20,5,24
+Story8,B7_0.9D-EQx,Combination,Min,,X,0.003184,1/314,10,10,0,24
+Story8,B5_1.2D+L+EQy,Combination,Max,,Y,0.003446,1/290,7,20,5,24
+Story8,B5_1.2D+L+EQy,Combination,Min,,Y,0.003173,1/315,10,10,0,24
+Story8,B7_0.9D+EQy,Combination,Max,,Y,0.003439,1/291,7,20,5,24
+Story8,B7_0.9D+EQy,Combination,Min,,Y,0.003158,1/317,3,10,15,24
+Story8,B5_1.2D+L-EQy,Combination,Max,,Y,0.00313,1/320,3,10,15,24
+Story8,B5_1.2D+L-EQy,Combination,Min,,Y,0.003419,1/292,26,20,10,24
+Story8,B7_0.9D-EQy,Combination,Max,,Y,0.003145,1/318,3,10,15,24
+Story8,B7_0.9D-EQy,Combination,Min,,Y,0.003426,1/292,26,20,10,24
+Story8,DConS1,Combination,,,X,9.4E-05,1/10648,24,5,0,24
+Story8,DConS1,Combination,,,Y,1.2E-05,1/80416,13,0,5,24
+Story8,DConS2,Combination,,,X,9E-05,1/11064,3,10,15,24
+Story8,DConS2,Combination,,,Y,4.6E-05,1/21930,13,0,5,24
+Story8,DConS3,Combination,Max,,X,0.000289,1/3465,3,10,15,24
+Story8,DConS3,Combination,Max,,Y,0.00032,1/3129,13,0,5,24
+Story8,DConS3,Combination,Min,,X,7.1E-05,1/13993,23,0,10,24
+Story8,DConS3,Combination,Min,,Y,0.000192,1/5209,26,20,10,24
+Story8,DConS4,Combination,Max,,X,0.000118,1/8468,3,10,15,24
+Story8,DConS4,Combination,Max,,Y,0.000236,1/4235,13,0,5,24
+Story8,DConS4,Combination,Min,,X,0.000131,1/7623,10,10,0,24
+Story8,DConS4,Combination,Min,,Y,0.000275,1/3631,26,20,10,24
+Story8,DConS5,Combination,Max,,X,0.000289,1/3465,3,10,15,24
+Story8,DConS5,Combination,Max,,Y,0.00032,1/3129,13,0,5,24
+Story8,DConS5,Combination,Min,,X,7.1E-05,1/13993,23,0,10,24
+Story8,DConS5,Combination,Min,,Y,0.000192,1/5209,26,20,10,24
+Story8,DConS6,Combination,Max,,X,0.000118,1/8468,3,10,15,24
+Story8,DConS6,Combination,Max,,Y,0.000236,1/4235,13,0,5,24
+Story8,DConS6,Combination,Min,,X,0.000131,1/7623,10,10,0,24
+Story8,DConS6,Combination,Min,,Y,0.000275,1/3631,26,20,10,24
+Story8,DConS7,Combination,Max,,X,0.000262,1/3812,24,5,0,24
+Story8,DConS7,Combination,Max,,Y,0.000295,1/3389,13,0,5,24
+Story8,DConS7,Combination,Min,,X,5E-05,1/20135,13,0,5,24
+Story8,DConS7,Combination,Min,,Y,0.000198,1/5044,26,20,10,24
+Story8,DConS8,Combination,Max,,X,9.2E-05,1/10895,24,5,0,24
+Story8,DConS8,Combination,Max,,Y,0.000212,1/4725,13,0,5,24
+Story8,DConS8,Combination,Min,,X,0.000144,1/6952,4,15,15,24
+Story8,DConS8,Combination,Min,,Y,0.000282,1/3550,26,20,10,24
+Story8,DConS9,Combination,Max,,X,0.000262,1/3812,24,5,0,24
+Story8,DConS9,Combination,Max,,Y,0.000295,1/3389,13,0,5,24
+Story8,DConS9,Combination,Min,,X,5E-05,1/20135,13,0,5,24
+Story8,DConS9,Combination,Min,,Y,0.000198,1/5044,26,20,10,24
+Story8,DConS10,Combination,Max,,X,9.2E-05,1/10895,24,5,0,24
+Story8,DConS10,Combination,Max,,Y,0.000212,1/4725,13,0,5,24
+Story8,DConS10,Combination,Min,,X,0.000144,1/6952,4,15,15,24
+Story8,DConS10,Combination,Min,,Y,0.000282,1/3550,26,20,10,24
+Story8,DConS11,Combination,Max,,X,0.003332,1/300,3,10,15,24
+Story8,DConS11,Combination,Min,,X,0.003176,1/315,23,0,10,24
+Story8,DConS12,Combination,Max,,X,0.003006,1/333,7,20,5,24
+Story8,DConS12,Combination,Min,,X,0.003165,1/316,10,10,0,24
+Story8,DConS13,Combination,Max,,Y,0.003447,1/290,7,20,5,24
+Story8,DConS13,Combination,Min,,Y,0.003174,1/315,10,10,0,24
+Story8,DConS14,Combination,Max,,Y,0.003129,1/320,3,10,15,24
+Story8,DConS14,Combination,Min,,Y,0.003419,1/293,26,20,10,24
+Story8,DConS15,Combination,Max,,X,0.003296,1/303,24,5,0,24
+Story8,DConS15,Combination,Min,,X,0.003142,1/318,13,0,5,24
+Story8,DConS16,Combination,Max,,X,0.003035,1/329,7,20,5,24
+Story8,DConS16,Combination,Min,,X,0.00319,1/313,10,10,0,24
+Story8,DConS17,Combination,Max,,Y,0.003438,1/291,7,20,5,24
+Story8,DConS17,Combination,Min,,Y,0.003157,1/317,3,10,15,24
+Story8,DConS18,Combination,Max,,Y,0.003145,1/318,3,10,15,24
+Story8,DConS18,Combination,Min,,Y,0.003426,1/292,26,20,10,24
+Story8,DConS19,Combination,Max,,X,0.001525,1/656,3,10,15,24
+Story8,DConS19,Combination,Min,,X,0.001357,1/737,10,10,0,24
+Story8,DConS20,Combination,Max,,X,0.000221,1/4520,3,10,15,24
+Story8,DConS20,Combination,Max,,Y,0.001556,1/643,8,20,0,24
+Story8,DConS20,Combination,Min,,Y,0.001528,1/655,26,20,10,24
+Story8,DConS21,Combination,Max,,X,0.001488,1/672,12,0,0,24
+Story8,DConS21,Combination,Min,,X,0.001383,1/723,10,10,0,24
+Story8,DConS22,Combination,Max,,Y,0.001547,1/646,8,20,0,24
+Story8,DConS22,Combination,Min,,Y,0.001535,1/651,5,20,15,24
+Story7,Dead,LinStatic,,,X,1E-06,1/868813,3,10,15,21
+Story7,Live,LinStatic,,,Y,2.1E-05,1/48606,13,0,5,21
+Story7,Modal,LinModEigen,Mode,1,Y,1E-06,1/852554,5,20,15,21
+Story7,Modal,LinModEigen,Mode,2,X,1E-06,1/888851,8,20,0,21
+Story7,Modal,LinModEigen,Mode,3,Y,1E-06,1/710796,1,0,15,21
+Story7,Modal,LinModEigen,Mode,4,X,1E-06,1/933873,1,0,15,21
+Story7,Modal,LinModEigen,Mode,4,Y,2E-06,1/428847,8,20,0,21
+Story7,Modal,LinModEigen,Mode,5,X,2E-06,1/439450,8,20,0,21
+Story7,Modal,LinModEigen,Mode,5,Y,1E-06,1/0,5,20,15,21
+Story7,Modal,LinModEigen,Mode,6,Y,3E-06,1/334110,1,0,15,21
+Story7,Modal,LinModEigen,Mode,7,X,1E-06,1/0,1,0,15,21
+Story7,Modal,LinModEigen,Mode,7,Y,1E-06,1/691566,16,10,5,21
+Story7,Modal,LinModEigen,Mode,8,X,1E-06,1/729194,8,20,0,21
+Story7,Modal,LinModEigen,Mode,8,Y,1E-06,1/0,5,20,15,21
+Story7,Modal,LinModEigen,Mode,9,X,5E-06,1/212210,8,20,0,21
+Story7,Modal,LinModEigen,Mode,9,Y,7E-06,1/133572,16,10,5,21
+Story7,Modal,LinModEigen,Mode,10,X,2E-06,1/463915,8,20,0,21
+Story7,Modal,LinModEigen,Mode,10,Y,2E-06,1/466061,1,0,15,21
+Story7,Modal,LinModEigen,Mode,11,X,7E-06,1/153450,7,20,5,21
+Story7,Modal,LinModEigen,Mode,11,Y,4E-06,1/267975,10,10,0,21
+Story7,Modal,LinModEigen,Mode,12,X,4E-06,1/256742,8,20,0,21
+Story7,Modal,LinModEigen,Mode,12,Y,6E-06,1/180920,16,10,5,21
+Story7,FF,LinStatic,,,X,3.407E-07,1/0,3,10,15,21
+Story7,PW,LinStatic,,,X,2.725E-07,1/0,3,10,15,21
+Story7,EQx,LinStatic,Step By Step,1,X,0.003183,1/314,1,0,15,21
+Story7,EQx,LinStatic,Step By Step,2,X,0.003188,1/314,8,20,0,21
+Story7,EQy,LinStatic,Step By Step,1,Y,0.003372,1/297,5,20,15,21
+Story7,EQy,LinStatic,Step By Step,2,Y,0.003219,1/311,12,0,0,21
+Story7,Wx,LinStatic,Step By Step,1,X,0.000201,1/4979,23,0,10,21
+Story7,Wx,LinStatic,Step By Step,2,Y,0.000285,1/3505,10,10,0,21
+Story7,Wx,LinStatic,Step By Step,3,X,0.000167,1/5980,12,0,0,21
+Story7,Wx,LinStatic,Step By Step,4,X,0.000167,1/5979,1,0,15,21
+Story7,Wx,LinStatic,Step By Step,5,Y,0.000256,1/3912,8,20,0,21
+Story7,Wx,LinStatic,Step By Step,6,Y,0.000256,1/3912,12,0,0,21
+Story7,Wx,LinStatic,Step By Step,7,X,0.000151,1/6640,1,0,15,21
+Story7,Wx,LinStatic,Step By Step,7,Y,0.000202,1/4942,2,5,15,21
+Story7,Wx,LinStatic,Step By Step,8,X,0.000159,1/6279,8,20,0,21
+Story7,Wx,LinStatic,Step By Step,8,Y,0.000214,1/4674,14,5,5,21
+Story7,Wx,LinStatic,Step By Step,9,X,0.000148,1/6772,12,0,0,21
+Story7,Wx,LinStatic,Step By Step,9,Y,0.000198,1/5049,12,0,0,21
+Story7,Wx,LinStatic,Step By Step,10,X,0.000148,1/6771,5,20,15,21
+Story7,Wx,LinStatic,Step By Step,10,Y,0.000198,1/5049,5,20,15,21
+Story7,Wx,LinStatic,Step By Step,11,X,0.000156,1/6403,8,20,0,21
+Story7,Wx,LinStatic,Step By Step,11,Y,0.000209,1/4774,8,20,0,21
+Story7,Wx,LinStatic,Step By Step,12,X,0.000156,1/6403,1,0,15,21
+Story7,Wx,LinStatic,Step By Step,12,Y,0.000209,1/4774,1,0,15,21
+Story7,Wy,LinStatic,Step By Step,1,X,0.000201,1/4979,23,0,10,21
+Story7,Wy,LinStatic,Step By Step,2,Y,0.000285,1/3505,10,10,0,21
+Story7,Wy,LinStatic,Step By Step,3,X,0.000167,1/5980,12,0,0,21
+Story7,Wy,LinStatic,Step By Step,4,X,0.000167,1/5979,1,0,15,21
+Story7,Wy,LinStatic,Step By Step,5,Y,0.000256,1/3912,8,20,0,21
+Story7,Wy,LinStatic,Step By Step,6,Y,0.000256,1/3912,12,0,0,21
+Story7,Wy,LinStatic,Step By Step,7,X,0.000151,1/6640,1,0,15,21
+Story7,Wy,LinStatic,Step By Step,7,Y,0.000202,1/4942,2,5,15,21
+Story7,Wy,LinStatic,Step By Step,8,X,0.000159,1/6279,8,20,0,21
+Story7,Wy,LinStatic,Step By Step,8,Y,0.000214,1/4674,14,5,5,21
+Story7,Wy,LinStatic,Step By Step,9,X,0.000148,1/6772,12,0,0,21
+Story7,Wy,LinStatic,Step By Step,9,Y,0.000198,1/5049,12,0,0,21
+Story7,Wy,LinStatic,Step By Step,10,X,0.000148,1/6771,5,20,15,21
+Story7,Wy,LinStatic,Step By Step,10,Y,0.000198,1/5049,5,20,15,21
+Story7,Wy,LinStatic,Step By Step,11,X,0.000156,1/6403,8,20,0,21
+Story7,Wy,LinStatic,Step By Step,11,Y,0.000209,1/4774,8,20,0,21
+Story7,Wy,LinStatic,Step By Step,12,X,0.000156,1/6403,1,0,15,21
+Story7,Wy,LinStatic,Step By Step,12,Y,0.000209,1/4774,1,0,15,21
+Story7,WALL,LinStatic,,,X,6.4E-05,1/15721,24,5,0,21
+Story7,WALL,LinStatic,,,Y,9E-06,1/113158,7,20,5,21
+Story7,RSx,LinRespSpec,Max,,X,0.001404,1/712,8,20,0,21
+Story7,RSy,LinRespSpec,Max,,Y,0.001506,1/664,5,20,15,21
+Story7,0.9D+1.0EQx,Combination,Max,,X,0.003188,1/314,8,20,0,21
+Story7,0.9D+1.0EQx,Combination,Min,,X,0.003036,1/329,16,10,5,21
+Story7,0.9D+1.0EQy,Combination,Max,,Y,0.003371,1/297,8,20,0,21
+Story7,0.9D+1.0EQy,Combination,Min,,Y,0.003097,1/323,16,10,5,21
+Story7,DWalS1,Combination,,,X,9E-05,1/11082,24,5,0,21
+Story7,DWalS1,Combination,,,Y,1.3E-05,1/79764,7,20,5,21
+Story7,DWalS2,Combination,,,X,8.6E-05,1/11567,3,10,15,21
+Story7,DWalS2,Combination,,,Y,4.3E-05,1/23018,13,0,5,21
+Story7,DWalS3,Combination,Max,,X,0.000284,1/3524,3,10,15,21
+Story7,DWalS3,Combination,Max,,Y,0.000316,1/3161,13,0,5,21
+Story7,DWalS3,Combination,Min,,X,6.8E-05,1/14793,23,0,10,21
+Story7,DWalS3,Combination,Min,,Y,0.000191,1/5243,26,20,10,21
+Story7,DWalS4,Combination,Max,,X,0.000114,1/8760,3,10,15,21
+Story7,DWalS4,Combination,Max,,Y,0.000233,1/4284,13,0,5,21
+Story7,DWalS4,Combination,Min,,X,0.000133,1/7531,10,10,0,21
+Story7,DWalS4,Combination,Min,,Y,0.000274,1/3654,26,20,10,21
+Story7,DWalS5,Combination,Max,,X,0.000284,1/3524,3,10,15,21
+Story7,DWalS5,Combination,Max,,Y,0.000316,1/3161,13,0,5,21
+Story7,DWalS5,Combination,Min,,X,6.8E-05,1/14793,23,0,10,21
+Story7,DWalS5,Combination,Min,,Y,0.000191,1/5243,26,20,10,21
+Story7,DWalS6,Combination,Max,,X,0.000114,1/8760,3,10,15,21
+Story7,DWalS6,Combination,Max,,Y,0.000233,1/4284,13,0,5,21
+Story7,DWalS6,Combination,Min,,X,0.000133,1/7531,10,10,0,21
+Story7,DWalS6,Combination,Min,,Y,0.000274,1/3654,26,20,10,21
+Story7,DWalS7,Combination,Max,,X,0.000259,1/3864,24,5,0,21
+Story7,DWalS7,Combination,Max,,Y,0.000293,1/3409,7,20,5,21
+Story7,DWalS7,Combination,Min,,X,4.7E-05,1/21213,13,0,5,21
+Story7,DWalS7,Combination,Min,,Y,0.000197,1/5081,26,20,10,21
+Story7,DWalS8,Combination,Max,,X,8.9E-05,1/11209,24,5,0,21
+Story7,DWalS8,Combination,Max,,Y,0.00021,1/4753,7,20,5,21
+Story7,DWalS8,Combination,Min,,X,0.000145,1/6888,4,15,15,21
+Story7,DWalS8,Combination,Min,,Y,0.00028,1/3575,26,20,10,21
+Story7,DWalS9,Combination,Max,,X,0.000259,1/3864,24,5,0,21
+Story7,DWalS9,Combination,Max,,Y,0.000293,1/3409,7,20,5,21
+Story7,DWalS9,Combination,Min,,X,4.7E-05,1/21213,13,0,5,21
+Story7,DWalS9,Combination,Min,,Y,0.000197,1/5081,26,20,10,21
+Story7,DWalS10,Combination,Max,,X,8.9E-05,1/11209,24,5,0,21
+Story7,DWalS10,Combination,Max,,Y,0.00021,1/4753,7,20,5,21
+Story7,DWalS10,Combination,Min,,X,0.000145,1/6888,4,15,15,21
+Story7,DWalS10,Combination,Min,,Y,0.00028,1/3575,26,20,10,21
+Story7,DWalS11,Combination,Max,,X,0.00327,1/306,2,5,15,21
+Story7,DWalS11,Combination,Min,,X,0.003118,1/321,23,0,10,21
+Story7,DWalS12,Combination,Max,,X,0.002957,1/338,7,20,5,21
+Story7,DWalS12,Combination,Min,,X,0.003112,1/321,8,20,0,21
+Story7,DWalS13,Combination,Max,,Y,0.003387,1/295,8,20,0,21
+Story7,DWalS13,Combination,Min,,Y,0.003119,1/321,16,10,5,21
+Story7,DWalS14,Combination,Max,,Y,0.003075,1/325,21,10,10,21
+Story7,DWalS14,Combination,Min,,Y,0.003358,1/298,5,20,15,21
+Story7,DWalS15,Combination,Max,,X,0.003238,1/309,8,20,0,21
+Story7,DWalS15,Combination,Min,,X,0.003086,1/324,14,5,5,21
+Story7,DWalS16,Combination,Max,,X,0.002986,1/335,7,20,5,21
+Story7,DWalS16,Combination,Min,,X,0.003137,1/319,8,20,0,21
+Story7,DWalS17,Combination,Max,,Y,0.003378,1/296,8,20,0,21
+Story7,DWalS17,Combination,Min,,Y,0.003103,1/322,16,10,5,21
+Story7,DWalS18,Combination,Max,,Y,0.003091,1/323,21,10,10,21
+Story7,DWalS18,Combination,Min,,Y,0.003366,1/297,5,20,15,21
+Story7,B1_1.4D,Combination,,,X,9E-05,1/11082,24,5,0,21
+Story7,B1_1.4D,Combination,,,Y,1.3E-05,1/79764,7,20,5,21
+Story7,B2_1.2D+1.6L,Combination,,,X,8.6E-05,1/11567,3,10,15,21
+Story7,B2_1.2D+1.6L,Combination,,,Y,4.3E-05,1/23018,13,0,5,21
+Story7,B5_1.2D+L+EQx,Combination,Max,,X,0.003264,1/306,2,5,15,21
+Story7,B5_1.2D+L+EQx,Combination,Min,,X,0.003112,1/321,23,0,10,21
+Story7,B7_0.9D+EQx,Combination,Max,,X,0.003245,1/308,8,20,0,21
+Story7,B7_0.9D+EQx,Combination,Min,,X,0.003092,1/323,14,5,5,21
+Story7,B5_1.2D+L-EQx,Combination,Max,,X,0.002963,1/338,7,20,5,21
+Story7,B5_1.2D+L-EQx,Combination,Min,,X,0.003118,1/321,8,20,0,21
+Story7,B7_0.9D-EQx,Combination,Max,,X,0.002979,1/336,7,20,5,21
+Story7,B7_0.9D-EQx,Combination,Min,,X,0.003131,1/319,8,20,0,21
+Story7,B5_1.2D+L+EQy,Combination,Max,,Y,0.003386,1/295,8,20,0,21
+Story7,B5_1.2D+L+EQy,Combination,Min,,Y,0.003119,1/321,16,10,5,21
+Story7,B7_0.9D+EQy,Combination,Max,,Y,0.003379,1/296,8,20,0,21
+Story7,B7_0.9D+EQy,Combination,Min,,Y,0.003104,1/322,16,10,5,21
+Story7,B5_1.2D+L-EQy,Combination,Max,,Y,0.003076,1/325,21,10,10,21
+Story7,B5_1.2D+L-EQy,Combination,Min,,Y,0.003359,1/298,5,20,15,21
+Story7,B7_0.9D-EQy,Combination,Max,,Y,0.003091,1/324,21,10,10,21
+Story7,B7_0.9D-EQy,Combination,Min,,Y,0.003365,1/297,5,20,15,21
+Story7,DConS1,Combination,,,X,9E-05,1/11082,24,5,0,21
+Story7,DConS1,Combination,,,Y,1.3E-05,1/79764,7,20,5,21
+Story7,DConS2,Combination,,,X,8.6E-05,1/11567,3,10,15,21
+Story7,DConS2,Combination,,,Y,4.3E-05,1/23018,13,0,5,21
+Story7,DConS3,Combination,Max,,X,0.000284,1/3524,3,10,15,21
+Story7,DConS3,Combination,Max,,Y,0.000316,1/3161,13,0,5,21
+Story7,DConS3,Combination,Min,,X,6.8E-05,1/14793,23,0,10,21
+Story7,DConS3,Combination,Min,,Y,0.000191,1/5243,26,20,10,21
+Story7,DConS4,Combination,Max,,X,0.000114,1/8760,3,10,15,21
+Story7,DConS4,Combination,Max,,Y,0.000233,1/4284,13,0,5,21
+Story7,DConS4,Combination,Min,,X,0.000133,1/7531,10,10,0,21
+Story7,DConS4,Combination,Min,,Y,0.000274,1/3654,26,20,10,21
+Story7,DConS5,Combination,Max,,X,0.000284,1/3524,3,10,15,21
+Story7,DConS5,Combination,Max,,Y,0.000316,1/3161,13,0,5,21
+Story7,DConS5,Combination,Min,,X,6.8E-05,1/14793,23,0,10,21
+Story7,DConS5,Combination,Min,,Y,0.000191,1/5243,26,20,10,21
+Story7,DConS6,Combination,Max,,X,0.000114,1/8760,3,10,15,21
+Story7,DConS6,Combination,Max,,Y,0.000233,1/4284,13,0,5,21
+Story7,DConS6,Combination,Min,,X,0.000133,1/7531,10,10,0,21
+Story7,DConS6,Combination,Min,,Y,0.000274,1/3654,26,20,10,21
+Story7,DConS7,Combination,Max,,X,0.000259,1/3864,24,5,0,21
+Story7,DConS7,Combination,Max,,Y,0.000293,1/3409,7,20,5,21
+Story7,DConS7,Combination,Min,,X,4.7E-05,1/21213,13,0,5,21
+Story7,DConS7,Combination,Min,,Y,0.000197,1/5081,26,20,10,21
+Story7,DConS8,Combination,Max,,X,8.9E-05,1/11209,24,5,0,21
+Story7,DConS8,Combination,Max,,Y,0.00021,1/4753,7,20,5,21
+Story7,DConS8,Combination,Min,,X,0.000145,1/6888,4,15,15,21
+Story7,DConS8,Combination,Min,,Y,0.00028,1/3575,26,20,10,21
+Story7,DConS9,Combination,Max,,X,0.000259,1/3864,24,5,0,21
+Story7,DConS9,Combination,Max,,Y,0.000293,1/3409,7,20,5,21
+Story7,DConS9,Combination,Min,,X,4.7E-05,1/21213,13,0,5,21
+Story7,DConS9,Combination,Min,,Y,0.000197,1/5081,26,20,10,21
+Story7,DConS10,Combination,Max,,X,8.9E-05,1/11209,24,5,0,21
+Story7,DConS10,Combination,Max,,Y,0.00021,1/4753,7,20,5,21
+Story7,DConS10,Combination,Min,,X,0.000145,1/6888,4,15,15,21
+Story7,DConS10,Combination,Min,,Y,0.00028,1/3575,26,20,10,21
+Story7,DConS11,Combination,Max,,X,0.00327,1/306,2,5,15,21
+Story7,DConS11,Combination,Min,,X,0.003118,1/321,23,0,10,21
+Story7,DConS12,Combination,Max,,X,0.002957,1/338,7,20,5,21
+Story7,DConS12,Combination,Min,,X,0.003112,1/321,8,20,0,21
+Story7,DConS13,Combination,Max,,Y,0.003387,1/295,8,20,0,21
+Story7,DConS13,Combination,Min,,Y,0.003119,1/321,16,10,5,21
+Story7,DConS14,Combination,Max,,Y,0.003075,1/325,21,10,10,21
+Story7,DConS14,Combination,Min,,Y,0.003358,1/298,5,20,15,21
+Story7,DConS15,Combination,Max,,X,0.003238,1/309,8,20,0,21
+Story7,DConS15,Combination,Min,,X,0.003086,1/324,14,5,5,21
+Story7,DConS16,Combination,Max,,X,0.002986,1/335,7,20,5,21
+Story7,DConS16,Combination,Min,,X,0.003137,1/319,8,20,0,21
+Story7,DConS17,Combination,Max,,Y,0.003378,1/296,8,20,0,21
+Story7,DConS17,Combination,Min,,Y,0.003103,1/322,16,10,5,21
+Story7,DConS18,Combination,Max,,Y,0.003091,1/323,21,10,10,21
+Story7,DConS18,Combination,Min,,Y,0.003366,1/297,5,20,15,21
+Story7,DConS19,Combination,Max,,X,0.001489,1/672,3,10,15,21
+Story7,DConS19,Combination,Min,,X,0.001328,1/753,10,10,0,21
+Story7,DConS20,Combination,Max,,X,0.000214,1/4666,3,10,15,21
+Story7,DConS20,Combination,Max,,Y,0.001521,1/657,7,20,5,21
+Story7,DConS20,Combination,Min,,Y,0.001493,1/670,26,20,10,21
+Story7,DConS21,Combination,Max,,X,0.001455,1/687,8,20,0,21
+Story7,DConS21,Combination,Min,,X,0.001353,1/739,8,20,0,21
+Story7,DConS22,Combination,Max,,Y,0.001513,1/661,8,20,0,21
+Story7,DConS22,Combination,Min,,Y,0.001501,1/666,5,20,15,21
+Story6,Dead,LinStatic,,,X,1E-06,1/920805,3,10,15,18
+Story6,Live,LinStatic,,,Y,1.9E-05,1/53056,13,0,5,18
+Story6,Modal,LinModEigen,Mode,1,Y,1E-06,1/893100,8,20,0,18
+Story6,Modal,LinModEigen,Mode,2,X,1E-06,1/930935,8,20,0,18
+Story6,Modal,LinModEigen,Mode,3,Y,1E-06,1/747297,1,0,15,18
+Story6,Modal,LinModEigen,Mode,4,X,1E-06,1/0,1,0,15,18
+Story6,Modal,LinModEigen,Mode,4,Y,1E-06,1/843559,5,20,15,18
+Story6,Modal,LinModEigen,Mode,5,X,1E-06,1/874155,8,20,0,18
+Story6,Modal,LinModEigen,Mode,5,Y,1E-06,1/0,5,20,15,18
+Story6,Modal,LinModEigen,Mode,6,X,1E-06,1/901367,1,0,15,18
+Story6,Modal,LinModEigen,Mode,6,Y,2E-06,1/639649,1,0,15,18
+Story6,Modal,LinModEigen,Mode,7,X,3E-06,1/396793,1,0,15,18
+Story6,Modal,LinModEigen,Mode,7,Y,4E-06,1/238985,16,10,5,18
+Story6,Modal,LinModEigen,Mode,8,X,4E-06,1/254450,7,20,5,18
+Story6,Modal,LinModEigen,Mode,8,Y,2E-06,1/438608,5,20,15,18
+Story6,Modal,LinModEigen,Mode,9,X,3E-06,1/331535,1,0,15,18
+Story6,Modal,LinModEigen,Mode,9,Y,4E-06,1/237379,21,10,10,18
+Story6,Modal,LinModEigen,Mode,10,X,4E-06,1/227471,8,20,0,18
+Story6,Modal,LinModEigen,Mode,10,Y,5E-06,1/185298,1,0,15,18
+Story6,Modal,LinModEigen,Mode,11,X,4E-06,1/255604,19,15,10,18
+Story6,Modal,LinModEigen,Mode,11,Y,2E-06,1/442226,12,0,0,18
+Story6,Modal,LinModEigen,Mode,12,X,6E-06,1/166710,8,20,0,18
+Story6,Modal,LinModEigen,Mode,12,Y,8E-06,1/119713,16,10,5,18
+Story6,FF,LinStatic,,,X,3.129E-07,1/0,3,10,15,18
+Story6,PW,LinStatic,,,X,2.503E-07,1/0,3,10,15,18
+Story6,EQx,LinStatic,Step By Step,1,X,0.003046,1/328,1,0,15,18
+Story6,EQx,LinStatic,Step By Step,2,X,0.003052,1/328,8,20,0,18
+Story6,EQy,LinStatic,Step By Step,1,Y,0.003227,1/310,8,20,0,18
+Story6,EQy,LinStatic,Step By Step,2,Y,0.003076,1/325,12,0,0,18
+Story6,Wx,LinStatic,Step By Step,1,X,0.000195,1/5119,23,0,10,18
+Story6,Wx,LinStatic,Step By Step,2,Y,0.000277,1/3605,10,10,0,18
+Story6,Wx,LinStatic,Step By Step,3,X,0.000163,1/6149,12,0,0,18
+Story6,Wx,LinStatic,Step By Step,4,X,0.000163,1/6148,1,0,15,18
+Story6,Wx,LinStatic,Step By Step,5,Y,0.000248,1/4025,8,20,0,18
+Story6,Wx,LinStatic,Step By Step,6,Y,0.000248,1/4024,12,0,0,18
+Story6,Wx,LinStatic,Step By Step,7,X,0.000146,1/6827,1,0,15,18
+Story6,Wx,LinStatic,Step By Step,7,Y,0.000197,1/5084,2,5,15,18
+Story6,Wx,LinStatic,Step By Step,8,X,0.000155,1/6455,8,20,0,18
+Story6,Wx,LinStatic,Step By Step,8,Y,0.000208,1/4807,24,5,0,18
+Story6,Wx,LinStatic,Step By Step,9,X,0.000144,1/6965,12,0,0,18
+Story6,Wx,LinStatic,Step By Step,9,Y,0.000193,1/5194,12,0,0,18
+Story6,Wx,LinStatic,Step By Step,10,X,0.000144,1/6964,1,0,15,18
+Story6,Wx,LinStatic,Step By Step,10,Y,0.000193,1/5194,5,20,15,18
+Story6,Wx,LinStatic,Step By Step,11,X,0.000152,1/6584,8,20,0,18
+Story6,Wx,LinStatic,Step By Step,11,Y,0.000204,1/4912,8,20,0,18
+Story6,Wx,LinStatic,Step By Step,12,X,0.000152,1/6585,1,0,15,18
+Story6,Wx,LinStatic,Step By Step,12,Y,0.000204,1/4912,1,0,15,18
+Story6,Wy,LinStatic,Step By Step,1,X,0.000195,1/5119,23,0,10,18
+Story6,Wy,LinStatic,Step By Step,2,Y,0.000277,1/3605,10,10,0,18
+Story6,Wy,LinStatic,Step By Step,3,X,0.000163,1/6149,12,0,0,18
+Story6,Wy,LinStatic,Step By Step,4,X,0.000163,1/6148,1,0,15,18
+Story6,Wy,LinStatic,Step By Step,5,Y,0.000248,1/4025,8,20,0,18
+Story6,Wy,LinStatic,Step By Step,6,Y,0.000248,1/4024,12,0,0,18
+Story6,Wy,LinStatic,Step By Step,7,X,0.000146,1/6827,1,0,15,18
+Story6,Wy,LinStatic,Step By Step,7,Y,0.000197,1/5084,2,5,15,18
+Story6,Wy,LinStatic,Step By Step,8,X,0.000155,1/6455,8,20,0,18
+Story6,Wy,LinStatic,Step By Step,8,Y,0.000208,1/4807,24,5,0,18
+Story6,Wy,LinStatic,Step By Step,9,X,0.000144,1/6965,12,0,0,18
+Story6,Wy,LinStatic,Step By Step,9,Y,0.000193,1/5194,12,0,0,18
+Story6,Wy,LinStatic,Step By Step,10,X,0.000144,1/6964,1,0,15,18
+Story6,Wy,LinStatic,Step By Step,10,Y,0.000193,1/5194,5,20,15,18
+Story6,Wy,LinStatic,Step By Step,11,X,0.000152,1/6584,8,20,0,18
+Story6,Wy,LinStatic,Step By Step,11,Y,0.000204,1/4912,8,20,0,18
+Story6,Wy,LinStatic,Step By Step,12,X,0.000152,1/6585,1,0,15,18
+Story6,Wy,LinStatic,Step By Step,12,Y,0.000204,1/4912,1,0,15,18
+Story6,WALL,LinStatic,,,X,5.7E-05,1/17426,24,5,0,18
+Story6,WALL,LinStatic,,,Y,9E-06,1/111172,7,20,5,18
+Story6,RSx,LinRespSpec,Max,,X,0.001337,1/748,8,20,0,18
+Story6,RSy,LinRespSpec,Max,,Y,0.001433,1/698,8,20,0,18
+Story6,0.9D+1.0EQx,Combination,Max,,X,0.003052,1/328,8,20,0,18
+Story6,0.9D+1.0EQx,Combination,Min,,X,0.002906,1/344,16,10,5,18
+Story6,0.9D+1.0EQy,Combination,Max,,Y,0.003227,1/310,8,20,0,18
+Story6,0.9D+1.0EQy,Combination,Min,,Y,0.002964,1/337,16,10,5,18
+Story6,DWalS1,Combination,,,X,8.2E-05,1/12268,24,5,0,18
+Story6,DWalS1,Combination,,,Y,1.3E-05,1/77774,7,20,5,18
+Story6,DWalS2,Combination,,,X,7.8E-05,1/12759,3,10,15,18
+Story6,DWalS2,Combination,,,Y,4E-05,1/24724,13,0,5,18
+Story6,DWalS3,Combination,Max,,X,0.00027,1/3698,3,10,15,18
+Story6,DWalS3,Combination,Max,,Y,0.000306,1/3263,13,0,5,18
+Story6,DWalS3,Combination,Min,,X,6E-05,1/16540,23,0,10,18
+Story6,DWalS3,Combination,Min,,Y,0.000185,1/5405,26,20,10,18
+Story6,DWalS4,Combination,Max,,X,0.000105,1/9481,3,10,15,18
+Story6,DWalS4,Combination,Max,,Y,0.000226,1/4428,13,0,5,18
+Story6,DWalS4,Combination,Min,,X,0.000134,1/7460,10,10,0,18
+Story6,DWalS4,Combination,Min,,Y,0.000266,1/3764,26,20,10,18
+Story6,DWalS5,Combination,Max,,X,0.00027,1/3698,3,10,15,18
+Story6,DWalS5,Combination,Max,,Y,0.000306,1/3263,13,0,5,18
+Story6,DWalS5,Combination,Min,,X,6E-05,1/16540,23,0,10,18
+Story6,DWalS5,Combination,Min,,Y,0.000185,1/5405,26,20,10,18
+Story6,DWalS6,Combination,Max,,X,0.000105,1/9481,3,10,15,18
+Story6,DWalS6,Combination,Max,,Y,0.000226,1/4428,13,0,5,18
+Story6,DWalS6,Combination,Min,,X,0.000134,1/7460,10,10,0,18
+Story6,DWalS6,Combination,Min,,Y,0.000266,1/3764,26,20,10,18
+Story6,DWalS7,Combination,Max,,X,0.000248,1/4037,24,5,0,18
+Story6,DWalS7,Combination,Max,,Y,0.000286,1/3501,7,20,5,18
+Story6,DWalS7,Combination,Min,,X,4.2E-05,1/23924,13,0,5,18
+Story6,DWalS7,Combination,Min,,Y,0.000191,1/5236,23,0,10,18
+Story6,DWalS8,Combination,Max,,X,8.3E-05,1/12090,24,5,0,18
+Story6,DWalS8,Combination,Max,,Y,0.000205,1/4880,7,20,5,18
+Story6,DWalS8,Combination,Min,,X,0.000145,1/6890,4,15,15,18
+Story6,DWalS8,Combination,Min,,Y,0.000272,1/3682,23,0,10,18
+Story6,DWalS9,Combination,Max,,X,0.000248,1/4037,24,5,0,18
+Story6,DWalS9,Combination,Max,,Y,0.000286,1/3501,7,20,5,18
+Story6,DWalS9,Combination,Min,,X,4.2E-05,1/23924,13,0,5,18
+Story6,DWalS9,Combination,Min,,Y,0.000191,1/5236,23,0,10,18
+Story6,DWalS10,Combination,Max,,X,8.3E-05,1/12090,24,5,0,18
+Story6,DWalS10,Combination,Max,,Y,0.000205,1/4880,7,20,5,18
+Story6,DWalS10,Combination,Min,,X,0.000145,1/6890,4,15,15,18
+Story6,DWalS10,Combination,Min,,Y,0.000272,1/3682,23,0,10,18
+Story6,DWalS11,Combination,Max,,X,0.003125,1/320,1,0,15,18
+Story6,DWalS11,Combination,Min,,X,0.002979,1/336,23,0,10,18
+Story6,DWalS12,Combination,Max,,X,0.002834,1/353,7,20,5,18
+Story6,DWalS12,Combination,Min,,X,0.002983,1/335,8,20,0,18
+Story6,DWalS13,Combination,Max,,Y,0.003242,1/308,8,20,0,18
+Story6,DWalS13,Combination,Min,,Y,0.002985,1/335,16,10,5,18
+Story6,DWalS14,Combination,Max,,Y,0.002943,1/340,21,10,10,18
+Story6,DWalS14,Combination,Min,,Y,0.003213,1/311,5,20,15,18
+Story6,DWalS15,Combination,Max,,X,0.003097,1/323,8,20,0,18
+Story6,DWalS15,Combination,Min,,X,0.002951,1/339,16,10,5,18
+Story6,DWalS16,Combination,Max,,X,0.00286,1/350,7,20,5,18
+Story6,DWalS16,Combination,Min,,X,0.003006,1/333,8,20,0,18
+Story6,DWalS17,Combination,Max,,Y,0.003234,1/309,8,20,0,18
+Story6,DWalS17,Combination,Min,,Y,0.00297,1/337,16,10,5,18
+Story6,DWalS18,Combination,Max,,Y,0.002957,1/338,21,10,10,18
+Story6,DWalS18,Combination,Min,,Y,0.003221,1/310,5,20,15,18
+Story6,B1_1.4D,Combination,,,X,8.2E-05,1/12268,24,5,0,18
+Story6,B1_1.4D,Combination,,,Y,1.3E-05,1/77774,7,20,5,18
+Story6,B2_1.2D+1.6L,Combination,,,X,7.8E-05,1/12759,3,10,15,18
+Story6,B2_1.2D+1.6L,Combination,,,Y,4E-05,1/24724,13,0,5,18
+Story6,B5_1.2D+L+EQx,Combination,Max,,X,0.003119,1/321,1,0,15,18
+Story6,B5_1.2D+L+EQx,Combination,Min,,X,0.002973,1/336,23,0,10,18
+Story6,B7_0.9D+EQx,Combination,Max,,X,0.003103,1/322,8,20,0,18
+Story6,B7_0.9D+EQx,Combination,Min,,X,0.002957,1/338,16,10,5,18
+Story6,B5_1.2D+L-EQx,Combination,Max,,X,0.00284,1/352,7,20,5,18
+Story6,B5_1.2D+L-EQx,Combination,Min,,X,0.002989,1/335,8,20,0,18
+Story6,B7_0.9D-EQx,Combination,Max,,X,0.002855,1/350,7,20,5,18
+Story6,B7_0.9D-EQx,Combination,Min,,X,0.003,1/333,8,20,0,18
+Story6,B5_1.2D+L+EQy,Combination,Max,,Y,0.003241,1/309,8,20,0,18
+Story6,B5_1.2D+L+EQy,Combination,Min,,Y,0.002984,1/335,16,10,5,18
+Story6,B7_0.9D+EQy,Combination,Max,,Y,0.003235,1/309,8,20,0,18
+Story6,B7_0.9D+EQy,Combination,Min,,Y,0.002971,1/337,16,10,5,18
+Story6,B5_1.2D+L-EQy,Combination,Max,,Y,0.002943,1/340,21,10,10,18
+Story6,B5_1.2D+L-EQy,Combination,Min,,Y,0.003214,1/311,5,20,15,18
+Story6,B7_0.9D-EQy,Combination,Max,,Y,0.002957,1/338,21,10,10,18
+Story6,B7_0.9D-EQy,Combination,Min,,Y,0.00322,1/311,5,20,15,18
+Story6,DConS1,Combination,,,X,8.2E-05,1/12268,24,5,0,18
+Story6,DConS1,Combination,,,Y,1.3E-05,1/77774,7,20,5,18
+Story6,DConS2,Combination,,,X,7.8E-05,1/12759,3,10,15,18
+Story6,DConS2,Combination,,,Y,4E-05,1/24724,13,0,5,18
+Story6,DConS3,Combination,Max,,X,0.00027,1/3698,3,10,15,18
+Story6,DConS3,Combination,Max,,Y,0.000306,1/3263,13,0,5,18
+Story6,DConS3,Combination,Min,,X,6E-05,1/16540,23,0,10,18
+Story6,DConS3,Combination,Min,,Y,0.000185,1/5405,26,20,10,18
+Story6,DConS4,Combination,Max,,X,0.000105,1/9481,3,10,15,18
+Story6,DConS4,Combination,Max,,Y,0.000226,1/4428,13,0,5,18
+Story6,DConS4,Combination,Min,,X,0.000134,1/7460,10,10,0,18
+Story6,DConS4,Combination,Min,,Y,0.000266,1/3764,26,20,10,18
+Story6,DConS5,Combination,Max,,X,0.00027,1/3698,3,10,15,18
+Story6,DConS5,Combination,Max,,Y,0.000306,1/3263,13,0,5,18
+Story6,DConS5,Combination,Min,,X,6E-05,1/16540,23,0,10,18
+Story6,DConS5,Combination,Min,,Y,0.000185,1/5405,26,20,10,18
+Story6,DConS6,Combination,Max,,X,0.000105,1/9481,3,10,15,18
+Story6,DConS6,Combination,Max,,Y,0.000226,1/4428,13,0,5,18
+Story6,DConS6,Combination,Min,,X,0.000134,1/7460,10,10,0,18
+Story6,DConS6,Combination,Min,,Y,0.000266,1/3764,26,20,10,18
+Story6,DConS7,Combination,Max,,X,0.000248,1/4037,24,5,0,18
+Story6,DConS7,Combination,Max,,Y,0.000286,1/3501,7,20,5,18
+Story6,DConS7,Combination,Min,,X,4.2E-05,1/23924,13,0,5,18
+Story6,DConS7,Combination,Min,,Y,0.000191,1/5236,23,0,10,18
+Story6,DConS8,Combination,Max,,X,8.3E-05,1/12090,24,5,0,18
+Story6,DConS8,Combination,Max,,Y,0.000205,1/4880,7,20,5,18
+Story6,DConS8,Combination,Min,,X,0.000145,1/6890,4,15,15,18
+Story6,DConS8,Combination,Min,,Y,0.000272,1/3682,23,0,10,18
+Story6,DConS9,Combination,Max,,X,0.000248,1/4037,24,5,0,18
+Story6,DConS9,Combination,Max,,Y,0.000286,1/3501,7,20,5,18
+Story6,DConS9,Combination,Min,,X,4.2E-05,1/23924,13,0,5,18
+Story6,DConS9,Combination,Min,,Y,0.000191,1/5236,23,0,10,18
+Story6,DConS10,Combination,Max,,X,8.3E-05,1/12090,24,5,0,18
+Story6,DConS10,Combination,Max,,Y,0.000205,1/4880,7,20,5,18
+Story6,DConS10,Combination,Min,,X,0.000145,1/6890,4,15,15,18
+Story6,DConS10,Combination,Min,,Y,0.000272,1/3682,23,0,10,18
+Story6,DConS11,Combination,Max,,X,0.003125,1/320,1,0,15,18
+Story6,DConS11,Combination,Min,,X,0.002979,1/336,23,0,10,18
+Story6,DConS12,Combination,Max,,X,0.002834,1/353,7,20,5,18
+Story6,DConS12,Combination,Min,,X,0.002983,1/335,8,20,0,18
+Story6,DConS13,Combination,Max,,Y,0.003242,1/308,8,20,0,18
+Story6,DConS13,Combination,Min,,Y,0.002985,1/335,16,10,5,18
+Story6,DConS14,Combination,Max,,Y,0.002943,1/340,21,10,10,18
+Story6,DConS14,Combination,Min,,Y,0.003213,1/311,5,20,15,18
+Story6,DConS15,Combination,Max,,X,0.003097,1/323,8,20,0,18
+Story6,DConS15,Combination,Min,,X,0.002951,1/339,16,10,5,18
+Story6,DConS16,Combination,Max,,X,0.00286,1/350,7,20,5,18
+Story6,DConS16,Combination,Min,,X,0.003006,1/333,8,20,0,18
+Story6,DConS17,Combination,Max,,Y,0.003234,1/309,8,20,0,18
+Story6,DConS17,Combination,Min,,Y,0.00297,1/337,16,10,5,18
+Story6,DConS18,Combination,Max,,Y,0.002957,1/338,21,10,10,18
+Story6,DConS18,Combination,Min,,Y,0.003221,1/310,5,20,15,18
+Story6,DConS19,Combination,Max,,X,0.001412,1/708,3,10,15,18
+Story6,DConS19,Combination,Min,,X,0.001268,1/789,10,10,0,18
+Story6,DConS20,Combination,Max,,X,0.0002,1/5000,3,10,15,18
+Story6,DConS20,Combination,Max,,Y,0.001449,1/690,8,20,0,18
+Story6,DConS20,Combination,Min,,Y,0.00142,1/704,26,20,10,18
+Story6,DConS21,Combination,Max,,X,0.001382,1/723,8,20,0,18
+Story6,DConS21,Combination,Min,,X,0.001291,1/775,8,20,0,18
+Story6,DConS22,Combination,Max,,Y,0.00144,1/694,8,20,0,18
+Story6,DConS22,Combination,Min,,Y,0.001428,1/700,5,20,15,18
+Story5,Dead,LinStatic,,,X,1E-06,1/981329,3,10,15,15
+Story5,Live,LinStatic,,,Y,1.7E-05,1/60219,13,0,5,15
+Story5,Modal,LinModEigen,Mode,1,Y,1E-06,1/971261,5,20,15,15
+Story5,Modal,LinModEigen,Mode,2,X,1E-06,1/0,8,20,0,15
+Story5,Modal,LinModEigen,Mode,3,Y,1E-06,1/814832,1,0,15,15
+Story5,Modal,LinModEigen,Mode,4,X,4.064E-08,1/0,8,20,0,15
+Story5,Modal,LinModEigen,Mode,4,Y,6.297E-08,1/0,21,10,10,15
+Story5,Modal,LinModEigen,Mode,5,X,5.098E-08,1/0,19,15,10,15
+Story5,Modal,LinModEigen,Mode,5,Y,2.194E-08,1/0,10,10,0,15
+Story5,Modal,LinModEigen,Mode,6,X,5.092E-08,1/0,8,20,0,15
+Story5,Modal,LinModEigen,Mode,6,Y,6.909E-08,1/0,8,20,0,15
+Story5,Modal,LinModEigen,Mode,7,X,3E-06,1/371283,1,0,15,15
+Story5,Modal,LinModEigen,Mode,7,Y,4E-06,1/224358,21,10,10,15
+Story5,Modal,LinModEigen,Mode,8,X,4E-06,1/234732,7,20,5,15
+Story5,Modal,LinModEigen,Mode,8,Y,2E-06,1/409530,5,20,15,15
+Story5,Modal,LinModEigen,Mode,9,X,3E-06,1/395442,8,20,0,15
+Story5,Modal,LinModEigen,Mode,9,Y,3E-06,1/305980,21,10,10,15
+Story5,Modal,LinModEigen,Mode,10,X,5E-06,1/215284,1,0,15,15
+Story5,Modal,LinModEigen,Mode,10,Y,6E-06,1/173359,1,0,15,15
+Story5,Modal,LinModEigen,Mode,11,X,3E-06,1/366359,8,20,0,15
+Story5,Modal,LinModEigen,Mode,11,Y,2E-06,1/541699,5,20,15,15
+Story5,Modal,LinModEigen,Mode,12,X,5E-06,1/196683,8,20,0,15
+Story5,Modal,LinModEigen,Mode,12,Y,7E-06,1/138151,21,10,10,15
+Story5,FF,LinStatic,,,X,2.813E-07,1/0,3,10,15,15
+Story5,PW,LinStatic,,,X,2.251E-07,1/0,3,10,15,15
+Story5,EQx,LinStatic,Step By Step,1,X,0.00281,1/356,1,0,15,15
+Story5,EQx,LinStatic,Step By Step,2,X,0.002815,1/355,8,20,0,15
+Story5,EQy,LinStatic,Step By Step,1,Y,0.002977,1/336,5,20,15,15
+Story5,EQy,LinStatic,Step By Step,2,Y,0.002836,1/353,12,0,0,15
+Story5,Wx,LinStatic,Step By Step,1,X,0.000184,1/5431,23,0,10,15
+Story5,Wx,LinStatic,Step By Step,2,Y,0.000261,1/3826,10,10,0,15
+Story5,Wx,LinStatic,Step By Step,3,X,0.000153,1/6524,12,0,0,15
+Story5,Wx,LinStatic,Step By Step,4,X,0.000153,1/6523,1,0,15,15
+Story5,Wx,LinStatic,Step By Step,5,Y,0.000234,1/4272,8,20,0,15
+Story5,Wx,LinStatic,Step By Step,6,Y,0.000234,1/4272,12,0,0,15
+Story5,Wx,LinStatic,Step By Step,7,X,0.000138,1/7242,1,0,15,15
+Story5,Wx,LinStatic,Step By Step,7,Y,0.000185,1/5396,2,5,15,15
+Story5,Wx,LinStatic,Step By Step,8,X,0.000146,1/6848,12,0,0,15
+Story5,Wx,LinStatic,Step By Step,8,Y,0.000196,1/5102,24,5,0,15
+Story5,Wx,LinStatic,Step By Step,9,X,0.000135,1/7391,12,0,0,15
+Story5,Wx,LinStatic,Step By Step,9,Y,0.000181,1/5515,12,0,0,15
+Story5,Wx,LinStatic,Step By Step,10,X,0.000135,1/7390,1,0,15,15
+Story5,Wx,LinStatic,Step By Step,10,Y,0.000181,1/5515,5,20,15,15
+Story5,Wx,LinStatic,Step By Step,11,X,0.000143,1/6986,8,20,0,15
+Story5,Wx,LinStatic,Step By Step,11,Y,0.000192,1/5214,8,20,0,15
+Story5,Wx,LinStatic,Step By Step,12,X,0.000143,1/6987,1,0,15,15
+Story5,Wx,LinStatic,Step By Step,12,Y,0.000192,1/5214,1,0,15,15
+Story5,Wy,LinStatic,Step By Step,1,X,0.000184,1/5431,23,0,10,15
+Story5,Wy,LinStatic,Step By Step,2,Y,0.000261,1/3826,10,10,0,15
+Story5,Wy,LinStatic,Step By Step,3,X,0.000153,1/6524,12,0,0,15
+Story5,Wy,LinStatic,Step By Step,4,X,0.000153,1/6523,1,0,15,15
+Story5,Wy,LinStatic,Step By Step,5,Y,0.000234,1/4272,8,20,0,15
+Story5,Wy,LinStatic,Step By Step,6,Y,0.000234,1/4272,12,0,0,15
+Story5,Wy,LinStatic,Step By Step,7,X,0.000138,1/7242,1,0,15,15
+Story5,Wy,LinStatic,Step By Step,7,Y,0.000185,1/5396,2,5,15,15
+Story5,Wy,LinStatic,Step By Step,8,X,0.000146,1/6848,12,0,0,15
+Story5,Wy,LinStatic,Step By Step,8,Y,0.000196,1/5102,24,5,0,15
+Story5,Wy,LinStatic,Step By Step,9,X,0.000135,1/7391,12,0,0,15
+Story5,Wy,LinStatic,Step By Step,9,Y,0.000181,1/5515,12,0,0,15
+Story5,Wy,LinStatic,Step By Step,10,X,0.000135,1/7390,1,0,15,15
+Story5,Wy,LinStatic,Step By Step,10,Y,0.000181,1/5515,5,20,15,15
+Story5,Wy,LinStatic,Step By Step,11,X,0.000143,1/6986,8,20,0,15
+Story5,Wy,LinStatic,Step By Step,11,Y,0.000192,1/5214,8,20,0,15
+Story5,Wy,LinStatic,Step By Step,12,X,0.000143,1/6987,1,0,15,15
+Story5,Wy,LinStatic,Step By Step,12,Y,0.000192,1/5214,1,0,15,15
+Story5,WALL,LinStatic,,,X,4.8E-05,1/20712,24,5,0,15
+Story5,WALL,LinStatic,,,Y,8E-06,1/118394,7,20,5,15
+Story5,RSx,LinRespSpec,Max,,X,0.001228,1/815,8,20,0,15
+Story5,RSy,LinRespSpec,Max,,Y,0.001316,1/760,5,20,15,15
+Story5,0.9D+1.0EQx,Combination,Max,,X,0.002815,1/355,8,20,0,15
+Story5,0.9D+1.0EQx,Combination,Min,,X,0.002681,1/373,16,10,5,15
+Story5,0.9D+1.0EQy,Combination,Max,,Y,0.002977,1/336,8,20,0,15
+Story5,0.9D+1.0EQy,Combination,Min,,Y,0.002733,1/366,16,10,5,15
+Story5,DWalS1,Combination,,,X,6.9E-05,1/14534,3,10,15,15
+Story5,DWalS1,Combination,,,Y,1.2E-05,1/81879,7,20,5,15
+Story5,DWalS2,Combination,,,X,6.7E-05,1/15024,3,10,15,15
+Story5,DWalS2,Combination,,,Y,3.6E-05,1/27675,13,0,5,15
+Story5,DWalS3,Combination,Max,,X,0.000248,1/4036,3,10,15,15
+Story5,DWalS3,Combination,Max,,Y,0.000287,1/3479,13,0,5,15
+Story5,DWalS3,Combination,Min,,X,5E-05,1/19975,22,5,10,15
+Story5,DWalS3,Combination,Min,,Y,0.000174,1/5734,26,20,10,15
+Story5,DWalS4,Combination,Max,,X,9.2E-05,1/10838,3,10,15,15
+Story5,DWalS4,Combination,Max,,Y,0.000211,1/4729,13,0,5,15
+Story5,DWalS4,Combination,Min,,X,0.000133,1/7524,10,10,0,15
+Story5,DWalS4,Combination,Min,,Y,0.00025,1/3994,26,20,10,15
+Story5,DWalS5,Combination,Max,,X,0.000248,1/4036,3,10,15,15
+Story5,DWalS5,Combination,Max,,Y,0.000287,1/3479,13,0,5,15
+Story5,DWalS5,Combination,Min,,X,5E-05,1/19975,22,5,10,15
+Story5,DWalS5,Combination,Min,,Y,0.000174,1/5734,26,20,10,15
+Story5,DWalS6,Combination,Max,,X,9.2E-05,1/10838,3,10,15,15
+Story5,DWalS6,Combination,Max,,Y,0.000211,1/4729,13,0,5,15
+Story5,DWalS6,Combination,Min,,X,0.000133,1/7524,10,10,0,15
+Story5,DWalS6,Combination,Min,,Y,0.00025,1/3994,26,20,10,15
+Story5,DWalS7,Combination,Max,,X,0.000228,1/4380,3,10,15,15
+Story5,DWalS7,Combination,Max,,Y,0.000269,1/3716,7,20,5,15
+Story5,DWalS7,Combination,Min,,X,3.4E-05,1/29219,13,0,5,15
+Story5,DWalS7,Combination,Min,,Y,0.00018,1/5550,23,0,10,15
+Story5,DWalS8,Combination,Max,,X,7.3E-05,1/13740,3,10,15,15
+Story5,DWalS8,Combination,Max,,Y,0.000193,1/5178,7,20,5,15
+Story5,DWalS8,Combination,Min,,X,0.000142,1/7044,4,15,15,15
+Story5,DWalS8,Combination,Min,,Y,0.000256,1/3904,23,0,10,15
+Story5,DWalS9,Combination,Max,,X,0.000228,1/4380,3,10,15,15
+Story5,DWalS9,Combination,Max,,Y,0.000269,1/3716,7,20,5,15
+Story5,DWalS9,Combination,Min,,X,3.4E-05,1/29219,13,0,5,15
+Story5,DWalS9,Combination,Min,,Y,0.00018,1/5550,23,0,10,15
+Story5,DWalS10,Combination,Max,,X,7.3E-05,1/13740,3,10,15,15
+Story5,DWalS10,Combination,Max,,Y,0.000193,1/5178,7,20,5,15
+Story5,DWalS10,Combination,Min,,X,0.000142,1/7044,4,15,15,15
+Story5,DWalS10,Combination,Min,,Y,0.000256,1/3904,23,0,10,15
+Story5,DWalS11,Combination,Max,,X,0.002877,1/348,1,0,15,15
+Story5,DWalS11,Combination,Min,,X,0.002743,1/365,23,0,10,15
+Story5,DWalS12,Combination,Max,,X,0.002621,1/382,7,20,5,15
+Story5,DWalS12,Combination,Min,,X,0.002757,1/363,8,20,0,15
+Story5,DWalS13,Combination,Max,,Y,0.002992,1/334,8,20,0,15
+Story5,DWalS13,Combination,Min,,Y,0.002752,1/363,16,10,5,15
+Story5,DWalS14,Combination,Max,,Y,0.002714,1/368,21,10,10,15
+Story5,DWalS14,Combination,Min,,Y,0.002965,1/337,5,20,15,15
+Story5,DWalS15,Combination,Max,,X,0.002854,1/350,8,20,0,15
+Story5,DWalS15,Combination,Min,,X,0.002719,1/368,16,10,5,15
+Story5,DWalS16,Combination,Max,,X,0.002643,1/378,7,20,5,15
+Story5,DWalS16,Combination,Min,,X,0.002776,1/360,8,20,0,15
+Story5,DWalS17,Combination,Max,,Y,0.002984,1/335,8,20,0,15
+Story5,DWalS17,Combination,Min,,Y,0.002739,1/365,16,10,5,15
+Story5,DWalS18,Combination,Max,,Y,0.002728,1/367,21,10,10,15
+Story5,DWalS18,Combination,Min,,Y,0.002972,1/336,5,20,15,15
+Story5,B1_1.4D,Combination,,,X,6.9E-05,1/14534,3,10,15,15
+Story5,B1_1.4D,Combination,,,Y,1.2E-05,1/81879,7,20,5,15
+Story5,B2_1.2D+1.6L,Combination,,,X,6.7E-05,1/15024,3,10,15,15
+Story5,B2_1.2D+1.6L,Combination,,,Y,3.6E-05,1/27675,13,0,5,15
+Story5,B5_1.2D+L+EQx,Combination,Max,,X,0.002872,1/348,1,0,15,15
+Story5,B5_1.2D+L+EQx,Combination,Min,,X,0.002738,1/365,23,0,10,15
+Story5,B7_0.9D+EQx,Combination,Max,,X,0.002859,1/350,8,20,0,15
+Story5,B7_0.9D+EQx,Combination,Min,,X,0.002724,1/367,16,10,5,15
+Story5,B5_1.2D+L-EQx,Combination,Max,,X,0.002625,1/381,7,20,5,15
+Story5,B5_1.2D+L-EQx,Combination,Min,,X,0.002762,1/362,8,20,0,15
+Story5,B7_0.9D-EQx,Combination,Max,,X,0.002638,1/379,7,20,5,15
+Story5,B7_0.9D-EQx,Combination,Min,,X,0.002772,1/361,8,20,0,15
+Story5,B5_1.2D+L+EQy,Combination,Max,,Y,0.002991,1/334,8,20,0,15
+Story5,B5_1.2D+L+EQy,Combination,Min,,Y,0.002752,1/363,16,10,5,15
+Story5,B7_0.9D+EQy,Combination,Max,,Y,0.002985,1/335,8,20,0,15
+Story5,B7_0.9D+EQy,Combination,Min,,Y,0.00274,1/365,16,10,5,15
+Story5,B5_1.2D+L-EQy,Combination,Max,,Y,0.002715,1/368,21,10,10,15
+Story5,B5_1.2D+L-EQy,Combination,Min,,Y,0.002966,1/337,5,20,15,15
+Story5,B7_0.9D-EQy,Combination,Max,,Y,0.002727,1/367,21,10,10,15
+Story5,B7_0.9D-EQy,Combination,Min,,Y,0.002971,1/337,5,20,15,15
+Story5,DConS1,Combination,,,X,6.9E-05,1/14534,3,10,15,15
+Story5,DConS1,Combination,,,Y,1.2E-05,1/81879,7,20,5,15
+Story5,DConS2,Combination,,,X,6.7E-05,1/15024,3,10,15,15
+Story5,DConS2,Combination,,,Y,3.6E-05,1/27675,13,0,5,15
+Story5,DConS3,Combination,Max,,X,0.000248,1/4036,3,10,15,15
+Story5,DConS3,Combination,Max,,Y,0.000287,1/3479,13,0,5,15
+Story5,DConS3,Combination,Min,,X,5E-05,1/19975,22,5,10,15
+Story5,DConS3,Combination,Min,,Y,0.000174,1/5734,26,20,10,15
+Story5,DConS4,Combination,Max,,X,9.2E-05,1/10838,3,10,15,15
+Story5,DConS4,Combination,Max,,Y,0.000211,1/4729,13,0,5,15
+Story5,DConS4,Combination,Min,,X,0.000133,1/7524,10,10,0,15
+Story5,DConS4,Combination,Min,,Y,0.00025,1/3994,26,20,10,15
+Story5,DConS5,Combination,Max,,X,0.000248,1/4036,3,10,15,15
+Story5,DConS5,Combination,Max,,Y,0.000287,1/3479,13,0,5,15
+Story5,DConS5,Combination,Min,,X,5E-05,1/19975,22,5,10,15
+Story5,DConS5,Combination,Min,,Y,0.000174,1/5734,26,20,10,15
+Story5,DConS6,Combination,Max,,X,9.2E-05,1/10838,3,10,15,15
+Story5,DConS6,Combination,Max,,Y,0.000211,1/4729,13,0,5,15
+Story5,DConS6,Combination,Min,,X,0.000133,1/7524,10,10,0,15
+Story5,DConS6,Combination,Min,,Y,0.00025,1/3994,26,20,10,15
+Story5,DConS7,Combination,Max,,X,0.000228,1/4380,3,10,15,15
+Story5,DConS7,Combination,Max,,Y,0.000269,1/3716,7,20,5,15
+Story5,DConS7,Combination,Min,,X,3.4E-05,1/29219,13,0,5,15
+Story5,DConS7,Combination,Min,,Y,0.00018,1/5550,23,0,10,15
+Story5,DConS8,Combination,Max,,X,7.3E-05,1/13740,3,10,15,15
+Story5,DConS8,Combination,Max,,Y,0.000193,1/5178,7,20,5,15
+Story5,DConS8,Combination,Min,,X,0.000142,1/7044,4,15,15,15
+Story5,DConS8,Combination,Min,,Y,0.000256,1/3904,23,0,10,15
+Story5,DConS9,Combination,Max,,X,0.000228,1/4380,3,10,15,15
+Story5,DConS9,Combination,Max,,Y,0.000269,1/3716,7,20,5,15
+Story5,DConS9,Combination,Min,,X,3.4E-05,1/29219,13,0,5,15
+Story5,DConS9,Combination,Min,,Y,0.00018,1/5550,23,0,10,15
+Story5,DConS10,Combination,Max,,X,7.3E-05,1/13740,3,10,15,15
+Story5,DConS10,Combination,Max,,Y,0.000193,1/5178,7,20,5,15
+Story5,DConS10,Combination,Min,,X,0.000142,1/7044,4,15,15,15
+Story5,DConS10,Combination,Min,,Y,0.000256,1/3904,23,0,10,15
+Story5,DConS11,Combination,Max,,X,0.002877,1/348,1,0,15,15
+Story5,DConS11,Combination,Min,,X,0.002743,1/365,23,0,10,15
+Story5,DConS12,Combination,Max,,X,0.002621,1/382,7,20,5,15
+Story5,DConS12,Combination,Min,,X,0.002757,1/363,8,20,0,15
+Story5,DConS13,Combination,Max,,Y,0.002992,1/334,8,20,0,15
+Story5,DConS13,Combination,Min,,Y,0.002752,1/363,16,10,5,15
+Story5,DConS14,Combination,Max,,Y,0.002714,1/368,21,10,10,15
+Story5,DConS14,Combination,Min,,Y,0.002965,1/337,5,20,15,15
+Story5,DConS15,Combination,Max,,X,0.002854,1/350,8,20,0,15
+Story5,DConS15,Combination,Min,,X,0.002719,1/368,16,10,5,15
+Story5,DConS16,Combination,Max,,X,0.002643,1/378,7,20,5,15
+Story5,DConS16,Combination,Min,,X,0.002776,1/360,8,20,0,15
+Story5,DConS17,Combination,Max,,Y,0.002984,1/335,8,20,0,15
+Story5,DConS17,Combination,Min,,Y,0.002739,1/365,16,10,5,15
+Story5,DConS18,Combination,Max,,Y,0.002728,1/367,21,10,10,15
+Story5,DConS18,Combination,Min,,Y,0.002972,1/336,5,20,15,15
+Story5,DConS19,Combination,Max,,X,0.001292,1/774,3,10,15,15
+Story5,DConS19,Combination,Min,,X,0.00117,1/854,10,10,0,15
+Story5,DConS20,Combination,Max,,X,0.000178,1/5615,3,10,15,15
+Story5,DConS20,Combination,Max,,Y,0.001331,1/751,7,20,5,15
+Story5,DConS20,Combination,Min,,Y,0.001304,1/767,26,20,10,15
+Story5,DConS21,Combination,Max,,X,0.001266,1/790,8,20,0,15
+Story5,DConS21,Combination,Min,,X,0.001189,1/841,8,20,0,15
+Story5,DConS22,Combination,Max,,Y,0.001323,1/756,8,20,0,15
+Story5,DConS22,Combination,Min,,Y,0.001311,1/763,5,20,15,15
+Story4,Dead,LinStatic,,,X,1E-06,1/0,3,10,15,12
+Story4,Live,LinStatic,,,Y,1.4E-05,1/72276,13,0,5,12
+Story4,Modal,LinModEigen,Mode,1,Y,1E-06,1/0,5,20,15,12
+Story4,Modal,LinModEigen,Mode,2,X,1E-06,1/0,8,20,0,12
+Story4,Modal,LinModEigen,Mode,3,Y,1E-06,1/934775,1,0,15,12
+Story4,Modal,LinModEigen,Mode,4,X,4.876E-07,1/0,1,0,15,12
+Story4,Modal,LinModEigen,Mode,4,Y,1E-06,1/924647,4,15,15,12
+Story4,Modal,LinModEigen,Mode,5,X,1E-06,1/938252,8,20,0,12
+Story4,Modal,LinModEigen,Mode,5,Y,4.621E-07,1/0,5,20,15,12
+Story4,Modal,LinModEigen,Mode,6,X,1E-06,1/994944,8,20,0,12
+Story4,Modal,LinModEigen,Mode,6,Y,1E-06,1/713046,1,0,15,12
+Story4,Modal,LinModEigen,Mode,7,X,2E-06,1/639657,1,0,15,12
+Story4,Modal,LinModEigen,Mode,7,Y,3E-06,1/382670,21,10,10,12
+Story4,Modal,LinModEigen,Mode,8,X,3E-06,1/397063,7,20,5,12
+Story4,Modal,LinModEigen,Mode,8,Y,1E-06,1/711879,5,20,15,12
+Story4,Modal,LinModEigen,Mode,9,X,5E-06,1/216599,8,20,0,12
+Story4,Modal,LinModEigen,Mode,9,Y,7E-06,1/144184,21,10,10,12
+Story4,Modal,LinModEigen,Mode,10,X,3E-06,1/294939,1,0,15,12
+Story4,Modal,LinModEigen,Mode,10,Y,4E-06,1/280461,8,20,0,12
+Story4,Modal,LinModEigen,Mode,11,X,6E-06,1/159303,7,20,5,12
+Story4,Modal,LinModEigen,Mode,11,Y,4E-06,1/267621,5,20,15,12
+Story4,Modal,LinModEigen,Mode,12,X,3E-06,1/363525,8,20,0,12
+Story4,Modal,LinModEigen,Mode,12,Y,4E-06,1/243876,21,10,10,12
+Story4,FF,LinStatic,,,X,2.386E-07,1/0,3,10,15,12
+Story4,PW,LinStatic,,,X,1.909E-07,1/0,3,10,15,12
+Story4,EQx,LinStatic,Step By Step,1,X,0.002465,1/406,1,0,15,12
+Story4,EQx,LinStatic,Step By Step,2,X,0.002468,1/405,8,20,0,12
+Story4,EQy,LinStatic,Step By Step,1,Y,0.00261,1/383,5,20,15,12
+Story4,EQy,LinStatic,Step By Step,2,Y,0.002486,1/402,12,0,0,12
+Story4,Wx,LinStatic,Step By Step,1,X,0.000166,1/6030,23,0,10,12
+Story4,Wx,LinStatic,Step By Step,2,Y,0.000235,1/4250,10,10,0,12
+Story4,Wx,LinStatic,Step By Step,3,X,0.000138,1/7244,12,0,0,12
+Story4,Wx,LinStatic,Step By Step,4,X,0.000138,1/7243,1,0,15,12
+Story4,Wx,LinStatic,Step By Step,5,Y,0.000211,1/4745,8,20,0,12
+Story4,Wx,LinStatic,Step By Step,6,Y,0.000211,1/4745,12,0,0,12
+Story4,Wx,LinStatic,Step By Step,7,X,0.000124,1/8042,1,0,15,12
+Story4,Wx,LinStatic,Step By Step,7,Y,0.000167,1/5996,2,5,15,12
+Story4,Wx,LinStatic,Step By Step,8,X,0.000132,1/7601,8,20,0,12
+Story4,Wx,LinStatic,Step By Step,8,Y,0.000176,1/5667,24,5,0,12
+Story4,Wx,LinStatic,Step By Step,9,X,0.000122,1/8210,12,0,0,12
+Story4,Wx,LinStatic,Step By Step,9,Y,0.000163,1/6128,12,0,0,12
+Story4,Wx,LinStatic,Step By Step,10,X,0.000122,1/8208,5,20,15,12
+Story4,Wx,LinStatic,Step By Step,10,Y,0.000163,1/6128,5,20,15,12
+Story4,Wx,LinStatic,Step By Step,11,X,0.000129,1/7757,8,20,0,12
+Story4,Wx,LinStatic,Step By Step,11,Y,0.000173,1/5792,8,20,0,12
+Story4,Wx,LinStatic,Step By Step,12,X,0.000129,1/7758,1,0,15,12
+Story4,Wx,LinStatic,Step By Step,12,Y,0.000173,1/5792,1,0,15,12
+Story4,Wy,LinStatic,Step By Step,1,X,0.000166,1/6030,23,0,10,12
+Story4,Wy,LinStatic,Step By Step,2,Y,0.000235,1/4250,10,10,0,12
+Story4,Wy,LinStatic,Step By Step,3,X,0.000138,1/7244,12,0,0,12
+Story4,Wy,LinStatic,Step By Step,4,X,0.000138,1/7243,1,0,15,12
+Story4,Wy,LinStatic,Step By Step,5,Y,0.000211,1/4745,8,20,0,12
+Story4,Wy,LinStatic,Step By Step,6,Y,0.000211,1/4745,12,0,0,12
+Story4,Wy,LinStatic,Step By Step,7,X,0.000124,1/8042,1,0,15,12
+Story4,Wy,LinStatic,Step By Step,7,Y,0.000167,1/5996,2,5,15,12
+Story4,Wy,LinStatic,Step By Step,8,X,0.000132,1/7601,8,20,0,12
+Story4,Wy,LinStatic,Step By Step,8,Y,0.000176,1/5667,24,5,0,12
+Story4,Wy,LinStatic,Step By Step,9,X,0.000122,1/8210,12,0,0,12
+Story4,Wy,LinStatic,Step By Step,9,Y,0.000163,1/6128,12,0,0,12
+Story4,Wy,LinStatic,Step By Step,10,X,0.000122,1/8208,5,20,15,12
+Story4,Wy,LinStatic,Step By Step,10,Y,0.000163,1/6128,5,20,15,12
+Story4,Wy,LinStatic,Step By Step,11,X,0.000129,1/7757,8,20,0,12
+Story4,Wy,LinStatic,Step By Step,11,Y,0.000173,1/5792,8,20,0,12
+Story4,Wy,LinStatic,Step By Step,12,X,0.000129,1/7758,1,0,15,12
+Story4,Wy,LinStatic,Step By Step,12,Y,0.000173,1/5792,1,0,15,12
+Story4,WALL,LinStatic,,,X,3.8E-05,1/26397,24,5,0,12
+Story4,WALL,LinStatic,,,Y,7E-06,1/147540,7,20,5,12
+Story4,RSx,LinRespSpec,Max,,X,0.001073,1/932,8,20,0,12
+Story4,RSy,LinRespSpec,Max,,Y,0.001151,1/869,5,20,15,12
+Story4,0.9D+1.0EQx,Combination,Max,,X,0.002468,1/405,8,20,0,12
+Story4,0.9D+1.0EQx,Combination,Min,,X,0.002351,1/425,13,0,5,12
+Story4,0.9D+1.0EQy,Combination,Max,,Y,0.00261,1/383,8,20,0,12
+Story4,0.9D+1.0EQy,Combination,Min,,Y,0.002395,1/418,16,10,5,12
+Story4,DWalS1,Combination,,,X,5.4E-05,1/18477,24,5,0,12
+Story4,DWalS1,Combination,,,Y,1E-05,1/100566,7,20,5,12
+Story4,DWalS2,Combination,,,X,5.2E-05,1/19062,3,10,15,12
+Story4,DWalS2,Combination,,,Y,3E-05,1/33115,13,0,5,12
+Story4,DWalS3,Combination,Max,,X,0.000216,1/4634,3,10,15,12
+Story4,DWalS3,Combination,Max,,Y,0.000257,1/3890,13,0,5,12
+Story4,DWalS3,Combination,Min,,X,3.8E-05,1/26157,23,0,10,12
+Story4,DWalS3,Combination,Min,,Y,0.000158,1/6329,26,20,10,12
+Story4,DWalS4,Combination,Max,,X,7.6E-05,1/13198,3,10,15,12
+Story4,DWalS4,Combination,Max,,Y,0.000189,1/5301,13,0,5,12
+Story4,DWalS4,Combination,Min,,X,0.000126,1/7932,10,10,0,12
+Story4,DWalS4,Combination,Min,,Y,0.000226,1/4415,26,20,10,12
+Story4,DWalS5,Combination,Max,,X,0.000216,1/4634,3,10,15,12
+Story4,DWalS5,Combination,Max,,Y,0.000257,1/3890,13,0,5,12
+Story4,DWalS5,Combination,Min,,X,3.8E-05,1/26157,23,0,10,12
+Story4,DWalS5,Combination,Min,,Y,0.000158,1/6329,26,20,10,12
+Story4,DWalS6,Combination,Max,,X,7.6E-05,1/13198,3,10,15,12
+Story4,DWalS6,Combination,Max,,Y,0.000189,1/5301,13,0,5,12
+Story4,DWalS6,Combination,Min,,X,0.000126,1/7932,10,10,0,12
+Story4,DWalS6,Combination,Min,,Y,0.000226,1/4415,26,20,10,12
+Story4,DWalS7,Combination,Max,,X,0.000201,1/4987,24,5,0,12
+Story4,DWalS7,Combination,Max,,Y,0.000242,1/4139,7,20,5,12
+Story4,DWalS7,Combination,Min,,X,2.6E-05,1/38599,13,0,5,12
+Story4,DWalS7,Combination,Min,,Y,0.000163,1/6147,23,0,10,12
+Story4,DWalS8,Combination,Max,,X,6E-05,1/16536,24,5,0,12
+Story4,DWalS8,Combination,Max,,Y,0.000173,1/5777,7,20,5,12
+Story4,DWalS8,Combination,Min,,X,0.000133,1/7517,4,15,15,12
+Story4,DWalS8,Combination,Min,,Y,0.000231,1/4327,23,0,10,12
+Story4,DWalS9,Combination,Max,,X,0.000201,1/4987,24,5,0,12
+Story4,DWalS9,Combination,Max,,Y,0.000242,1/4139,7,20,5,12
+Story4,DWalS9,Combination,Min,,X,2.6E-05,1/38599,13,0,5,12
+Story4,DWalS9,Combination,Min,,Y,0.000163,1/6147,23,0,10,12
+Story4,DWalS10,Combination,Max,,X,6E-05,1/16536,24,5,0,12
+Story4,DWalS10,Combination,Max,,Y,0.000173,1/5777,7,20,5,12
+Story4,DWalS10,Combination,Min,,X,0.000133,1/7517,4,15,15,12
+Story4,DWalS10,Combination,Min,,Y,0.000231,1/4327,23,0,10,12
+Story4,DWalS11,Combination,Max,,X,0.002517,1/397,1,0,15,12
+Story4,DWalS11,Combination,Min,,X,0.0024,1/417,23,0,10,12
+Story4,DWalS12,Combination,Max,,X,0.002304,1/434,7,20,5,12
+Story4,DWalS12,Combination,Min,,X,0.002423,1/413,8,20,0,12
+Story4,DWalS13,Combination,Max,,Y,0.002622,1/381,8,20,0,12
+Story4,DWalS13,Combination,Min,,Y,0.002411,1/415,3,10,15,12
+Story4,DWalS14,Combination,Max,,Y,0.002379,1/420,16,10,5,12
+Story4,DWalS14,Combination,Min,,Y,0.002601,1/385,5,20,15,12
+Story4,DWalS15,Combination,Max,,X,0.002498,1/400,8,20,0,12
+Story4,DWalS15,Combination,Min,,X,0.002381,1/420,13,0,5,12
+Story4,DWalS16,Combination,Max,,X,0.002321,1/431,7,20,5,12
+Story4,DWalS16,Combination,Min,,X,0.002438,1/410,8,20,0,12
+Story4,DWalS17,Combination,Max,,Y,0.002616,1/382,8,20,0,12
+Story4,DWalS17,Combination,Min,,Y,0.0024,1/417,3,10,15,12
+Story4,DWalS18,Combination,Max,,Y,0.002391,1/418,16,10,5,12
+Story4,DWalS18,Combination,Min,,Y,0.002606,1/384,5,20,15,12
+Story4,B1_1.4D,Combination,,,X,5.4E-05,1/18477,24,5,0,12
+Story4,B1_1.4D,Combination,,,Y,1E-05,1/100566,7,20,5,12
+Story4,B2_1.2D+1.6L,Combination,,,X,5.2E-05,1/19062,3,10,15,12
+Story4,B2_1.2D+1.6L,Combination,,,Y,3E-05,1/33115,13,0,5,12
+Story4,B5_1.2D+L+EQx,Combination,Max,,X,0.002513,1/398,1,0,15,12
+Story4,B5_1.2D+L+EQx,Combination,Min,,X,0.002396,1/417,23,0,10,12
+Story4,B7_0.9D+EQx,Combination,Max,,X,0.002502,1/400,8,20,0,12
+Story4,B7_0.9D+EQx,Combination,Min,,X,0.002385,1/419,13,0,5,12
+Story4,B5_1.2D+L-EQx,Combination,Max,,X,0.002308,1/433,7,20,5,12
+Story4,B5_1.2D+L-EQx,Combination,Min,,X,0.002427,1/412,8,20,0,12
+Story4,B7_0.9D-EQx,Combination,Max,,X,0.002317,1/432,7,20,5,12
+Story4,B7_0.9D-EQx,Combination,Min,,X,0.002434,1/411,8,20,0,12
+Story4,B5_1.2D+L+EQy,Combination,Max,,Y,0.002621,1/381,8,20,0,12
+Story4,B5_1.2D+L+EQy,Combination,Min,,Y,0.00241,1/415,3,10,15,12
+Story4,B7_0.9D+EQy,Combination,Max,,Y,0.002616,1/382,8,20,0,12
+Story4,B7_0.9D+EQy,Combination,Min,,Y,0.0024,1/417,3,10,15,12
+Story4,B5_1.2D+L-EQy,Combination,Max,,Y,0.00238,1/420,16,10,5,12
+Story4,B5_1.2D+L-EQy,Combination,Min,,Y,0.002601,1/384,5,20,15,12
+Story4,B7_0.9D-EQy,Combination,Max,,Y,0.00239,1/418,16,10,5,12
+Story4,B7_0.9D-EQy,Combination,Min,,Y,0.002606,1/384,5,20,15,12
+Story4,DConS1,Combination,,,X,5.4E-05,1/18477,24,5,0,12
+Story4,DConS1,Combination,,,Y,1E-05,1/100566,7,20,5,12
+Story4,DConS2,Combination,,,X,5.2E-05,1/19062,3,10,15,12
+Story4,DConS2,Combination,,,Y,3E-05,1/33115,13,0,5,12
+Story4,DConS3,Combination,Max,,X,0.000216,1/4634,3,10,15,12
+Story4,DConS3,Combination,Max,,Y,0.000257,1/3890,13,0,5,12
+Story4,DConS3,Combination,Min,,X,3.8E-05,1/26157,23,0,10,12
+Story4,DConS3,Combination,Min,,Y,0.000158,1/6329,26,20,10,12
+Story4,DConS4,Combination,Max,,X,7.6E-05,1/13198,3,10,15,12
+Story4,DConS4,Combination,Max,,Y,0.000189,1/5301,13,0,5,12
+Story4,DConS4,Combination,Min,,X,0.000126,1/7932,10,10,0,12
+Story4,DConS4,Combination,Min,,Y,0.000226,1/4415,26,20,10,12
+Story4,DConS5,Combination,Max,,X,0.000216,1/4634,3,10,15,12
+Story4,DConS5,Combination,Max,,Y,0.000257,1/3890,13,0,5,12
+Story4,DConS5,Combination,Min,,X,3.8E-05,1/26157,23,0,10,12
+Story4,DConS5,Combination,Min,,Y,0.000158,1/6329,26,20,10,12
+Story4,DConS6,Combination,Max,,X,7.6E-05,1/13198,3,10,15,12
+Story4,DConS6,Combination,Max,,Y,0.000189,1/5301,13,0,5,12
+Story4,DConS6,Combination,Min,,X,0.000126,1/7932,10,10,0,12
+Story4,DConS6,Combination,Min,,Y,0.000226,1/4415,26,20,10,12
+Story4,DConS7,Combination,Max,,X,0.000201,1/4987,24,5,0,12
+Story4,DConS7,Combination,Max,,Y,0.000242,1/4139,7,20,5,12
+Story4,DConS7,Combination,Min,,X,2.6E-05,1/38599,13,0,5,12
+Story4,DConS7,Combination,Min,,Y,0.000163,1/6147,23,0,10,12
+Story4,DConS8,Combination,Max,,X,6E-05,1/16536,24,5,0,12
+Story4,DConS8,Combination,Max,,Y,0.000173,1/5777,7,20,5,12
+Story4,DConS8,Combination,Min,,X,0.000133,1/7517,4,15,15,12
+Story4,DConS8,Combination,Min,,Y,0.000231,1/4327,23,0,10,12
+Story4,DConS9,Combination,Max,,X,0.000201,1/4987,24,5,0,12
+Story4,DConS9,Combination,Max,,Y,0.000242,1/4139,7,20,5,12
+Story4,DConS9,Combination,Min,,X,2.6E-05,1/38599,13,0,5,12
+Story4,DConS9,Combination,Min,,Y,0.000163,1/6147,23,0,10,12
+Story4,DConS10,Combination,Max,,X,6E-05,1/16536,24,5,0,12
+Story4,DConS10,Combination,Max,,Y,0.000173,1/5777,7,20,5,12
+Story4,DConS10,Combination,Min,,X,0.000133,1/7517,4,15,15,12
+Story4,DConS10,Combination,Min,,Y,0.000231,1/4327,23,0,10,12
+Story4,DConS11,Combination,Max,,X,0.002517,1/397,1,0,15,12
+Story4,DConS11,Combination,Min,,X,0.0024,1/417,23,0,10,12
+Story4,DConS12,Combination,Max,,X,0.002304,1/434,7,20,5,12
+Story4,DConS12,Combination,Min,,X,0.002423,1/413,8,20,0,12
+Story4,DConS13,Combination,Max,,Y,0.002622,1/381,8,20,0,12
+Story4,DConS13,Combination,Min,,Y,0.002411,1/415,3,10,15,12
+Story4,DConS14,Combination,Max,,Y,0.002379,1/420,16,10,5,12
+Story4,DConS14,Combination,Min,,Y,0.002601,1/385,5,20,15,12
+Story4,DConS15,Combination,Max,,X,0.002498,1/400,8,20,0,12
+Story4,DConS15,Combination,Min,,X,0.002381,1/420,13,0,5,12
+Story4,DConS16,Combination,Max,,X,0.002321,1/431,7,20,5,12
+Story4,DConS16,Combination,Min,,X,0.002438,1/410,8,20,0,12
+Story4,DConS17,Combination,Max,,Y,0.002616,1/382,8,20,0,12
+Story4,DConS17,Combination,Min,,Y,0.0024,1/417,3,10,15,12
+Story4,DConS18,Combination,Max,,Y,0.002391,1/418,16,10,5,12
+Story4,DConS18,Combination,Min,,Y,0.002606,1/384,5,20,15,12
+Story4,DConS19,Combination,Max,,X,0.001124,1/890,3,10,15,12
+Story4,DConS19,Combination,Min,,X,0.001029,1/972,10,10,0,12
+Story4,DConS20,Combination,Max,,X,0.00015,1/6675,3,10,15,12
+Story4,DConS20,Combination,Max,,Y,0.001163,1/860,7,20,5,12
+Story4,DConS20,Combination,Min,,Y,0.001142,1/876,26,20,10,12
+Story4,DConS21,Combination,Max,,X,0.001104,1/906,8,20,0,12
+Story4,DConS21,Combination,Min,,X,0.001043,1/959,10,10,0,12
+Story4,DConS22,Combination,Max,,Y,0.001157,1/865,8,20,0,12
+Story4,DConS22,Combination,Min,,Y,0.001147,1/872,5,20,15,12
+Story3,Dead,LinStatic,,,X,1E-06,1/0,3,10,15,9
+Story3,Live,LinStatic,,,Y,1.1E-05,1/94535,13,0,5,9
+Story3,Modal,LinModEigen,Mode,1,Y,1E-06,1/0,26,20,10,9
+Story3,Modal,LinModEigen,Mode,2,X,1E-06,1/0,8,20,0,9
+Story3,Modal,LinModEigen,Mode,3,Y,1E-06,1/0,1,0,15,9
+Story3,Modal,LinModEigen,Mode,4,X,1E-06,1/0,1,0,15,9
+Story3,Modal,LinModEigen,Mode,4,Y,2E-06,1/564014,8,20,0,9
+Story3,Modal,LinModEigen,Mode,5,X,2E-06,1/573240,8,20,0,9
+Story3,Modal,LinModEigen,Mode,5,Y,1E-06,1/0,5,20,15,9
+Story3,Modal,LinModEigen,Mode,6,Y,2E-06,1/423993,1,0,15,9
+Story3,Modal,LinModEigen,Mode,7,X,2.486E-07,1/0,1,0,15,9
+Story3,Modal,LinModEigen,Mode,7,Y,3.799E-07,1/0,17,15,5,9
+Story3,Modal,LinModEigen,Mode,8,X,3.699E-07,1/0,8,20,0,9
+Story3,Modal,LinModEigen,Mode,8,Y,2.471E-07,1/0,5,20,15,9
+Story3,Modal,LinModEigen,Mode,9,X,3E-06,1/362961,8,20,0,9
+Story3,Modal,LinModEigen,Mode,9,Y,4E-06,1/226215,21,10,10,9
+Story3,Modal,LinModEigen,Mode,10,X,1E-06,1/0,8,20,0,9
+Story3,Modal,LinModEigen,Mode,10,Y,4.79E-07,1/0,1,0,15,9
+Story3,Modal,LinModEigen,Mode,11,X,4E-06,1/240633,7,20,5,9
+Story3,Modal,LinModEigen,Mode,11,Y,2E-06,1/428415,10,10,0,9
+Story3,Modal,LinModEigen,Mode,12,X,6E-06,1/161006,8,20,0,9
+Story3,Modal,LinModEigen,Mode,12,Y,9E-06,1/109997,21,10,10,9
+Story3,FF,LinStatic,,,X,2.1E-07,1/0,3,10,15,9
+Story3,PW,LinStatic,,,X,1.68E-07,1/0,3,10,15,9
+Story3,EQx,LinStatic,Step By Step,1,X,0.001999,1/500,1,0,15,9
+Story3,EQx,LinStatic,Step By Step,2,X,0.002001,1/500,8,20,0,9
+Story3,EQy,LinStatic,Step By Step,1,Y,0.002117,1/472,5,20,15,9
+Story3,EQy,LinStatic,Step By Step,2,Y,0.002015,1/496,13,0,5,9
+Story3,Wx,LinStatic,Step By Step,1,X,0.000139,1/7198,24,5,0,9
+Story3,Wx,LinStatic,Step By Step,2,Y,0.000197,1/5074,7,20,5,9
+Story3,Wx,LinStatic,Step By Step,3,X,0.000116,1/8647,24,5,0,9
+Story3,Wx,LinStatic,Step By Step,4,X,0.000116,1/8649,4,15,15,9
+Story3,Wx,LinStatic,Step By Step,5,Y,0.000177,1/5665,7,20,5,9
+Story3,Wx,LinStatic,Step By Step,6,Y,0.000177,1/5665,13,0,5,9
+Story3,Wx,LinStatic,Step By Step,7,X,0.000104,1/9595,4,15,15,9
+Story3,Wx,LinStatic,Step By Step,7,Y,0.00014,1/7159,13,0,5,9
+Story3,Wx,LinStatic,Step By Step,8,X,0.00011,1/9066,10,10,0,9
+Story3,Wx,LinStatic,Step By Step,8,Y,0.000148,1/6764,23,0,10,9
+Story3,Wx,LinStatic,Step By Step,9,X,0.000102,1/9799,24,5,0,9
+Story3,Wx,LinStatic,Step By Step,9,Y,0.000137,1/7317,13,0,5,9
+Story3,Wx,LinStatic,Step By Step,10,X,0.000102,1/9795,4,15,15,9
+Story3,Wx,LinStatic,Step By Step,10,Y,0.000137,1/7318,26,20,10,9
+Story3,Wx,LinStatic,Step By Step,11,X,0.000108,1/9256,10,10,0,9
+Story3,Wx,LinStatic,Step By Step,11,Y,0.000145,1/6915,7,20,5,9
+Story3,Wx,LinStatic,Step By Step,12,X,0.000108,1/9260,3,10,15,9
+Story3,Wx,LinStatic,Step By Step,12,Y,0.000145,1/6913,23,0,10,9
+Story3,Wy,LinStatic,Step By Step,1,X,0.000139,1/7198,24,5,0,9
+Story3,Wy,LinStatic,Step By Step,2,Y,0.000197,1/5074,7,20,5,9
+Story3,Wy,LinStatic,Step By Step,3,X,0.000116,1/8647,24,5,0,9
+Story3,Wy,LinStatic,Step By Step,4,X,0.000116,1/8649,4,15,15,9
+Story3,Wy,LinStatic,Step By Step,5,Y,0.000177,1/5665,7,20,5,9
+Story3,Wy,LinStatic,Step By Step,6,Y,0.000177,1/5665,13,0,5,9
+Story3,Wy,LinStatic,Step By Step,7,X,0.000104,1/9595,4,15,15,9
+Story3,Wy,LinStatic,Step By Step,7,Y,0.00014,1/7159,13,0,5,9
+Story3,Wy,LinStatic,Step By Step,8,X,0.00011,1/9066,10,10,0,9
+Story3,Wy,LinStatic,Step By Step,8,Y,0.000148,1/6764,23,0,10,9
+Story3,Wy,LinStatic,Step By Step,9,X,0.000102,1/9799,24,5,0,9
+Story3,Wy,LinStatic,Step By Step,9,Y,0.000137,1/7317,13,0,5,9
+Story3,Wy,LinStatic,Step By Step,10,X,0.000102,1/9795,4,15,15,9
+Story3,Wy,LinStatic,Step By Step,10,Y,0.000137,1/7318,26,20,10,9
+Story3,Wy,LinStatic,Step By Step,11,X,0.000108,1/9256,10,10,0,9
+Story3,Wy,LinStatic,Step By Step,11,Y,0.000145,1/6915,7,20,5,9
+Story3,Wy,LinStatic,Step By Step,12,X,0.000108,1/9260,3,10,15,9
+Story3,Wy,LinStatic,Step By Step,12,Y,0.000145,1/6913,23,0,10,9
+Story3,WALL,LinStatic,,,X,2.7E-05,1/36715,24,5,0,9
+Story3,WALL,LinStatic,,,Y,5E-06,1/203191,7,20,5,9
+Story3,RSx,LinRespSpec,Max,,X,0.00087,1/1149,8,20,0,9
+Story3,RSy,LinRespSpec,Max,,Y,0.000933,1/1072,5,20,15,9
+Story3,0.9D+1.0EQx,Combination,Max,,X,0.002002,1/500,8,20,0,9
+Story3,0.9D+1.0EQx,Combination,Min,,X,0.001907,1/524,13,0,5,9
+Story3,0.9D+1.0EQy,Combination,Max,,Y,0.002117,1/472,7,20,5,9
+Story3,0.9D+1.0EQy,Combination,Min,,Y,0.001941,1/515,3,10,15,9
+Story3,DWalS1,Combination,,,X,3.9E-05,1/25446,24,5,0,9
+Story3,DWalS1,Combination,,,Y,8E-06,1/130872,7,20,5,9
+Story3,DWalS2,Combination,,,X,3.8E-05,1/26123,3,10,15,9
+Story3,DWalS2,Combination,,,Y,2.3E-05,1/42867,13,0,5,9
+Story3,DWalS3,Combination,Max,,X,0.000175,1/5703,3,10,15,9
+Story3,DWalS3,Combination,Max,,Y,0.000214,1/4672,13,0,5,9
+Story3,DWalS3,Combination,Min,,X,2.6E-05,1/37926,22,5,10,9
+Story3,DWalS3,Combination,Min,,Y,0.000134,1/7462,26,20,10,9
+Story3,DWalS4,Combination,Max,,X,5.8E-05,1/17261,3,10,15,9
+Story3,DWalS4,Combination,Max,,Y,0.000157,1/6383,13,0,5,9
+Story3,DWalS4,Combination,Min,,X,0.000111,1/8983,10,10,0,9
+Story3,DWalS4,Combination,Min,,Y,0.000191,1/5224,26,20,10,9
+Story3,DWalS5,Combination,Max,,X,0.000175,1/5703,3,10,15,9
+Story3,DWalS5,Combination,Max,,Y,0.000214,1/4672,13,0,5,9
+Story3,DWalS5,Combination,Min,,X,2.6E-05,1/37926,22,5,10,9
+Story3,DWalS5,Combination,Min,,Y,0.000134,1/7462,26,20,10,9
+Story3,DWalS6,Combination,Max,,X,5.8E-05,1/17261,3,10,15,9
+Story3,DWalS6,Combination,Max,,Y,0.000157,1/6383,13,0,5,9
+Story3,DWalS6,Combination,Min,,X,0.000111,1/8983,10,10,0,9
+Story3,DWalS6,Combination,Min,,Y,0.000191,1/5224,26,20,10,9
+Story3,DWalS7,Combination,Max,,X,0.000164,1/6090,24,5,0,9
+Story3,DWalS7,Combination,Max,,Y,0.000202,1/4951,7,20,5,9
+Story3,DWalS7,Combination,Min,,Y,0.000137,1/7293,23,0,10,9
+Story3,DWalS8,Combination,Max,,X,4.7E-05,1/21369,24,5,0,9
+Story3,DWalS8,Combination,Max,,Y,0.000145,1/6918,7,20,5,9
+Story3,DWalS8,Combination,Min,,X,0.000116,1/8616,4,15,15,9
+Story3,DWalS8,Combination,Min,,Y,0.000195,1/5141,23,0,10,9
+Story3,DWalS9,Combination,Max,,X,0.000164,1/6090,24,5,0,9
+Story3,DWalS9,Combination,Max,,Y,0.000202,1/4951,7,20,5,9
+Story3,DWalS9,Combination,Min,,Y,0.000137,1/7293,23,0,10,9
+Story3,DWalS10,Combination,Max,,X,4.7E-05,1/21369,24,5,0,9
+Story3,DWalS10,Combination,Max,,Y,0.000145,1/6918,7,20,5,9
+Story3,DWalS10,Combination,Min,,X,0.000116,1/8616,4,15,15,9
+Story3,DWalS10,Combination,Min,,Y,0.000195,1/5141,23,0,10,9
+Story3,DWalS11,Combination,Max,,X,0.002038,1/491,3,10,15,9
+Story3,DWalS11,Combination,Min,,X,0.001941,1/515,22,5,10,9
+Story3,DWalS12,Combination,Max,,X,0.001873,1/534,17,15,5,9
+Story3,DWalS12,Combination,Min,,X,0.001971,1/507,10,10,0,9
+Story3,DWalS13,Combination,Max,,Y,0.002126,1/470,7,20,5,9
+Story3,DWalS13,Combination,Min,,Y,0.001953,1/512,3,10,15,9
+Story3,DWalS14,Combination,Max,,Y,0.00193,1/518,21,10,10,9
+Story3,DWalS14,Combination,Min,,Y,0.002111,1/474,26,20,10,9
+Story3,DWalS15,Combination,Max,,X,0.002023,1/494,8,20,0,9
+Story3,DWalS15,Combination,Min,,X,0.001928,1/519,13,0,5,9
+Story3,DWalS16,Combination,Max,,X,0.001885,1/530,17,15,5,9
+Story3,DWalS16,Combination,Min,,X,0.00198,1/505,10,10,0,9
+Story3,DWalS17,Combination,Max,,Y,0.002121,1/472,7,20,5,9
+Story3,DWalS17,Combination,Min,,Y,0.001945,1/514,3,10,15,9
+Story3,DWalS18,Combination,Max,,Y,0.001938,1/516,21,10,10,9
+Story3,DWalS18,Combination,Min,,Y,0.002114,1/473,26,20,10,9
+Story3,B1_1.4D,Combination,,,X,3.9E-05,1/25446,24,5,0,9
+Story3,B1_1.4D,Combination,,,Y,8E-06,1/130872,7,20,5,9
+Story3,B2_1.2D+1.6L,Combination,,,X,3.8E-05,1/26123,3,10,15,9
+Story3,B2_1.2D+1.6L,Combination,,,Y,2.3E-05,1/42867,13,0,5,9
+Story3,B5_1.2D+L+EQx,Combination,Max,,X,0.002035,1/491,3,10,15,9
+Story3,B5_1.2D+L+EQx,Combination,Min,,X,0.001939,1/516,22,5,10,9
+Story3,B7_0.9D+EQx,Combination,Max,,X,0.002026,1/494,24,5,0,9
+Story3,B7_0.9D+EQx,Combination,Min,,X,0.001931,1/518,13,0,5,9
+Story3,B5_1.2D+L-EQx,Combination,Max,,X,0.001876,1/533,17,15,5,9
+Story3,B5_1.2D+L-EQx,Combination,Min,,X,0.001973,1/507,10,10,0,9
+Story3,B7_0.9D-EQx,Combination,Max,,X,0.001882,1/531,17,15,5,9
+Story3,B7_0.9D-EQx,Combination,Min,,X,0.001978,1/506,10,10,0,9
+Story3,B5_1.2D+L+EQy,Combination,Max,,Y,0.002125,1/470,7,20,5,9
+Story3,B5_1.2D+L+EQy,Combination,Min,,Y,0.001953,1/512,3,10,15,9
+Story3,B7_0.9D+EQy,Combination,Max,,Y,0.002121,1/471,7,20,5,9
+Story3,B7_0.9D+EQy,Combination,Min,,Y,0.001945,1/514,3,10,15,9
+Story3,B5_1.2D+L-EQy,Combination,Max,,Y,0.00193,1/518,21,10,10,9
+Story3,B5_1.2D+L-EQy,Combination,Min,,Y,0.002111,1/474,26,20,10,9
+Story3,B7_0.9D-EQy,Combination,Max,,Y,0.001938,1/516,21,10,10,9
+Story3,B7_0.9D-EQy,Combination,Min,,Y,0.002114,1/473,26,20,10,9
+Story3,DConS1,Combination,,,X,3.9E-05,1/25446,24,5,0,9
+Story3,DConS1,Combination,,,Y,8E-06,1/130872,7,20,5,9
+Story3,DConS2,Combination,,,X,3.8E-05,1/26123,3,10,15,9
+Story3,DConS2,Combination,,,Y,2.3E-05,1/42867,13,0,5,9
+Story3,DConS3,Combination,Max,,X,0.000175,1/5703,3,10,15,9
+Story3,DConS3,Combination,Max,,Y,0.000214,1/4672,13,0,5,9
+Story3,DConS3,Combination,Min,,X,2.6E-05,1/37926,22,5,10,9
+Story3,DConS3,Combination,Min,,Y,0.000134,1/7462,26,20,10,9
+Story3,DConS4,Combination,Max,,X,5.8E-05,1/17261,3,10,15,9
+Story3,DConS4,Combination,Max,,Y,0.000157,1/6383,13,0,5,9
+Story3,DConS4,Combination,Min,,X,0.000111,1/8983,10,10,0,9
+Story3,DConS4,Combination,Min,,Y,0.000191,1/5224,26,20,10,9
+Story3,DConS5,Combination,Max,,X,0.000175,1/5703,3,10,15,9
+Story3,DConS5,Combination,Max,,Y,0.000214,1/4672,13,0,5,9
+Story3,DConS5,Combination,Min,,X,2.6E-05,1/37926,22,5,10,9
+Story3,DConS5,Combination,Min,,Y,0.000134,1/7462,26,20,10,9
+Story3,DConS6,Combination,Max,,X,5.8E-05,1/17261,3,10,15,9
+Story3,DConS6,Combination,Max,,Y,0.000157,1/6383,13,0,5,9
+Story3,DConS6,Combination,Min,,X,0.000111,1/8983,10,10,0,9
+Story3,DConS6,Combination,Min,,Y,0.000191,1/5224,26,20,10,9
+Story3,DConS7,Combination,Max,,X,0.000164,1/6090,24,5,0,9
+Story3,DConS7,Combination,Max,,Y,0.000202,1/4951,7,20,5,9
+Story3,DConS7,Combination,Min,,Y,0.000137,1/7293,23,0,10,9
+Story3,DConS8,Combination,Max,,X,4.7E-05,1/21369,24,5,0,9
+Story3,DConS8,Combination,Max,,Y,0.000145,1/6918,7,20,5,9
+Story3,DConS8,Combination,Min,,X,0.000116,1/8616,4,15,15,9
+Story3,DConS8,Combination,Min,,Y,0.000195,1/5141,23,0,10,9
+Story3,DConS9,Combination,Max,,X,0.000164,1/6090,24,5,0,9
+Story3,DConS9,Combination,Max,,Y,0.000202,1/4951,7,20,5,9
+Story3,DConS9,Combination,Min,,Y,0.000137,1/7293,23,0,10,9
+Story3,DConS10,Combination,Max,,X,4.7E-05,1/21369,24,5,0,9
+Story3,DConS10,Combination,Max,,Y,0.000145,1/6918,7,20,5,9
+Story3,DConS10,Combination,Min,,X,0.000116,1/8616,4,15,15,9
+Story3,DConS10,Combination,Min,,Y,0.000195,1/5141,23,0,10,9
+Story3,DConS11,Combination,Max,,X,0.002038,1/491,3,10,15,9
+Story3,DConS11,Combination,Min,,X,0.001941,1/515,22,5,10,9
+Story3,DConS12,Combination,Max,,X,0.001873,1/534,17,15,5,9
+Story3,DConS12,Combination,Min,,X,0.001971,1/507,10,10,0,9
+Story3,DConS13,Combination,Max,,Y,0.002126,1/470,7,20,5,9
+Story3,DConS13,Combination,Min,,Y,0.001953,1/512,3,10,15,9
+Story3,DConS14,Combination,Max,,Y,0.00193,1/518,21,10,10,9
+Story3,DConS14,Combination,Min,,Y,0.002111,1/474,26,20,10,9
+Story3,DConS15,Combination,Max,,X,0.002023,1/494,8,20,0,9
+Story3,DConS15,Combination,Min,,X,0.001928,1/519,13,0,5,9
+Story3,DConS16,Combination,Max,,X,0.001885,1/530,17,15,5,9
+Story3,DConS16,Combination,Min,,X,0.00198,1/505,10,10,0,9
+Story3,DConS17,Combination,Max,,Y,0.002121,1/472,7,20,5,9
+Story3,DConS17,Combination,Min,,Y,0.001945,1/514,3,10,15,9
+Story3,DConS18,Combination,Max,,Y,0.001938,1/516,21,10,10,9
+Story3,DConS18,Combination,Min,,Y,0.002114,1/473,26,20,10,9
+Story3,DConS19,Combination,Max,,X,0.000907,1/1102,3,10,15,9
+Story3,DConS19,Combination,Min,,X,0.00084,1/1191,10,10,0,9
+Story3,DConS20,Combination,Max,,Y,0.000943,1/1061,7,20,5,9
+Story3,DConS20,Combination,Min,,Y,0.000927,1/1079,26,20,10,9
+Story3,DConS21,Combination,Max,,X,0.000892,1/1121,24,5,0,9
+Story3,DConS21,Combination,Min,,X,0.000849,1/1177,10,10,0,9
+Story3,DConS22,Combination,Max,,Y,0.000937,1/1067,7,20,5,9
+Story3,DConS22,Combination,Min,,Y,0.000931,1/1074,26,20,10,9
+Story2,Dead,LinStatic,,,X,1E-06,1/0,3,10,15,6
+Story2,Live,LinStatic,,,Y,7E-06,1/147029,13,0,5,6
+Story2,Modal,LinModEigen,Mode,1,Y,1E-06,1/0,5,20,15,6
+Story2,Modal,LinModEigen,Mode,2,X,4.914E-07,1/0,8,20,0,6
+Story2,Modal,LinModEigen,Mode,3,Y,1E-06,1/0,1,0,15,6
+Story2,Modal,LinModEigen,Mode,4,X,1E-06,1/0,1,0,15,6
+Story2,Modal,LinModEigen,Mode,4,Y,2E-06,1/496441,17,15,5,6
+Story2,Modal,LinModEigen,Mode,5,X,2E-06,1/505381,8,20,0,6
+Story2,Modal,LinModEigen,Mode,5,Y,1E-06,1/0,5,20,15,6
+Story2,Modal,LinModEigen,Mode,6,Y,3E-06,1/372932,1,0,15,6
+Story2,Modal,LinModEigen,Mode,7,X,2E-06,1/503314,1,0,15,6
+Story2,Modal,LinModEigen,Mode,7,Y,3E-06,1/312050,21,10,10,6
+Story2,Modal,LinModEigen,Mode,8,X,3E-06,1/334146,7,20,5,6
+Story2,Modal,LinModEigen,Mode,8,Y,2E-06,1/568954,5,20,15,6
+Story2,Modal,LinModEigen,Mode,9,X,2E-06,1/559393,8,20,0,6
+Story2,Modal,LinModEigen,Mode,9,Y,2E-06,1/431993,21,10,10,6
+Story2,Modal,LinModEigen,Mode,10,X,3E-06,1/321710,1,0,15,6
+Story2,Modal,LinModEigen,Mode,10,Y,4E-06,1/259782,1,0,15,6
+Story2,Modal,LinModEigen,Mode,11,X,2E-06,1/524909,8,20,0,6
+Story2,Modal,LinModEigen,Mode,11,Y,1E-06,1/804706,5,20,15,6
+Story2,Modal,LinModEigen,Mode,12,X,3.447E-07,1/0,24,5,0,6
+Story2,Modal,LinModEigen,Mode,12,Y,1E-06,1/0,13,0,5,6
+Story2,FF,LinStatic,,,X,1.976E-07,1/0,3,10,15,6
+Story2,PW,LinStatic,,,X,1.581E-07,1/0,3,10,15,6
+Story2,EQx,LinStatic,Step By Step,1,X,0.001422,1/703,1,0,15,6
+Story2,EQx,LinStatic,Step By Step,2,X,0.001424,1/702,8,20,0,6
+Story2,EQy,LinStatic,Step By Step,1,Y,0.001499,1/667,5,20,15,6
+Story2,EQy,LinStatic,Step By Step,2,Y,0.001426,1/701,12,0,0,6
+Story2,Wx,LinStatic,Step By Step,1,X,0.000104,1/9641,1,0,15,6
+Story2,Wx,LinStatic,Step By Step,2,Y,0.000148,1/6776,10,10,0,6
+Story2,Wx,LinStatic,Step By Step,3,X,8.6E-05,1/11599,8,20,0,6
+Story2,Wx,LinStatic,Step By Step,4,X,8.6E-05,1/11580,1,0,15,6
+Story2,Wx,LinStatic,Step By Step,5,Y,0.000131,1/7636,8,20,0,6
+Story2,Wx,LinStatic,Step By Step,6,Y,0.000131,1/7640,12,0,0,6
+Story2,Wx,LinStatic,Step By Step,7,X,7.8E-05,1/12768,8,20,0,6
+Story2,Wx,LinStatic,Step By Step,7,Y,0.000105,1/9554,21,10,10,6
+Story2,Wx,LinStatic,Step By Step,8,X,8.2E-05,1/12179,12,0,0,6
+Story2,Wx,LinStatic,Step By Step,8,Y,0.00011,1/9070,10,10,0,6
+Story2,Wx,LinStatic,Step By Step,9,X,7.6E-05,1/13080,8,20,0,6
+Story2,Wx,LinStatic,Step By Step,9,Y,0.000101,1/9873,1,0,15,6
+Story2,Wx,LinStatic,Step By Step,10,X,7.6E-05,1/13079,1,0,15,6
+Story2,Wx,LinStatic,Step By Step,10,Y,0.000101,1/9876,8,20,0,6
+Story2,Wx,LinStatic,Step By Step,11,X,8E-05,1/12457,12,0,0,6
+Story2,Wx,LinStatic,Step By Step,11,Y,0.000107,1/9324,5,20,15,6
+Story2,Wx,LinStatic,Step By Step,12,X,8E-05,1/12473,5,20,15,6
+Story2,Wx,LinStatic,Step By Step,12,Y,0.000107,1/9318,12,0,0,6
+Story2,Wy,LinStatic,Step By Step,1,X,0.000104,1/9641,1,0,15,6
+Story2,Wy,LinStatic,Step By Step,2,Y,0.000148,1/6776,10,10,0,6
+Story2,Wy,LinStatic,Step By Step,3,X,8.6E-05,1/11599,8,20,0,6
+Story2,Wy,LinStatic,Step By Step,4,X,8.6E-05,1/11580,1,0,15,6
+Story2,Wy,LinStatic,Step By Step,5,Y,0.000131,1/7636,8,20,0,6
+Story2,Wy,LinStatic,Step By Step,6,Y,0.000131,1/7640,12,0,0,6
+Story2,Wy,LinStatic,Step By Step,7,X,7.8E-05,1/12768,8,20,0,6
+Story2,Wy,LinStatic,Step By Step,7,Y,0.000105,1/9554,21,10,10,6
+Story2,Wy,LinStatic,Step By Step,8,X,8.2E-05,1/12179,12,0,0,6
+Story2,Wy,LinStatic,Step By Step,8,Y,0.00011,1/9070,10,10,0,6
+Story2,Wy,LinStatic,Step By Step,9,X,7.6E-05,1/13080,8,20,0,6
+Story2,Wy,LinStatic,Step By Step,9,Y,0.000101,1/9873,1,0,15,6
+Story2,Wy,LinStatic,Step By Step,10,X,7.6E-05,1/13079,1,0,15,6
+Story2,Wy,LinStatic,Step By Step,10,Y,0.000101,1/9876,8,20,0,6
+Story2,Wy,LinStatic,Step By Step,11,X,8E-05,1/12457,12,0,0,6
+Story2,Wy,LinStatic,Step By Step,11,Y,0.000107,1/9324,5,20,15,6
+Story2,Wy,LinStatic,Step By Step,12,X,8E-05,1/12473,5,20,15,6
+Story2,Wy,LinStatic,Step By Step,12,Y,0.000107,1/9318,12,0,0,6
+Story2,WALL,LinStatic,,,X,1.7E-05,1/60009,12,0,0,6
+Story2,WALL,LinStatic,,,Y,3E-06,1/301138,8,20,0,6
+Story2,RSx,LinRespSpec,Max,,X,0.000621,1/1609,8,20,0,6
+Story2,RSy,LinRespSpec,Max,,Y,0.000663,1/1509,5,20,15,6
+Story2,0.9D+1.0EQx,Combination,Max,,X,0.001424,1/702,8,20,0,6
+Story2,0.9D+1.0EQx,Combination,Min,,X,0.001356,1/738,23,0,10,6
+Story2,0.9D+1.0EQy,Combination,Max,,Y,0.001499,1/667,8,20,0,6
+Story2,0.9D+1.0EQy,Combination,Min,,Y,0.001384,1/723,10,10,0,6
+Story2,DWalS1,Combination,,,X,2.5E-05,1/40529,24,5,0,6
+Story2,DWalS1,Combination,,,Y,6E-06,1/172309,7,20,5,6
+Story2,DWalS2,Combination,,,X,2.4E-05,1/41282,3,10,15,6
+Story2,DWalS2,Combination,,,Y,1.6E-05,1/63505,13,0,5,6
+Story2,DWalS3,Combination,Max,,X,0.000126,1/7926,1,0,15,6
+Story2,DWalS3,Combination,Max,,Y,0.000158,1/6341,12,0,0,6
+Story2,DWalS3,Combination,Min,,Y,0.000101,1/9907,5,20,15,6
+Story2,DWalS4,Combination,Max,,X,3.9E-05,1/25635,1,0,15,6
+Story2,DWalS4,Combination,Max,,Y,0.000115,1/8698,12,0,0,6
+Story2,DWalS4,Combination,Min,,X,8.8E-05,1/11380,8,20,0,6
+Story2,DWalS4,Combination,Min,,Y,0.000144,1/6958,5,20,15,6
+Story2,DWalS5,Combination,Max,,X,0.000126,1/7926,1,0,15,6
+Story2,DWalS5,Combination,Max,,Y,0.000158,1/6341,12,0,0,6
+Story2,DWalS5,Combination,Min,,Y,0.000101,1/9907,5,20,15,6
+Story2,DWalS6,Combination,Max,,X,3.9E-05,1/25635,1,0,15,6
+Story2,DWalS6,Combination,Max,,Y,0.000115,1/8698,12,0,0,6
+Story2,DWalS6,Combination,Min,,X,8.8E-05,1/11380,8,20,0,6
+Story2,DWalS6,Combination,Min,,Y,0.000144,1/6958,5,20,15,6
+Story2,DWalS7,Combination,Max,,X,0.000119,1/8392,23,0,10,6
+Story2,DWalS7,Combination,Max,,Y,0.00015,1/6652,10,10,0,6
+Story2,DWalS7,Combination,Min,,Y,0.000103,1/9723,3,10,15,6
+Story2,DWalS8,Combination,Max,,X,3.2E-05,1/31385,1,0,15,6
+Story2,DWalS8,Combination,Max,,Y,0.000107,1/9314,10,10,0,6
+Story2,DWalS8,Combination,Min,,X,9E-05,1/11085,7,20,5,6
+Story2,DWalS8,Combination,Min,,Y,0.000146,1/6864,3,10,15,6
+Story2,DWalS9,Combination,Max,,X,0.000119,1/8392,23,0,10,6
+Story2,DWalS9,Combination,Max,,Y,0.00015,1/6652,10,10,0,6
+Story2,DWalS9,Combination,Min,,Y,0.000103,1/9723,3,10,15,6
+Story2,DWalS10,Combination,Max,,X,3.2E-05,1/31385,1,0,15,6
+Story2,DWalS10,Combination,Max,,Y,0.000107,1/9314,10,10,0,6
+Story2,DWalS10,Combination,Min,,X,9E-05,1/11085,7,20,5,6
+Story2,DWalS10,Combination,Min,,Y,0.000146,1/6864,3,10,15,6
+Story2,DWalS11,Combination,Max,,X,0.001446,1/691,1,0,15,6
+Story2,DWalS11,Combination,Min,,X,0.001378,1/726,23,0,10,6
+Story2,DWalS12,Combination,Max,,X,0.001337,1/748,7,20,5,6
+Story2,DWalS12,Combination,Min,,X,0.001407,1/711,8,20,0,6
+Story2,DWalS13,Combination,Max,,Y,0.001505,1/664,8,20,0,6
+Story2,DWalS13,Combination,Min,,Y,0.001391,1/719,10,10,0,6
+Story2,DWalS14,Combination,Max,,Y,0.001377,1/726,3,10,15,6
+Story2,DWalS14,Combination,Min,,Y,0.001496,1/668,5,20,15,6
+Story2,DWalS15,Combination,Max,,X,0.001436,1/696,8,20,0,6
+Story2,DWalS15,Combination,Min,,X,0.001369,1/731,23,0,10,6
+Story2,DWalS16,Combination,Max,,X,0.001344,1/744,7,20,5,6
+Story2,DWalS16,Combination,Min,,X,0.001412,1/708,8,20,0,6
+Story2,DWalS17,Combination,Max,,Y,0.001502,1/666,8,20,0,6
+Story2,DWalS17,Combination,Min,,Y,0.001386,1/722,10,10,0,6
+Story2,DWalS18,Combination,Max,,Y,0.001382,1/724,3,10,15,6
+Story2,DWalS18,Combination,Min,,Y,0.001498,1/668,5,20,15,6
+Story2,B1_1.4D,Combination,,,X,2.5E-05,1/40529,24,5,0,6
+Story2,B1_1.4D,Combination,,,Y,6E-06,1/172309,7,20,5,6
+Story2,B2_1.2D+1.6L,Combination,,,X,2.4E-05,1/41282,3,10,15,6
+Story2,B2_1.2D+1.6L,Combination,,,Y,1.6E-05,1/63505,13,0,5,6
+Story2,B5_1.2D+L+EQx,Combination,Max,,X,0.001445,1/692,1,0,15,6
+Story2,B5_1.2D+L+EQx,Combination,Min,,X,0.001376,1/727,23,0,10,6
+Story2,B7_0.9D+EQx,Combination,Max,,X,0.001438,1/696,8,20,0,6
+Story2,B7_0.9D+EQx,Combination,Min,,X,0.00137,1/730,23,0,10,6
+Story2,B5_1.2D+L-EQx,Combination,Max,,X,0.001339,1/747,7,20,5,6
+Story2,B5_1.2D+L-EQx,Combination,Min,,X,0.001408,1/710,8,20,0,6
+Story2,B7_0.9D-EQx,Combination,Max,,X,0.001342,1/745,7,20,5,6
+Story2,B7_0.9D-EQx,Combination,Min,,X,0.001411,1/709,8,20,0,6
+Story2,B5_1.2D+L+EQy,Combination,Max,,Y,0.001505,1/664,8,20,0,6
+Story2,B5_1.2D+L+EQy,Combination,Min,,Y,0.001391,1/719,10,10,0,6
+Story2,B7_0.9D+EQy,Combination,Max,,Y,0.001502,1/666,8,20,0,6
+Story2,B7_0.9D+EQy,Combination,Min,,Y,0.001386,1/722,10,10,0,6
+Story2,B5_1.2D+L-EQy,Combination,Max,,Y,0.001377,1/726,3,10,15,6
+Story2,B5_1.2D+L-EQy,Combination,Min,,Y,0.001496,1/668,5,20,15,6
+Story2,B7_0.9D-EQy,Combination,Max,,Y,0.001381,1/724,3,10,15,6
+Story2,B7_0.9D-EQy,Combination,Min,,Y,0.001498,1/668,5,20,15,6
+Story2,DConS1,Combination,,,X,2.5E-05,1/40529,24,5,0,6
+Story2,DConS1,Combination,,,Y,6E-06,1/172309,7,20,5,6
+Story2,DConS2,Combination,,,X,2.4E-05,1/41282,3,10,15,6
+Story2,DConS2,Combination,,,Y,1.6E-05,1/63505,13,0,5,6
+Story2,DConS3,Combination,Max,,X,0.000126,1/7926,1,0,15,6
+Story2,DConS3,Combination,Max,,Y,0.000158,1/6341,12,0,0,6
+Story2,DConS3,Combination,Min,,Y,0.000101,1/9907,5,20,15,6
+Story2,DConS4,Combination,Max,,X,3.9E-05,1/25635,1,0,15,6
+Story2,DConS4,Combination,Max,,Y,0.000115,1/8698,12,0,0,6
+Story2,DConS4,Combination,Min,,X,8.8E-05,1/11380,8,20,0,6
+Story2,DConS4,Combination,Min,,Y,0.000144,1/6958,5,20,15,6
+Story2,DConS5,Combination,Max,,X,0.000126,1/7926,1,0,15,6
+Story2,DConS5,Combination,Max,,Y,0.000158,1/6341,12,0,0,6
+Story2,DConS5,Combination,Min,,Y,0.000101,1/9907,5,20,15,6
+Story2,DConS6,Combination,Max,,X,3.9E-05,1/25635,1,0,15,6
+Story2,DConS6,Combination,Max,,Y,0.000115,1/8698,12,0,0,6
+Story2,DConS6,Combination,Min,,X,8.8E-05,1/11380,8,20,0,6
+Story2,DConS6,Combination,Min,,Y,0.000144,1/6958,5,20,15,6
+Story2,DConS7,Combination,Max,,X,0.000119,1/8392,23,0,10,6
+Story2,DConS7,Combination,Max,,Y,0.00015,1/6652,10,10,0,6
+Story2,DConS7,Combination,Min,,Y,0.000103,1/9723,3,10,15,6
+Story2,DConS8,Combination,Max,,X,3.2E-05,1/31385,1,0,15,6
+Story2,DConS8,Combination,Max,,Y,0.000107,1/9314,10,10,0,6
+Story2,DConS8,Combination,Min,,X,9E-05,1/11085,7,20,5,6
+Story2,DConS8,Combination,Min,,Y,0.000146,1/6864,3,10,15,6
+Story2,DConS9,Combination,Max,,X,0.000119,1/8392,23,0,10,6
+Story2,DConS9,Combination,Max,,Y,0.00015,1/6652,10,10,0,6
+Story2,DConS9,Combination,Min,,Y,0.000103,1/9723,3,10,15,6
+Story2,DConS10,Combination,Max,,X,3.2E-05,1/31385,1,0,15,6
+Story2,DConS10,Combination,Max,,Y,0.000107,1/9314,10,10,0,6
+Story2,DConS10,Combination,Min,,X,9E-05,1/11085,7,20,5,6
+Story2,DConS10,Combination,Min,,Y,0.000146,1/6864,3,10,15,6
+Story2,DConS11,Combination,Max,,X,0.001446,1/691,1,0,15,6
+Story2,DConS11,Combination,Min,,X,0.001378,1/726,23,0,10,6
+Story2,DConS12,Combination,Max,,X,0.001337,1/748,7,20,5,6
+Story2,DConS12,Combination,Min,,X,0.001407,1/711,8,20,0,6
+Story2,DConS13,Combination,Max,,Y,0.001505,1/664,8,20,0,6
+Story2,DConS13,Combination,Min,,Y,0.001391,1/719,10,10,0,6
+Story2,DConS14,Combination,Max,,Y,0.001377,1/726,3,10,15,6
+Story2,DConS14,Combination,Min,,Y,0.001496,1/668,5,20,15,6
+Story2,DConS15,Combination,Max,,X,0.001436,1/696,8,20,0,6
+Story2,DConS15,Combination,Min,,X,0.001369,1/731,23,0,10,6
+Story2,DConS16,Combination,Max,,X,0.001344,1/744,7,20,5,6
+Story2,DConS16,Combination,Min,,X,0.001412,1/708,8,20,0,6
+Story2,DConS17,Combination,Max,,Y,0.001502,1/666,8,20,0,6
+Story2,DConS17,Combination,Min,,Y,0.001386,1/722,10,10,0,6
+Story2,DConS18,Combination,Max,,Y,0.001382,1/724,3,10,15,6
+Story2,DConS18,Combination,Min,,Y,0.001498,1/668,5,20,15,6
+Story2,DConS19,Combination,Max,,X,0.000644,1/1553,1,0,15,6
+Story2,DConS19,Combination,Min,,X,0.000604,1/1655,8,20,0,6
+Story2,DConS20,Combination,Max,,Y,0.00067,1/1493,8,20,0,6
+Story2,DConS20,Combination,Min,,Y,0.00066,1/1515,5,20,15,6
+Story2,DConS21,Combination,Max,,X,0.000633,1/1579,1,0,15,6
+Story2,DConS21,Combination,Min,,X,0.000609,1/1641,8,20,0,6
+Story2,DConS22,Combination,Max,,Y,0.000666,1/1501,8,20,0,6
+Story2,DConS22,Combination,Min,,Y,0.000662,1/1511,5,20,15,6
+Story1,Dead,LinStatic,,,X,6E-06,1/170079,4,15,15,3
+Story1,Dead,LinStatic,,,Y,6E-06,1/168887,13,0,5,3
+Story1,Live,LinStatic,,,Y,4E-06,1/264569,23,0,10,3
+Story1,Modal,LinModEigen,Mode,1,Y,2.359E-07,1/0,7,20,5,3
+Story1,Modal,LinModEigen,Mode,2,X,2.264E-07,1/0,24,5,0,3
+Story1,Modal,LinModEigen,Mode,3,Y,2.82E-07,1/0,13,0,5,3
+Story1,Modal,LinModEigen,Mode,4,X,1E-06,1/0,2,5,15,3
+Story1,Modal,LinModEigen,Mode,4,Y,1E-06,1/689818,26,20,10,3
+Story1,Modal,LinModEigen,Mode,5,X,1E-06,1/705202,10,10,0,3
+Story1,Modal,LinModEigen,Mode,5,Y,1E-06,1/0,7,20,5,3
+Story1,Modal,LinModEigen,Mode,6,Y,2E-06,1/498957,1,0,15,3
+Story1,Modal,LinModEigen,Mode,7,X,2E-06,1/501007,1,0,15,3
+Story1,Modal,LinModEigen,Mode,7,Y,3E-06,1/303323,21,10,10,3
+Story1,Modal,LinModEigen,Mode,8,X,3E-06,1/306230,7,20,5,3
+Story1,Modal,LinModEigen,Mode,8,Y,2E-06,1/523746,5,20,15,3
+Story1,Modal,LinModEigen,Mode,9,X,3E-06,1/292899,8,20,0,3
+Story1,Modal,LinModEigen,Mode,9,Y,5E-06,1/198244,21,10,10,3
+Story1,Modal,LinModEigen,Mode,10,X,4E-06,1/254481,1,0,15,3
+Story1,Modal,LinModEigen,Mode,11,X,5E-06,1/205628,7,20,5,3
+Story1,Modal,LinModEigen,Mode,11,Y,3E-06,1/336708,5,20,15,3
+Story1,Modal,LinModEigen,Mode,12,X,4E-06,1/239843,8,20,0,3
+Story1,Modal,LinModEigen,Mode,12,Y,6E-06,1/158808,21,10,10,3
+Story1,FF,LinStatic,,,X,1E-06,1/0,4,15,15,3
+Story1,FF,LinStatic,,,Y,1E-06,1/0,13,0,5,3
+Story1,PW,LinStatic,,,X,1E-06,1/0,4,15,15,3
+Story1,PW,LinStatic,,,Y,1E-06,1/0,13,0,5,3
+Story1,EQx,LinStatic,Step By Step,1,X,0.000663,1/1509,4,15,15,3
+Story1,EQx,LinStatic,Step By Step,2,X,0.000663,1/1508,24,5,0,3
+Story1,EQy,LinStatic,Step By Step,1,Y,0.000701,1/1427,7,20,5,3
+Story1,EQy,LinStatic,Step By Step,2,Y,0.000666,1/1500,23,0,10,3
+Story1,Wx,LinStatic,Step By Step,1,X,5.4E-05,1/18655,23,0,10,3
+Story1,Wx,LinStatic,Step By Step,2,Y,7.6E-05,1/13201,10,10,0,3
+Story1,Wx,LinStatic,Step By Step,3,X,4.5E-05,1/22431,12,0,0,3
+Story1,Wx,LinStatic,Step By Step,4,X,4.5E-05,1/22224,1,0,15,3
+Story1,Wx,LinStatic,Step By Step,5,Y,6.8E-05,1/14807,8,20,0,3
+Story1,Wx,LinStatic,Step By Step,6,Y,6.8E-05,1/14807,12,0,0,3
+Story1,Wx,LinStatic,Step By Step,7,X,4E-05,1/25071,1,0,15,3
+Story1,Wx,LinStatic,Step By Step,7,Y,5.3E-05,1/18858,2,5,15,3
+Story1,Wx,LinStatic,Step By Step,8,X,4.2E-05,1/23751,8,20,0,3
+Story1,Wx,LinStatic,Step By Step,8,Y,5.6E-05,1/17828,12,0,0,3
+Story1,Wx,LinStatic,Step By Step,9,X,3.9E-05,1/25881,12,0,0,3
+Story1,Wx,LinStatic,Step By Step,9,Y,5.2E-05,1/19282,1,0,15,3
+Story1,Wx,LinStatic,Step By Step,10,X,3.9E-05,1/25707,5,20,15,3
+Story1,Wx,LinStatic,Step By Step,10,Y,5.2E-05,1/19290,5,20,15,3
+Story1,Wx,LinStatic,Step By Step,11,X,4.1E-05,1/24109,8,20,0,3
+Story1,Wx,LinStatic,Step By Step,11,Y,5.5E-05,1/18178,8,20,0,3
+Story1,Wx,LinStatic,Step By Step,12,X,4.1E-05,1/24284,1,0,15,3
+Story1,Wx,LinStatic,Step By Step,12,Y,5.5E-05,1/18166,1,0,15,3
+Story1,Wy,LinStatic,Step By Step,1,X,5.4E-05,1/18655,23,0,10,3
+Story1,Wy,LinStatic,Step By Step,2,Y,7.6E-05,1/13201,10,10,0,3
+Story1,Wy,LinStatic,Step By Step,3,X,4.5E-05,1/22431,12,0,0,3
+Story1,Wy,LinStatic,Step By Step,4,X,4.5E-05,1/22224,1,0,15,3
+Story1,Wy,LinStatic,Step By Step,5,Y,6.8E-05,1/14807,8,20,0,3
+Story1,Wy,LinStatic,Step By Step,6,Y,6.8E-05,1/14807,12,0,0,3
+Story1,Wy,LinStatic,Step By Step,7,X,4E-05,1/25071,1,0,15,3
+Story1,Wy,LinStatic,Step By Step,7,Y,5.3E-05,1/18858,2,5,15,3
+Story1,Wy,LinStatic,Step By Step,8,X,4.2E-05,1/23751,8,20,0,3
+Story1,Wy,LinStatic,Step By Step,8,Y,5.6E-05,1/17828,12,0,0,3
+Story1,Wy,LinStatic,Step By Step,9,X,3.9E-05,1/25881,12,0,0,3
+Story1,Wy,LinStatic,Step By Step,9,Y,5.2E-05,1/19282,1,0,15,3
+Story1,Wy,LinStatic,Step By Step,10,X,3.9E-05,1/25707,5,20,15,3
+Story1,Wy,LinStatic,Step By Step,10,Y,5.2E-05,1/19290,5,20,15,3
+Story1,Wy,LinStatic,Step By Step,11,X,4.1E-05,1/24109,8,20,0,3
+Story1,Wy,LinStatic,Step By Step,11,Y,5.5E-05,1/18178,8,20,0,3
+Story1,Wy,LinStatic,Step By Step,12,X,4.1E-05,1/24284,1,0,15,3
+Story1,Wy,LinStatic,Step By Step,12,Y,5.5E-05,1/18166,1,0,15,3
+Story1,WALL,LinStatic,,,X,9E-06,1/107459,4,15,15,3
+Story1,WALL,LinStatic,,,Y,5E-06,1/182591,26,20,10,3
+Story1,RSx,LinRespSpec,Max,,X,0.000293,1/3412,24,5,0,3
+Story1,RSy,LinRespSpec,Max,,Y,0.000314,1/3184,7,20,5,3
+Story1,0.9D+1.0EQx,Combination,Max,,X,0.00067,1/1493,4,15,15,3
+Story1,0.9D+1.0EQx,Combination,Min,,X,0.000632,1/1583,26,20,10,3
+Story1,0.9D+1.0EQy,Combination,Max,,Y,0.000708,1/1413,26,20,10,3
+Story1,0.9D+1.0EQy,Combination,Min,,Y,0.000637,1/1570,21,10,10,3
+Story1,DWalS1,Combination,,,X,2.4E-05,1/42205,4,15,15,3
+Story1,DWalS1,Combination,,,Y,1.8E-05,1/54869,26,20,10,3
+Story1,DWalS2,Combination,,,X,2.4E-05,1/42438,4,15,15,3
+Story1,DWalS2,Combination,,,Y,2E-05,1/49524,23,0,10,3
+Story1,DWalS3,Combination,Max,,X,7.4E-05,1/13425,4,15,15,3
+Story1,DWalS3,Combination,Max,,Y,9.2E-05,1/10867,23,0,10,3
+Story1,DWalS3,Combination,Min,,Y,6.6E-05,1/15043,7,20,5,3
+Story1,DWalS4,Combination,Max,,X,3E-05,1/32962,4,15,15,3
+Story1,DWalS4,Combination,Max,,Y,7.1E-05,1/14158,23,0,10,3
+Story1,DWalS4,Combination,Min,,X,6.1E-05,1/16275,24,5,0,3
+Story1,DWalS4,Combination,Min,,Y,8.8E-05,1/11317,7,20,5,3
+Story1,DWalS5,Combination,Max,,X,7.4E-05,1/13425,4,15,15,3
+Story1,DWalS5,Combination,Max,,Y,9.2E-05,1/10867,23,0,10,3
+Story1,DWalS5,Combination,Min,,Y,6.6E-05,1/15043,7,20,5,3
+Story1,DWalS6,Combination,Max,,X,3E-05,1/32962,4,15,15,3
+Story1,DWalS6,Combination,Max,,Y,7.1E-05,1/14158,23,0,10,3
+Story1,DWalS6,Combination,Min,,X,6.1E-05,1/16275,24,5,0,3
+Story1,DWalS6,Combination,Min,,Y,8.8E-05,1/11317,7,20,5,3
+Story1,DWalS7,Combination,Max,,X,6.7E-05,1/14842,4,15,15,3
+Story1,DWalS7,Combination,Max,,Y,8.6E-05,1/11649,26,20,10,3
+Story1,DWalS7,Combination,Min,,Y,6.2E-05,1/16038,7,20,5,3
+Story1,DWalS8,Combination,Max,,X,2.3E-05,1/43054,4,15,15,3
+Story1,DWalS8,Combination,Max,,Y,6.4E-05,1/15607,26,20,10,3
+Story1,DWalS8,Combination,Min,,X,5.8E-05,1/17332,24,5,0,3
+Story1,DWalS8,Combination,Min,,Y,8.4E-05,1/11872,7,20,5,3
+Story1,DWalS9,Combination,Max,,X,6.7E-05,1/14842,4,15,15,3
+Story1,DWalS9,Combination,Max,,Y,8.6E-05,1/11649,26,20,10,3
+Story1,DWalS9,Combination,Min,,Y,6.2E-05,1/16038,7,20,5,3
+Story1,DWalS10,Combination,Max,,X,2.3E-05,1/43054,4,15,15,3
+Story1,DWalS10,Combination,Max,,Y,6.4E-05,1/15607,26,20,10,3
+Story1,DWalS10,Combination,Min,,X,5.8E-05,1/17332,24,5,0,3
+Story1,DWalS10,Combination,Min,,Y,8.4E-05,1/11872,7,20,5,3
+Story1,DWalS11,Combination,Max,,X,0.000687,1/1456,4,15,15,3
+Story1,DWalS11,Combination,Min,,X,0.000645,1/1552,26,20,10,3
+Story1,DWalS12,Combination,Max,,X,0.000632,1/1583,13,0,5,3
+Story1,DWalS12,Combination,Min,,X,0.000673,1/1486,24,5,0,3
+Story1,DWalS13,Combination,Max,,Y,0.00072,1/1390,26,20,10,3
+Story1,DWalS13,Combination,Min,,Y,0.000641,1/1559,21,10,10,3
+Story1,DWalS14,Combination,Max,,Y,0.000633,1/1580,16,10,5,3
+Story1,DWalS14,Combination,Min,,Y,0.000716,1/1397,7,20,5,3
+Story1,DWalS15,Combination,Max,,X,0.000676,1/1479,4,15,15,3
+Story1,DWalS15,Combination,Min,,X,0.000638,1/1569,26,20,10,3
+Story1,DWalS16,Combination,Max,,X,0.00063,1/1588,13,0,5,3
+Story1,DWalS16,Combination,Min,,X,0.000668,1/1497,24,5,0,3
+Story1,DWalS17,Combination,Max,,Y,0.000711,1/1406,26,20,10,3
+Story1,DWalS17,Combination,Min,,Y,0.000638,1/1567,21,10,10,3
+Story1,DWalS18,Combination,Max,,Y,0.000635,1/1575,16,10,5,3
+Story1,DWalS18,Combination,Min,,Y,0.00071,1/1409,7,20,5,3
+Story1,B1_1.4D,Combination,,,X,2.4E-05,1/42205,4,15,15,3
+Story1,B1_1.4D,Combination,,,Y,1.8E-05,1/54869,26,20,10,3
+Story1,B2_1.2D+1.6L,Combination,,,X,2.4E-05,1/42438,4,15,15,3
+Story1,B2_1.2D+1.6L,Combination,,,Y,2E-05,1/49524,23,0,10,3
+Story1,B5_1.2D+L+EQx,Combination,Max,,X,0.000685,1/1460,4,15,15,3
+Story1,B5_1.2D+L+EQx,Combination,Min,,X,0.000643,1/1554,26,20,10,3
+Story1,B7_0.9D+EQx,Combination,Max,,X,0.000678,1/1475,4,15,15,3
+Story1,B7_0.9D+EQx,Combination,Min,,X,0.000639,1/1566,26,20,10,3
+Story1,B5_1.2D+L-EQx,Combination,Max,,X,0.000632,1/1583,13,0,5,3
+Story1,B5_1.2D+L-EQx,Combination,Min,,X,0.000672,1/1488,24,5,0,3
+Story1,B7_0.9D-EQx,Combination,Max,,X,0.00063,1/1588,13,0,5,3
+Story1,B7_0.9D-EQx,Combination,Min,,X,0.000669,1/1496,24,5,0,3
+Story1,B5_1.2D+L+EQy,Combination,Max,,Y,0.000718,1/1392,26,20,10,3
+Story1,B5_1.2D+L+EQy,Combination,Min,,Y,0.000641,1/1560,21,10,10,3
+Story1,B7_0.9D+EQy,Combination,Max,,Y,0.000713,1/1403,26,20,10,3
+Story1,B7_0.9D+EQy,Combination,Min,,Y,0.000638,1/1566,21,10,10,3
+Story1,B5_1.2D+L-EQy,Combination,Max,,Y,0.000633,1/1580,16,10,5,3
+Story1,B5_1.2D+L-EQy,Combination,Min,,Y,0.000715,1/1399,7,20,5,3
+Story1,B7_0.9D-EQy,Combination,Max,,Y,0.000635,1/1575,16,10,5,3
+Story1,B7_0.9D-EQy,Combination,Min,,Y,0.000711,1/1407,7,20,5,3
+Story1,DConS1,Combination,,,X,2.4E-05,1/42205,4,15,15,3
+Story1,DConS1,Combination,,,Y,1.8E-05,1/54869,26,20,10,3
+Story1,DConS2,Combination,,,X,2.4E-05,1/42438,4,15,15,3
+Story1,DConS2,Combination,,,Y,2E-05,1/49524,23,0,10,3
+Story1,DConS3,Combination,Max,,X,7.4E-05,1/13425,4,15,15,3
+Story1,DConS3,Combination,Max,,Y,9.2E-05,1/10867,23,0,10,3
+Story1,DConS3,Combination,Min,,Y,6.6E-05,1/15043,7,20,5,3
+Story1,DConS4,Combination,Max,,X,3E-05,1/32962,4,15,15,3
+Story1,DConS4,Combination,Max,,Y,7.1E-05,1/14158,23,0,10,3
+Story1,DConS4,Combination,Min,,X,6.1E-05,1/16275,24,5,0,3
+Story1,DConS4,Combination,Min,,Y,8.8E-05,1/11317,7,20,5,3
+Story1,DConS5,Combination,Max,,X,7.4E-05,1/13425,4,15,15,3
+Story1,DConS5,Combination,Max,,Y,9.2E-05,1/10867,23,0,10,3
+Story1,DConS5,Combination,Min,,Y,6.6E-05,1/15043,7,20,5,3
+Story1,DConS6,Combination,Max,,X,3E-05,1/32962,4,15,15,3
+Story1,DConS6,Combination,Max,,Y,7.1E-05,1/14158,23,0,10,3
+Story1,DConS6,Combination,Min,,X,6.1E-05,1/16275,24,5,0,3
+Story1,DConS6,Combination,Min,,Y,8.8E-05,1/11317,7,20,5,3
+Story1,DConS7,Combination,Max,,X,6.7E-05,1/14842,4,15,15,3
+Story1,DConS7,Combination,Max,,Y,8.6E-05,1/11649,26,20,10,3
+Story1,DConS7,Combination,Min,,Y,6.2E-05,1/16038,7,20,5,3
+Story1,DConS8,Combination,Max,,X,2.3E-05,1/43054,4,15,15,3
+Story1,DConS8,Combination,Max,,Y,6.4E-05,1/15607,26,20,10,3
+Story1,DConS8,Combination,Min,,X,5.8E-05,1/17332,24,5,0,3
+Story1,DConS8,Combination,Min,,Y,8.4E-05,1/11872,7,20,5,3
+Story1,DConS9,Combination,Max,,X,6.7E-05,1/14842,4,15,15,3
+Story1,DConS9,Combination,Max,,Y,8.6E-05,1/11649,26,20,10,3
+Story1,DConS9,Combination,Min,,Y,6.2E-05,1/16038,7,20,5,3
+Story1,DConS10,Combination,Max,,X,2.3E-05,1/43054,4,15,15,3
+Story1,DConS10,Combination,Max,,Y,6.4E-05,1/15607,26,20,10,3
+Story1,DConS10,Combination,Min,,X,5.8E-05,1/17332,24,5,0,3
+Story1,DConS10,Combination,Min,,Y,8.4E-05,1/11872,7,20,5,3
+Story1,DConS11,Combination,Max,,X,0.000687,1/1456,4,15,15,3
+Story1,DConS11,Combination,Min,,X,0.000645,1/1552,26,20,10,3
+Story1,DConS12,Combination,Max,,X,0.000632,1/1583,13,0,5,3
+Story1,DConS12,Combination,Min,,X,0.000673,1/1486,24,5,0,3
+Story1,DConS13,Combination,Max,,Y,0.00072,1/1390,26,20,10,3
+Story1,DConS13,Combination,Min,,Y,0.000641,1/1559,21,10,10,3
+Story1,DConS14,Combination,Max,,Y,0.000633,1/1580,16,10,5,3
+Story1,DConS14,Combination,Min,,Y,0.000716,1/1397,7,20,5,3
+Story1,DConS15,Combination,Max,,X,0.000676,1/1479,4,15,15,3
+Story1,DConS15,Combination,Min,,X,0.000638,1/1569,26,20,10,3
+Story1,DConS16,Combination,Max,,X,0.00063,1/1588,13,0,5,3
+Story1,DConS16,Combination,Min,,X,0.000668,1/1497,24,5,0,3
+Story1,DConS17,Combination,Max,,Y,0.000711,1/1406,26,20,10,3
+Story1,DConS17,Combination,Min,,Y,0.000638,1/1567,21,10,10,3
+Story1,DConS18,Combination,Max,,Y,0.000635,1/1575,16,10,5,3
+Story1,DConS18,Combination,Min,,Y,0.00071,1/1409,7,20,5,3
+Story1,DConS19,Combination,Max,,X,0.000317,1/3158,4,15,15,3
+Story1,DConS19,Combination,Min,,X,0.000303,1/3304,24,5,0,3
+Story1,DConS20,Combination,Max,,Y,0.000333,1/3005,26,20,10,3
+Story1,DConS20,Combination,Min,,Y,0.000329,1/3037,7,20,5,3
+Story1,DConS21,Combination,Max,,X,0.000306,1/3266,4,15,15,3
+Story1,DConS21,Combination,Min,,X,0.000298,1/3359,24,5,0,3
+Story1,DConS22,Combination,Max,,Y,0.000324,1/3082,26,20,10,3
+Story1,DConS22,Combination,Min,,Y,0.000323,1/3097,7,20,5,3

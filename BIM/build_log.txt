@@ -1,0 +1,87 @@
+[2026-11-20 00:21:15.166] ================================================================================
+[2026-11-20 00:21:15.167] PrefabBIM Add-in started. PREFAB_BIM_JOB=1 detected. Initializing job pipeline...
+[2026-11-20 00:21:15.167] ================================================================================
+[2026-11-20 00:21:15.172] Subscribed to ApplicationInitialized and DialogBoxShowing successfully.
+[2026-11-20 00:21:17.935] ApplicationInitialized event fired. Beginning headless BIM construction...
+[2026-11-20 00:21:17.945] Opening template project: C:\ProgramData\Autodesk\RVT 2027\Templates\English\Structural Analysis-DefaultMetric.rte
+[2026-11-20 00:21:19.552] Created material: 'Concrete C28 (precast)' (Class: Concrete, Shading: RGB 200,200,200)
+[2026-11-20 00:21:19.562] Level [0]: 'Base', Elevation = 0.0 m (0.000 ft)
+[2026-11-20 00:21:19.563] Level [1]: 'Level 1', Elevation = 3.0 m (9.843 ft)
+[2026-11-20 00:21:19.566] Level [2]: 'Level 2', Elevation = 6.0 m (19.685 ft)
+[2026-11-20 00:21:19.567] Level [3]: 'Level 3', Elevation = 9.0 m (29.528 ft)
+[2026-11-20 00:21:19.568] Level [4]: 'Level 4', Elevation = 12.0 m (39.370 ft)
+[2026-11-20 00:21:19.568] Level [5]: 'Level 5', Elevation = 15.0 m (49.213 ft)
+[2026-11-20 00:21:19.568] Level [6]: 'Level 6', Elevation = 18.0 m (59.055 ft)
+[2026-11-20 00:21:19.569] Level [7]: 'Level 7', Elevation = 21.0 m (68.898 ft)
+[2026-11-20 00:21:19.569] Level [8]: 'Level 8', Elevation = 24.0 m (78.740 ft)
+[2026-11-20 00:21:19.569] Level [9]: 'Level 9', Elevation = 27.0 m (88.583 ft)
+[2026-11-20 00:21:19.570] Level [10]: 'Level 10', Elevation = 30.0 m (98.425 ft)
+[2026-11-20 00:21:19.577] Grid created: 'A' at x = 0 m
+[2026-11-20 00:21:19.578] Grid created: 'B' at x = 5 m
+[2026-11-20 00:21:19.578] Grid created: 'C' at x = 10 m
+[2026-11-20 00:21:19.579] Grid created: 'D' at x = 15 m
+[2026-11-20 00:21:19.579] Grid created: 'E' at x = 20 m
+[2026-11-20 00:21:19.580] Grid created: '1' at y = 0 m
+[2026-11-20 00:21:19.580] Grid created: '2' at y = 5 m
+[2026-11-20 00:21:19.581] Grid created: '3' at y = 10 m
+[2026-11-20 00:21:19.581] Grid created: '4' at y = 15 m
+[2026-11-20 00:21:19.695] Found 7 structural column symbols in template.
+[2026-11-20 00:21:19.697]   Column Family: 'UC-Universal Columns-Column', Symbol: 'UC305x305x97'
+[2026-11-20 00:21:19.698]   Column Family: 'UC-Universal Columns-Column', Symbol: 'UC356x368x129'
+[2026-11-20 00:21:19.698]   Column Family: 'UC-Universal Columns-Column', Symbol: 'UC254x254x73'
+[2026-11-20 00:21:19.698]   Column Family: 'UC-Universal Columns-Column', Symbol: 'UC203x203x52'
+[2026-11-20 00:21:19.699]   Column Family: 'M_Concrete-Rectangular-Column', Symbol: '300 x 450mm'
+[2026-11-20 00:21:19.699]   Column Family: 'M_Concrete-Rectangular-Column', Symbol: '450 x 600mm'
+[2026-11-20 00:21:19.699]   Column Family: 'M_Concrete-Rectangular-Column', Symbol: '600 x 750mm'
+[2026-11-20 00:21:19.699] Selected concrete rectangular column base symbol: 'M_Concrete-Rectangular-Column' : '300 x 450mm'
+[2026-11-20 00:21:19.745] Symbol 'C 500x500': Set width parameter 'b' = 1.6404 ft
+[2026-11-20 00:21:19.748] Symbol 'C 500x500': Set depth/height parameter 'h' = 1.6404 ft
+[2026-11-20 00:21:19.757] Symbol 'C 500x500': Set BuiltInParameter.STRUCTURAL_MATERIAL_PARAM
+[2026-11-20 00:21:19.763] Symbol 'C 600x600': Set width parameter 'b' = 1.9685 ft
+[2026-11-20 00:21:19.766] Symbol 'C 600x600': Set depth/height parameter 'h' = 1.9685 ft
+[2026-11-20 00:21:19.770] Symbol 'C 600x600': Set BuiltInParameter.STRUCTURAL_MATERIAL_PARAM
+[2026-11-20 00:21:19.772] Found 8 structural framing symbols in template.
+[2026-11-20 00:21:19.772]   Framing Family: 'UB-Universal Beams', Symbol: 'UB305x165x40'
+[2026-11-20 00:21:19.772]   Framing Family: 'M_Concrete-Rectangular Beam', Symbol: '400 x 800mm'
+[2026-11-20 00:21:19.772]   Framing Family: 'M_Concrete-Rectangular Beam', Symbol: '300 x 600mm'
+[2026-11-20 00:21:19.772]   Framing Family: 'UB-Universal Beams', Symbol: 'UB406x178x60'
+[2026-11-20 00:21:19.773]   Framing Family: 'UB-Universal Beams', Symbol: 'UB356x171x51'
+[2026-11-20 00:21:19.773]   Framing Family: 'UB-Universal Beams', Symbol: 'UB254x102x28'
+[2026-11-20 00:21:19.773]   Framing Family: 'M_HSS Square', Symbol: 'HSS152.4X152.4X9.5'
+[2026-11-20 00:21:19.773]   Framing Family: 'M_HSS Square', Symbol: 'HSS203.2X203.2X9.5'
+[2026-11-20 00:21:19.773] Selected concrete rectangular framing base symbol: 'M_Concrete-Rectangular Beam' : '400 x 800mm'
+[2026-11-20 00:21:19.785] Symbol 'B 300x500': Set width parameter 'b' = 0.9843 ft
+[2026-11-20 00:21:19.788] Symbol 'B 300x500': Set depth/height parameter 'h' = 1.6404 ft
+[2026-11-20 00:21:19.792] Symbol 'B 300x500': Set BuiltInParameter.STRUCTURAL_MATERIAL_PARAM
+[2026-11-20 00:21:19.808] Created WallType: 'PC Wall 200' with single 200 mm concrete layer.
+[2026-11-20 00:21:19.824] Created FloorType: 'PC Slab 150' with single 150 mm concrete layer.
+[2026-11-20 00:21:25.303] Columns generated: 200 (expected: 200)
+[2026-11-20 00:21:25.515] Beams generated: 310 (expected: 310)
+[2026-11-20 00:21:25.575] Walls generated: 40 (expected: 40)
+[2026-11-20 00:21:25.639] Floors generated: 10 (expected: 10)
+[2026-11-20 00:21:36.132] Created 3D Isometric View 'BIM 3D' (Detail: Fine, DisplayStyle: Shading).
+[2026-11-20 00:21:36.282] ================================================================================
+[2026-11-20 00:21:36.282] MODEL SUMMARY:
+[2026-11-20 00:21:36.282]   Columns: 200 / 200
+[2026-11-20 00:21:36.283]   Beams:   310 / 310
+[2026-11-20 00:21:36.283]   Walls:   40 / 40
+[2026-11-20 00:21:36.283]   Floors:  10 / 10
+[2026-11-20 00:21:36.283]   Total:   560 / 560 elements
+[2026-11-20 00:21:36.283]   Failures:0
+[2026-11-20 00:21:36.283] ================================================================================
+[2026-11-20 00:21:36.283] Saving project file to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.rvt'...
+[2026-11-20 00:21:38.056] Project document saved successfully.
+[2026-11-20 00:21:38.057] Exporting IFC file to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.ifc'...
+[2026-11-20 00:21:38.070] Direct IFC export (IFC4RV) returned: Modifying  is forbidden because the document has no open transaction.. Retrying within Transaction...
+[2026-11-20 00:21:45.818] IFC export succeeded within transaction.
+[2026-11-20 00:21:45.819] Exporting 3D PNG to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_3D.png'...
+[2026-11-20 00:21:47.512] ExportImage command executed.
+[2026-11-20 00:21:47.515] Copied generated image 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_3D - 3D View - BIM 3D.png' to target path 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_3D.png'
+[2026-11-20 00:21:47.516] Closing document...
+[2026-11-20 00:21:47.760] Document closed successfully.
+[2026-11-20 00:21:47.761] BIM Generation finished with result: SUCCESS. Registering Idling event for Revit exit...
+[2026-11-20 00:21:47.781] [DIALOG SUPPRESSION] DialogBoxShowing: DialogId = ''
+[2026-11-20 00:21:47.783] [DIALOG SUPPRESSION] TaskDialog: Id = '', Message = 'Failed to open file.'
+[2026-11-20 00:21:48.259] Idling triggered after document closed. Posting ExitRevit command...
+[2026-11-20 00:21:48.264] ExitRevit command posted successfully.
+[2026-11-20 00:21:53.769] PrefabBIM Add-in shutting down.

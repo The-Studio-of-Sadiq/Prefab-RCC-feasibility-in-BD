@@ -1,0 +1,3 @@
+Name,MassSource,LoadName,Function,TransAccSF,CoordSys,Angle,ModalCase,ModalCombo,RigidResp,DirCombo,EccenRatio,DesignType,GUID,Notes
+RSx,Previous  (MsSrc1),U1,BNBC20_SD,9.8067,Global,0,Modal,CQC,No,SRSS,0.05,Program Determined,5ea44100-8c89-4101-bf53-20c8b7d5b923,
+RSy,Previous  (MsSrc1),U2,BNBC20_SD,9.8067,Global,0,Modal,CQC,No,SRSS,0.05,Program Determined,7d4ee177-987c-4d4f-ae87-78c50b1b9fe0,

@@ -1,0 +1,385 @@
+{
+  "metadata": {
+    "model_name": "Projected Precast RCC vs. Conventional Construction Cost Model",
+    "location": "Dhaka, Bangladesh",
+    "benchmark_building": "10-Storey Residential Core & Shell",
+    "currency": "BDT",
+    "exchange_rate_usd_to_bdt": 122.0,
+    "deterministic_seed": 42,
+    "disclaimer": "All precast figures are projected estimates based on literature variances and engineering plant models. No primary precast cost data exist in Bangladesh."
+  },
+  "table_7_projected_cost_comparison": {
+    "rows": [
+      {
+        "component": "Material Cost",
+        "conv_bdt": 10000.0,
+        "precast_bdt": 9200.0,
+        "variance_pct": -8.0,
+        "conv_share_pct": 55.55555555555556,
+        "precast_share_pct": 60.130718954248366
+      },
+      {
+        "component": "Labour Cost",
+        "conv_bdt": 4000.0,
+        "precast_bdt": 1600.0,
+        "variance_pct": -60.0,
+        "conv_share_pct": 22.22222222222222,
+        "precast_share_pct": 10.457516339869281
+      },
+      {
+        "component": "Equipment / Plant Cost",
+        "conv_bdt": 500.0,
+        "precast_bdt": 1250.0,
+        "variance_pct": 150.0,
+        "conv_share_pct": 2.7777777777777777,
+        "precast_share_pct": 8.169934640522875
+      },
+      {
+        "component": "Transportation Cost",
+        "conv_bdt": 500.0,
+        "precast_bdt": 1650.0,
+        "variance_pct": 229.99999999999997,
+        "conv_share_pct": 2.7777777777777777,
+        "precast_share_pct": 10.784313725490197
+      },
+      {
+        "component": "Formwork Cost",
+        "conv_bdt": 2000.0,
+        "precast_bdt": 399.9999999999999,
+        "variance_pct": -80.0,
+        "conv_share_pct": 11.11111111111111,
+        "precast_share_pct": 2.61437908496732
+      },
+      {
+        "component": "Quality Control / Testing",
+        "conv_bdt": 200.0,
+        "precast_bdt": 500.0,
+        "variance_pct": 150.0,
+        "conv_share_pct": 1.1111111111111112,
+        "precast_share_pct": 3.2679738562091507
+      },
+      {
+        "component": "Overhead & Preliminaries",
+        "conv_bdt": 800.0,
+        "precast_bdt": 700.0,
+        "variance_pct": -12.5,
+        "conv_share_pct": 4.444444444444445,
+        "precast_share_pct": 4.57516339869281
+      }
+    ],
+    "total_conv_bdt": 18000.0,
+    "total_precast_bdt": 15300.0,
+    "total_variance_pct": -15.0
+  },
+  "plant_calibration": {
+    "panel_area_m2": 12.9,
+    "k_floor_per_panel": 1.0,
+    "design_scale_panels_yr": 5000,
+    "discount_rate_i": 0.1,
+    "plant_life_yrs": 15,
+    "crf": 0.13147377688737216,
+    "annualized_capex_bdt_yr": 80625000.0,
+    "annual_fixed_overhead_fo_bdt_yr": 45150000.0,
+    "total_annual_fixed_cost_f_bdt_yr": 125775000.0,
+    "implied_initial_capex_c0_bdt": 613240160.196112,
+    "implied_initial_capex_c0_usd": 5026558.690132066,
+    "mfg_variable_cost_v_bdt_m2": 11700.0,
+    "transport_erection_cost_bdt_m2": 1650.0,
+    "total_variable_cost_bdt_m2": 13350.0,
+    "conventional_baseline_bdt_m2": 18000.0,
+    "breakeven_volume_panels_yr": 2096.7741935483873
+  },
+  "table_8_economies_of_scale": [
+    {
+      "volume_panels_yr": 500,
+      "fixed_cost_per_panel_bdt": 251550.0,
+      "variable_cost_per_panel_bdt": 172215.0,
+      "total_unit_cost_per_panel_bdt": 423765.0,
+      "equivalent_cost_per_m2_bdt": 32850.0,
+      "fixed_cost_per_m2_bdt": 19500.0,
+      "variable_cost_per_m2_bdt": 13350.0,
+      "vs_conventional_pct": 82.5,
+      "total_annual_fixed_cost_bdt": 125775000.0
+    },
+    {
+      "volume_panels_yr": 1000,
+      "fixed_cost_per_panel_bdt": 125775.0,
+      "variable_cost_per_panel_bdt": 172215.0,
+      "total_unit_cost_per_panel_bdt": 297990.0,
+      "equivalent_cost_per_m2_bdt": 23100.0,
+      "fixed_cost_per_m2_bdt": 9750.0,
+      "variable_cost_per_m2_bdt": 13350.0,
+      "vs_conventional_pct": 28.333333333333332,
+      "total_annual_fixed_cost_bdt": 125775000.0
+    },
+    {
+      "volume_panels_yr": 2000,
+      "fixed_cost_per_panel_bdt": 62887.5,
+      "variable_cost_per_panel_bdt": 172215.0,
+      "total_unit_cost_per_panel_bdt": 235102.5,
+      "equivalent_cost_per_m2_bdt": 18225.0,
+      "fixed_cost_per_m2_bdt": 4875.0,
+      "variable_cost_per_m2_bdt": 13350.0,
+      "vs_conventional_pct": 1.25,
+      "total_annual_fixed_cost_bdt": 125775000.0
+    },
+    {
+      "volume_panels_yr": 3000,
+      "fixed_cost_per_panel_bdt": 41925.0,
+      "variable_cost_per_panel_bdt": 172215.0,
+      "total_unit_cost_per_panel_bdt": 214140.0,
+      "equivalent_cost_per_m2_bdt": 16600.0,
+      "fixed_cost_per_m2_bdt": 3250.0,
+      "variable_cost_per_m2_bdt": 13350.0,
+      "vs_conventional_pct": -7.777777777777778,
+      "total_annual_fixed_cost_bdt": 125775000.0
+    },
+    {
+      "volume_panels_yr": 5000,
+      "fixed_cost_per_panel_bdt": 25155.0,
+      "variable_cost_per_panel_bdt": 172215.0,
+      "total_unit_cost_per_panel_bdt": 197370.0,
+      "equivalent_cost_per_m2_bdt": 15300.0,
+      "fixed_cost_per_m2_bdt": 1950.0,
+      "variable_cost_per_m2_bdt": 13350.0,
+      "vs_conventional_pct": -15.0,
+      "total_annual_fixed_cost_bdt": 125775000.0
+    },
+    {
+      "volume_panels_yr": 10000,
+      "fixed_cost_per_panel_bdt": 12577.5,
+      "variable_cost_per_panel_bdt": 172215.0,
+      "total_unit_cost_per_panel_bdt": 184792.5,
+      "equivalent_cost_per_m2_bdt": 14325.0,
+      "fixed_cost_per_m2_bdt": 975.0,
+      "variable_cost_per_m2_bdt": 13350.0,
+      "vs_conventional_pct": -20.416666666666668,
+      "total_annual_fixed_cost_bdt": 125775000.0
+    }
+  ],
+  "sensitivity_analysis": {
+    "baseline_breakeven_n_star": 2096.7741935483873,
+    "baseline_cost_at_5000_bdt_m2": 15300.0,
+    "baseline_variance_at_5000_pct": -15.0,
+    "parameters": [
+      {
+        "param": "Conventional Baseline (BDT/m\u00b2)",
+        "id": "c_conv",
+        "low_val": 14000.0,
+        "base_val": 18000.0,
+        "high_val": 22000.0,
+        "n_star_low": 15000.0,
+        "n_star_high": 1127.1676300578035,
+        "cost_5k_low": 15300.0,
+        "cost_5k_high": 15300.0,
+        "pct_5k_low": 9.285714285714286,
+        "pct_5k_high": -30.454545454545457,
+        "spread_n_star": 13872.832369942196
+      },
+      {
+        "param": "Floor Area Served per Panel Area (k)",
+        "id": "k",
+        "low_val": 0.8,
+        "base_val": 1.0,
+        "high_val": 1.2,
+        "n_star_low": 2620.967741935484,
+        "n_star_high": 1747.3118279569892,
+        "cost_5k_low": 15787.5,
+        "cost_5k_high": 14975.0,
+        "pct_5k_low": -12.291666666666666,
+        "pct_5k_high": -16.805555555555557,
+        "spread_n_star": 873.6559139784947
+      },
+      {
+        "param": "Discount Rate / Cost of Capital (i)",
+        "id": "discount_rate",
+        "low_val": 0.06,
+        "base_val": 0.1,
+        "high_val": 0.14,
+        "n_star_low": 1805.299689292163,
+        "n_star_high": 2417.1208556634224,
+        "cost_5k_low": 15028.928711041712,
+        "cost_5k_high": 15597.922395766982,
+        "pct_5k_low": -16.505951605323823,
+        "pct_5k_high": -13.344875579072324,
+        "spread_n_star": 611.8211663712593
+      },
+      {
+        "param": "Labour Saving vs Conventional (%)",
+        "id": "labour_saving",
+        "low_val": 0.4,
+        "base_val": 0.6,
+        "high_val": 0.7,
+        "n_star_low": 2532.4675324675327,
+        "n_star_high": 1930.6930693069307,
+        "cost_5k_low": 16100.0,
+        "cost_5k_high": 14900.0,
+        "pct_5k_low": -10.555555555555555,
+        "pct_5k_high": -17.22222222222222,
+        "spread_n_star": 601.774463160602
+      },
+      {
+        "param": "Transport & Erection Premium (%)",
+        "id": "trans_premium",
+        "low_val": 1.0,
+        "base_val": 2.3,
+        "high_val": 3.5,
+        "n_star_low": 1839.622641509434,
+        "n_star_high": 2407.4074074074074,
+        "cost_5k_low": 14650.0,
+        "cost_5k_high": 15900.0,
+        "pct_5k_low": -18.61111111111111,
+        "pct_5k_high": -11.666666666666666,
+        "spread_n_star": 567.7847658979733
+      },
+      {
+        "param": "Plant Initial Capex C0 (BDT)",
+        "id": "capex_c0",
+        "low_val": 490592128.1568897,
+        "base_val": 613240160.196112,
+        "high_val": 735888192.2353344,
+        "n_star_low": 1827.9569892473119,
+        "n_star_high": 2365.5913978494623,
+        "cost_5k_low": 15050.0,
+        "cost_5k_high": 15550.0,
+        "pct_5k_low": -16.38888888888889,
+        "pct_5k_high": -13.61111111111111,
+        "spread_n_star": 537.6344086021504
+      },
+      {
+        "param": "Plant Economic Life (years)",
+        "id": "plant_life",
+        "low_val": 10.0,
+        "base_val": 15.0,
+        "high_val": 20.0,
+        "n_star_low": 2416.4709848950715,
+        "n_star_high": 1953.5043612918425,
+        "cost_5k_low": 15597.318015952416,
+        "cost_5k_high": 15166.759056001414,
+        "pct_5k_low": -13.3482332447088,
+        "pct_5k_high": -15.74022746665881,
+        "spread_n_star": 462.966623603229
+      },
+      {
+        "param": "Equipment Premium vs Conventional (%)",
+        "id": "eq_premium",
+        "low_val": 1.2,
+        "base_val": 1.5,
+        "high_val": 1.8,
+        "n_star_low": 1935.483870967742,
+        "n_star_high": 2258.064516129032,
+        "cost_5k_low": 15150.0,
+        "cost_5k_high": 15450.0,
+        "pct_5k_low": -15.833333333333332,
+        "pct_5k_high": -14.166666666666666,
+        "spread_n_star": 322.58064516129025
+      },
+      {
+        "param": "Annual Fixed Overhead Fo (BDT)",
+        "id": "fixed_overhead",
+        "low_val": 36120000.0,
+        "base_val": 45150000.0,
+        "high_val": 54180000.0,
+        "n_star_low": 1946.236559139785,
+        "n_star_high": 2247.3118279569894,
+        "cost_5k_low": 15160.0,
+        "cost_5k_high": 15440.0,
+        "pct_5k_low": -15.777777777777777,
+        "pct_5k_high": -14.222222222222221,
+        "spread_n_star": 301.07526881720446
+      },
+      {
+        "param": "Formwork Saving vs Conventional (%)",
+        "id": "formwork_saving",
+        "low_val": 0.6,
+        "base_val": 0.8,
+        "high_val": 0.9,
+        "n_star_low": 2294.1176470588234,
+        "n_star_high": 2010.3092783505156,
+        "cost_5k_low": 15700.0,
+        "cost_5k_high": 15100.0,
+        "pct_5k_low": -12.777777777777777,
+        "pct_5k_high": -16.11111111111111,
+        "spread_n_star": 283.80836870830785
+      }
+    ]
+  },
+  "monte_carlo_results": {
+    "n_draws": 10000,
+    "seed": 42,
+    "n_star_p10": 1430.724364185343,
+    "n_star_p50": 2237.746097178565,
+    "n_star_p90": 4539.586225080305,
+    "prob_cheaper_2000_pct": 39.08,
+    "prob_cheaper_5000_pct": 92.08,
+    "prob_cheaper_10000_pct": 98.76,
+    "non_breakeven_draws_count": 1
+  },
+  "assumptions": [
+    {
+      "parameter": "Conventional core & shell baseline",
+      "value": "18,000 BDT/m\u00b2",
+      "type": "Assumed (SSRN paper baseline & Dhaka developer consensus)"
+    },
+    {
+      "parameter": "Panel nominal geometry",
+      "value": "4.3 m x 3.0 m (12.9 m\u00b2)",
+      "type": "Literature-derived standard precast wall panel"
+    },
+    {
+      "parameter": "Floor area served per panel area (k)",
+      "value": "1.0 m\u00b2 floor / m\u00b2 panel",
+      "type": "Assumed (SSRN paper convention; tested 0.8-1.2)"
+    },
+    {
+      "parameter": "Material cost saving",
+      "value": "-8.0%",
+      "type": "Literature-derived (controlled factory batching & reduced scrap)"
+    },
+    {
+      "parameter": "Labour cost saving",
+      "value": "-60.0%",
+      "type": "Literature-derived (off-site industrial automation vs site pouring)"
+    },
+    {
+      "parameter": "Formwork cost saving",
+      "value": "-80.0%",
+      "type": "Literature-derived & register-supported (steel moulds reuse >200 times)"
+    },
+    {
+      "parameter": "Transport & erection premium",
+      "value": "+230.0%",
+      "type": "Literature-derived (heavy flatbed Dhaka logistics & mobile crane hire)"
+    },
+    {
+      "parameter": "Quality control / testing premium",
+      "value": "+150.0%",
+      "type": "Literature-derived (rigorous factory cube test protocol)"
+    },
+    {
+      "parameter": "Plant capital recovery rate (i)",
+      "value": "10.0% annual",
+      "type": "Assumed standard industrial project finance discount rate"
+    },
+    {
+      "parameter": "Plant asset economic life (n)",
+      "value": "15 years",
+      "type": "Assumed standard precast machinery depreciation life"
+    },
+    {
+      "parameter": "Plant initial Capex C0",
+      "value": "613,240,160 BDT ($5,026,558.69 USD)",
+      "type": "Calibrated from Table 7 equipment share at 5,000 units/yr"
+    },
+    {
+      "parameter": "Fixed annual overhead Fo",
+      "value": "45,150,000 BDT/yr",
+      "type": "Calibrated from Table 7 overhead share at 5,000 units/yr"
+    },
+    {
+      "parameter": "Exchange rate",
+      "value": "122 BDT / USD",
+      "type": "Commercial projection (2024-2026 Bangladesh banking rate)"
+    }
+  ]
+}
