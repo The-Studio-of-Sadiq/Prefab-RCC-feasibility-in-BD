@@ -1,0 +1,40 @@
+{
+ "label": "M2",
+ "col_rho_max": 0.054236,
+ "col_rho_gt_4pct": 24,
+ "col_fail": 0,
+ "col_msgs": [
+  [
+   "No Message",
+   600
+  ]
+ ],
+ "beam_rho_max": 0.005757575757575757,
+ "beam_rho_gt_2.5pct": 0,
+ "beam_fail": 0,
+ "beam_msgs": [
+  [
+   "No Message",
+   3100
+  ]
+ ],
+ "joint_shear_max": 0.546,
+ "joint_shear_gt1": 0,
+ "bc_ratio_max": 1.099,
+ "bc_gt_1": 8,
+ "wall_shear_DC_max": 0.568,
+ "wall_rho_t_req_max": 0.0038,
+ "wall_rho_l_req_max": 0.0095,
+ "wall_BE_storeys": [
+  "Story1",
+  "Story2",
+  "Story3",
+  "Story4",
+  "Story5"
+ ],
+ "wall_sigma_max": 12.06,
+ "wall_Pu_min": -150,
+ "wall_edge_stress_min_MPa": -8.9538,
+ "wall_edge_tension_force_kN_per_m": 1790.76,
+ "bnbc_min_vertical_tie_kN_per_m": 44.0
+}

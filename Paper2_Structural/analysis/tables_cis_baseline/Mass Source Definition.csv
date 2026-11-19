@@ -1,0 +1,5 @@
+Name,IsDefault,IncLateral,IncVertical,LumpMass,SourceSelf,SourceAdded,SourceLoads,MoveMass,LoadPattern,Multiplier,GUID
+MsSrc1,Yes,Yes,No,Yes,Yes,Yes,Yes,No,FF,1,3cd8a287-8baf-4e8a-b10d-2fd6f004bfba
+MsSrc1,,,,,,,,,PW,1,
+MsSrc1,,,,,,,,,Live,0.25,
+MsSrc1,,,,,,,,,WALL,1,

@@ -1,0 +1,14 @@
+# ETABS run artefacts (keep only *.EDB model inputs)
+*.$et
+*.ebk
+*.K_*
+*.LOG
+*.OUT
+*.Y
+*.Y$$
+*.Y0*
+*.Y_
+*.Y_1
+*.msh
+*.ico
+__pycache__/

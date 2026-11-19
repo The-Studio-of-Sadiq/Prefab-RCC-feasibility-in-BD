@@ -1,0 +1,40 @@
+{
+ "label": "M4_fix600",
+ "col_rho_max": 0.038783333333333336,
+ "col_rho_gt_4pct": 0,
+ "col_fail": 0,
+ "col_msgs": [
+  [
+   "No Message",
+   600
+  ]
+ ],
+ "beam_rho_max": 0.005363636363636363,
+ "beam_rho_gt_2.5pct": 0,
+ "beam_fail": 0,
+ "beam_msgs": [
+  [
+   "No Message",
+   3100
+  ]
+ ],
+ "joint_shear_max": 0.425,
+ "joint_shear_gt1": 0,
+ "bc_ratio_max": 0.892,
+ "bc_gt_1": 0,
+ "wall_shear_DC_max": 0.575,
+ "wall_rho_t_req_max": 0.0039,
+ "wall_rho_l_req_max": 0.008,
+ "wall_BE_storeys": [
+  "Story1",
+  "Story2",
+  "Story3",
+  "Story4",
+  "Story5"
+ ],
+ "wall_sigma_max": 9.96,
+ "wall_Pu_min": -47,
+ "wall_edge_stress_min_MPa": -7.5966,
+ "wall_edge_tension_force_kN_per_m": 1519.32,
+ "bnbc_min_vertical_tie_kN_per_m": 44.0
+}

@@ -1,0 +1,41 @@
+Name,IsAuto,Type,SelfWtMult,AutoLoad,GUID
+~LLRF,Yes,Other,0,,eecd78e7-4b68-4b4a-8e8a-ce71446623aa
+~RSxECC,Yes,Other,0,,9060a09a-2f94-48e5-bba9-f623eb5b33db
+~RSyECC,Yes,Other,0,,a1b73c61-34ba-4958-b433-08889b5b2957
+Dead,No,Dead,1,,d11898e4-5268-4af3-9576-dcddfdea81c2
+EQx,No,Seismic,0,User Coefficient,bc39e76c-7470-495f-8f17-f1faa3436fcb
+EQx(1/2),Yes,Seismic,0,User Coefficient,6c6b0e23-f841-4a84-addc-0fcf7c177cc1
+EQx(2/2),Yes,Seismic,0,User Coefficient,f7f711d9-6943-44da-8d9c-17a601d0bc68
+EQy,No,Seismic,0,User Coefficient,8a34dc21-c2ac-40e6-9c74-c09a1a041e23
+EQy(1/2),Yes,Seismic,0,User Coefficient,a893152b-60e6-49f8-af42-a6cf99de88d3
+EQy(2/2),Yes,Seismic,0,User Coefficient,982503ae-8b6a-46b5-9877-1284bbba9430
+FF,No,Super Dead,0,,cf8f62c3-995f-45a3-960d-2df3be7d73c0
+Live,No,Live,0,,3cb73257-588b-4ee5-86ff-a370274750ac
+PW,No,Super Dead,0,,9209d6c3-c604-4e46-9a32-1845a799fee0
+WALL,No,Super Dead,0,,101122bf-3520-43e3-b1f2-b1988745589a
+Wx,No,Wind,0,ASCE 7-05,a7eb499a-6fe1-4ac8-bd2f-e2b5faea4016
+Wx(1/12),Yes,Wind,0,ASCE 7-05,416722d1-ab47-4970-8a7c-cb1a80d754c9
+Wx(10/12),Yes,Wind,0,ASCE 7-05,8c0807b4-a187-47e1-ae8f-53d0d99a4220
+Wx(11/12),Yes,Wind,0,ASCE 7-05,518cf68c-4b43-4f9c-9417-5883d5e46921
+Wx(12/12),Yes,Wind,0,ASCE 7-05,eafe5a47-ffda-4fe9-b2c4-f64c11fd156b
+Wx(2/12),Yes,Wind,0,ASCE 7-05,94c4f847-ebf7-45e8-af78-bf38dc5ee33d
+Wx(3/12),Yes,Wind,0,ASCE 7-05,bbab43aa-76b8-4102-85f5-e4454bf40a22
+Wx(4/12),Yes,Wind,0,ASCE 7-05,a6cf7a73-095a-4357-a156-10bbcd6aad73
+Wx(5/12),Yes,Wind,0,ASCE 7-05,1a78573c-6da7-4741-9891-7d5c699d9fa2
+Wx(6/12),Yes,Wind,0,ASCE 7-05,e99924fb-91d8-4d46-9611-c5c5fdd86280
+Wx(7/12),Yes,Wind,0,ASCE 7-05,50118533-ccd6-4108-a53f-a13dd7a2ce21
+Wx(8/12),Yes,Wind,0,ASCE 7-05,7be4ff00-dac2-4d66-8a1f-7f4364c5765b
+Wx(9/12),Yes,Wind,0,ASCE 7-05,120602d6-e084-4932-ab66-812b50248722
+Wy,No,Wind,0,ASCE 7-05,c87de773-3384-4c72-baf3-72cf9c7ede44
+Wy(1/12),Yes,Wind,0,ASCE 7-05,d0f58c8f-9479-4d6e-8416-a5e0eb63b537
+Wy(10/12),Yes,Wind,0,ASCE 7-05,e45dea2f-42fa-411b-934a-2f509b174629
+Wy(11/12),Yes,Wind,0,ASCE 7-05,522fb0f3-541f-45c5-8b83-69354e184001
+Wy(12/12),Yes,Wind,0,ASCE 7-05,d3a1d7eb-da66-4034-96e5-631e80a11f5f
+Wy(2/12),Yes,Wind,0,ASCE 7-05,92cb4031-46e5-48f6-a1d6-e7653a487e3a
+Wy(3/12),Yes,Wind,0,ASCE 7-05,5cf5f86d-b3f8-4790-aaf7-b426015a996d
+Wy(4/12),Yes,Wind,0,ASCE 7-05,6e20e44f-f47e-4269-9205-2b28da236a3a
+Wy(5/12),Yes,Wind,0,ASCE 7-05,d47e4d4c-769b-4024-a756-9ff8fcf423bd
+Wy(6/12),Yes,Wind,0,ASCE 7-05,1baf657e-40ab-4903-8d3f-3d8bd867d7cf
+Wy(7/12),Yes,Wind,0,ASCE 7-05,78c1a313-976d-44ed-acd3-d685787aa394
+Wy(8/12),Yes,Wind,0,ASCE 7-05,2a8f3121-bb7c-40cb-8f41-b785b1acfa81
+Wy(9/12),Yes,Wind,0,ASCE 7-05,dd7608f3-013d-4229-a640-1defb9467fe8

@@ -1,0 +1,499 @@
+{
+  "network_overview": {
+    "total_segments": 3441,
+    "sum_precomputed_km": 1235.669,
+    "sum_computed_km": 1235.669,
+    "cross_check_pct_difference": -3.9274786288843477e-10,
+    "max_segment_abs_diff_m": 0.0,
+    "highway_breakdown": [
+      {
+        "highway": "tertiary",
+        "count": 1082,
+        "length_km": 373.3894,
+        "share_pct": 30.22
+      },
+      {
+        "highway": "primary",
+        "count": 491,
+        "length_km": 240.9949,
+        "share_pct": 19.5
+      },
+      {
+        "highway": "secondary",
+        "count": 572,
+        "length_km": 219.7974,
+        "share_pct": 17.79
+      },
+      {
+        "highway": "trunk",
+        "count": 250,
+        "length_km": 178.8912,
+        "share_pct": 14.48
+      },
+      {
+        "highway": "residential",
+        "count": 342,
+        "length_km": 77.2826,
+        "share_pct": 6.25
+      },
+      {
+        "highway": "motorway",
+        "count": 85,
+        "length_km": 76.8894,
+        "share_pct": 6.22
+      },
+      {
+        "highway": "motorway_link",
+        "count": 61,
+        "length_km": 15.29,
+        "share_pct": 1.24
+      },
+      {
+        "highway": "unclassified",
+        "count": 29,
+        "length_km": 14.621,
+        "share_pct": 1.18
+      },
+      {
+        "highway": "trunk_link",
+        "count": 104,
+        "length_km": 14.4183,
+        "share_pct": 1.17
+      },
+      {
+        "highway": "primary_link",
+        "count": 168,
+        "length_km": 8.8911,
+        "share_pct": 0.72
+      },
+      {
+        "highway": "secondary_link",
+        "count": 141,
+        "length_km": 7.1942,
+        "share_pct": 0.58
+      },
+      {
+        "highway": "service",
+        "count": 22,
+        "length_km": 5.1231,
+        "share_pct": 0.41
+      },
+      {
+        "highway": "living_street",
+        "count": 12,
+        "length_km": 1.869,
+        "share_pct": 0.15
+      },
+      {
+        "highway": "tertiary_link",
+        "count": 82,
+        "length_km": 1.0176,
+        "share_pct": 0.08
+      }
+    ]
+  },
+  "selection_and_widths": {
+    "category_breakdown": [
+      {
+        "category": "lanes",
+        "count": 1329,
+        "length_km": 620.0986,
+        "share_pct": 50.18
+      },
+      {
+        "category": "class",
+        "count": 1969,
+        "length_km": 590.8458,
+        "share_pct": 47.82
+      },
+      {
+        "category": "tagged",
+        "count": 143,
+        "length_km": 24.7247,
+        "share_pct": 2.0
+      }
+    ],
+    "width_analysis": {
+      "count_numeric_width": 143,
+      "count_null_width": 3298,
+      "numeric_width_feature_pct": 4.16,
+      "min_width_m": 4.8768,
+      "median_width_m": 5.5,
+      "mean_width_m": 7.5653,
+      "max_width_m": 25.0,
+      "distribution_bins": {
+        "lt_4_9m": 3,
+        "4_9_to_7_3m": 95,
+        "7_3_to_10_8m": 24,
+        "gt_10_8m": 21
+      }
+    }
+  },
+  "surfaces_and_structures": {
+    "surface_breakdown": [
+      {
+        "surface": "asphalt",
+        "count": 1420,
+        "length_km": 624.9499,
+        "share_pct": 50.58
+      },
+      {
+        "surface": "unknown",
+        "count": 1701,
+        "length_km": 498.9779,
+        "share_pct": 40.38
+      },
+      {
+        "surface": "paved",
+        "count": 227,
+        "length_km": 59.2091,
+        "share_pct": 4.79
+      },
+      {
+        "surface": "concrete",
+        "count": 75,
+        "length_km": 48.3277,
+        "share_pct": 3.91
+      },
+      {
+        "surface": "concrete:lanes",
+        "count": 8,
+        "length_km": 2.8134,
+        "share_pct": 0.23
+      },
+      {
+        "surface": "concrete:plates",
+        "count": 4,
+        "length_km": 0.8331,
+        "share_pct": 0.07
+      },
+      {
+        "surface": "unpaved",
+        "count": 4,
+        "length_km": 0.3437,
+        "share_pct": 0.03
+      },
+      {
+        "surface": "gravel",
+        "count": 1,
+        "length_km": 0.1329,
+        "share_pct": 0.01
+      },
+      {
+        "surface": "metal",
+        "count": 1,
+        "length_km": 0.0812,
+        "share_pct": 0.01
+      }
+    ],
+    "bridge_breakdown": [
+      {
+        "bridge_tag": "yes",
+        "count": 354,
+        "length_km": 110.9836,
+        "share_pct": 8.98
+      },
+      {
+        "bridge_tag": "viaduct",
+        "count": 1,
+        "length_km": 0.0159,
+        "share_pct": 0.0
+      },
+      {
+        "bridge_tag": "covered",
+        "count": 1,
+        "length_km": 0.0121,
+        "share_pct": 0.0
+      }
+    ],
+    "maxweight_tags": [
+      {
+        "tag": "maxweight:signed=no",
+        "count": 3,
+        "length_km": 0.0847
+      },
+      {
+        "tag": "maxweightrating:hgv=4.8",
+        "count": 1,
+        "length_km": 0.0722
+      }
+    ],
+    "standard_maxweight_tag_status": "not available in data"
+  },
+  "corridors_and_bbox": {
+    "heavy_corridor": {
+      "count": 1159,
+      "length_km": 535.3748,
+      "share_pct": 43.33
+    },
+    "secondary_tertiary": {
+      "count": 1877,
+      "length_km": 601.3985,
+      "share_pct": 48.67
+    },
+    "other_roads": {
+      "count": 405,
+      "length_km": 98.8957,
+      "share_pct": 8.0
+    },
+    "bounding_box": {
+      "min_lon": 90.2712105,
+      "max_lon": 90.5157053,
+      "min_lat": 23.6325328,
+      "max_lat": 23.937444
+    }
+  },
+  "connectivity_all_roads": {
+    "total_nodes": 32481,
+    "total_features": 3441,
+    "total_length_km": 1235.669,
+    "connected_components_count": 92,
+    "largest_component_km": 1200.8463,
+    "largest_component_share_pct": 97.18,
+    "largest_component_features": 3317,
+    "top_components": [
+      {
+        "component_id": 0,
+        "length_km": 1200.8463,
+        "share_pct": 97.18,
+        "features_count": 3317,
+        "nodes_count": 31412
+      },
+      {
+        "component_id": 40,
+        "length_km": 5.9227,
+        "share_pct": 0.48,
+        "features_count": 9,
+        "nodes_count": 109
+      },
+      {
+        "component_id": 8,
+        "length_km": 3.8582,
+        "share_pct": 0.31,
+        "features_count": 3,
+        "nodes_count": 102
+      },
+      {
+        "component_id": 59,
+        "length_km": 2.5939,
+        "share_pct": 0.21,
+        "features_count": 1,
+        "nodes_count": 39
+      },
+      {
+        "component_id": 85,
+        "length_km": 2.4911,
+        "share_pct": 0.2,
+        "features_count": 1,
+        "nodes_count": 35
+      }
+    ]
+  },
+  "connectivity_heavy_corridor": {
+    "total_nodes": 13408,
+    "total_features": 1159,
+    "total_length_km": 535.3748,
+    "connected_components_count": 4,
+    "largest_component_km": 531.9588,
+    "largest_component_share_pct": 99.36,
+    "largest_component_features": 1156,
+    "top_components": [
+      {
+        "component_id": 0,
+        "length_km": 531.9588,
+        "share_pct": 99.36,
+        "features_count": 1156,
+        "nodes_count": 13356
+      },
+      {
+        "component_id": 2,
+        "length_km": 2.4911,
+        "share_pct": 0.47,
+        "features_count": 1,
+        "nodes_count": 35
+      },
+      {
+        "component_id": 3,
+        "length_km": 0.7004,
+        "share_pct": 0.13,
+        "features_count": 1,
+        "nodes_count": 9
+      },
+      {
+        "component_id": 1,
+        "length_km": 0.2246,
+        "share_pct": 0.04,
+        "features_count": 1,
+        "nodes_count": 8
+      }
+    ]
+  },
+  "origin_destination_routing": {
+    "candidate_factories": {
+      "Savar EPZ": [
+        23.8667,
+        90.2667
+      ],
+      "Gazipur/Tongi": [
+        23.9,
+        90.405
+      ],
+      "Narayanganj/Kanchpur": [
+        23.7,
+        90.5167
+      ]
+    },
+    "demand_points": {
+      "Mirpur": [
+        23.8069,
+        90.3687
+      ],
+      "Gulshan": [
+        23.7925,
+        90.4078
+      ],
+      "Dhanmondi": [
+        23.7465,
+        90.376
+      ]
+    },
+    "snapped_factories": {
+      "Savar EPZ": {
+        "original_lat": 23.8667,
+        "original_lon": 90.2667,
+        "snapped_node": [
+          90.31101,
+          23.87525
+        ],
+        "snap_dist_km": 4.6048,
+        "component_id": 8
+      },
+      "Gazipur/Tongi": {
+        "original_lat": 23.9,
+        "original_lon": 90.405,
+        "snapped_node": [
+          90.40373,
+          23.90046
+        ],
+        "snap_dist_km": 0.1389,
+        "component_id": 0
+      },
+      "Narayanganj/Kanchpur": {
+        "original_lat": 23.7,
+        "original_lon": 90.5167,
+        "snapped_node": [
+          90.51571,
+          23.70179
+        ],
+        "snap_dist_km": 0.2231,
+        "component_id": 0
+      }
+    },
+    "snapped_demands": {
+      "Mirpur": {
+        "original_lat": 23.8069,
+        "original_lon": 90.3687,
+        "snapped_node": [
+          90.36867,
+          23.80696
+        ],
+        "snap_dist_km": 0.0073,
+        "component_id": 0
+      },
+      "Gulshan": {
+        "original_lat": 23.7925,
+        "original_lon": 90.4078,
+        "snapped_node": [
+          90.40828,
+          23.79244
+        ],
+        "snap_dist_km": 0.0493,
+        "component_id": 0
+      },
+      "Dhanmondi": {
+        "original_lat": 23.7465,
+        "original_lon": 90.376,
+        "snapped_node": [
+          90.37255,
+          23.74463
+        ],
+        "snap_dist_km": 0.4081,
+        "component_id": 0
+      }
+    },
+    "od_matrix": [
+      {
+        "origin_factory": "Savar EPZ",
+        "destination_demand": "Mirpur",
+        "straight_line_km": 12.32,
+        "network_distance_km": "Disconnected",
+        "circuity_factor": "N/A",
+        "status": "Disconnected"
+      },
+      {
+        "origin_factory": "Savar EPZ",
+        "destination_demand": "Gulshan",
+        "straight_line_km": 16.55,
+        "network_distance_km": "Disconnected",
+        "circuity_factor": "N/A",
+        "status": "Disconnected"
+      },
+      {
+        "origin_factory": "Savar EPZ",
+        "destination_demand": "Dhanmondi",
+        "straight_line_km": 17.39,
+        "network_distance_km": "Disconnected",
+        "circuity_factor": "N/A",
+        "status": "Disconnected"
+      },
+      {
+        "origin_factory": "Gazipur/Tongi",
+        "destination_demand": "Mirpur",
+        "straight_line_km": 10.99,
+        "network_distance_km": 14.341,
+        "circuity_factor": 1.3,
+        "status": "Connected"
+      },
+      {
+        "origin_factory": "Gazipur/Tongi",
+        "destination_demand": "Gulshan",
+        "straight_line_km": 11.96,
+        "network_distance_km": 15.049,
+        "circuity_factor": 1.26,
+        "status": "Connected"
+      },
+      {
+        "origin_factory": "Gazipur/Tongi",
+        "destination_demand": "Dhanmondi",
+        "straight_line_km": 17.32,
+        "network_distance_km": 22.411,
+        "circuity_factor": 1.29,
+        "status": "Connected"
+      },
+      {
+        "origin_factory": "Narayanganj/Kanchpur",
+        "destination_demand": "Mirpur",
+        "straight_line_km": 19.19,
+        "network_distance_km": 23.192,
+        "circuity_factor": 1.21,
+        "status": "Connected"
+      },
+      {
+        "origin_factory": "Narayanganj/Kanchpur",
+        "destination_demand": "Gulshan",
+        "straight_line_km": 15.12,
+        "network_distance_km": 20.881,
+        "circuity_factor": 1.38,
+        "status": "Connected"
+      },
+      {
+        "origin_factory": "Narayanganj/Kanchpur",
+        "destination_demand": "Dhanmondi",
+        "straight_line_km": 15.23,
+        "network_distance_km": 17.47,
+        "circuity_factor": 1.15,
+        "status": "Connected"
+      }
+    ]
+  }
+}

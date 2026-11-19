@@ -1,0 +1,7 @@
+Name,IsAuto,XDir,XDirPlusE,XDirMinusE,YDir,YDirPlusE,YDirMinusE,EccRatio,TopStory,BotStory,C,K,WeightUsed,BaseShear
+EQx,No,Yes,Yes,No,No,No,No,0.05,Story10,Base,0.056,1,,
+EQx(1/2),Yes,Yes,No,No,No,No,No,0.05,Story10,Base,0.056,1,29010.2621,1624.5747
+EQx(2/2),Yes,No,Yes,No,No,No,No,0.05,Story10,Base,0.056,1,29010.2621,1624.5747
+EQy,No,No,No,No,Yes,Yes,No,0.05,Story10,Base,0.056,1,,
+EQy(1/2),Yes,No,No,No,Yes,No,No,0.05,Story10,Base,0.056,1,29010.2621,1624.5747
+EQy(2/2),Yes,No,No,No,No,Yes,No,0.05,Story10,Base,0.056,1,29010.2621,1624.5747

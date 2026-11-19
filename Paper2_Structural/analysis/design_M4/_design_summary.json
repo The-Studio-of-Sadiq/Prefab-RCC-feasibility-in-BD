@@ -1,0 +1,44 @@
+{
+ "label": "M4",
+ "col_rho_max": 0.070912,
+ "col_rho_gt_4pct": 48,
+ "col_fail": 24,
+ "col_msgs": [
+  [
+   "No Message",
+   576
+  ],
+  [
+   "Reinforcing required exceeds maximum allowed",
+   24
+  ]
+ ],
+ "beam_rho_max": 0.005363636363636363,
+ "beam_rho_gt_2.5pct": 0,
+ "beam_fail": 0,
+ "beam_msgs": [
+  [
+   "No Message",
+   3100
+  ]
+ ],
+ "joint_shear_max": 0.425,
+ "joint_shear_gt1": 0,
+ "bc_ratio_max": 0.886,
+ "bc_gt_1": 0,
+ "wall_shear_DC_max": 0.586,
+ "wall_rho_t_req_max": 0.004,
+ "wall_rho_l_req_max": 0.01,
+ "wall_BE_storeys": [
+  "Story1",
+  "Story2",
+  "Story3",
+  "Story4",
+  "Story5"
+ ],
+ "wall_sigma_max": 12.26,
+ "wall_Pu_min": -68,
+ "wall_edge_stress_min_MPa": -9.346,
+ "wall_edge_tension_force_kN_per_m": 1869.2,
+ "bnbc_min_vertical_tie_kN_per_m": 44.0
+}

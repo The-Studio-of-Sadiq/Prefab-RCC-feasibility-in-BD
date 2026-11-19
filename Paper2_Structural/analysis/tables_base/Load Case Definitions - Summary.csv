@@ -1,0 +1,11 @@
+Name,Type,GUID
+Dead,Linear Static,7cdf4043-9af7-4807-b249-36f580e82331
+Live,Linear Static,08dcb033-4785-4f5e-92db-c7eb46935756
+Modal,Modal - Eigen,d2bf79ad-8cd7-4ce1-838e-5199a5478623
+FF,Linear Static,4d30fea0-3784-4622-a4d3-8fc363b8e70e
+PW,Linear Static,a91dbc1f-532a-4d2e-bda1-1f185b664639
+EQx,Linear Static,fefc325d-9a5b-4fa8-a199-d1fe819f6738
+EQy,Linear Static,70e899bd-602b-417b-aa0c-cdbbc66eab9b
+Wx,Linear Static,283e8d35-df4f-4dfc-b5b4-47239636399a
+Wy,Linear Static,d3f13f65-630d-402a-acc7-26145114e659
+WALL,Linear Static,1fbbe2cb-10b9-4d2e-964a-da10c926c744

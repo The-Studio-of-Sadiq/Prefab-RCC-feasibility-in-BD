@@ -1,0 +1,79 @@
+{
+  "assumptions": {
+    "F_bdt_per_yr": 125775000.0,
+    "v_total_bdt_m2": 13350.0,
+    "c_conv_bdt_m2": 18000.0,
+    "design_gfa_m2_yr": 64500.0,
+    "building_gfa_m2": 3000.0,
+    "k_range_floor_per_panel": [
+      0.3333333333333333,
+      0.5
+    ],
+    "note": "F was calibrated so that Table 7's plant and overhead allowances are recovered at the design throughput (64,500 m2 GFA/yr). The breakeven therefore follows from Table 7's assumptions; it is not an independent estimate."
+  },
+  "q_star_m2_gfa_per_yr": 27048.387096774193,
+  "q_star_buildings_3000m2": 9.016129032258064,
+  "q_star_panels_range": [
+    6290.322580645162,
+    4193.548387096774
+  ],
+  "scale_table": [
+    {
+      "gfa_per_yr": 6450,
+      "buildings_3000m2": 2.15,
+      "cost_bdt_m2": 32850.0,
+      "vs_conv_pct": 82.5,
+      "panels_k_low": 1500.0,
+      "panels_k_high": 1000.0
+    },
+    {
+      "gfa_per_yr": 12900,
+      "buildings_3000m2": 4.3,
+      "cost_bdt_m2": 23100.0,
+      "vs_conv_pct": 28.333333333333343,
+      "panels_k_low": 3000.0,
+      "panels_k_high": 2000.0
+    },
+    {
+      "gfa_per_yr": 25800,
+      "buildings_3000m2": 8.6,
+      "cost_bdt_m2": 18225.0,
+      "vs_conv_pct": 1.2499999999999956,
+      "panels_k_low": 6000.0,
+      "panels_k_high": 4000.0
+    },
+    {
+      "gfa_per_yr": 38700,
+      "buildings_3000m2": 12.9,
+      "cost_bdt_m2": 16600.0,
+      "vs_conv_pct": -7.777777777777772,
+      "panels_k_low": 9000.0,
+      "panels_k_high": 6000.0
+    },
+    {
+      "gfa_per_yr": 64500,
+      "buildings_3000m2": 21.5,
+      "cost_bdt_m2": 15300.0,
+      "vs_conv_pct": -15.000000000000002,
+      "panels_k_low": 15000.0,
+      "panels_k_high": 10000.0
+    },
+    {
+      "gfa_per_yr": 129000,
+      "buildings_3000m2": 43.0,
+      "cost_bdt_m2": 14325.0,
+      "vs_conv_pct": -20.41666666666667,
+      "panels_k_low": 30000.0,
+      "panels_k_high": 20000.0
+    }
+  ],
+  "monte_carlo": {
+    "q_star_p10": 18494.11201917832,
+    "q_star_p50": 28490.30471295859,
+    "q_star_p90": 57081.24099607408,
+    "share_no_breakeven": 0.0002,
+    "p_cheaper_at_25800": 0.3966,
+    "p_cheaper_at_64500": 0.9261,
+    "p_cheaper_at_129000": 0.9886
+  }
+}
