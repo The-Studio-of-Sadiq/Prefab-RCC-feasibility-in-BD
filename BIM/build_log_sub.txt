@@ -1,0 +1,287 @@
+[2026-11-20 07:34:47.768] ================================================================================
+[2026-11-20 07:34:47.770] PrefabBIM Add-in started. PREFAB_BIM_JOB='sub' detected. Active mode: 'sub'.
+[2026-11-20 07:34:47.770] ================================================================================
+[2026-11-20 07:34:47.776] Subscribed to ApplicationInitialized and DialogBoxShowing successfully.
+[2026-11-20 07:34:51.993] ApplicationInitialized event fired. Executing pipeline for mode: 'sub'...
+[2026-11-20 07:34:52.001] ================================================================================
+[2026-11-20 07:34:52.002] Starting Substructure Job Pipeline (PREFAB_BIM_JOB=sub)...
+[2026-11-20 07:34:52.002] ================================================================================
+[2026-11-20 07:34:52.002] Reading pile design JSON from 'C:\Users\rashe\Documents\prefab\repo\Paper2_Structural\analysis\2_Precast\reactions_M2_fix600\pile_design_Qa1307.json'...
+[2026-11-20 07:34:52.010] Successfully parsed pile design JSON: total_piles = 70, caps count = 20
+[2026-11-20 07:34:52.010] Opening structural model document: 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.rvt'
+[2026-11-20 07:34:53.832] Located Base level: 'Base', Elevation = 0.000 ft (0.00 m)
+[2026-11-20 07:34:53.837] Found material 'Concrete C28 (precast)' (Id: 425956).
+[2026-11-20 07:34:58.326] No previous SUB elements found to delete.
+[2026-11-20 07:34:58.401] Symbol 'GB 300x600': Set width parameter 'b' = 0.9843 ft
+[2026-11-20 07:34:58.404] Symbol 'GB 300x600': Set depth/height parameter 'h' = 1.9685 ft
+[2026-11-20 07:34:58.411] Symbol 'GB 300x600': Set BuiltInParameter.STRUCTURAL_MATERIAL_PARAM
+[2026-11-20 07:34:58.411] Prepared grade beam symbol 'GB 300x600' from 'M_Concrete-Rectangular Beam'.
+[2026-11-20 07:34:58.413] Found 2 structural foundation symbols in document.
+[2026-11-20 07:34:58.413]   Foundation Symbol: Family='M_Footing-Rectangular', Name='1800 x 1200 x 450mm'
+[2026-11-20 07:34:58.413]   Foundation Symbol: Family='M_Footing-Rectangular', Name='2400 x 1800 x 450mm'
+[2026-11-20 07:34:58.413] Found base footing symbol: 'M_Footing-Rectangular' : '1800 x 1200 x 450mm'
+[2026-11-20 07:34:58.428] Configured footing type 'PC-CAP 2.7x1.2x1.0': width via 'Width' (8.8583 ft), length via 'Length' (3.9370 ft), thickness via 'Foundation Thickness' (3.2808 ft)
+[2026-11-20 07:34:58.436] Configured footing type 'PC-CAP 2.7x2.7x1.2': width via 'Width' (8.8583 ft), length via 'Length' (8.8583 ft), thickness via 'Foundation Thickness' (3.9370 ft)
+[2026-11-20 07:34:58.443] Configured footing type 'PC-CAP 2.7x2.46x1.0': width via 'Width' (8.8583 ft), length via 'Length' (8.0709 ft), thickness via 'Foundation Thickness' (3.2808 ft)
+[2026-11-20 07:34:58.708] Created FamilyInstance pile cap 'SUB-CAP-A1' at (0.0,0.0), size 2.7x1.2x1 m, type 'PC-CAP 2.7x1.2x1.0'.
+[2026-11-20 07:34:58.750] DirectShape Id 427105: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.750] DirectShape Id 427105: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.751] Created DirectShape pile 'SUB-PILE-A1-1' at (-0.90,0.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.754] DirectShape Id 427107: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.754] DirectShape Id 427107: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.755] Created DirectShape pile 'SUB-PILE-A1-2' at (0.90,0.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.756] Created FamilyInstance pile cap 'SUB-CAP-A2' at (0.0,5.0), size 2.7x2.7x1.2 m, type 'PC-CAP 2.7x2.7x1.2'.
+[2026-11-20 07:34:58.758] DirectShape Id 427109: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.758] DirectShape Id 427109: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.759] Created DirectShape pile 'SUB-PILE-A2-1' at (-0.90,4.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.762] DirectShape Id 427110: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.762] DirectShape Id 427110: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.763] Created DirectShape pile 'SUB-PILE-A2-2' at (0.90,4.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.765] DirectShape Id 427111: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.766] DirectShape Id 427111: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.766] Created DirectShape pile 'SUB-PILE-A2-3' at (-0.90,5.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.769] DirectShape Id 427112: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.770] DirectShape Id 427112: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.770] Created DirectShape pile 'SUB-PILE-A2-4' at (0.90,5.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.773] DirectShape Id 427113: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.773] DirectShape Id 427113: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.774] Created DirectShape pile 'SUB-PILE-A2-5' at (0.00,5.00), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.775] Created FamilyInstance pile cap 'SUB-CAP-A3' at (0.0,10.0), size 2.7x2.7x1.2 m, type 'PC-CAP 2.7x2.7x1.2'.
+[2026-11-20 07:34:58.778] DirectShape Id 427115: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.779] DirectShape Id 427115: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.779] Created DirectShape pile 'SUB-PILE-A3-1' at (-0.90,9.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.782] DirectShape Id 427116: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.783] DirectShape Id 427116: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.784] Created DirectShape pile 'SUB-PILE-A3-2' at (0.90,9.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.787] DirectShape Id 427117: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.788] DirectShape Id 427117: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.788] Created DirectShape pile 'SUB-PILE-A3-3' at (-0.90,10.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.791] DirectShape Id 427118: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.791] DirectShape Id 427118: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.791] Created DirectShape pile 'SUB-PILE-A3-4' at (0.90,10.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.794] DirectShape Id 427119: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.794] DirectShape Id 427119: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.794] Created DirectShape pile 'SUB-PILE-A3-5' at (0.00,10.00), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.795] Created FamilyInstance pile cap 'SUB-CAP-A4' at (0.0,15.0), size 2.7x1.2x1 m, type 'PC-CAP 2.7x1.2x1.0'.
+[2026-11-20 07:34:58.798] DirectShape Id 427121: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.799] DirectShape Id 427121: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.799] Created DirectShape pile 'SUB-PILE-A4-1' at (-0.90,15.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.803] DirectShape Id 427122: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.803] DirectShape Id 427122: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.804] Created DirectShape pile 'SUB-PILE-A4-2' at (0.90,15.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.805] Created FamilyInstance pile cap 'SUB-CAP-B1' at (5.0,0.0), size 2.7x2.7x1.2 m, type 'PC-CAP 2.7x2.7x1.2'.
+[2026-11-20 07:34:58.808] DirectShape Id 427124: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.808] DirectShape Id 427124: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.809] Created DirectShape pile 'SUB-PILE-B1-1' at (4.10,-0.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.811] DirectShape Id 427125: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.812] DirectShape Id 427125: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.812] Created DirectShape pile 'SUB-PILE-B1-2' at (5.90,-0.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.815] DirectShape Id 427126: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.816] DirectShape Id 427126: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.816] Created DirectShape pile 'SUB-PILE-B1-3' at (4.10,0.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.820] DirectShape Id 427127: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.820] DirectShape Id 427127: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.821] Created DirectShape pile 'SUB-PILE-B1-4' at (5.90,0.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.824] DirectShape Id 427128: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.824] DirectShape Id 427128: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.824] Created DirectShape pile 'SUB-PILE-B1-5' at (5.00,0.00), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.825] Created FamilyInstance pile cap 'SUB-CAP-B2' at (5.0,5.0), size 2.7x2.46x1 m, type 'PC-CAP 2.7x2.46x1.0'.
+[2026-11-20 07:34:58.827] DirectShape Id 427130: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.828] DirectShape Id 427130: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.828] Created DirectShape pile 'SUB-PILE-B2-1' at (4.10,4.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.830] DirectShape Id 427131: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.831] DirectShape Id 427131: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.831] Created DirectShape pile 'SUB-PILE-B2-2' at (5.90,4.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.835] DirectShape Id 427132: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.835] DirectShape Id 427132: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.836] Created DirectShape pile 'SUB-PILE-B2-3' at (5.00,6.04), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.837] Created FamilyInstance pile cap 'SUB-CAP-B3' at (5.0,10.0), size 2.7x2.46x1 m, type 'PC-CAP 2.7x2.46x1.0'.
+[2026-11-20 07:34:58.840] DirectShape Id 427134: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.840] DirectShape Id 427134: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.841] Created DirectShape pile 'SUB-PILE-B3-1' at (4.10,9.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.844] DirectShape Id 427135: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.844] DirectShape Id 427135: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.845] Created DirectShape pile 'SUB-PILE-B3-2' at (5.90,9.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.849] DirectShape Id 427136: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.850] DirectShape Id 427136: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.850] Created DirectShape pile 'SUB-PILE-B3-3' at (5.00,11.04), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.851] Created FamilyInstance pile cap 'SUB-CAP-B4' at (5.0,15.0), size 2.7x1.2x1 m, type 'PC-CAP 2.7x1.2x1.0'.
+[2026-11-20 07:34:58.854] DirectShape Id 427138: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.854] DirectShape Id 427138: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.854] Created DirectShape pile 'SUB-PILE-B4-1' at (4.10,15.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.857] DirectShape Id 427139: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.857] DirectShape Id 427139: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.858] Created DirectShape pile 'SUB-PILE-B4-2' at (5.90,15.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.859] Created FamilyInstance pile cap 'SUB-CAP-C1' at (10.0,0.0), size 2.7x2.7x1.2 m, type 'PC-CAP 2.7x2.7x1.2'.
+[2026-11-20 07:34:58.861] DirectShape Id 427141: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.861] DirectShape Id 427141: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.861] Created DirectShape pile 'SUB-PILE-C1-1' at (9.10,-0.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.864] DirectShape Id 427142: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.864] DirectShape Id 427142: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.865] Created DirectShape pile 'SUB-PILE-C1-2' at (10.90,-0.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.868] DirectShape Id 427143: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.869] DirectShape Id 427143: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.869] Created DirectShape pile 'SUB-PILE-C1-3' at (9.10,0.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.872] DirectShape Id 427144: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.873] DirectShape Id 427144: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.873] Created DirectShape pile 'SUB-PILE-C1-4' at (10.90,0.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.875] DirectShape Id 427145: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.876] DirectShape Id 427145: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.876] Created DirectShape pile 'SUB-PILE-C1-5' at (10.00,0.00), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.877] Created FamilyInstance pile cap 'SUB-CAP-C2' at (10.0,5.0), size 2.7x2.46x1 m, type 'PC-CAP 2.7x2.46x1.0'.
+[2026-11-20 07:34:58.880] DirectShape Id 427147: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.880] DirectShape Id 427147: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.881] Created DirectShape pile 'SUB-PILE-C2-1' at (9.10,4.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.885] DirectShape Id 427148: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.885] DirectShape Id 427148: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.886] Created DirectShape pile 'SUB-PILE-C2-2' at (10.90,4.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.890] DirectShape Id 427149: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.890] DirectShape Id 427149: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.891] Created DirectShape pile 'SUB-PILE-C2-3' at (10.00,6.04), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.892] Created FamilyInstance pile cap 'SUB-CAP-C3' at (10.0,10.0), size 2.7x2.46x1 m, type 'PC-CAP 2.7x2.46x1.0'.
+[2026-11-20 07:34:58.895] DirectShape Id 427151: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.895] DirectShape Id 427151: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.896] Created DirectShape pile 'SUB-PILE-C3-1' at (9.10,9.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.898] DirectShape Id 427152: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.898] DirectShape Id 427152: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.899] Created DirectShape pile 'SUB-PILE-C3-2' at (10.90,9.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.903] DirectShape Id 427153: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.903] DirectShape Id 427153: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.904] Created DirectShape pile 'SUB-PILE-C3-3' at (10.00,11.04), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.905] Created FamilyInstance pile cap 'SUB-CAP-C4' at (10.0,15.0), size 2.7x2.7x1.2 m, type 'PC-CAP 2.7x2.7x1.2'.
+[2026-11-20 07:34:58.908] DirectShape Id 427155: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.909] DirectShape Id 427155: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.909] Created DirectShape pile 'SUB-PILE-C4-1' at (9.10,14.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.912] DirectShape Id 427156: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.912] DirectShape Id 427156: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.913] Created DirectShape pile 'SUB-PILE-C4-2' at (10.90,14.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.916] DirectShape Id 427157: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.916] DirectShape Id 427157: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.917] Created DirectShape pile 'SUB-PILE-C4-3' at (9.10,15.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.920] DirectShape Id 427158: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.921] DirectShape Id 427158: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.921] Created DirectShape pile 'SUB-PILE-C4-4' at (10.90,15.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.924] DirectShape Id 427159: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.924] DirectShape Id 427159: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.925] Created DirectShape pile 'SUB-PILE-C4-5' at (10.00,15.00), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.926] Created FamilyInstance pile cap 'SUB-CAP-D1' at (15.0,0.0), size 2.7x1.2x1 m, type 'PC-CAP 2.7x1.2x1.0'.
+[2026-11-20 07:34:58.928] DirectShape Id 427161: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.928] DirectShape Id 427161: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.928] Created DirectShape pile 'SUB-PILE-D1-1' at (14.10,0.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.930] DirectShape Id 427162: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.931] DirectShape Id 427162: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.931] Created DirectShape pile 'SUB-PILE-D1-2' at (15.90,0.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.932] Created FamilyInstance pile cap 'SUB-CAP-D2' at (15.0,5.0), size 2.7x2.46x1 m, type 'PC-CAP 2.7x2.46x1.0'.
+[2026-11-20 07:34:58.935] DirectShape Id 427164: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.936] DirectShape Id 427164: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.936] Created DirectShape pile 'SUB-PILE-D2-1' at (14.10,4.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.939] DirectShape Id 427165: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.940] DirectShape Id 427165: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.940] Created DirectShape pile 'SUB-PILE-D2-2' at (15.90,4.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.942] DirectShape Id 427166: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.942] DirectShape Id 427166: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.943] Created DirectShape pile 'SUB-PILE-D2-3' at (15.00,6.04), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.944] Created FamilyInstance pile cap 'SUB-CAP-D3' at (15.0,10.0), size 2.7x2.46x1 m, type 'PC-CAP 2.7x2.46x1.0'.
+[2026-11-20 07:34:58.947] DirectShape Id 427168: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.947] DirectShape Id 427168: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.947] Created DirectShape pile 'SUB-PILE-D3-1' at (14.10,9.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.951] DirectShape Id 427169: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.951] DirectShape Id 427169: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.952] Created DirectShape pile 'SUB-PILE-D3-2' at (15.90,9.48), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.955] DirectShape Id 427170: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.955] DirectShape Id 427170: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.955] Created DirectShape pile 'SUB-PILE-D3-3' at (15.00,11.04), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.956] Created FamilyInstance pile cap 'SUB-CAP-D4' at (15.0,15.0), size 2.7x2.7x1.2 m, type 'PC-CAP 2.7x2.7x1.2'.
+[2026-11-20 07:34:58.959] DirectShape Id 427172: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.959] DirectShape Id 427172: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.960] Created DirectShape pile 'SUB-PILE-D4-1' at (14.10,14.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.963] DirectShape Id 427173: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.963] DirectShape Id 427173: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.963] Created DirectShape pile 'SUB-PILE-D4-2' at (15.90,14.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.966] DirectShape Id 427174: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.967] DirectShape Id 427174: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.967] Created DirectShape pile 'SUB-PILE-D4-3' at (14.10,15.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.971] DirectShape Id 427175: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.972] DirectShape Id 427175: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.972] Created DirectShape pile 'SUB-PILE-D4-4' at (15.90,15.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.975] DirectShape Id 427176: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.975] DirectShape Id 427176: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.976] Created DirectShape pile 'SUB-PILE-D4-5' at (15.00,15.00), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.977] Created FamilyInstance pile cap 'SUB-CAP-E1' at (20.0,0.0), size 2.7x1.2x1 m, type 'PC-CAP 2.7x1.2x1.0'.
+[2026-11-20 07:34:58.979] DirectShape Id 427178: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.979] DirectShape Id 427178: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.979] Created DirectShape pile 'SUB-PILE-E1-1' at (19.10,0.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.982] DirectShape Id 427179: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.982] DirectShape Id 427179: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.983] Created DirectShape pile 'SUB-PILE-E1-2' at (20.90,0.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:58.984] Created FamilyInstance pile cap 'SUB-CAP-E2' at (20.0,5.0), size 2.7x2.7x1.2 m, type 'PC-CAP 2.7x2.7x1.2'.
+[2026-11-20 07:34:58.987] DirectShape Id 427181: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.988] DirectShape Id 427181: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.988] Created DirectShape pile 'SUB-PILE-E2-1' at (19.10,4.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.990] DirectShape Id 427182: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.991] DirectShape Id 427182: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.991] Created DirectShape pile 'SUB-PILE-E2-2' at (20.90,4.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.994] DirectShape Id 427183: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.994] DirectShape Id 427183: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.994] Created DirectShape pile 'SUB-PILE-E2-3' at (19.10,5.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:58.997] DirectShape Id 427184: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:58.997] DirectShape Id 427184: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:58.998] Created DirectShape pile 'SUB-PILE-E2-4' at (20.90,5.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:59.001] DirectShape Id 427185: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:59.002] DirectShape Id 427185: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:59.003] Created DirectShape pile 'SUB-PILE-E2-5' at (20.00,5.00), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:59.004] Created FamilyInstance pile cap 'SUB-CAP-E3' at (20.0,10.0), size 2.7x2.7x1.2 m, type 'PC-CAP 2.7x2.7x1.2'.
+[2026-11-20 07:34:59.008] DirectShape Id 427187: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:59.009] DirectShape Id 427187: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:59.009] Created DirectShape pile 'SUB-PILE-E3-1' at (19.10,9.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:59.012] DirectShape Id 427188: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:59.013] DirectShape Id 427188: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:59.013] Created DirectShape pile 'SUB-PILE-E3-2' at (20.90,9.10), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:59.017] DirectShape Id 427189: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:59.017] DirectShape Id 427189: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:59.018] Created DirectShape pile 'SUB-PILE-E3-3' at (19.10,10.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:59.022] DirectShape Id 427190: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:59.022] DirectShape Id 427190: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:59.022] Created DirectShape pile 'SUB-PILE-E3-4' at (20.90,10.90), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:59.026] DirectShape Id 427191: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:59.026] DirectShape Id 427191: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:59.026] Created DirectShape pile 'SUB-PILE-E3-5' at (20.00,10.00), depth -1.20 to -25.20 m.
+[2026-11-20 07:34:59.027] Created FamilyInstance pile cap 'SUB-CAP-E4' at (20.0,15.0), size 2.7x1.2x1 m, type 'PC-CAP 2.7x1.2x1.0'.
+[2026-11-20 07:34:59.030] DirectShape Id 427193: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:59.031] DirectShape Id 427193: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:59.031] Created DirectShape pile 'SUB-PILE-E4-1' at (19.10,15.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:59.034] DirectShape Id 427194: DirectShapeType material assignment skipped (This Element cannot have type assigned.).
+[2026-11-20 07:34:59.034] DirectShape Id 427194: Material parameter not directly settable on instance or type, skipped material.
+[2026-11-20 07:34:59.035] Created DirectShape pile 'SUB-PILE-E4-2' at (20.90,15.00), depth -1.00 to -25.00 m.
+[2026-11-20 07:34:59.189] Pile caps created: 20 / 20
+[2026-11-20 07:34:59.190] Piles created: 70 / 70
+[2026-11-20 07:35:00.557] Grade beams created: 31 / 31
+[2026-11-20 07:35:00.759] Created 3D Isometric View 'BIM 3D Foundations'.
+[2026-11-20 07:35:00.767] Configured section box on 'BIM 3D Foundations' from z = -28 m to +36 m.
+[2026-11-20 07:35:00.781] ================================================================================
+[2026-11-20 07:35:00.781] SUBSTRUCTURE MODEL SUMMARY:
+[2026-11-20 07:35:00.781]   Pile Caps:   20 / 20
+[2026-11-20 07:35:00.782]   Piles:       70 / 70
+[2026-11-20 07:35:00.782]   Grade Beams: 31 / 31
+[2026-11-20 07:35:00.782]   Total Added: 121 elements
+[2026-11-20 07:35:00.782]   Failures:    0
+[2026-11-20 07:35:00.782] ================================================================================
+[2026-11-20 07:35:00.782] Saving updated structural model to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.rvt'...
+[2026-11-20 07:35:01.238] Saved with doc.Save().
+[2026-11-20 07:35:01.238] Re-exporting structural IFC to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey.ifc'...
+[2026-11-20 07:35:01.245] Direct IFC export (IFC4RV) returned: Modifying  is forbidden because the document has no open transaction.. Retrying within Transaction...
+[2026-11-20 07:35:09.323] IFC export succeeded within transaction.
+[2026-11-20 07:35:09.323] Exporting Foundations 3D PNG to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_foundations_3D.png'...
+[2026-11-20 07:35:10.243] ExportImage command executed.
+[2026-11-20 07:35:10.245] Copied generated image 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_foundations_3D - 3D View - BIM 3D Foundations.png' to target path 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_foundations_3D.png'
+[2026-11-20 07:35:10.245] Re-exporting main 3D PNG to 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_3D.png'...
+[2026-11-20 07:35:10.762] ExportImage command executed.
+[2026-11-20 07:35:10.763] Copied generated image 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_3D - 3D View - BIM 3D.png' to target path 'C:\Users\rashe\Documents\prefab\repo\BIM\Prefab_RCC_10storey_3D.png'
+[2026-11-20 07:35:10.764] Closing structural document...
+[2026-11-20 07:35:10.998] Structural document closed successfully.
+[2026-11-20 07:35:10.998] Job execution finished with result: SUCCESS. Registering Idling event for Revit exit...
+[2026-11-20 07:35:11.027] [DIALOG SUPPRESSION] DialogBoxShowing: DialogId = ''
+[2026-11-20 07:35:11.029] [DIALOG SUPPRESSION] TaskDialog: Id = '', Message = 'Failed to open file.'
+[2026-11-20 07:35:12.170] Idling triggered after document closed. Posting ExitRevit command...
+[2026-11-20 07:35:12.177] ExitRevit command posted successfully.
+[2026-11-20 07:35:18.005] PrefabBIM Add-in shutting down (Mode: sub).

@@ -2,9 +2,9 @@
 import csv, os, json
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 A = 'Paper2_Structural/analysis'; OUT = os.path.join(A, 'figures'); os.makedirs(OUT, exist_ok=True)
-V = [('M0 cast-in-situ', 'tables_cis_baseline', '#222222', '-'), ('M1 emulative', 'tables_pc_M1', '#1f77b4', '--'),
-     ('M2 semi-rigid central', 'tables_pc_M2', '#2ca02c', '-.'), ('M3 semi-rigid low', 'tables_pc_M3', '#ff7f0e', ':'),
-     ('M4 dry connections', 'tables_pc_M4', '#d62728', '-')]
+V = [('M0 cast-in-situ', '1_CastInSitu/tables_cis_baseline', '#222222', '-'), ('M1 emulative', '2_Precast/tables_pc_M1', '#1f77b4', '--'),
+     ('M2 semi-rigid central', '2_Precast/tables_pc_M2', '#2ca02c', '-.'), ('M3 semi-rigid low', '2_Precast/tables_pc_M3', '#ff7f0e', ':'),
+     ('M4 dry connections', '2_Precast/tables_pc_M4', '#d62728', '-')]
 Cd, I = 5.0, 1.0
 fig, axs = plt.subplots(1, 2, figsize=(9, 5), dpi=300, sharey=True)
 for ax, (case, dr) in zip(axs, (('EQx', 'X'), ('EQy', 'Y'))):
